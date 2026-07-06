@@ -44,7 +44,7 @@ export function BonusSection() {
                   <b.icon className="size-5 text-accent" />
                 </div>
                 <h3 className="text-sm font-bold text-foreground mb-1.5 pr-14">{b.title}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">{b.desc}</p>
+                <p className="text-[13px] text-foreground/65 leading-relaxed">{b.desc}</p>
               </div>
             </FadeIn>
           ))}

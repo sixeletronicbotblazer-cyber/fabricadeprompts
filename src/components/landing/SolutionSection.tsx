@@ -42,7 +42,7 @@ export function SolutionSection() {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-8">
+          <p className="text-sm text-foreground/70 leading-relaxed mb-8">
             Em vez de ficar tentando inventar comando do zero, você abre o app, escolhe o tipo de
             roupa, copia o prompt e usa na sua ferramenta de vídeo.
           </p>
@@ -56,7 +56,7 @@ export function SolutionSection() {
                   <item.icon className="size-5" />
                 </div>
                 <h3 className="text-sm font-bold text-foreground mb-1.5">{item.title}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
+                <p className="text-[13px] text-foreground/65 leading-relaxed">{item.desc}</p>
               </div>
             </FadeIn>
           ))}

@@ -15,7 +15,7 @@ export function FinalCTA() {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-md mx-auto">
+          <p className="text-sm text-foreground/70 leading-relaxed mb-6 max-w-md mx-auto">
             Abra o app, escolha o tipo de roupa, copie o prompt e gere seu vídeo com movimento mais
             natural.
           </p>
@@ -37,7 +37,7 @@ export function FinalCTA() {
         </FadeIn>
 
         <FadeIn delay={0.4}>
-          <p className="mt-3 text-[11px] text-muted-foreground">
+          <p className="mt-3 text-xs text-foreground/60">
             Acesso imediato • Pagamento único • Guia prático
           </p>
         </FadeIn>

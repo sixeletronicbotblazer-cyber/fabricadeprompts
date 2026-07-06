@@ -25,7 +25,7 @@ export function ProblemSection() {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+          <p className="text-sm text-foreground/70 leading-relaxed mb-6">
             Você cria a imagem, coloca a roupa na personagem, mas na hora de animar o vídeo a
             modelo fica travada, artificial, dançando demais ou mudando a roupa.
           </p>

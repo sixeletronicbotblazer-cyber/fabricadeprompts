@@ -24,11 +24,11 @@ export function OfferBox() {
             <div className="absolute inset-0 bg-gradient-to-b from-accent/10 to-transparent pointer-events-none" />
 
             <div className="relative z-10">
-              <p className="text-sm text-white/60 font-medium mb-2">Acesso completo por apenas</p>
+              <p className="text-sm text-white/80 font-medium mb-2">Acesso completo por apenas</p>
               <div className="mb-1">
                 <span className="text-5xl sm:text-6xl font-extrabold text-white">R$ 19,90</span>
               </div>
-              <p className="text-xs text-white/50 mb-8">Pagamento único. Acesso imediato ao InfoApp.</p>
+              <p className="text-sm text-white/70 mb-8">Pagamento único. Acesso imediato ao InfoApp.</p>
 
               <div className="flex flex-col items-center gap-2.5 mb-8">
                 {includes.map((item) => (
@@ -36,7 +36,7 @@ export function OfferBox() {
                     <div className="size-4 rounded-full bg-accent/20 flex items-center justify-center">
                       <Check className="size-2.5 text-accent" />
                     </div>
-                    <span className="text-sm text-white/90">{item}</span>
+                    <span className="text-sm text-white/95">{item}</span>
                   </div>
                 ))}
               </div>
@@ -47,7 +47,7 @@ export function OfferBox() {
               >
                 Comprar agora por R$ 19,90
               </a>
-              <p className="mt-3 text-[11px] text-white/40">
+              <p className="mt-3 text-xs text-white/60">
                 Você recebe o acesso logo após a compra.
               </p>
             </div>

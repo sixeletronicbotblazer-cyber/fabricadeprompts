@@ -70,7 +70,7 @@ export function HowItWorks() {
                       </span>
                     </div>
                     <h3 className="text-sm font-bold text-foreground mb-1">{step.title}</h3>
-                    <p className="text-xs text-muted-foreground leading-relaxed">{step.desc}</p>
+                    <p className="text-[13px] text-foreground/65 leading-relaxed">{step.desc}</p>
                   </div>
                 </div>
               </FadeIn>

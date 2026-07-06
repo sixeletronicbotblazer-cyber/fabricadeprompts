@@ -81,7 +81,7 @@ export function Hero() {
             </FadeIn>
 
             <FadeIn delay={0.2}>
-              <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed max-w-lg mx-auto lg:mx-0">
+              <p className="mt-4 text-sm sm:text-base text-foreground/70 leading-relaxed max-w-lg mx-auto lg:mx-0">
                 Um InfoApp simples para você criar personagem, trocar roupa, animar movimentos
                 realistas e gerar vídeos UGC de moda sem precisar gravar uma modelo real.
               </p>
@@ -90,7 +90,7 @@ export function Hero() {
             <FadeIn delay={0.3}>
               <div className="mt-6">
                 <span className="text-4xl sm:text-5xl font-extrabold text-foreground">R$ 19,90</span>
-                <p className="mt-1 text-xs text-muted-foreground">
+                <p className="mt-1.5 text-sm text-foreground/70">
                   Acesso imediato ao guia em formato de aplicativo.
                 </p>
               </div>
@@ -104,7 +104,7 @@ export function Hero() {
                 >
                   Quero acessar os prompts
                 </a>
-                <p className="text-[11px] text-muted-foreground text-center lg:text-left">
+                <p className="text-xs text-foreground/60 text-center lg:text-left">
                   Pagamento único • Acesso imediato • Ideal para TikTok Shop, afiliados e criativos
                 </p>
               </div>

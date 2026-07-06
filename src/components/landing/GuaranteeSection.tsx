@@ -15,7 +15,7 @@ export function GuaranteeSection() {
             <h2 className="text-xl sm:text-2xl font-extrabold text-foreground leading-tight mb-3">
               Garantia simples de 7 dias
             </h2>
-            <p className="text-sm text-muted-foreground leading-relaxed max-w-md mx-auto">
+            <p className="text-sm text-foreground/70 leading-relaxed max-w-md mx-auto">
               Se você acessar e sentir que o guia não te ajuda a criar vídeos de roupa com IA de
               forma mais prática, pode pedir reembolso em até 7 dias.
             </p>

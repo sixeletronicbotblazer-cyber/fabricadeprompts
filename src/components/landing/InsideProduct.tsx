@@ -42,7 +42,7 @@ export function InsideProduct() {
         </div>
 
         <FadeIn delay={0.5}>
-          <p className="mt-6 text-center text-xs font-medium text-muted-foreground">
+          <p className="mt-6 text-center text-xs font-medium text-foreground/60">
             Tudo organizado por categoria, com botão de copiar prompt.
           </p>
         </FadeIn>

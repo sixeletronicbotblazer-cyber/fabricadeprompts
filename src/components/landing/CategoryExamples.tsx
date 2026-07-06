@@ -52,7 +52,7 @@ export function CategoryExamples() {
               <div className="bg-white rounded-xl border border-border/60 p-5 h-full hover:shadow-md transition-shadow">
                 <span className="text-3xl mb-3 block">{cat.emoji}</span>
                 <h3 className="text-sm font-bold text-foreground mb-1.5">{cat.title}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">{cat.desc}</p>
+                <p className="text-[13px] text-foreground/65 leading-relaxed">{cat.desc}</p>
               </div>
             </FadeIn>
           ))}

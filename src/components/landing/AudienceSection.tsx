@@ -52,9 +52,9 @@ export function AudienceSection() {
               {notFor.map((item, i) => (
                 <div key={item} className="flex items-start gap-3">
                   <div className="flex-shrink-0 mt-0.5 size-5 rounded-full bg-white flex items-center justify-center">
-                    <X className="size-3 text-muted-foreground" />
+                    <X className="size-3 text-foreground/50" />
                   </div>
-                  <span className="text-sm text-muted-foreground">{item}</span>
+                  <span className="text-sm text-foreground/70">{item}</span>
                 </div>
               ))}
             </div>
