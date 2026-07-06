@@ -7,26 +7,26 @@ const items = [
   {
     icon: UserPlus,
     title: "Prompts para criar personagem",
-    desc: "Passo a passo para criar uma modelo realista a partir de referências de espelho.",
+    desc: "Comando pronto para gerar uma modelo IA realista a partir de referências de espelho.",
     color: "text-emerald-600 bg-emerald-50",
   },
   {
     icon: Shirt,
     title: "Prompts para trocar roupa",
     desc: "Comando para colocar a peça na personagem mantendo cenário, corpo e realismo.",
-    color: "text-blue-600 bg-blue-50",
-  },
-  {
-    icon: Film,
-    title: "Prompts de movimento",
-    desc: "Movimentos naturais para blusa, calça, short, vestido, academia, frio e mais.",
     color: "text-[#25F4EE] bg-[#25F4EE]/10",
   },
   {
-    icon: Workflow,
-    title: "Fluxo pronto",
-    desc: "Do Pinterest até o vídeo animado, com uma sequência simples de execução.",
+    icon: Film,
+    title: "Prompts de movimento por tipo",
+    desc: "Movimentos naturais específicos para blusa, calça, short, vestido, academia e mais.",
     color: "text-accent bg-accent/10",
+  },
+  {
+    icon: Workflow,
+    title: "Fluxo completo pronto",
+    desc: "Do Pinterest até o vídeo animado, com sequência simples de execução.",
+    color: "text-foreground bg-foreground/5",
   },
 ];
 
@@ -44,7 +44,7 @@ export function SolutionSection() {
         <FadeIn delay={0.1}>
           <p className="text-sm text-foreground/70 leading-relaxed mb-8">
             Em vez de ficar tentando inventar comando do zero, você abre o app, escolhe o tipo de
-            roupa, copia o prompt e usa na sua ferramenta de vídeo.
+            roupa, copia o prompt e usa na sua ferramenta de vídeo. Sem dor de cabeça.
           </p>
         </FadeIn>
 

@@ -25,7 +25,7 @@ export function FinalCTA() {
 
         <FadeIn delay={0.2}>
           <div className="mb-3">
-            <span className="text-lg text-foreground/40 line-through mr-2">R$ 29,90</span>
+            <span className="text-lg text-foreground/35 line-through mr-2">R$ 29,90</span>
             <span className="text-4xl sm:text-5xl font-extrabold text-foreground">R$ 19,90</span>
           </div>
         </FadeIn>
@@ -42,7 +42,7 @@ export function FinalCTA() {
 
         <FadeIn delay={0.4}>
           <p className="mt-3 text-xs text-foreground/60">
-            A partir de R$ 19,90 • Pagamento único • Guia prático
+            Acesso imediato • Pagamento único • Guia prático
           </p>
         </FadeIn>
       </div>

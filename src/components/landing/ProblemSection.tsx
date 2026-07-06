@@ -4,10 +4,10 @@ import { FadeIn } from "./FadeIn";
 import { AlertTriangle } from "lucide-react";
 
 const problems = [
-  { icon: "🤖", label: "Movimento duro" },
-  { icon: "👗", label: "Roupa muda no vídeo" },
+  { icon: "📝", label: "Não sabe escrever um prompt bom" },
+  { icon: "🤖", label: "Vídeo fica com movimento artificial" },
+  { icon: "👗", label: "A roupa muda no meio do vídeo" },
   { icon: "😳", label: "Modelo fica com cara de IA" },
-  { icon: "📝", label: "Prompt não parece natural" },
 ];
 
 export function ProblemSection() {
@@ -18,16 +18,17 @@ export function ProblemSection() {
           <div className="flex items-start gap-3 mb-3">
             <AlertTriangle className="size-5 text-accent mt-0.5 shrink-0" />
             <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-foreground leading-tight">
-              Criar vídeo de roupa com IA parece fácil… até a hora do{" "}
-              <span className="text-accent">movimento ficar estranho.</span>
+              Você tenta criar o prompt, mas o vídeo fica{" "}
+              <span className="text-accent">com cara de IA.</span>
             </h2>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.1}>
           <p className="text-sm text-foreground/70 leading-relaxed mb-6">
-            Você cria a imagem, coloca a roupa na personagem, mas na hora de animar o vídeo a
-            modelo fica travada, artificial, dançando demais ou mudando a roupa.
+            Você passa tempo escrevendo comando, testando variações, e na hora de gerar o vídeo a
+            modelo fica travada, a roupa some ou o movimento fica robótico. O problema quase nunca
+            é a ferramenta — é o <span className="text-accent font-semibold">prompt que você usa.</span>
           </p>
         </FadeIn>
 
@@ -44,7 +45,8 @@ export function ProblemSection() {
 
         <FadeIn delay={0.4}>
           <p className="text-sm font-semibold text-foreground text-center">
-            O problema quase nunca é a ferramenta. É o <span className="text-accent">comando que você usa.</span>
+            Se você não tem um prompt bom, o resultado nunca vai ser{" "}
+            <span className="text-accent">natural.</span>
           </p>
         </FadeIn>
       </div>
