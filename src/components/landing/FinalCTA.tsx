@@ -25,8 +25,8 @@ export function FinalCTA() {
 
         <FadeIn delay={0.2}>
           <div className="mb-3">
-            <span className="text-lg text-foreground/35 line-through mr-2">R$ 29,90</span>
-            <span className="text-4xl sm:text-5xl font-extrabold text-foreground">R$ 19,90</span>
+            <span className="text-lg text-foreground/35 line-through mr-2">R$ 19,90</span>
+            <span className="text-4xl sm:text-5xl font-extrabold text-foreground">R$ 10,00</span>
           </div>
         </FadeIn>
 

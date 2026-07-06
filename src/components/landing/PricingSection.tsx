@@ -63,7 +63,7 @@ export function PricingSection() {
 
                 <div className="mb-5">
                   <span className="text-4xl sm:text-5xl font-extrabold text-foreground">
-                    R$ 29
+                    R$ 19
                   </span>
                   <span className="text-lg font-bold text-foreground">,90</span>
                   <span className="text-xs text-foreground/50 ml-1.5">
@@ -117,9 +117,9 @@ export function PricingSection() {
 
                 <div className="mb-5">
                   <span className="text-4xl sm:text-5xl font-extrabold text-foreground">
-                    R$ 19
+                    R$ 10
                   </span>
-                  <span className="text-lg font-bold text-foreground">,90</span>
+                  <span className="text-lg font-bold text-foreground">,00</span>
                   <span className="text-xs text-foreground/50 ml-1.5">
                     pagamento único
                   </span>
@@ -190,7 +190,7 @@ export function PricingSection() {
 
               <p className="text-sm text-foreground/70 mb-5">
                 Por apenas{" "}
-                <span className="font-bold text-accent">R$ 24,90</span> você
+                <span className="font-bold text-accent">R$ 14,90</span> você
                 pode levar o plano completo com todos os bônus.
               </p>
 
@@ -212,13 +212,13 @@ export function PricingSection() {
                   href={checkoutUrl}
                   className="block w-full text-center bg-accent hover:bg-accent/90 text-accent-foreground font-bold py-3.5 px-6 rounded-full transition-all text-sm sm:text-base shadow-lg shadow-accent/25"
                 >
-                  Sim, quero o completo por R$ 24,90
+                  Sim, quero o completo por R$ 14,90
                 </a>
                 <a
                   href={checkoutUrl}
                   className="block w-full text-center border border-border text-foreground/60 hover:bg-secondary font-medium py-3 px-6 rounded-full transition-colors text-sm"
                 >
-                  Não, quero o básico por R$ 19,90
+                  Não, quero o básico por R$ 10,00
                 </a>
               </div>
             </motion.div>
