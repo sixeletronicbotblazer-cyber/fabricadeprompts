@@ -1,12 +1,12 @@
 import { Hero } from "@/components/landing/Hero";
 import { ProblemSection } from "@/components/landing/ProblemSection";
 import { SolutionSection } from "@/components/landing/SolutionSection";
+import { ResultsShowcase } from "@/components/landing/ResultsShowcase";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { InsideProduct } from "@/components/landing/InsideProduct";
 import { AudienceSection } from "@/components/landing/AudienceSection";
 import { CategoryExamples } from "@/components/landing/CategoryExamples";
-import { OfferBox } from "@/components/landing/OfferBox";
-import { BonusSection } from "@/components/landing/BonusSection";
+import { PricingSection } from "@/components/landing/PricingSection";
 import { GuaranteeSection } from "@/components/landing/GuaranteeSection";
 import { FAQ } from "@/components/landing/FAQ";
 import { FinalCTA } from "@/components/landing/FinalCTA";
@@ -19,12 +19,12 @@ export default function Home() {
         <Hero />
         <ProblemSection />
         <SolutionSection />
+        <ResultsShowcase />
         <HowItWorks />
         <InsideProduct />
         <CategoryExamples />
         <AudienceSection />
-        <OfferBox />
-        <BonusSection />
+        <PricingSection />
         <GuaranteeSection />
         <FAQ />
         <FinalCTA />

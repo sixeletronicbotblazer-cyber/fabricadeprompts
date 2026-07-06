@@ -20,13 +20,13 @@ const items = [
     icon: Film,
     title: "Prompts de movimento",
     desc: "Movimentos naturais para blusa, calça, short, vestido, academia, frio e mais.",
-    color: "text-purple-600 bg-purple-50",
+    color: "text-[#25F4EE] bg-[#25F4EE]/10",
   },
   {
     icon: Workflow,
     title: "Fluxo pronto",
     desc: "Do Pinterest até o vídeo animado, com uma sequência simples de execução.",
-    color: "text-accent bg-orange-50",
+    color: "text-accent bg-accent/10",
   },
 ];
 
