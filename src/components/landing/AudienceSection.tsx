@@ -21,18 +21,18 @@ const notFor = [
 
 export function AudienceSection() {
   return (
-    <section className="py-12 md:py-16 px-4">
+    <section className="py-8 md:py-14 px-4">
       <div className="max-w-3xl mx-auto">
         <FadeIn>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-foreground leading-tight mb-8 text-center">
+          <h2 className="text-lg sm:text-2xl md:text-3xl font-extrabold text-foreground leading-tight mb-5 text-center">
             Esse guia é para quem quer criar conteúdo de moda{" "}
             <span className="text-accent">sem complicar.</span>
           </h2>
         </FadeIn>
 
-        <div className="bg-white rounded-2xl border border-border/60 p-6 mb-6">
+        <div className="bg-white rounded-2xl border border-border/60 p-4 sm:p-6 mb-4">
           <FadeIn delay={0.1}>
-            <div className="space-y-3">
+            <div className="space-y-2.5">
               {targetAudience.map((item, i) => (
                 <div key={item} className="flex items-start gap-3">
                   <div className="flex-shrink-0 mt-0.5 size-5 rounded-full bg-emerald-50 flex items-center justify-center">
@@ -46,7 +46,7 @@ export function AudienceSection() {
         </div>
 
         <FadeIn delay={0.2}>
-          <div className="bg-secondary rounded-2xl p-6">
+          <div className="bg-secondary rounded-2xl p-4 sm:p-6">
             <h3 className="text-sm font-bold text-foreground mb-3">Não é para você se:</h3>
             <div className="space-y-2.5">
               {notFor.map((item, i) => (

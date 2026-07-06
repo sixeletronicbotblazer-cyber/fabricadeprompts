@@ -30,13 +30,13 @@ export function PricingSection() {
 
   return (
     <>
-      <section className="py-12 md:py-16 px-4">
+      <section className="py-8 md:py-14 px-4">
         <div className="max-w-3xl mx-auto">
           <FadeIn>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-foreground leading-tight mb-3 text-center">
+            <h2 className="text-lg sm:text-2xl md:text-3xl font-extrabold text-foreground leading-tight mb-2 text-center">
               Escolha o seu <span className="text-accent">plano</span>
             </h2>
-            <p className="text-sm text-foreground/70 text-center mb-8 max-w-md mx-auto">
+            <p className="text-sm text-foreground/70 text-center mb-6 max-w-md mx-auto">
               Comece a criar vídeos UGC profissionais com IA hoje mesmo.
             </p>
           </FadeIn>

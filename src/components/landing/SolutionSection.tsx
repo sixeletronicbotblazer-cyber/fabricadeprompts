@@ -32,17 +32,17 @@ const items = [
 
 export function SolutionSection() {
   return (
-    <section className="py-12 md:py-16 px-4">
+    <section className="py-8 md:py-14 px-4">
       <div className="max-w-3xl mx-auto">
         <FadeIn>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-foreground leading-tight mb-3">
+          <h2 className="text-lg sm:text-2xl md:text-3xl font-extrabold text-foreground leading-tight mb-2">
             Por isso eu organizei os prompts em um{" "}
             <span className="text-accent">app simples.</span>
           </h2>
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <p className="text-sm text-foreground/70 leading-relaxed mb-8">
+          <p className="text-sm text-foreground/70 leading-relaxed mb-5">
             Em vez de ficar tentando inventar comando do zero, você abre o app, escolhe o tipo de
             roupa, copia o prompt e usa na sua ferramenta de vídeo. Sem dor de cabeça.
           </p>
@@ -51,7 +51,7 @@ export function SolutionSection() {
         <div className="grid sm:grid-cols-2 gap-3">
           {items.map((item, i) => (
             <FadeIn key={item.title} delay={0.15 + i * 0.05}>
-              <div className="bg-white rounded-xl border border-border/60 p-5 h-full">
+              <div className="bg-white rounded-xl border border-border/60 p-4 sm:p-5 h-full">
                 <div className={`inline-flex size-10 rounded-lg items-center justify-center ${item.color} mb-3`}>
                   <item.icon className="size-5" />
                 </div>

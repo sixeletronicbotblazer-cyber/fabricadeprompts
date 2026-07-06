@@ -5,10 +5,10 @@ import { ShieldCheck } from "lucide-react";
 
 export function GuaranteeSection() {
   return (
-    <section className="py-12 md:py-16 px-4">
+    <section className="py-8 md:py-14 px-4">
       <div className="max-w-2xl mx-auto">
         <FadeIn>
-          <div className="bg-white rounded-2xl border border-border/60 p-6 sm:p-8 text-center">
+          <div className="bg-white rounded-2xl border border-border/60 p-5 sm:p-8 text-center">
             <div className="inline-flex size-14 rounded-full bg-emerald-50 items-center justify-center mb-4">
               <ShieldCheck className="size-7 text-emerald-600" />
             </div>

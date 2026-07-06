@@ -20,10 +20,10 @@ const items = [
 
 export function InsideProduct() {
   return (
-    <section className="py-12 md:py-16 px-4">
+    <section className="py-8 md:py-14 px-4">
       <div className="max-w-3xl mx-auto">
         <FadeIn>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-foreground leading-tight mb-8 text-center">
+          <h2 className="text-lg sm:text-2xl md:text-3xl font-extrabold text-foreground leading-tight mb-5 text-center">
             O que você recebe no <span className="text-accent">InfoApp</span>
           </h2>
         </FadeIn>
@@ -42,7 +42,7 @@ export function InsideProduct() {
         </div>
 
         <FadeIn delay={0.5}>
-          <p className="mt-6 text-center text-xs font-medium text-foreground/60">
+          <p className="mt-4 text-center text-xs font-medium text-foreground/60">
             Tudo organizado por categoria, com botão de copiar prompt.
           </p>
         </FadeIn>

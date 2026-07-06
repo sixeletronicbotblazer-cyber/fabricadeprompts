@@ -7,16 +7,16 @@ const checkoutUrl = "#";
 
 export function FinalCTA() {
   return (
-    <section className="py-12 md:py-16 px-4">
+    <section className="py-8 md:py-14 px-4">
       <div className="max-w-2xl mx-auto text-center">
         <FadeIn>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-foreground leading-tight mb-3">
+          <h2 className="text-lg sm:text-2xl md:text-3xl font-extrabold text-foreground leading-tight mb-2">
             Pare de tentar inventar prompt do zero.
           </h2>
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <p className="text-sm text-foreground/70 leading-relaxed mb-6 max-w-md mx-auto">
+          <p className="text-sm text-foreground/70 leading-relaxed mb-5 max-w-md mx-auto">
             Abra o app, escolha o tipo de roupa, copie o prompt e gere seu vídeo com movimento mais
             natural para o{" "}
             <span className="tiktok-text-gradient font-semibold">TikTok Shop</span>.
