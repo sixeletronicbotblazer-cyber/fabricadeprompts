@@ -1,11 +1,6 @@
 import { Hero } from "@/components/landing/Hero";
-import { ProblemSection } from "@/components/landing/ProblemSection";
-import { SolutionSection } from "@/components/landing/SolutionSection";
 import { ResultsShowcase } from "@/components/landing/ResultsShowcase";
-import { HowItWorks } from "@/components/landing/HowItWorks";
 import { InsideProduct } from "@/components/landing/InsideProduct";
-import { AudienceSection } from "@/components/landing/AudienceSection";
-import { CategoryExamples } from "@/components/landing/CategoryExamples";
 import { PricingSection } from "@/components/landing/PricingSection";
 import { GuaranteeSection } from "@/components/landing/GuaranteeSection";
 import { FAQ } from "@/components/landing/FAQ";
@@ -17,13 +12,8 @@ export default function Home() {
     <div className="min-h-screen flex flex-col">
       <main className="flex-1">
         <Hero />
-        <ProblemSection />
-        <SolutionSection />
         <ResultsShowcase />
-        <HowItWorks />
         <InsideProduct />
-        <CategoryExamples />
-        <AudienceSection />
         <PricingSection />
         <GuaranteeSection />
         <FAQ />

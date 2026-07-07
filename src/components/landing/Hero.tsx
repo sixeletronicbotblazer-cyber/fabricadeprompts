@@ -3,69 +3,19 @@
 import { FadeIn } from "./FadeIn";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-import { UserPlus, Shirt, LayoutList, Copy, Sparkles, Music2 } from "lucide-react";
 
 const checkoutUrl = "#";
 
-function MockupCard() {
-  return (
-    <div className="w-full max-w-[220px] sm:max-w-[260px] mx-auto">
-      <div className="bg-white rounded-2xl border border-border/60 shadow-lg overflow-hidden">
-        {/* Status bar */}
-        <div className="bg-foreground px-4 py-2 flex items-center justify-between">
-          <div className="flex gap-1">
-            <div className="w-2 h-2 rounded-full bg-white/30" />
-            <div className="w-2 h-2 rounded-full bg-white/30" />
-            <div className="w-2 h-2 rounded-full bg-white/30" />
-          </div>
-          <span className="text-[10px] text-white/60 font-medium">9:41</span>
-          <div className="w-6 h-3 rounded-sm border border-white/30" />
-        </div>
-        {/* App header */}
-        <div className="px-4 py-3 border-b border-border/40">
-          <div className="flex items-center gap-2">
-            <Music2 className="size-4 text-accent" />
-            <span className="text-xs font-bold text-foreground truncate">
-              TikTok Shop Motion
-            </span>
-          </div>
-        </div>
-        {/* App cards */}
-        <div className="p-3 space-y-2">
-          {[
-            { icon: UserPlus, label: "Criar personagem", color: "text-accent bg-accent/10" },
-            { icon: Shirt, label: "Trocar roupa", color: "text-[#25F4EE] bg-[#25F4EE]/10" },
-            { icon: LayoutList, label: "Prompts por tipo de peça", color: "text-foreground bg-foreground/5" },
-            { icon: Copy, label: "Copiar prompt", color: "text-accent bg-accent/10" },
-          ].map((item) => (
-            <div
-              key={item.label}
-              className="flex items-center gap-2.5 p-2.5 rounded-lg bg-secondary/50 border border-border/30"
-            >
-              <div className={`size-8 rounded-lg flex items-center justify-center ${item.color}`}>
-                <item.icon className="size-4" />
-              </div>
-              <span className="text-[11px] font-medium text-foreground">{item.label}</span>
-            </div>
-          ))}
-        </div>
-        {/* Badge */}
-        <div className="px-3 pb-3">
-          <div className="flex items-center gap-1.5 px-2.5 py-1.5 bg-accent/10 rounded-lg">
-            <Sparkles className="size-3 text-accent" />
-            <span className="text-[10px] font-semibold text-accent">+ prompts por categoria</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+const resultImages = [
+  { src: "/images/result-skirt.jpeg", alt: "Vídeo UGC de pijama preto com saia" },
+  { src: "/images/result-suit.jpeg", alt: "Vídeo UGC de pijama bege social" },
+];
 
 export function Hero() {
   return (
     <section className="py-8 md:py-14 lg:py-20 px-4">
       <div className="max-w-5xl mx-auto">
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-14">
           {/* Left content */}
           <div className="flex-1 text-center lg:text-left">
             <FadeIn>
@@ -117,23 +67,27 @@ export function Hero() {
             </FadeIn>
           </div>
 
-          {/* Right: mockup + result image */}
-          <FadeIn delay={0.3} className="flex-shrink-0 w-full lg:w-auto">
-            <div className="flex flex-col sm:flex-row items-center gap-4">
-              <MockupCard />
-              {/* Small result preview */}
-              <div className="relative overflow-hidden rounded-xl border border-border/60 w-full max-w-[160px] sm:max-w-[200px] aspect-[3/4] shadow-md">
-                <Image
-                  src="/images/result-skirt.jpeg"
-                  alt="Exemplo de resultado criado com os prompts"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 160px, 200px"
-                />
-                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/60 to-transparent p-3 pt-8">
-                  <p className="text-[10px] text-white/80 font-medium">Resultado real • Prompt do guia</p>
+          {/* Right: real result images */}
+          <FadeIn delay={0.25} className="flex-shrink-0 w-full lg:w-auto">
+            <div className="flex items-center justify-center gap-3">
+              {resultImages.map((img) => (
+                <div
+                  key={img.src}
+                  className="relative overflow-hidden rounded-2xl border border-border/60 w-full max-w-[150px] sm:max-w-[180px] aspect-[3/4] shadow-lg"
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 150px, 180px"
+                  />
+                  <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-10">
+                    <p className="text-[10px] text-white/90 font-semibold">Prompt do guia</p>
+                    <p className="text-[9px] text-white/60">Resultado direto da IA</p>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
           </FadeIn>
         </div>
