@@ -41,10 +41,10 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section className="py-8 md:py-14 px-4">
+    <section className="bg-black py-10 md:py-16 px-4">
       <div className="max-w-2xl mx-auto">
         <FadeIn>
-          <h2 className="text-lg sm:text-2xl md:text-3xl font-extrabold text-foreground leading-tight mb-5 text-center">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white leading-tight mb-6 text-center">
             Dúvidas frequentes
           </h2>
         </FadeIn>
@@ -52,11 +52,15 @@ export function FAQ() {
         <FadeIn delay={0.1}>
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, i) => (
-              <AccordionItem key={i} value={`faq-${i}`} className="border-border/60 bg-white rounded-xl mb-2 px-5 border">
-                <AccordionTrigger className="text-sm font-semibold text-foreground hover:no-underline py-4">
+              <AccordionItem
+                key={i}
+                value={`faq-${i}`}
+                className="bg-[#1A1A1A] rounded-xl mb-2.5 px-5 border border-white/[0.08] overflow-hidden"
+              >
+                <AccordionTrigger className="text-sm font-semibold text-white hover:no-underline py-4 data-[state=open]:text-[#FE2C55] transition-colors">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-sm text-foreground/70 leading-relaxed">
+                <AccordionContent className="text-sm text-white/50 leading-relaxed">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>

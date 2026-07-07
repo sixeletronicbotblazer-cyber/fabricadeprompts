@@ -4,21 +4,21 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-background: #F7F5F0;
-  --color-foreground: #111111;
-  --color-card: #ffffff;
-  --color-card-foreground: #111111;
-  --color-primary: #000000;
-  --color-primary-foreground: #ffffff;
-  --color-secondary: #F0EDE6;
-  --color-secondary-foreground: #111111;
-  --color-muted: #F0EDE6;
-  --color-muted-foreground: #4A4540;
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+  --color-card: #1A1A1A;
+  --color-card-foreground: #ffffff;
+  --color-primary: #ffffff;
+  --color-primary-foreground: #000000;
+  --color-secondary: #1A1A1A;
+  --color-secondary-foreground: #ffffff;
+  --color-muted: #1A1A1A;
+  --color-muted-foreground: #999999;
   --color-accent: #FE2C55;
   --color-accent-foreground: #ffffff;
   --color-destructive: #ef4444;
-  --color-border: #E8E4DC;
-  --color-input: #E8E4DC;
+  --color-border: #333333;
+  --color-input: #333333;
   --color-ring: #FE2C55;
   --font-sans: var(--font-inter);
   --radius-sm: 0.375rem;
@@ -37,19 +37,19 @@
   }
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - dark */
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: #000;
 }
 ::-webkit-scrollbar-thumb {
-  background: #ccc;
+  background: #444;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #aaa;
+  background: #666;
 }
 
 /* TikTok brand utilities */
@@ -61,4 +61,15 @@
   background: linear-gradient(135deg, #25F4EE, #FE2C55);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* Section backgrounds */
+.bg-tiktok-teal {
+  background-color: #E0F7FA;
+  color: #111111;
+}
+
+.bg-tiktok-pink-light {
+  background-color: #FCE4EC;
+  color: #111111;
 }
