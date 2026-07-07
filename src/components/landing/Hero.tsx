@@ -3,7 +3,7 @@
 import { FadeIn } from "./FadeIn";
 import { Badge } from "@/components/ui/badge";
 
-const checkoutUrl = "#";
+const checkoutUrl = "https://pay.cakto.com.br/3dtfnag_968205";
 
 export function Hero() {
   return (

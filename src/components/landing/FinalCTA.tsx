@@ -3,7 +3,7 @@
 import { FadeIn } from "./FadeIn";
 import { Music2 } from "lucide-react";
 
-const checkoutUrl = "#";
+const checkoutUrl = "https://pay.cakto.com.br/3dtfnag_968205";
 
 export function FinalCTA() {
   return (

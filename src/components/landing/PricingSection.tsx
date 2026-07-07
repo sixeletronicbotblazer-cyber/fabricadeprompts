@@ -5,7 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Check, X } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
-const checkoutUrl = "#";
+const checkoutUrlBasico = "https://pay.cakto.com.br/3dtfnag_968205";
+const checkoutUrlCompleto = "https://pay.cakto.com.br/36cmdfq";
+const checkoutUrlDownsell = "https://pay.cakto.com.br/9wutx2x";
 
 const basicoFeatures = [
   "Guia passo a passo completo",
@@ -95,7 +97,7 @@ export function PricingSection() {
                 </ul>
 
                 <a
-                  href={checkoutUrl}
+                  href={checkoutUrlCompleto}
                   className="block w-full text-center bg-accent hover:bg-accent/90 text-accent-foreground font-bold py-3.5 px-6 rounded-full transition-all text-sm sm:text-base shadow-lg shadow-accent/25 hover:shadow-accent/35 hover:scale-[1.02] active:scale-[0.98]"
                 >
                   Quero o plano completo
@@ -209,13 +211,13 @@ export function PricingSection() {
 
               <div className="flex flex-col gap-3">
                 <a
-                  href={checkoutUrl}
+                  href={checkoutUrlDownsell}
                   className="block w-full text-center bg-accent hover:bg-accent/90 text-accent-foreground font-bold py-3.5 px-6 rounded-full transition-all text-sm sm:text-base shadow-lg shadow-accent/25"
                 >
                   Sim, quero o completo por R$ 14,90
                 </a>
                 <a
-                  href={checkoutUrl}
+                  href={checkoutUrlBasico}
                   className="block w-full text-center border border-border text-foreground/60 hover:bg-secondary font-medium py-3 px-6 rounded-full transition-colors text-sm"
                 >
                   Não, quero o básico por R$ 10,00
