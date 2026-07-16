@@ -2,17 +2,16 @@
 
 import { FadeIn } from "./FadeIn";
 import { Badge } from "@/components/ui/badge";
-
-const checkoutUrl = "https://pay.cakto.com.br/3dtfnag_968205";
+import { User, Eye, Camera } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="bg-black py-12 md:py-20 lg:py-24 px-4">
+    <section id="hero" className="bg-black py-12 md:py-20 lg:py-24 px-4">
       <div className="max-w-2xl mx-auto text-center">
         <FadeIn>
           <div className="inline-flex items-center gap-2 mb-6">
             <Badge className="bg-white/10 text-white text-[11px] px-3 py-1 rounded-full border border-white/15 font-semibold hover:bg-white/15">
-              PROMPTS DE MOVIMENTO
+              3 MODOS DE VÍDEO
             </Badge>
             <span className="text-[10px] font-bold text-[#25F4EE] bg-[#25F4EE]/10 px-2 py-1 rounded-full border border-[#25F4EE]/20">
               TIKTOK SHOP
@@ -30,9 +29,9 @@ export function Hero() {
 
         <FadeIn delay={0.2}>
           <p className="mt-4 sm:mt-5 text-[14px] sm:text-[16px] text-white/60 leading-relaxed mx-auto max-w-lg">
-            Abra o app, escolha o tipo de roupa, copie o prompt e gere seu vídeo com{" "}
+            Abra o app, escolha o modo (modelo, POV ou selfie), copie o prompt e gere seu vídeo com{" "}
             <span className="tiktok-text-gradient font-semibold">movimento mais natural</span>{" "}
-            para o TikTok Shop.
+            para o TikTok Shop ou Shopee.
           </p>
         </FadeIn>
 
@@ -43,16 +42,33 @@ export function Hero() {
           </div>
         </FadeIn>
 
+        <FadeIn delay={0.35}>
+          <div className="mt-4 flex items-center justify-center gap-4">
+            <div className="flex items-center gap-1.5 text-white/30">
+              <User className="size-3.5" />
+              <span className="text-[11px] font-medium">Modelo</span>
+            </div>
+            <div className="flex items-center gap-1.5 text-white/30">
+              <Eye className="size-3.5" />
+              <span className="text-[11px] font-medium">POV</span>
+            </div>
+            <div className="flex items-center gap-1.5 text-white/30">
+              <Camera className="size-3.5" />
+              <span className="text-[11px] font-medium">Selfie</span>
+            </div>
+          </div>
+        </FadeIn>
+
         <FadeIn delay={0.4}>
-          <div className="mt-6 flex flex-col items-center gap-2.5">
+          <div className="mt-8 flex flex-col items-center gap-2.5">
             <a
-              href={checkoutUrl}
+              href="#planos"
               className="inline-flex items-center justify-center w-full sm:w-auto px-10 py-4 bg-[#FE2C55] hover:bg-[#e62750] text-white font-bold text-base sm:text-lg rounded-full transition-all shadow-lg shadow-[#FE2C55]/25 hover:shadow-[#FE2C55]/40 hover:scale-[1.02] active:scale-[0.98]"
             >
               Quero acessar agora
             </a>
             <p className="text-[11px] text-white/40">
-              Acesso imediato • Pagamento único • Guia prático
+              3 modos de vídeo • TikTok Shop & Shopee • Acesso imediato
             </p>
           </div>
         </FadeIn>

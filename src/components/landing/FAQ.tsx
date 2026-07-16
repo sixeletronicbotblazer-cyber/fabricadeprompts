@@ -14,6 +14,14 @@ const faqs = [
     a: "Não. É um guia prático em formato de aplicativo, com passo a passo e prompts prontos para copiar.",
   },
   {
+    q: "O que são os modos Modelo, POV e Selfie?",
+    a: "São 3 estilos de vídeo que mais vendem. Modelo é a IA mostrando a roupa de frente. POV é em primeira pessoa, como se fosse você segurando a peça. Selfie é a modelo olhando pra câmera, estilo selfie real.",
+  },
+  {
+    q: "Funciona para Shopee também?",
+    a: "Sim. Os prompts foram pensados para vídeos curtos de roupa, então funcionam tanto para TikTok Shop quanto para Shopee e outros marketplaces.",
+  },
+  {
     q: "Preciso aparecer nos vídeos?",
     a: "Não. A ideia é criar uma personagem IA para mostrar as roupas.",
   },
@@ -28,10 +36,6 @@ const faqs = [
   {
     q: "Serve para Flow, Veo ou outras ferramentas?",
     a: "Sim. Os prompts foram escritos para ferramentas de vídeo por IA que animam imagem de referência.",
-  },
-  {
-    q: "Vou receber o quê?",
-    a: "Você recebe acesso ao InfoApp com o passo a passo, prompts organizados, checklist e links úteis.",
   },
   {
     q: "O acesso é imediato?",

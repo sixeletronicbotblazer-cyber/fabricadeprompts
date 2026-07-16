@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, X } from "lucide-react";
+import { Check, X, Sparkles } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
 const checkoutUrlBasico = "https://pay.cakto.com.br/3dtfnag_968205";
@@ -21,6 +21,11 @@ const completoFeatures = [
   "Botões para copiar",
 ];
 
+const newModules = [
+  { name: "Módulo POV", desc: "Vídeos em primeira pessoa que vendem" },
+  { name: "Módulo Selfie", desc: "Vídeos estilo selfie com olhar pra câmera" },
+];
+
 const bonuses = [
   "Checklist de vídeo realista",
   "Fluxo rápido de criação",
@@ -32,14 +37,14 @@ export function PricingSection() {
 
   return (
     <>
-      <section className="bg-black py-10 md:py-16 px-4">
+      <section id="planos" className="bg-black py-10 md:py-16 px-4">
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white leading-tight mb-2 text-center">
               Escolha o seu <span className="text-[#FE2C55]">plano</span>
             </h2>
             <p className="text-sm text-white/50 text-center mb-8 max-w-md mx-auto">
-              Comece a criar vídeos UGC profissionais com IA hoje mesmo.
+              3 modos de vídeo prontos para TikTok Shop e Shopee.
             </p>
           </FadeIn>
 
@@ -59,13 +64,13 @@ export function PricingSection() {
                     Plano Completo
                   </h3>
                   <p className="text-sm text-white/50">
-                    Tudo + bônus exclusivos
+                    3 modos + bônus exclusivos
                   </p>
                 </div>
 
                 <div className="mb-5">
                   <span className="text-4xl sm:text-5xl font-extrabold text-white">
-                    R$ 19
+                    R$ 22
                   </span>
                   <span className="text-lg font-bold text-white">,90</span>
                   <span className="text-xs text-white/40 ml-1.5">
@@ -73,14 +78,37 @@ export function PricingSection() {
                   </span>
                 </div>
 
-                <ul className="space-y-2.5 mb-7 flex-1">
+                <ul className="space-y-2.5 mb-4 flex-1">
                   {completoFeatures.map((f) => (
                     <li key={f} className="flex items-start gap-2.5">
                       <Check className="size-4 text-[#FE2C55] shrink-0 mt-0.5" />
                       <span className="text-sm text-white/90">{f}</span>
                     </li>
                   ))}
-                  <li className="border-t border-white/10 pt-2.5 mt-1">
+                </ul>
+
+                {/* NEW MODULES — strong highlight */}
+                <div className="mb-4 rounded-xl bg-gradient-to-r from-[#FE2C55]/10 to-[#25F4EE]/10 border border-[#FE2C55]/20 p-4">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Sparkles className="size-3.5 text-[#25F4EE]" />
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#25F4EE]">
+                      Novos módulos incluídos
+                    </span>
+                  </div>
+                  {newModules.map((m) => (
+                    <div key={m.name} className="flex items-start gap-2.5 mb-2 last:mb-0">
+                      <Check className="size-4 text-[#25F4EE] shrink-0 mt-0.5" />
+                      <div>
+                        <span className="text-sm font-semibold text-white">{m.name}</span>
+                        <span className="text-xs text-white/40 ml-1.5">{m.desc}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Bônus */}
+                <ul className="space-y-2.5 mb-7">
+                  <li className="border-t border-white/10 pt-2.5">
                     <span className="text-[10px] font-bold uppercase tracking-wider text-[#25F4EE]">
                       Bônus incluídos
                     </span>
@@ -137,7 +165,7 @@ export function PricingSection() {
                 </ul>
 
                 <p className="text-xs text-white/30 mb-5">
-                  Sem bônus inclusos
+                  Sem módulos POV, Selfie e sem bônus
                 </p>
 
                 <button
@@ -161,7 +189,6 @@ export function PricingSection() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            {/* Backdrop */}
             <motion.div
               className="absolute inset-0 bg-black/80 backdrop-blur-sm"
               onClick={() => setDownsellOpen(false)}
@@ -170,7 +197,6 @@ export function PricingSection() {
               exit={{ opacity: 0 }}
             />
 
-            {/* Modal */}
             <motion.div
               className="relative bg-[#1A1A1A] rounded-2xl border border-white/10 shadow-2xl w-full max-w-md p-6 sm:p-8 z-10"
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -190,20 +216,28 @@ export function PricingSection() {
                 Espere! Antes de continuar...
               </h3>
 
-              <p className="text-sm text-white/60 mb-5">
+              <p className="text-sm text-white/60 mb-4">
                 Por apenas{" "}
-                <span className="font-bold text-[#FE2C55]">R$ 14,90</span> você
-                pode levar o plano completo com todos os bônus.
+                <span className="font-bold text-[#FE2C55]">R$ 16,90</span> você
+                leva o plano completo com os 3 modos (modelo, POV e selfie) e todos os bônus.
               </p>
 
-              <ul className="space-y-2.5 mb-5">
-                {bonuses.map((b) => (
-                  <li key={b} className="flex items-start gap-2.5">
-                    <span className="text-[#25F4EE] font-bold text-sm mt-px">✅</span>
-                    <span className="text-sm text-white/90">{b}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="rounded-xl bg-gradient-to-r from-[#FE2C55]/10 to-[#25F4EE]/10 border border-[#FE2C55]/20 p-3 mb-5">
+                <div className="flex items-center gap-2 mb-2">
+                  <Sparkles className="size-3.5 text-[#25F4EE]" />
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#25F4EE]">
+                    Incluído nesta oferta
+                  </span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {["Módulo Modelo", "Módulo POV", "Módulo Selfie", ...bonuses].map((b) => (
+                    <span key={b} className="inline-flex items-center gap-1 text-[11px] text-white/70 bg-white/5 rounded-full px-2.5 py-1">
+                      <Check className="size-2.5 text-[#25F4EE]" />
+                      {b}
+                    </span>
+                  ))}
+                </div>
+              </div>
 
               <p className="text-xs text-white/30 italic mb-6">
                 Essa condição é válida apenas agora.
@@ -214,7 +248,7 @@ export function PricingSection() {
                   href={checkoutUrlDownsell}
                   className="block w-full text-center bg-[#FE2C55] hover:bg-[#e62750] text-white font-bold py-3.5 px-6 rounded-full transition-all text-sm sm:text-base shadow-lg shadow-[#FE2C55]/25"
                 >
-                  Sim, quero o completo por R$ 14,90
+                  Sim, quero o completo por R$ 16,90
                 </a>
                 <a
                   href={checkoutUrlBasico}
