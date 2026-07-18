@@ -35,14 +35,34 @@ export function Hero() {
           </p>
         </FadeIn>
 
-        <FadeIn delay={0.3}>
-          <div className="mt-8 flex items-baseline gap-3 justify-center">
+        <FadeIn delay={0.25}>
+          <div className="mt-7 sm:mt-8 mx-auto w-full max-w-[760px]">
+            <div className="relative rounded-2xl overflow-hidden bg-black shadow-[0_0_30px_rgba(37,244,238,0.08),0_0_60px_rgba(254,44,85,0.06)] border border-white/[0.08]">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                className="w-full aspect-video object-cover rounded-2xl"
+              >
+                <source src="/images/demo-video.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <p className="mt-2.5 text-[11px] text-white/35 text-center">
+              Veja o app em ação: do prompt ao vídeo pronto em menos de 1 minuto.
+            </p>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.35}>
+          <div className="mt-7 sm:mt-8 flex items-baseline gap-3 justify-center">
             <span className="text-lg font-bold text-white/30 line-through">R$ 19,90</span>
             <span className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white">R$ 10,00</span>
           </div>
         </FadeIn>
 
-        <FadeIn delay={0.35}>
+        <FadeIn delay={0.4}>
           <div className="mt-4 flex items-center justify-center gap-4">
             <div className="flex items-center gap-1.5 text-white/30">
               <User className="size-3.5" />
@@ -59,7 +79,7 @@ export function Hero() {
           </div>
         </FadeIn>
 
-        <FadeIn delay={0.4}>
+        <FadeIn delay={0.45}>
           <div className="mt-8 flex flex-col items-center gap-2.5">
             <a
               href="#planos"
