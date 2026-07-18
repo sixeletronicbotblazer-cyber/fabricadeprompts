@@ -73,3 +73,8 @@
   background-color: #FCE4EC;
   color: #111111;
 }
+
+@keyframes heroFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
