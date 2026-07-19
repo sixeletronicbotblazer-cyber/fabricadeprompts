@@ -1,4 +1,5 @@
 import { Hero } from "@/components/landing/Hero";
+import { SocialProofSection } from "@/components/landing/SocialProofSection";
 import { ModesSection } from "@/components/landing/ModesSection";
 import { ResultsShowcase } from "@/components/landing/ResultsShowcase";
 import { ModeExamples } from "@/components/landing/ModeExamples";
@@ -16,6 +17,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col">
       <main className="flex-1">
         <Hero />
+        <SocialProofSection />
         <ModesSection />
         <ResultsShowcase />
         <ModeExamples />
