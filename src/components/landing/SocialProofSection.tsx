@@ -88,9 +88,9 @@ const reviews = [
 
 function ReviewCard({ review }: { review: typeof reviews[number] }) {
   return (
-    <div className="flex-shrink-0 w-[300px] sm:w-[340px] bg-[#1A1A1A] border border-white/[0.06] rounded-2xl p-5 mx-2.5">
+    <div className="flex-shrink-0 w-[220px] sm:w-[260px] bg-[#1A1A1A] border border-white/[0.06] rounded-xl p-4 mx-2">
       {/* Stars */}
-      <div className="flex items-center gap-0.5 mb-3">
+      <div className="flex items-center gap-0.5 mb-2">
         {Array.from({ length: 5 }).map((_, i) => (
           <Star
             key={i}
@@ -104,20 +104,20 @@ function ReviewCard({ review }: { review: typeof reviews[number] }) {
       </div>
 
       {/* Comment */}
-      <p className="text-[13.5px] leading-relaxed text-white/75 mb-4">
+      <p className="text-[12.5px] leading-relaxed text-white/70 mb-3">
         &ldquo;{review.text}&rdquo;
       </p>
 
       {/* Person */}
       <div className="flex items-center gap-3">
         <div
-          className={`flex items-center justify-center size-9 rounded-full text-[11px] font-bold ${review.color}`}
+          className={`flex items-center justify-center size-7 rounded-full text-[10px] font-bold ${review.color}`}
         >
           {review.initials}
         </div>
         <div>
-          <p className="text-[13px] font-semibold text-white">{review.name}</p>
-          <p className="text-[11px] text-white/35">{review.city}</p>
+          <p className="text-[12px] font-semibold text-white">{review.name}</p>
+          <p className="text-[10px] text-white/30">{review.city}</p>
         </div>
       </div>
     </div>
