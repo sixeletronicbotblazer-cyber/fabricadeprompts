@@ -42,7 +42,7 @@ export function EntryPopup() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 60 }}
             transition={{ type: "spring", damping: 28, stiffness: 300 }}
-          >
+        >
             <button
               onClick={() => { setOpen(false); setClosed(true); }}
               className="absolute top-3 right-3 size-7 flex items-center justify-center rounded-full text-white/30 hover:text-white hover:bg-white/10 transition-colors"
@@ -60,21 +60,19 @@ export function EntryPopup() {
               </div>
 
               <h3 className="text-lg font-extrabold text-white mb-1.5 leading-tight">
-                Plano completo com 3 modos por{" "}
-                <span className="text-[#FE2C55]">R$ 16,90</span>
+                Plano completo com todos os modos por{" "}
+                <span className="text-[#FE2C55]">R$ 17,90</span>
               </h3>
 
               <p className="text-[13px] text-white/50 leading-relaxed mb-4">
-                Prompts prontos para <span className="text-white/80 font-medium">modelo</span>,{" "}
-                <span className="text-white/80 font-medium">POV</span> e{" "}
-                <span className="text-white/80 font-medium">selfie</span> — os 3 estilos que mais vendem no TikTok Shop e Shopee.
+                Libere todos os modos, exemplos, módulos, bônus e acesso ao grupo VIP por esse preço exclusivo.
               </p>
 
               <a
                 href={checkoutUrlDownsell}
                 className="block w-full text-center bg-[#FE2C55] hover:bg-[#e62750] text-white font-bold py-3.5 px-6 rounded-full transition-all text-sm shadow-lg shadow-[#FE2C55]/25 hover:shadow-[#FE2C55]/40"
               >
-                Quero por R$ 16,90
+                Quero por R$ 17,90
               </a>
 
               <button

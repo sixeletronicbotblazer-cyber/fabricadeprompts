@@ -1,7 +1,7 @@
 "use client";
 
 import { FadeIn } from "./FadeIn";
-import { Sparkles, Shirt, Wind, Eye, Camera, RefreshCw } from "lucide-react";
+import { Sparkles, Shirt, Wind, Eye, Camera, RefreshCw, Users } from "lucide-react";
 
 const items = [
   {
@@ -33,6 +33,11 @@ const items = [
     icon: RefreshCw,
     title: "Atualizações e aulas",
     text: "Novos exemplos, aulas e melhorias adicionadas conforme o método evolui.",
+  },
+  {
+    icon: Users,
+    title: "Grupo VIP para compradores",
+    text: "Espaço para trocar ideias, acompanhar atualizações e novidades do produto.",
   },
 ];
 

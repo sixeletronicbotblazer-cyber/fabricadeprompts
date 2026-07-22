@@ -10,6 +10,14 @@ import {
 
 const faqs = [
   {
+    q: "Qual plano vale mais a pena?",
+    a: "O Plano Inicial é para quem quer começar com os prompts principais. O Plano Completo é a melhor escolha para quem quer todos os modos, exemplos, módulos, grupo VIP, bônus e atualizações.",
+  },
+  {
+    q: "O que recebo no Plano Completo?",
+    a: "O Plano Completo libera a biblioteca completa com +250 prompts organizados, modos Modelo, POV e Selfie UGC, novos módulos, bônus, aulas rápidas, exemplos prontos e acesso ao grupo VIP para compradores.",
+  },
+  {
     q: "Preciso saber editar vídeo?",
     a: "Não. A ideia é usar prompts prontos para criar as imagens e movimentos com IA. Depois você pode ajustar o resultado na ferramenta que já usa.",
   },

@@ -42,8 +42,8 @@ export function Hero() {
 
         <FadeIn delay={0.35}>
           <div className="mt-7 sm:mt-8 flex items-baseline gap-3 justify-center">
-            <span className="text-lg font-bold text-white/30 line-through">R$ 19,90</span>
-            <span className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white">R$ 10,00</span>
+            <span className="text-lg font-bold text-white/30 line-through">R$ 29,90</span>
+            <span className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white">R$ 14,90</span>
           </div>
         </FadeIn>
 
