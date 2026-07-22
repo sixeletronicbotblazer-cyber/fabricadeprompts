@@ -2,6 +2,7 @@ import { UrgencyBar } from "@/components/landing/UrgencyBar";
 import { Hero } from "@/components/landing/Hero";
 import { SocialProofSection } from "@/components/landing/SocialProofSection";
 import { ExampleCarousel } from "@/components/landing/ExampleCarousel";
+import { ReferenceExamples } from "@/components/landing/ReferenceExamples";
 import { ProofCarousel } from "@/components/landing/ProofCarousel";
 import { CTAAfterProofs } from "@/components/landing/CTAAfterProofs";
 import { MechanismSection } from "@/components/landing/MechanismSection";
@@ -24,6 +25,7 @@ export default function Home() {
         <Hero />
         <SocialProofSection />
         <ExampleCarousel />
+        <ReferenceExamples />
         <ProofCarousel />
         <CTAAfterProofs />
         <MechanismSection />

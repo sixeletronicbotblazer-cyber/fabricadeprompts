@@ -109,11 +109,11 @@
 }
 
 .animate-scroll-left-slow {
-  animation: scrollLeftSlow 11s linear infinite;
+  animation: scrollLeftSlow 10s linear infinite;
 }
 
 .animate-scroll-right-slow {
-  animation: scrollRightSlow 14s linear infinite;
+  animation: scrollRightSlow 3s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
