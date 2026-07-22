@@ -85,7 +85,7 @@
 }
 
 @keyframes scrollRight {
-  0% { transform: translateX(-33.333%); }
+  0% { transform: translateX(-25%); }
   100% { transform: translateX(0); }
 }
 
@@ -97,9 +97,30 @@
   animation: scrollRight 28s linear infinite;
 }
 
+/* Slower carousels for examples and proofs */
+@keyframes scrollLeftSlow {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+
+@keyframes scrollRightSlow {
+  0% { transform: translateX(-25%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-scroll-left-slow {
+  animation: scrollLeftSlow 45s linear infinite;
+}
+
+.animate-scroll-right-slow {
+  animation: scrollRightSlow 55s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-scroll-left,
-  .animate-scroll-right {
+  .animate-scroll-right,
+  .animate-scroll-left-slow,
+  .animate-scroll-right-slow {
     animation: none;
   }
 }

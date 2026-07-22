@@ -10,24 +10,28 @@ import {
 
 const faqs = [
   {
-    q: "É um curso?",
-    a: "Não. É um guia prático em formato de aplicativo, com passo a passo e prompts prontos para copiar.",
+    q: "Preciso saber editar vídeo?",
+    a: "Não. A ideia é usar prompts prontos para criar as imagens e movimentos com IA. Depois você pode ajustar o resultado na ferramenta que já usa.",
   },
   {
-    q: "O que são os modos Modelo, POV e Selfie?",
-    a: "São 3 estilos de vídeo que mais vendem. Modelo é a IA mostrando a roupa de frente. POV é em primeira pessoa, como se fosse você segurando a peça. Selfie é a modelo olhando pra câmera, estilo selfie real.",
+    q: "Serve para TikTok Shop e Shopee?",
+    a: "Sim. Os prompts foram pensados para criar vídeos de produto, roupas e criativos com estética UGC.",
   },
   {
-    q: "Funciona para Shopee também?",
-    a: "Sim. Os prompts foram pensados para vídeos curtos de roupa, então funcionam tanto para TikTok Shop quanto para Shopee e outros marketplaces.",
+    q: "É curso ou app?",
+    a: "É um app com prompts organizados, exemplos e aulas rápidas para usar como guia prático.",
   },
   {
-    q: "Preciso aparecer nos vídeos?",
-    a: "Não. A ideia é criar uma personagem IA para mostrar as roupas.",
+    q: "Recebo acesso na hora?",
+    a: "Sim. Após a compra, o acesso é liberado imediatamente.",
   },
   {
-    q: "Preciso comprar as roupas?",
-    a: "Não necessariamente. Você pode usar imagens dos produtos como referência para criar os criativos.",
+    q: "Tem garantia?",
+    a: "Sim. Você tem garantia de 7 dias conforme as regras da plataforma de pagamento.",
+  },
+  {
+    q: "Os resultados são garantidos?",
+    a: "Não. Os resultados dependem do produto, oferta, criativo, tráfego e execução. O app ajuda você a criar mais criativos para testar com mais rapidez.",
   },
   {
     q: "Funciona para qualquer roupa?",
@@ -36,10 +40,6 @@ const faqs = [
   {
     q: "Serve para Flow, Veo ou outras ferramentas?",
     a: "Sim. Os prompts foram escritos para ferramentas de vídeo por IA que animam imagem de referência.",
-  },
-  {
-    q: "O acesso é imediato?",
-    a: "Sim. Depois da compra, você recebe as instruções de acesso.",
   },
 ];
 

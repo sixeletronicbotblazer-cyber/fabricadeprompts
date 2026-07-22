@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, X, Sparkles } from "lucide-react";
+import { Check, X, Sparkles, Shield } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
 const checkoutUrlBasico = "https://pay.cakto.com.br/3dtfnag_968205";
@@ -10,15 +10,22 @@ const checkoutUrlCompleto = "https://pay.cakto.com.br/36cmdfq";
 const checkoutUrlDownsell = "https://pay.cakto.com.br/9wutx2x";
 
 const basicoFeatures = [
-  "Guia passo a passo completo",
-  "Prompts por tipo de roupa",
-  "Botões para copiar",
+  "Acesso imediato",
+  "Prompts essenciais",
+  "Modo modelo",
+  "Primeiros movimentos",
+  "Ideal para testar",
 ];
 
 const completoFeatures = [
-  "Guia passo a passo completo",
-  "Prompts por tipo de roupa",
-  "Botões para copiar",
+  "+250 prompts organizados",
+  "Modo Modelo",
+  "Modo POV",
+  "Modo Selfie UGC",
+  "Movimentos por tipo de roupa",
+  "Exemplos prontos",
+  "Atualizações",
+  "Aulas rápidas",
 ];
 
 const newModules = [
@@ -55,7 +62,7 @@ export function PricingSection() {
                 {/* Badge */}
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                   <span className="inline-block bg-[#FE2C55] text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider px-3 sm:px-4 py-1 rounded-full shadow-md">
-                    Mais escolhido
+                    Melhor escolha
                   </span>
                 </div>
 
@@ -64,7 +71,7 @@ export function PricingSection() {
                     Plano Completo
                   </h3>
                   <p className="text-sm text-white/50">
-                    3 modos + bônus exclusivos
+                    Biblioteca completa com todos os modos e atualizações.
                   </p>
                 </div>
 
@@ -107,7 +114,7 @@ export function PricingSection() {
                 </div>
 
                 {/* Bônus */}
-                <ul className="space-y-2.5 mb-7">
+                <ul className="space-y-2.5 mb-5">
                   <li className="border-t border-white/10 pt-2.5">
                     <span className="text-[10px] font-bold uppercase tracking-wider text-[#25F4EE]">
                       Bônus incluídos
@@ -130,18 +137,25 @@ export function PricingSection() {
                 >
                   Quero o plano completo
                 </a>
+
+                <div className="flex items-center justify-center gap-1.5 mt-3">
+                  <Shield className="size-3 text-white/25" />
+                  <span className="text-[10px] text-white/25">
+                    Acesso imediato • PIX seguro • Garantia de 7 dias
+                  </span>
+                </div>
               </div>
             </FadeIn>
 
-            {/* BÁSICO */}
+            {/* BÁSICO / INICIAL */}
             <FadeIn delay={0.1}>
               <div className="bg-[#1A1A1A] rounded-2xl border border-white/[0.08] p-5 sm:p-7 flex flex-col order-2 md:order-1">
                 <div className="mb-5">
                   <h3 className="text-lg sm:text-xl font-bold text-white mb-0.5">
-                    Plano Básico
+                    Plano Inicial
                   </h3>
                   <p className="text-sm text-white/50">
-                    O essencial para começar
+                    Para começar agora com os prompts principais.
                   </p>
                 </div>
 
@@ -174,6 +188,13 @@ export function PricingSection() {
                 >
                   Quero o plano básico
                 </button>
+
+                <div className="flex items-center justify-center gap-1.5 mt-3">
+                  <Shield className="size-3 text-white/20" />
+                  <span className="text-[10px] text-white/20">
+                    Acesso imediato • PIX seguro • Garantia de 7 dias
+                  </span>
+                </div>
               </div>
             </FadeIn>
           </div>

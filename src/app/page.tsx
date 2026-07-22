@@ -1,5 +1,12 @@
+import { UrgencyBar } from "@/components/landing/UrgencyBar";
 import { Hero } from "@/components/landing/Hero";
 import { SocialProofSection } from "@/components/landing/SocialProofSection";
+import { ExampleCarousel } from "@/components/landing/ExampleCarousel";
+import { ProofCarousel } from "@/components/landing/ProofCarousel";
+import { CTAAfterProofs } from "@/components/landing/CTAAfterProofs";
+import { MechanismSection } from "@/components/landing/MechanismSection";
+import { WhatYouReceiveSection } from "@/components/landing/WhatYouReceiveSection";
+import { ComparisonSection } from "@/components/landing/ComparisonSection";
 import { ModesSection } from "@/components/landing/ModesSection";
 import { ResultsShowcase } from "@/components/landing/ResultsShowcase";
 import { ModeExamples } from "@/components/landing/ModeExamples";
@@ -15,9 +22,16 @@ import { EntryPopup } from "@/components/landing/EntryPopup";
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
+      <UrgencyBar />
       <main className="flex-1">
         <Hero />
         <SocialProofSection />
+        <ExampleCarousel />
+        <ProofCarousel />
+        <CTAAfterProofs />
+        <MechanismSection />
+        <WhatYouReceiveSection />
+        <ComparisonSection />
         <ModesSection />
         <ResultsShowcase />
         <ModeExamples />
