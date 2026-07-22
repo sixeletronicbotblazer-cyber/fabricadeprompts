@@ -66,3 +66,26 @@ Stage Summary:
 - Downsell popup: triggered by Básico CTA, offers Completo at R$24,90 with AnimatePresence animation
 - VLM verification: Hero 9/10, Results 9/10, Pricing 9/10, Popup 7/10 (VLM misread price), Desktop 8/10
 - All interactive elements working (CTAs, FAQ, downsell popup open/close)
+
+---
+Task ID: 4
+Agent: Main Agent
+Task: Update carousels, remove mode sections, improve copy, add real videos
+
+Work Log:
+- Copied 7 uploaded "Lovable App" MP4 videos to public/images/ as example-0.mp4 through example-7.mp4
+- Sped up both carousels 4x in globals.css: scrollLeftSlow 45s→11s, scrollRightSlow 55s→14s
+- Rewrote ExampleCarousel.tsx: replaced placeholder cards with real video autoplay carousel, removed all "Modo" references (Modo Modelo/POV/Selfie badges), added "Prompt aplicado" badges, TikTok-style side icons (heart, comment, bookmark, share), responsive card widths (150/180/200px)
+- Rewrote ProofCarousel.tsx: improved heading to "Quem usa o mecanismo de prompts, teste mais criativos e vende mais" with pink accent, better subtext, improved text sizing (text-lg/xl/2xl), smaller disclaimer
+- Rewrote CTAAfterProofs.tsx: added cyan "Mecanismo pronto" tag with Zap icon, new heading "Pare de inventar prompt. Copie, aplique, gere." with white/60 subline, mechanism-focused description, improved text sizing (text-base/lg/xl), responsive CTA button
+- Removed ModesSection, ModeExamples, and ResultsShowcase from page.tsx (and their imports)
+- Updated page section order: Hero → SocialProof → ExampleCarousel → ProofCarousel → CTAAfterProofs → Mechanism → WhatYouReceive → Comparison → InsideProduct → Pricing → Guarantee → FAQ → FinalCTA → Footer
+- ESLint passed, dev log clean (200 responses, no errors)
+- VLM verified: example carousel shows real videos with people/models, TikTok icons, "Prompt aplicado" badges, no "Modo" section headers, proof carousel with mechanism copy, CTA with "Mecanismo pronto" tag
+
+Stage Summary:
+- Carousels 4x faster (11s and 14s from 45s and 55s)
+- Example carousel uses 7 real uploaded MP4 videos with autoplay muted loop
+- All "Modo Modelo/POV/Selfie" standalone sections removed from page flow
+- Proof and CTA copy improved with mechanism focus
+- Text sizing improved for mobile responsiveness across ProofCarousel and CTAAfterProofs

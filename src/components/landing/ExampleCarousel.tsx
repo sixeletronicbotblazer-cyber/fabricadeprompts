@@ -1,107 +1,80 @@
 "use client";
 
 import { FadeIn } from "./FadeIn";
-import { Heart, MessageCircle, Bookmark, Share2 } from "lucide-react";
+import { Heart, MessageCircle, Bookmark, Share2, Play } from "lucide-react";
 
-type ExampleCard = {
-  badge: string;
-  badgeColor: string;
-  label: string;
-  caption: string;
-  image: string;
-};
-
-const cards: ExampleCard[] = [
+const videos = [
   {
-    badge: "Prompt aplicado",
-    badgeColor: "bg-[#25F4EE]/20 text-[#25F4EE]",
-    label: "Modelo IA",
-    caption: "Look no corpo sem gravar",
-    image: "/images/placeholder-modelo.webp",
+    src: "/images/example-0.mp4",
+    caption: "Look completo com movimento natural",
   },
   {
-    badge: "Modo POV",
-    badgeColor: "bg-[#FE2C55]/20 text-[#FE2C55]",
-    label: "POV Produto",
-    caption: "Produto na mão com aparência UGC",
-    image: "/images/placeholder-pov.webp",
+    src: "/images/example-1.mp4",
+    caption: "Modelo IA mostrando a peça de perto",
   },
   {
-    badge: "Modo Selfie",
-    badgeColor: "bg-purple-500/20 text-purple-400",
-    label: "Selfie UGC",
-    caption: "Vídeo no espelho com IA",
-    image: "/images/placeholder-selfie.webp",
+    src: "/images/example-2.mp4",
+    caption: "Caimento realista do tecido",
   },
   {
-    badge: "Imagem + produto",
-    badgeColor: "bg-amber-500/20 text-amber-400",
-    label: "Troca de roupa",
-    caption: "Aplique a peça na modelo",
-    image: "/images/placeholder-troca.webp",
+    src: "/images/example-3.mp4",
+    caption: "Detalhe da roupa em movimento",
   },
   {
-    badge: "Vídeo pronto",
-    badgeColor: "bg-emerald-500/20 text-emerald-400",
-    label: "Movimento natural",
-    caption: "Pose, caimento e movimento",
-    image: "/images/placeholder-movimento.webp",
+    src: "/images/example-4.mp4",
+    caption: "Criativo pronto para anunciar",
   },
   {
-    badge: "TikTok Shop",
-    badgeColor: "bg-[#25F4EE]/20 text-[#25F4EE]",
-    label: "Criativo de venda",
-    caption: "Formato pronto para testar",
-    image: "/images/placeholder-criativo.webp",
+    src: "/images/example-6.mp4",
+    caption: "Vídeo UGC sem gravar nada",
+  },
+  {
+    src: "/images/example-7.mp4",
+    caption: "Estilo TikTok Shop em segundos",
   },
 ];
 
-function Card({ card }: { card: ExampleCard }) {
+function VideoCard({ video, index }: { video: (typeof videos)[number]; index: number }) {
   return (
-    <div className="flex-shrink-0 w-[160px] sm:w-[200px] lg:w-[220px]">
-      <div className="relative aspect-[9/16] rounded-2xl overflow-hidden bg-[#111] shadow-lg shadow-black/40 group">
-        {/* Placeholder bg until images arrive */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/[0.04] to-black/40" />
+    <div className="flex-shrink-0 w-[150px] sm:w-[180px] lg:w-[200px]">
+      <div className="relative aspect-[9/16] rounded-2xl overflow-hidden bg-[#111] shadow-lg shadow-black/40">
+        {/* Video */}
+        <video
+          src={video.src}
+          autoPlay
+          muted
+          playsInline
+          loop
+          preload="metadata"
+          className="w-full h-full object-cover"
+          poster=""
+        />
 
         {/* Top overlay */}
-        <div className="absolute inset-x-0 top-0 h-14 bg-gradient-to-b from-black/70 to-transparent z-10" />
+        <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-black/60 to-transparent z-10 pointer-events-none" />
         {/* Bottom overlay */}
-        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/80 to-transparent z-10" />
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/70 to-transparent z-10 pointer-events-none" />
 
         {/* Badge top-left */}
-        <div className="absolute top-3 left-3 z-20">
-          <span className={`inline-block text-[9px] sm:text-[10px] font-bold px-2 py-0.5 rounded-full ${card.badgeColor} backdrop-blur-sm`}>
-            {card.badge}
-          </span>
-        </div>
-
-        {/* Label top-right */}
-        <div className="absolute top-3 right-3 z-20">
-          <span className="text-[9px] font-semibold text-white/50 bg-black/40 backdrop-blur-sm px-1.5 py-0.5 rounded">
-            {card.label}
+        <div className="absolute top-2.5 left-2.5 z-20">
+          <span className="inline-flex items-center gap-1 bg-[#FE2C55]/90 backdrop-blur-sm text-[9px] sm:text-[10px] font-bold text-white px-2 py-0.5 rounded-full">
+            <Play className="size-2" fill="currentColor" />
+            Prompt aplicado
           </span>
         </div>
 
         {/* Side icons (TikTok-style) */}
-        <div className="absolute right-2.5 bottom-16 z-20 flex flex-col items-center gap-4">
-          <button className="flex flex-col items-center gap-0.5" aria-label="Curtir">
-            <Heart className="size-5 text-white" />
-          </button>
-          <button className="flex flex-col items-center gap-0.5" aria-label="Comentar">
-            <MessageCircle className="size-5 text-white" />
-          </button>
-          <button className="flex flex-col items-center gap-0.5" aria-label="Salvar">
-            <Bookmark className="size-5 text-white" />
-          </button>
-          <button className="flex flex-col items-center gap-0.5" aria-label="Compartilhar">
-            <Share2 className="size-5 text-white" />
-          </button>
+        <div className="absolute right-2 bottom-14 z-20 flex flex-col items-center gap-3 pointer-events-none">
+          <Heart className="size-4 sm:size-[18px] text-white" />
+          <MessageCircle className="size-4 sm:size-[18px] text-white" />
+          <Bookmark className="size-4 sm:size-[18px] text-white" />
+          <Share2 className="size-4 sm:size-[18px] text-white" />
         </div>
 
         {/* Caption bottom */}
-        <div className="absolute bottom-3 left-3 right-10 z-20">
-          <p className="text-[10px] sm:text-[11px] text-white/80 leading-snug">
-            {card.caption}
+        <div className="absolute bottom-2.5 left-2.5 right-9 z-20">
+          <p className="text-[9px] sm:text-[10px] text-white/80 leading-snug">
+            {video.caption}
           </p>
         </div>
       </div>
@@ -114,22 +87,22 @@ export function ExampleCarousel() {
     <section className="bg-black py-10 md:py-14 overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 mb-8 text-center">
         <FadeIn>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white leading-tight mb-2">
+          <h2 className="text-lg sm:text-xl md:text-2xl font-extrabold text-white leading-tight mb-2">
             Veja o que dá para criar com os prompts
           </h2>
-          <p className="text-sm text-white/45 max-w-md mx-auto">
-            Exemplos de vídeos no formato TikTok Shop usando os modos Modelo, POV e Selfie.
+          <p className="text-xs sm:text-sm text-white/45 max-w-sm mx-auto">
+            Vídeos gerados copiando e colando — sem editar, sem gravar.
           </p>
         </FadeIn>
       </div>
 
       <div className="relative">
-        <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
         <div className="flex animate-scroll-left-slow">
-          {[...cards, ...cards, ...cards].map((card, i) => (
-            <div key={i} className="mx-2">
-              <Card card={card} />
+          {[...videos, ...videos, ...videos].map((video, i) => (
+            <div key={i} className="mx-1.5">
+              <VideoCard video={video} index={i} />
             </div>
           ))}
         </div>

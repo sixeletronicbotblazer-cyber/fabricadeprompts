@@ -7,9 +7,6 @@ import { CTAAfterProofs } from "@/components/landing/CTAAfterProofs";
 import { MechanismSection } from "@/components/landing/MechanismSection";
 import { WhatYouReceiveSection } from "@/components/landing/WhatYouReceiveSection";
 import { ComparisonSection } from "@/components/landing/ComparisonSection";
-import { ModesSection } from "@/components/landing/ModesSection";
-import { ResultsShowcase } from "@/components/landing/ResultsShowcase";
-import { ModeExamples } from "@/components/landing/ModeExamples";
 import { InsideProduct } from "@/components/landing/InsideProduct";
 import { PricingSection } from "@/components/landing/PricingSection";
 import { GuaranteeSection } from "@/components/landing/GuaranteeSection";
@@ -32,9 +29,6 @@ export default function Home() {
         <MechanismSection />
         <WhatYouReceiveSection />
         <ComparisonSection />
-        <ModesSection />
-        <ResultsShowcase />
-        <ModeExamples />
         <InsideProduct />
         <PricingSection />
         <GuaranteeSection />
