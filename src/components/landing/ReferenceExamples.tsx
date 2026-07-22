@@ -30,44 +30,44 @@ const refs = [
 export function ReferenceExamples() {
   return (
     <section className="bg-[#0D0D0D] py-10 md:py-14 px-4">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-2xl mx-auto">
         <FadeIn>
           <h2 className="text-lg sm:text-xl md:text-2xl font-extrabold text-white leading-tight mb-6 text-center">
             Referência: prompt + resultado
           </h2>
         </FadeIn>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {refs.map((ref, i) => (
             <FadeIn key={ref.tag} delay={i * 0.08}>
               <div className="bg-[#1A1A1A] rounded-2xl border border-white/[0.08] overflow-hidden">
                 {/* Video/GIF */}
-                <div className="relative overflow-hidden bg-black/50 w-full aspect-[9/16] max-h-[220px] sm:max-h-[240px]">
+                <div className="relative overflow-hidden bg-black/50 w-full aspect-[9/16]">
                   <img
                     src={ref.image}
                     alt={`Exemplo ${ref.tag}`}
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
-                  <div className="absolute top-2 left-2">
+                  <div className="absolute top-3 left-3">
                     <span
-                      className={`inline-flex items-center gap-1 ${ref.tagColor} text-[9px] sm:text-[10px] font-bold text-white px-2 py-0.5 rounded-full`}
+                      className={`inline-flex items-center gap-1 ${ref.tagColor} text-[10px] sm:text-xs font-bold text-white px-2.5 py-1 rounded-full`}
                     >
-                      <Play className="size-2" fill="currentColor" />
+                      <Play className="size-2.5" fill="currentColor" />
                       {ref.tag}
                     </span>
                   </div>
                 </div>
 
                 {/* Prompt */}
-                <div className="p-3 sm:p-3.5">
-                  <div className="flex items-center gap-1.5 mb-1.5">
-                    <Copy className="size-3 text-[#25F4EE]" />
-                    <span className="text-[9px] text-white/35 uppercase tracking-wider font-semibold">
-                      Prompt
+                <div className="p-4 sm:p-5">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Copy className="size-3.5 text-[#25F4EE]" />
+                    <span className="text-[10px] text-white/40 uppercase tracking-wider font-semibold">
+                      Prompt do guia
                     </span>
                   </div>
-                  <p className="text-[11px] sm:text-xs text-white/55 font-mono leading-relaxed line-clamp-3">
+                  <p className="text-sm sm:text-[15px] text-white/70 font-mono leading-relaxed">
                     &quot;{ref.prompt}&quot;
                   </p>
                 </div>
