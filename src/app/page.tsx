@@ -1,7 +1,6 @@
 import { UrgencyBar } from "@/components/landing/UrgencyBar";
 import { Hero } from "@/components/landing/Hero";
 import { SocialProofSection } from "@/components/landing/SocialProofSection";
-import { ExampleCarousel } from "@/components/landing/ExampleCarousel";
 import { ReferenceExamples } from "@/components/landing/ReferenceExamples";
 import { ProofCarousel } from "@/components/landing/ProofCarousel";
 import { CTAAfterProofs } from "@/components/landing/CTAAfterProofs";
@@ -24,7 +23,6 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <SocialProofSection />
-        <ExampleCarousel />
         <ReferenceExamples />
         <ProofCarousel />
         <CTAAfterProofs />
