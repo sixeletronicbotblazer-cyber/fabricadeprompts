@@ -124,17 +124,14 @@ export function PricingSection() {
             <FadeIn>
               <div className="relative bg-[#111] rounded-2xl border-2 border-[#FE2C55]/60 p-5 sm:p-6 flex flex-col order-1 md:order-2 shadow-[0_0_40px_rgba(254,44,85,0.12),0_0_80px_rgba(37,244,238,0.05)]">
                 {/* Top badge */}
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 flex items-center gap-2">
-                  <span className="inline-block bg-[#FE2C55] text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider px-3 sm:px-4 py-1 rounded-full shadow-md">
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+                  <span className="inline-block bg-[#FE2C55] text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider px-4 sm:px-5 py-1.5 rounded-full shadow-md shadow-[#FE2C55]/30 whitespace-nowrap">
                     Melhor escolha
-                  </span>
-                  <span className="inline-block bg-gradient-to-r from-purple-500/80 to-[#25F4EE]/80 text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-2.5 sm:px-3 py-1 rounded-full border border-white/20 backdrop-blur-sm">
-                    Com Super Bônus
                   </span>
                 </div>
 
                 {/* Urgency header */}
-                <div className="text-center mt-1 mb-5">
+                <div className="text-center mt-2 mb-5">
                   <p className="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-2">
                     Promoção válida por 24 horas
                   </p>
