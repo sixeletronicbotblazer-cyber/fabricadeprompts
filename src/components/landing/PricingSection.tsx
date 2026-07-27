@@ -13,6 +13,7 @@ const completoFeatures = [
   "+250 prompts organizados prontos para copiar",
   "Modo Modelo, POV e Selfie UGC",
   "Novos módulos incluídos no acesso",
+  "Bônus: Galeria Premium de Prompts",
   "Grupo VIP com atualizações, troca de ideias e novidades",
   "Aulas rápidas e exemplos prontos",
   "Como ativar TIKTOK SHOP em 3 dias!",
@@ -26,7 +27,7 @@ const inicialFeatures = [
   "Modo Modelo",
   "Primeiros movimentos",
   "Ideal para testar",
-  "Sem módulos POV, Selfie e sem bônus",
+  "Acesso aos prompts principais",
 ];
 
 const downsellFeatures = [
@@ -39,7 +40,7 @@ const downsellFeatures = [
   "Aulas rápidas",
   "Como ativar TIKTOK SHOP em 3 dias!",
   "Grupo VIP com atualizações e troca de ideias",
-  "Bônus incluídos",
+  "Bônus: Galeria Premium de Prompts",
 ];
 
 function CountdownTimer() {
@@ -123,9 +124,12 @@ export function PricingSection() {
             <FadeIn>
               <div className="relative bg-[#111] rounded-2xl border-2 border-[#FE2C55]/60 p-5 sm:p-6 flex flex-col order-1 md:order-2 shadow-[0_0_40px_rgba(254,44,85,0.12),0_0_80px_rgba(37,244,238,0.05)]">
                 {/* Top badge */}
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 flex items-center gap-2">
                   <span className="inline-block bg-[#FE2C55] text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider px-3 sm:px-4 py-1 rounded-full shadow-md">
                     Melhor escolha
+                  </span>
+                  <span className="inline-block bg-gradient-to-r from-purple-500/80 to-[#25F4EE]/80 text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-2.5 sm:px-3 py-1 rounded-full border border-white/20 backdrop-blur-sm">
+                    Com Super Bônus
                   </span>
                 </div>
 
@@ -180,12 +184,17 @@ export function PricingSection() {
 
                 {/* Features list */}
                 <ul className="space-y-2.5 mb-5 flex-1">
-                  {completoFeatures.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5">
-                      <Check className="size-4 text-[#FE2C55] shrink-0 mt-0.5" />
-                      <span className="text-sm text-white/85">{f}</span>
+                  {completoFeatures.map((f, i) => (
+                    <li key={f} className={`flex items-start gap-2.5 ${f.startsWith("Bônus") ? "mt-1" : ""}`}>
+                      <Check className={`size-4 shrink-0 mt-0.5 ${f.startsWith("Bônus") ? "text-[#25F4EE]" : "text-[#FE2C55]"}`} />
+                      <span className={`text-sm ${f.startsWith("Bônus") ? "text-[#25F4EE]/90 font-semibold" : "text-white/85"}`}>{f}</span>
                     </li>
                   ))}
+                  <li className="ml-6.5">
+                    <span className="text-[10px] text-white/30 leading-relaxed block">
+                      Acervo visual com imagens, categorias, favoritos e botão de copiar prompt.
+                    </span>
+                  </li>
                 </ul>
 
                 {/* CTA */}
