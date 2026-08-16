@@ -7,7 +7,8 @@ export function HeroVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isEnded, setIsEnded] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [showPoster, setShowPoster] = useState(true);
   const [hasError, setHasError] = useState(false);
 
   const handlePlay = useCallback(() => {
@@ -47,14 +48,12 @@ export function HeroVideo() {
         {/* Video */}
         <video
           ref={videoRef}
-          autoPlay
           muted
           playsInline
-          preload="metadata"
+          preload="none"
           onLoadedData={() => setIsLoading(false)}
           onCanPlay={() => {
             setIsLoading(false);
-            videoRef.current?.play().then(() => setIsPlaying(true)).catch(() => {});
           }}
           onPlay={() => setIsPlaying(true)}
           onPause={() => setIsPlaying(false)}
@@ -66,7 +65,7 @@ export function HeroVideo() {
             setIsLoading(false);
             setHasError(true);
           }}
-          className={`w-full aspect-video object-cover rounded-2xl ${isEnded ? "opacity-0 scale-[0.98] transition-all duration-700" : "opacity-100 scale-100 transition-all duration-700"}`}
+          className={`w-full aspect-video object-cover rounded-2xl ${isEnded ? "opacity-0 scale-[0.98] transition-all duration-700" : showPoster ? "opacity-0" : "opacity-100 scale-100 transition-all duration-700"}`}
         >
           <source src="/images/demo-video.mp4" type="video/mp4" />
         </video>
@@ -76,6 +75,27 @@ export function HeroVideo() {
           <div className="absolute inset-0 flex items-center justify-center bg-black rounded-2xl">
             <Loader2 className="size-8 text-white/40 animate-spin" />
           </div>
+        )}
+
+        {/* Poster / Click-to-play */}
+        {showPoster && !hasError && (
+          <button
+            onClick={() => {
+              setShowPoster(false);
+              setIsLoading(true);
+              videoRef.current?.load();
+              videoRef.current?.play().then(() => setIsPlaying(true)).catch(() => {});
+            }}
+            className="absolute inset-0 flex flex-col items-center justify-center bg-black/80 backdrop-blur-[2px] rounded-2xl gap-3 cursor-pointer group/poster hover:bg-black/70 transition-colors"
+            aria-label="Reproduzir vídeo"
+          >
+            <div className="flex items-center justify-center size-16 rounded-full bg-white/10 border border-white/20 group-hover/poster:bg-white/20 group-hover/poster:scale-110 transition-all">
+              <Play className="size-7 text-white ml-1" fill="white" />
+            </div>
+            <span className="text-[12px] text-white/50 font-medium">
+              Clique para assistir
+            </span>
+          </button>
         )}
 
         {/* Error state */}
