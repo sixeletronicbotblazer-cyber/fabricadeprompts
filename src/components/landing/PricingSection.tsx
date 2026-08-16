@@ -158,19 +158,19 @@ export function PricingSection() {
                 {/* Price warning */}
                 <div className="mb-5 rounded-lg bg-amber-500/10 border border-amber-500/20 px-3.5 py-2.5 text-center">
                   <p className="text-[11px] sm:text-xs text-amber-400 font-semibold">
-                    R$ 29,90 travado SÓ HOJE. Amanhã o valor volta ao normal.
+                    R$ 39,90 travado SÓ HOJE. Amanhã o valor volta ao normal.
                   </p>
                 </div>
 
                 {/* Price area */}
                 <div className="mb-5 text-center">
-                  <span className="text-base font-bold text-white/30 line-through">R$ 29,90</span>
+                  <span className="text-base font-bold text-white/30 line-through">R$ 39,90</span>
                   <span className="inline-block ml-2 text-[10px] font-bold text-emerald-400 bg-emerald-400/15 px-2 py-0.5 rounded-full">
-                    -23% OFF
+                    -25% OFF
                   </span>
                   <div className="mt-2">
                     <span className="text-4xl sm:text-5xl font-extrabold text-white">
-                      R$ 22
+                      R$ 29
                     </span>
                     <span className="text-lg font-bold text-white">,90</span>
                   </div>
@@ -199,7 +199,7 @@ export function PricingSection() {
                   href={checkoutUrlCompleto}
                   className="block w-full text-center bg-[#FE2C55] hover:bg-[#e62750] text-white font-bold py-3.5 px-6 rounded-full transition-all text-sm sm:text-base shadow-lg shadow-[#FE2C55]/25 hover:shadow-[#FE2C55]/40 hover:scale-[1.02] active:scale-[0.98]"
                 >
-                  Quero o plano completo por R$22,90
+                  Quero o plano completo por R$29,90
                 </a>
 
                 <div className="flex items-center justify-center gap-1.5 mt-3">
@@ -210,7 +210,7 @@ export function PricingSection() {
                 </div>
 
                 <p className="mt-2 text-center text-[10px] text-white/20">
-                  Depois que o cronômetro zerar, o preço volta para R$29,90.
+                  Depois que o cronômetro zerar, o preço volta para R$39,90.
                 </p>
               </div>
             </FadeIn>
@@ -229,7 +229,7 @@ export function PricingSection() {
 
                 <div className="mb-5">
                   <span className="text-4xl sm:text-5xl font-extrabold text-white">
-                    R$ 14
+                    R$ 17
                   </span>
                   <span className="text-lg font-bold text-white">,90</span>
                   <span className="text-xs text-white/40 ml-1.5">
@@ -250,7 +250,7 @@ export function PricingSection() {
                   onClick={() => setDownsellOpen(true)}
                   className="block w-full text-center border-2 border-white/20 text-white hover:bg-white hover:text-black font-bold py-3.5 px-6 rounded-full transition-all text-sm sm:text-base"
                 >
-                  Começar por R$14,90
+                  Começar por R$17,90
                 </button>
 
                 <div className="flex items-center justify-center gap-1.5 mt-3">
@@ -303,7 +303,7 @@ export function PricingSection() {
 
               <h3 className="text-lg sm:text-xl font-extrabold text-white mb-1.5 leading-tight">
                 Libere o Plano Completo por apenas{" "}
-                <span className="text-[#FE2C55]">R$3 a mais</span>
+                <span className="text-[#FE2C55]">R$5 a mais</span>
               </h3>
 
               <p className="text-sm text-white/55 leading-relaxed mb-4">
@@ -311,9 +311,9 @@ export function PricingSection() {
               </p>
 
               <div className="flex items-baseline gap-2 mb-4">
-                <span className="text-sm text-white/30 line-through">De R$22,90</span>
+                <span className="text-sm text-white/30 line-through">De R$29,90</span>
                 <span className="text-sm text-white/60">por</span>
-                <span className="text-xl sm:text-2xl font-extrabold text-[#FE2C55]">R$17,90</span>
+                <span className="text-xl sm:text-2xl font-extrabold text-[#FE2C55]">R$22,90</span>
               </div>
 
               <div className="inline-block mb-4 bg-[#FE2C55]/15 text-[#FE2C55] text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border border-[#FE2C55]/25">
@@ -336,7 +336,7 @@ export function PricingSection() {
                   href={checkoutUrlDownsell}
                   className="block w-full text-center bg-[#FE2C55] hover:bg-[#e62750] text-white font-bold py-3.5 px-6 rounded-full transition-all text-sm sm:text-base shadow-lg shadow-[#FE2C55]/25"
                 >
-                  Sim, quero o completo por R$17,90
+                  Sim, quero o completo por R$22,90
                 </a>
                 <a
                   href={checkoutUrlInicial}
@@ -347,7 +347,7 @@ export function PricingSection() {
               </div>
 
               <p className="mt-3 text-center text-[10px] text-white/25">
-                A diferença é de apenas R$3 para acessar a versão completa.
+                A diferença é de apenas R$5 para acessar a versão completa.
               </p>
             </motion.div>
           </motion.div>

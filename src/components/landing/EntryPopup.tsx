@@ -61,7 +61,7 @@ export function EntryPopup() {
 
               <h3 className="text-lg font-extrabold text-white mb-1.5 leading-tight">
                 Plano completo com todos os modos por{" "}
-                <span className="text-[#FE2C55]">R$ 17,90</span>
+                <span className="text-[#FE2C55]">R$ 22,90</span>
               </h3>
 
               <p className="text-[13px] text-white/50 leading-relaxed mb-4">
@@ -72,7 +72,7 @@ export function EntryPopup() {
                 href={checkoutUrlDownsell}
                 className="block w-full text-center bg-[#FE2C55] hover:bg-[#e62750] text-white font-bold py-3.5 px-6 rounded-full transition-all text-sm shadow-lg shadow-[#FE2C55]/25 hover:shadow-[#FE2C55]/40"
               >
-                Quero por R$ 17,90
+                Quero por R$ 22,90
               </a>
 
               <button
