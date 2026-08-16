@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Check, X, Shield, Zap } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
-const checkoutUrlInicial = "https://pay.cakto.com.br/3dtfnag_968205";
-const checkoutUrlCompleto = "https://pay.cakto.com.br/36cmdfq";
-const checkoutUrlDownsell = "https://pay.cakto.com.br/9wutx2x";
+const checkoutUrlInicial = "https://pay.cakto.com.br/7dnhb97";
+const checkoutUrlCompleto = "https://pay.cakto.com.br/oci2odo";
+const checkoutUrlDownsell = "https://pay.cakto.com.br/guw9f5r";
 
 const completoFeatures = [
   "+250 prompts organizados prontos para copiar",

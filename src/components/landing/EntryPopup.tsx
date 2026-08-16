@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Sparkles } from "lucide-react";
 
-const checkoutUrlDownsell = "https://pay.cakto.com.br/9wutx2x";
+const checkoutUrlDownsell = "https://pay.cakto.com.br/guw9f5r";
 
 export function EntryPopup() {
   const [open, setOpen] = useState(false);
