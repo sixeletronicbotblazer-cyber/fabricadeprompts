@@ -15,31 +15,43 @@ import { FAQ } from "@/components/landing/FAQ";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { Footer } from "@/components/landing/Footer";
 import { SocialProof } from "@/components/landing/SocialProof";
+import { EntryPopup } from "@/components/landing/EntryPopup";
 
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col grain-overlay">
       <UrgencyBar />
       <main className="flex-1">
         <Hero />
+        <div className="section-divider" />
         <SocialProofSection />
         <ProofCarousel />
+        <div className="section-divider" />
         <DorSection />
+        <div className="section-divider" />
         <MechanismSection />
+        <div className="section-divider" />
         <DayToDaySection />
         <ReferenceExamples />
+        <div className="section-divider" />
         <PlatformModulesSection />
+        <div className="section-divider" />
         <PremiumBonusSection />
+        <div className="section-divider" />
         <ComparisonSection />
+        <div className="section-divider" />
         <PricingSection />
+        <div className="section-divider" />
         <GuaranteeSection />
+        <div className="section-divider" />
         <FAQ />
+        <div className="section-divider" />
         <FinalCTA />
       </main>
       <Footer />
       <SocialProof />
-
+      <EntryPopup />
     </div>
   );
 }

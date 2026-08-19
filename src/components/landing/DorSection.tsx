@@ -7,32 +7,50 @@ const cards = [
   {
     icon: AlertTriangle,
     title: 'Prompt genérico',
+    titleHighlight: 'genérico',
     text: 'A IA não entende câmera, cenário, movimento e intenção do vídeo.',
   },
   {
     icon: Shuffle,
     title: 'Produto mudando',
+    titleHighlight: 'mudando',
     text: 'Cor, textura, formato e detalhes podem sumir quando o comando não protege a referência.',
   },
   {
     icon: Bot,
     title: 'Vídeo com cara de IA',
+    titleHighlight: 'cara de IA',
     text: 'Movimento travado, pele artificial, cenário falso e resultado pouco natural.',
   },
 ];
 
+function HighlightedTitle({ title, highlight }: { title: string; highlight: string }) {
+  const parts = title.split(highlight);
+  return (
+    <h3 className="text-sm font-bold text-[#F4F4F5] mb-1">
+      {parts[0]}<span className="text-[#FF2D55]">{highlight}</span>{parts[1]}
+    </h3>
+  );
+}
+
 export function DorSection() {
   return (
-    <section className="bg-[#0D0D0D] py-10 md:py-14 px-4">
+    <section className="bg-[#08080A] py-12 md:py-16 px-4">
       <div className="max-w-2xl mx-auto">
         <FadeIn>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white leading-tight mb-2 text-center">
-            Hoje não falta ferramenta. Falta comando certo.
+          <div className="flex justify-center mb-3">
+            <span className="text-[10px] font-bold text-[#FF2D55]/80 uppercase tracking-[0.15em] bg-[#FF2D55]/8 border border-[#FF2D55]/12 px-3 py-1 rounded-full">ESSE É O PROBLEMA</span>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.05}>
+          <h2 className="text-2xl sm:text-3xl md:text-[2.25rem] font-black text-white leading-[0.98] sm:leading-[1.0] mb-2 text-center">
+            Hoje não falta <span className="text-[#A1A1AA]">ferramenta</span>. Falta <span className="text-gradient-hot">comando certo</span>.
           </h2>
         </FadeIn>
 
         <FadeIn delay={0.05}>
-          <p className="text-sm text-white/45 max-w-lg mx-auto mb-8 text-center">
+          <p className="text-sm text-[#A1A1AA]/80 max-w-lg mx-auto mb-8 text-center">
             Você pode usar Veo, Flow, Kling, Sora ou qualquer IA. Mas se o prompt
             for fraco, o vídeo sai estranho, genérico ou muda completamente o
             produto.
@@ -44,14 +62,12 @@ export function DorSection() {
             const Icon = card.icon;
             return (
               <FadeIn key={i} delay={i * 0.08}>
-                <div className="bg-[#1A1A1A] border border-white/[0.06] rounded-2xl p-5 h-full">
-                  <div className="size-10 rounded-xl bg-[#FE2C55]/10 border border-[#FE2C55]/15 flex items-center justify-center mb-3">
-                    <Icon className="size-5 text-[#FE2C55]" />
+                <div className="bg-[#111113] border-[#2A2A2E]/60 rounded-2xl p-5 h-full card-glow-pink transition-all duration-300 hover:border-[#FF2D55]/15">
+                  <div className="size-10 rounded-xl bg-[#FF2D55]/10 border-[#FF2D55]/15 flex items-center justify-center mb-3">
+                    <Icon className="size-5 text-[#FF2D55]" />
                   </div>
-                  <h3 className="text-sm font-bold text-white mb-1">
-                    {card.title}
-                  </h3>
-                  <p className="text-xs text-white/40 leading-relaxed">
+                  <HighlightedTitle title={card.title} highlight={card.titleHighlight} />
+                  <p className="text-xs text-[#A1A1AA]/70 leading-relaxed">
                     {card.text}
                   </p>
                 </div>

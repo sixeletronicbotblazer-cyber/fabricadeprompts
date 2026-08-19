@@ -28,11 +28,11 @@ const cards = [
 
 export function DayToDaySection() {
   return (
-    <section className="bg-black py-10 md:py-14 px-4">
+    <section className="bg-[#08080A] py-12 md:py-16 px-4">
       <div className="max-w-3xl mx-auto">
         <FadeIn>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white leading-tight mb-8 text-center">
-            O que muda no seu dia a dia com o Motion Prompts?
+          <h2 className="text-2xl sm:text-3xl md:text-[2.25rem] font-black text-white leading-[0.98] sm:leading-[1.0] mb-10 text-center">
+            O que <span className="text-[#FF2D55]">muda</span> no seu dia a dia com o <span className="text-gradient-main">Motion Prompts</span>?
           </h2>
         </FadeIn>
 
@@ -41,14 +41,15 @@ export function DayToDaySection() {
             const Icon = card.icon;
             return (
               <FadeIn key={i} delay={i * 0.06}>
-                <div className="bg-[#1A1A1A] border border-white/[0.06] rounded-2xl p-5 h-full">
-                  <div className="size-10 rounded-xl bg-[#25F4EE]/10 border border-[#25F4EE]/15 flex items-center justify-center mb-3">
-                    <Icon className="size-5 text-[#25F4EE]" />
+                <div className="relative bg-[#111113] border-[#2A2A2E]/60 rounded-2xl p-5 h-full card-glow-cyan transition-all duration-300 hover:border-[#22D3EE]/15">
+                  <span className="text-[10px] font-black text-[#22D3EE]/30 absolute top-3 right-4">0{i + 1}</span>
+                  <div className="size-10 rounded-xl bg-[#22D3EE]/10 border-[#22D3EE]/15 flex items-center justify-center mb-3">
+                    <Icon className="size-5 text-[#22D3EE]" />
                   </div>
-                  <h3 className="text-sm font-bold text-white mb-1">
+                  <h3 className="text-sm font-bold text-[#F4F4F5] mb-1">
                     {card.title}
                   </h3>
-                  <p className="text-xs text-white/40 leading-relaxed">
+                  <p className="text-xs text-[#A1A1AA]/70 leading-relaxed">
                     {card.text}
                   </p>
                 </div>

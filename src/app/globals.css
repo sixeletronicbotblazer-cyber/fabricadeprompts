@@ -4,22 +4,22 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-background: #000000;
-  --color-foreground: #ffffff;
-  --color-card: #1A1A1A;
-  --color-card-foreground: #ffffff;
-  --color-primary: #ffffff;
-  --color-primary-foreground: #000000;
-  --color-secondary: #1A1A1A;
+  --color-background: #050505;
+  --color-foreground: #F4F4F5;
+  --color-card: #111113;
+  --color-card-foreground: #F4F4F5;
+  --color-primary: #FF2D55;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #151518;
   --color-secondary-foreground: #ffffff;
-  --color-muted: #1A1A1A;
-  --color-muted-foreground: #999999;
-  --color-accent: #FE2C55;
+  --color-muted: #151518;
+  --color-muted-foreground: #A1A1AA;
+  --color-accent: #FF2D55;
   --color-accent-foreground: #ffffff;
   --color-destructive: #ef4444;
-  --color-border: #333333;
-  --color-input: #333333;
-  --color-ring: #FE2C55;
+  --color-border: #2A2A2E;
+  --color-input: #2A2A2E;
+  --color-ring: #FF2D55;
   --font-sans: var(--font-inter);
   --radius-sm: 0.375rem;
   --radius-md: 0.5rem;
@@ -42,14 +42,120 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #000;
+  background: #050505;
 }
 ::-webkit-scrollbar-thumb {
-  background: #444;
+  background: #333;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #666;
+  background: #555;
+}
+
+/* === VISUAL SYSTEM: Premium Dark Landing === */
+
+/* Main gradient for highlighted text */
+.text-gradient-main {
+  background: linear-gradient(90deg, #FF2D55, #A855F7, #22D3EE);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Red-to-orange gradient for CTAs and accents */
+.text-gradient-hot {
+  background: linear-gradient(90deg, #FF2D55, #FF4D1A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Pink-to-purple gradient */
+.text-gradient-pink {
+  background: linear-gradient(90deg, #FF2D55, #A855F7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* CTA button gradient */
+.bg-cta-gradient {
+  background: linear-gradient(90deg, #FF2D55, #FF4D1A);
+}
+
+.bg-cta-gradient-hover {
+  background: linear-gradient(90deg, #e6274c, #e64317);
+}
+
+/* CTA shadow/glow */
+.shadow-cta {
+  box-shadow: 0 8px 30px rgba(255, 45, 85, 0.35), 0 2px 8px rgba(255, 77, 26, 0.2);
+}
+
+.shadow-cta-hover {
+  box-shadow: 0 12px 40px rgba(255, 45, 85, 0.45), 0 4px 12px rgba(255, 77, 26, 0.3);
+}
+
+/* Section background glow */
+.glow-hero {
+  background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(255, 45, 85, 0.12) 0%, transparent 70%);
+}
+
+.glow-gallery {
+  background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(255, 45, 85, 0.10) 0%, rgba(168, 85, 247, 0.08) 40%, transparent 70%);
+}
+
+.glow-pricing {
+  background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(255, 45, 85, 0.10) 0%, rgba(168, 85, 247, 0.06) 40%, rgba(34, 211, 238, 0.04) 60%, transparent 70%);
+}
+
+.glow-final {
+  background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(255, 45, 85, 0.08) 0%, rgba(34, 211, 238, 0.06) 40%, transparent 70%);
+}
+
+/* Premium card glow on hover */
+.card-glow-pink:hover {
+  box-shadow: 0 0 20px rgba(255, 45, 85, 0.08), 0 0 40px rgba(255, 45, 85, 0.04);
+}
+
+.card-glow-cyan:hover {
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.08), 0 0 40px rgba(34, 211, 238, 0.04);
+}
+
+/* Pricing card gradient border */
+.border-gradient-vitalicio {
+  position: relative;
+}
+.border-gradient-vitalicio::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(135deg, #FF2D55, #A855F7, #22D3EE);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Grain texture overlay */
+.grain-overlay::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.018;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* Subtle divider line between sections */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.04), transparent);
 }
 
 /* TikTok brand utilities */

@@ -23,24 +23,24 @@ const withApp = [
 
 export function ComparisonSection() {
   return (
-    <section className="bg-[#0D0D0D] py-10 md:py-14 px-4">
+    <section className="bg-[#08080A] py-12 md:py-16 px-4">
       <div className="max-w-2xl mx-auto">
         <FadeIn>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white leading-tight mb-8 text-center">
-            Você pode continuar tentando criar tudo sozinho...
+          <h2 className="text-2xl sm:text-3xl md:text-[2.25rem] font-black leading-[0.98] sm:leading-[1.0] text-[#F4F4F5] mb-10 text-center">
+            Você pode continuar tentando criar tudo <span className="text-gradient-hot">sozinho</span>...
           </h2>
         </FadeIn>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {/* Alone */}
           <FadeIn>
-            <div className="bg-[#1A1A1A] border border-white/[0.06] rounded-2xl p-5">
-              <p className="text-sm font-bold text-white/50 mb-4">Tentando sozinho</p>
+            <div className="bg-[#111113] border border-[#2A2A2E]/60 rounded-2xl p-5">
+              <p className="text-sm font-bold text-[#A1A1AA] mb-4">Tentando sozinho</p>
               <ul className="space-y-3">
                 {alone.map((item) => (
                   <li key={item} className="flex items-start gap-2.5">
-                    <X className="size-4 text-[#FE2C55]/60 shrink-0 mt-0.5" />
-                    <span className="text-sm text-white/50">{item}</span>
+                    <X className="size-4 text-[#FF2D55]/50 shrink-0 mt-0.5" />
+                    <span className="text-sm text-[#A1A1AA]/60">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -49,13 +49,13 @@ export function ComparisonSection() {
 
           {/* With App */}
           <FadeIn delay={0.1}>
-            <div className="bg-[#1A1A1A] rounded-2xl border border-[#25F4EE]/20 p-5 shadow-[0_0_30px_rgba(37,244,238,0.06)]">
-              <p className="text-sm font-bold text-[#25F4EE] mb-4">Com Motion Prompts</p>
+            <div className="bg-[#111113] rounded-2xl border border-[#22D3EE]/25 p-5 shadow-[0_0_30px_rgba(34,211,238,0.06)]">
+              <p className="text-sm font-bold text-gradient-main mb-4">Com Motion Prompts</p>
               <ul className="space-y-3">
                 {withApp.map((item) => (
                   <li key={item} className="flex items-start gap-2.5">
-                    <Check className="size-4 text-[#25F4EE] shrink-0 mt-0.5" />
-                    <span className="text-sm text-white/80">{item}</span>
+                    <Check className="size-4 text-[#22D3EE] shrink-0 mt-0.5" />
+                    <span className="text-sm text-[#C4C4CC]">{item}</span>
                   </li>
                 ))}
               </ul>

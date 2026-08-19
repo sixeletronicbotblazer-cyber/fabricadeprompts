@@ -89,3 +89,135 @@ Stage Summary:
 - All "Modo Modelo/POV/Selfie" standalone sections removed from page flow
 - Proof and CTA copy improved with mechanism focus
 - Text sizing improved for mobile responsiveness across ProofCarousel and CTAAfterProofs
+
+---
+Task ID: 5
+Agent: Sub Agent (general-purpose)
+Task: Enhance Hero + UrgencyBar styling with premium dark aesthetic
+
+Work Log:
+- Updated Hero.tsx section: bg-black → bg-[#050505] glow-hero relative overflow-hidden, added z-10 to inner container
+- Added radial glow div (absolute, top, centered, #FF2D55/8%, 600x400, blur-120px, pointer-events-none)
+- Badge: white/10 → #FF2D55/10 bg, #FF2D55 text, #FF2D55/20 border, added Zap icon (lucide-react) before text
+- H1: font-extrabold → font-black, leading-[1.15] → leading-[1.02] sm:leading-[0.98], wrapped "TikTok Shop e Shopee" in text-gradient-main span, wrapped "sem inventar prompt do zero" in text-white font-black span
+- Subheadline: text-white/60 → text-[#C4C4CC], leading-relaxed → leading-[1.55], wrapped 5 keywords (Modelo, POV, Selfie UGC, produto na mão, unboxing) as inline chips with bg-[#FF2D55]/8, border-[#FF2D55]/12, text-[#FF2D55] styling
+- Microcopy: text-white/35 → text-white/30
+- Main CTA: bg-[#FE2C55] → bg-cta-gradient hover:brightness-110, shadow-lg → shadow-cta hover:shadow-cta-hover, added ArrowRight icon (lucide-react), font-bold → font-extrabold tracking-wide uppercase, text-base → text-[15px] sm:text-base
+- Secondary link: text-white/30 → text-[#A1A1AA]/60 hover:text-[#A1A1AA], added ChevronDown icon (lucide-react)
+- Updated UrgencyBar.tsx: bg-gradient-to-r from-black → bg-[#08080A], border-white/[0.06] → border-[#2A2A2E]/50, text-white/70 → text-[#A1A1AA], price color #25F4EE → #FF2D55 font-extrabold, added h-px gradient line (via-[#FF2D55]/30) at bottom
+- ESLint passed with 0 errors on both files
+
+Stage Summary:
+- Hero section fully upgraded to premium dark palette (#050505 background, glow-hero class, radial pink glow)
+- 3 new lucide-react icon imports: Zap (badge), ArrowRight (CTA), ChevronDown (secondary link)
+- H1 has gradient text highlight (text-gradient-main) and tighter leading for visual density
+- 5 keyword chips in subheadline with subtle pink bg/border for scannability
+- CTA uses bg-cta-gradient utility class with shadow-cta system for premium button feel
+- UrgencyBar uses new dark palette (#08080A) with pink accent price and gradient divider line
+- All hrefs, functional behavior, text content, and component structure preserved unchanged
+
+---
+Task ID: 4
+Agent: Sub Agent (general-purpose)
+Task: Enhance Dor + Mechanism + DayToDay sections with premium dark palette styling
+
+Work Log:
+- Updated DorSection.tsx: section bg → bg-[#08080A] py-12 md:py-16, added "ESSE É O PROBLEMA" badge (pink/8 bg, pink/12 border, uppercase tracking-wider), h2 upgraded to text-[2.25rem] font-black leading-[0.98] with "ferramenta" in text-[#A1A1AA] and "comando certo" in text-gradient-hot, subtext → text-[#A1A1AA]/80, cards → bg-[#111113] border-[#2A2A2E]/60 card-glow-pink hover:border-[#FF2D55]/15, icon containers → #FF2D55/10 and /15, icons → text-[#FF2D55], card titles now have keyword highlights ("genérico", "mudando", "cara de IA" in text-[#FF2D55]), card text → text-[#A1A1AA]/70, added HighlightedTitle helper component
+- Updated MechanismSection.tsx: section bg → bg-[#0D0D10] py-12 md:py-16, h2 upgraded to text-[2.25rem] font-black leading-[0.98] with three highlighted spans ("não é só gerar vídeo" in text-[#A1A1AA]/80, "guiar a IA" in text-gradient-main, "criativo real" in text-[#F4F4F5] font-black), subtext → text-[#A1A1AA]/70, added visual flow connector (Prompt → Cena → Movimento → Vídeo) with gradient dividers (pink→purple), cards → bg-[#111113] border-[#2A2A2E]/60 card-glow-cyan hover:border-[#22D3EE]/15, all #25F4EE references → #22D3EE, titles → text-[#F4F4F5], text → text-[#A1A1AA]/70
+- Updated DayToDaySection.tsx: section bg → bg-[#08080A] py-12 md:py-16, h2 upgraded to text-[2.25rem] font-black leading-[0.98] mb-10 with "muda" in text-[#FF2D55] and "Motion Prompts" in text-gradient-main, cards → bg-[#111113] border-[#2A2A2E]/60 card-glow-cyan hover:border-[#22D3EE]/15 with relative positioning, added numbered indicators (01-04) at top-right in text-[#22D3EE]/30, all #25F4EE references → #22D3EE, titles → text-[#F4F4F5], text → text-[#A1A1AA]/70
+- ESLint passed with 0 errors on all three files
+
+Stage Summary:
+- All three sections upgraded to new dark palette (#08080A, #0D0D10, #111113, #2A2A2E)
+- DorSection: pink/red accent theme with badge, keyword highlights, card-glow-pink hover
+- MechanismSection: cyan accent theme with flow connector (Prompt→Cena→Movimento→Vídeo), gradient dividers, text-gradient-main highlight, card-glow-cyan hover
+- DayToDaySection: cyan accent theme with numbered indicators (01-04), keyword highlights ("muda" in pink, "Motion Prompts" in gradient), card-glow-cyan hover
+- All TikTok #25F4EE and #FE2C55 references migrated to new palette #22D3EE and #FF2D55
+- No new file imports added (no new lucide-react icons needed)
+- All functional behavior, links, prices, text content, and component structure preserved unchanged
+
+---
+Task ID: 6
+Agent: Sub Agent (general-purpose)
+Task: Enhance Comparison + Pricing + FinalCTA + Guarantee + FAQ + EntryPopup + Footer
+
+Work Log:
+- Read worklog.md and all 7 source files in full (PricingSection 375 lines)
+- ComparisonSection: bg → #08080A, h2 → font-black text-gradient-hot on "sozinho", left card → #111113/#2A2A2E dimmer styling, right card → #22D3EE accent with text-gradient-main title
+- PricingSection (most important, 380 lines): section → #0D0D10 glow-pricing with radial pink glow div, h2/subheadline with #FF2D55 and text-gradient-main highlights, vitalicio card → #151518 border-gradient-vitalicio with triple glow shadow, added Gift + Sparkles + ArrowRight imports, added "COM SUPER BÔNUS" purple badge, countdown → #050505/#2A2A2E, warning box → #FF4D1A, OFF badge → #22D3EE, CTA → bg-cta-gradient rounded-xl with ArrowRight, added Galeria Premium internal block with cyan/purple gradient, mensal card → #111113/#2A2A2E subdued styling, recovery popup → #111113/#FF2D55 border, bg-black/85 backdrop-blur-md overlay, crown badge → #22D3EE, price → font-black text-2xl sm:text-3xl, CTA → bg-cta-gradient rounded-xl, feature box → gradient from pink to cyan
+- FinalCTA: bg → #050505 glow-final with radial pink glow, h2 → font-black with text-gradient-hot on "no escuro", added ArrowRight import, CTA → bg-cta-gradient rounded-xl, secondary → #2A2A2E border
+- GuaranteeSection: section → #08080A, card → #111113/#2A2A2E, icon bg → emerald-500/8, h2 → font-black text-[#F4F4F5], text → #A1A1AA/70
+- FAQ: section → #08080A, h2 → font-black 2.25rem, items → #111113/#2A2A2E with hover:border transition, trigger → #C4C4CC open:#FF2D55, content → #A1A1AA/80
+- EntryPopup: overlay → bg-black/85 backdrop-blur-md, card → #111113/#FF2D55 border with pink glow shadow, close → #A1A1AA/40, sparkles → #22D3EE, h3 → font-black #F4F4F5, price → #FF2D55, crown badge → #22D3EE, CTA → bg-cta-gradient rounded-xl uppercase, dismiss → #A1A1AA/30
+- Footer: bg → #08080A, border → #2A2A2E/40, text → #A1A1AA/40, links → #A1A1AA/40 hover:#A1A1AA/70, dots → #2A2A2E
+- ESLint passed with 0 errors on all 7 files
+
+Stage Summary:
+- All 7 components upgraded to premium dark palette (#050505, #08080A, #0D0D10, #111113, #151518, #2A2A2E)
+- PricingSection: most heavily enhanced — border-gradient-vitalicio, triple-color glow shadow, new Gift badge, Galeria Premium internal block, bg-cta-gradient CTA with ArrowRight, countdown/warning/OFF badge all restyled
+- 3 new lucide-react icon imports in PricingSection: Gift, ArrowRight, Sparkles; 1 in FinalCTA: ArrowRight
+- All #25F4EE → #22D3EE, all #FE2C55 → #FF2D55, all white/XX → #A1A1AA/XX or #C4C4CC color migrations
+- Comparison left card deliberately dimmer/sadder, right card clearly premium with cyan accent
+- EntryPopup and Recovery Popup share consistent styling (bg-black/85 backdrop-blur-md, #FF2D55 border glow, bg-cta-gradient CTA)
+- No structure, links, prices, checkout URLs, or text content changed — CSS classes and visual wrapper spans only---
+Task ID: 3
+Agent: general-purpose (Hero + UrgencyBar)
+Task: Enhance Hero and UrgencyBar with premium dark visual direction
+
+Work Log:
+- Updated Hero.tsx: bg #050505 with glow-hero, radial pink glow, Zap badge, h1 font-black with text-gradient-main on 'TikTok Shop e Shopee', inline chips for keywords, bg-cta-gradient CTA with ArrowRight, tighter leading
+- Updated UrgencyBar.tsx: bg #08080A, price in #FF2D55, gradient line at bottom
+
+Stage Summary:
+- Hero section now has premium dark aesthetic with gradient text highlights, inline keyword chips, gradient CTA button
+- UrgencyBar updated to new palette with red price highlight
+
+---
+Task ID: 4
+Agent: general-purpose (Dor + Mechanism + DayToDay)
+Task: Enhance DorSection, MechanismSection, DayToDaySection with premium dark styling
+
+Work Log:
+- Updated DorSection.tsx: bg #08080A, 'ESSE É O PROBLEMA' badge, text-gradient-hot on 'comando certo', cards #111113 with card-glow-pink, title word highlights
+- Updated MechanismSection.tsx: bg #0D0D10, three-part headline highlights, visual connector (Prompt→Cena→Movimento→Vídeo), card-glow-cyan cards
+- Updated DayToDaySection.tsx: bg #08080A, text-gradient-main on 'Motion Prompts', numbered 01-04 indicators, card-glow-cyan cards
+
+Stage Summary:
+- All three problem/solution sections upgraded with new palette, headline gradient highlights, numbered indicators, visual connector, and premium card hover effects
+
+---
+Task ID: 5
+Agent: general-purpose (Platform + Gallery + Social)
+Task: Enhance PlatformModules, PremiumBonus, SocialProof, ProofCarousel, ReferenceExamples
+
+Work Log:
+- Updated PlatformModulesSection.tsx: bg #08080A, text-gradient-main on 'plataforma', cards #111113 with card-glow-pink, color migration to #FF2D55/#22D3EE/#A855F7
+- Updated PremiumBonusSection.tsx: bg #0D0D10, text-gradient-pink on 'Prompts', neon border frame, mini cards with card-glow-cyan, bg-cta-gradient CTA
+- Updated SocialProofSection.tsx: bg #0D0D10, cards #111113, initials colors migrated to new palette
+- Updated ProofCarousel.tsx: bg #0D0D10, text-gradient-hot on highlight, proof cards #111113
+- Updated ReferenceExamples.tsx: bg #0D0D10, text-gradient-main on 'prompt + resultado', cards #111113 with card-glow-pink, tag colors migrated
+- Updated SocialProof.tsx (toast): bg #151518, border #2A2A2E/60, icon #FF2D55
+
+Stage Summary:
+- All product showcase and social proof sections upgraded with consistent premium dark palette
+- Color migration from #FE2C55→#FF2D55, #25F4EE→#22D3EE, purple-400→#A855F7 completed
+
+---
+Task ID: 6
+Agent: general-purpose (Bottom sections + Popups)
+Task: Enhance Comparison, Pricing, FinalCTA, Guarantee, FAQ, EntryPopup, Footer
+
+Work Log:
+- Updated ComparisonSection.tsx: bg #08080A, text-gradient-hot on 'sozinho', left card dimmer, right card premium cyan
+- Updated PricingSection.tsx: bg #0D0D10 with glow-pricing, border-gradient-vitalicio on vitalicio card, triple-glow shadow, 'COM SUPER BÔNUS' purple badge, Galeria Premium internal block with Sparkles icon, bg-cta-gradient CTA with ArrowRight, subdued mensal card, restyled recovery popup with bg-cta-gradient
+- Updated FinalCTA.tsx: bg #050505 with glow-final, text-gradient-hot on 'no escuro', ArrowRight on CTA
+- Updated GuaranteeSection.tsx: bg #08080A, card #111113, emerald accents preserved
+- Updated FAQ.tsx: bg #08080A, items #111113, open state #FF2D55
+- Updated EntryPopup.tsx: bg-black/85 backdrop-blur, border #FF2D55/20 with glow, bg-cta-gradient CTA
+- Updated Footer.tsx: bg #08080A, border #2A2A2E/40
+
+Stage Summary:
+- All bottom sections, popups, and footer upgraded with consistent premium dark palette
+- Vitalicio pricing card has gradient border, triple-glow shadow, and Galeria Premium internal block
+- All CTAs use bg-cta-gradient system with shadow-cta
+- Recovery popup fully restyled with premium border glow
