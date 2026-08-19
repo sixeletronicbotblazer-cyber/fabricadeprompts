@@ -15,9 +15,6 @@ import { FAQ } from "@/components/landing/FAQ";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { Footer } from "@/components/landing/Footer";
 import { SocialProof } from "@/components/landing/SocialProof";
-import { EntryPopup } from "@/components/landing/EntryPopup";
-
-
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col grain-overlay">
@@ -51,7 +48,6 @@ export default function Home() {
       </main>
       <Footer />
       <SocialProof />
-      <EntryPopup />
     </div>
   );
 }
