@@ -1,14 +1,14 @@
 import { UrgencyBar } from "@/components/landing/UrgencyBar";
 import { Hero } from "@/components/landing/Hero";
 import { SocialProofSection } from "@/components/landing/SocialProofSection";
-import { PremiumBonusSection } from "@/components/landing/PremiumBonusSection";
-import { ReferenceExamples } from "@/components/landing/ReferenceExamples";
 import { ProofCarousel } from "@/components/landing/ProofCarousel";
-import { CTAAfterProofs } from "@/components/landing/CTAAfterProofs";
+import { DorSection } from "@/components/landing/DorSection";
 import { MechanismSection } from "@/components/landing/MechanismSection";
-import { WhatYouReceiveSection } from "@/components/landing/WhatYouReceiveSection";
+import { DayToDaySection } from "@/components/landing/DayToDaySection";
+import { ReferenceExamples } from "@/components/landing/ReferenceExamples";
+import { PlatformModulesSection } from "@/components/landing/PlatformModulesSection";
+import { PremiumBonusSection } from "@/components/landing/PremiumBonusSection";
 import { ComparisonSection } from "@/components/landing/ComparisonSection";
-import { InsideProduct } from "@/components/landing/InsideProduct";
 import { PricingSection } from "@/components/landing/PricingSection";
 import { GuaranteeSection } from "@/components/landing/GuaranteeSection";
 import { FAQ } from "@/components/landing/FAQ";
@@ -24,14 +24,14 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <SocialProofSection />
-        <PremiumBonusSection />
-        <ReferenceExamples />
         <ProofCarousel />
-        <CTAAfterProofs />
+        <DorSection />
         <MechanismSection />
-        <WhatYouReceiveSection />
+        <DayToDaySection />
+        <ReferenceExamples />
+        <PlatformModulesSection />
+        <PremiumBonusSection />
         <ComparisonSection />
-        <InsideProduct />
         <PricingSection />
         <GuaranteeSection />
         <FAQ />

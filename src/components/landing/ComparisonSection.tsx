@@ -4,32 +4,31 @@ import { FadeIn } from "./FadeIn";
 import { X, Check } from "lucide-react";
 
 const alone = [
-  "Perde tempo testando prompts",
-  "Vídeo sai travado ou artificial",
-  "Troca de roupa fica inconsistente",
-  "Não sabe qual movimento usar",
-  "Começa do zero toda vez",
+  "Prompt do zero toda vez",
+  "Resultado imprevisível",
+  "Produto muda na imagem",
+  "Poucas variações para testar",
+  "Vídeos com aparência artificial",
+  "Tempo perdido ajustando comando",
 ];
 
 const withApp = [
-  "Copia prompts prontos",
-  "Escolhe por tipo de cena",
-  "Usa modos Modelo, POV e Selfie",
-  "Tem movimentos organizados",
-  "Cria mais rápido para testar",
+  "Prompts prontos por categoria",
+  "Comandos para preservar produto",
+  "Modelo, POV e Selfie UGC",
+  "Mais ideias de criativo",
+  "Fluxo organizado",
+  "Copiar, adaptar e testar",
 ];
 
 export function ComparisonSection() {
   return (
-    <section className="bg-black py-10 md:py-14 px-4">
+    <section className="bg-[#0D0D0D] py-10 md:py-14 px-4">
       <div className="max-w-2xl mx-auto">
         <FadeIn>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white leading-tight mb-2 text-center">
-            Você poderia tentar fazer tudo sozinho…
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white leading-tight mb-8 text-center">
+            Você pode continuar tentando criar tudo sozinho...
           </h2>
-          <p className="text-sm text-white/45 max-w-lg mx-auto mb-8 text-center">
-            Mas o que mais trava não é a ferramenta. É saber o que pedir, como pedir e qual movimento usar para o vídeo não ficar robótico.
-          </p>
         </FadeIn>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -51,7 +50,7 @@ export function ComparisonSection() {
           {/* With App */}
           <FadeIn delay={0.1}>
             <div className="bg-[#1A1A1A] rounded-2xl border border-[#25F4EE]/20 p-5 shadow-[0_0_30px_rgba(37,244,238,0.06)]">
-              <p className="text-sm font-bold text-[#25F4EE] mb-4">Com o app</p>
+              <p className="text-sm font-bold text-[#25F4EE] mb-4">Com Motion Prompts</p>
               <ul className="space-y-3">
                 {withApp.map((item) => (
                   <li key={item} className="flex items-start gap-2.5">

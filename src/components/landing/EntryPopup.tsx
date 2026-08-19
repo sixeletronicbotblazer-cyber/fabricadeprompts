@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Sparkles } from "lucide-react";
+import { X, Sparkles, Crown } from "lucide-react";
 
-const checkoutUrlDownsell = "https://pay.cakto.com.br/guw9f5r";
+const checkoutUrlRecovery = "https://pay.cakto.com.br/guw9f5r";
 
 export function EntryPopup() {
   const [open, setOpen] = useState(false);
@@ -55,24 +55,37 @@ export function EntryPopup() {
               <div className="flex items-center gap-2 mb-3">
                 <Sparkles className="size-4 text-[#25F4EE]" />
                 <span className="text-[10px] font-bold text-[#25F4EE] uppercase tracking-wider">
-                  Oferta rápida
+                  Condição especial
                 </span>
               </div>
 
               <h3 className="text-lg font-extrabold text-white mb-1.5 leading-tight">
-                Plano completo com todos os modos por{" "}
+                Acesso vitalício com todos os módulos por{" "}
                 <span className="text-[#FE2C55]">R$ 22,90</span>
               </h3>
 
               <p className="text-[13px] text-white/50 leading-relaxed mb-4">
-                Libere todos os modos, exemplos, módulos, bônus e acesso ao grupo VIP por esse preço exclusivo.
+                Libere todos os modos, exemplos, módulos, bônus premium e acesso ao grupo VIP por esse preço exclusivo.
               </p>
 
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="inline-flex items-center gap-1 text-[9px] font-bold text-[#25F4EE] bg-[#25F4EE]/10 px-2 py-0.5 rounded-full border border-[#25F4EE]/20">
+                  <Crown className="size-2.5" />
+                  Vitalício
+                </span>
+                <span className="text-[9px] font-bold text-white/40 bg-white/5 px-2 py-0.5 rounded-full border border-white/10">
+                  Pagamento único
+                </span>
+                <span className="text-[9px] font-bold text-white/40 bg-white/5 px-2 py-0.5 rounded-full border border-white/10">
+                  Sem mensalidade
+                </span>
+              </div>
+
               <a
-                href={checkoutUrlDownsell}
+                href={checkoutUrlRecovery}
                 className="block w-full text-center bg-[#FE2C55] hover:bg-[#e62750] text-white font-bold py-3.5 px-6 rounded-full transition-all text-sm shadow-lg shadow-[#FE2C55]/25 hover:shadow-[#FE2C55]/40"
               >
-                Quero por R$ 22,90
+                QUERO O VITALÍCIO POR R$ 22,90
               </a>
 
               <button

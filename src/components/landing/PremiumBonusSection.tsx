@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Search, Layers, Copy, Star, Eye, AppWindow, Gift } from "lucide-react";
+import { Search, Layers, Star, Eye, Gift } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
 const benefitCards = [
@@ -14,27 +14,17 @@ const benefitCards = [
   {
     icon: Layers,
     title: "Categorias prontas",
-    text: "POV, Selfie, UGC, Roupas, Produto, TikTok Shop e Shopee.",
+    text: "POV, Selfie, UGC, Produto, Roupas, TikTok Shop e Shopee.",
   },
   {
-    icon: Copy,
-    title: "Copiar e usar",
-    text: "Cada card tem botão para copiar o prompt em segundos.",
+    icon: Eye,
+    title: "Imagem + prompt",
+    text: "Veja a referência visual antes de copiar o comando.",
   },
   {
     icon: Star,
     title: "Favoritos",
     text: "Salve os prompts que mais combinam com seu fluxo.",
-  },
-  {
-    icon: Eye,
-    title: "Imagem + prompt",
-    text: "Veja a referência visual antes de usar o comando.",
-  },
-  {
-    icon: AppWindow,
-    title: "Acervo separado",
-    text: "Um app exclusivo para consultar seus prompts com mais organização.",
   },
 ];
 
@@ -68,10 +58,10 @@ export function PremiumBonusSection() {
 
         <FadeIn delay={0.1}>
           <p className="text-sm sm:text-base text-white/70 text-center max-w-xl mx-auto mb-2 leading-relaxed">
-            Acesse uma galeria visual com prompts prontos para copiar e usar.
+            Um app separado para navegar por referências visuais, filtrar por categoria e copiar prompts em poucos segundos.
           </p>
           <p className="text-xs sm:text-sm text-white/45 text-center max-w-lg mx-auto mb-10 leading-relaxed">
-            Um acervo separado, organizado por categorias, com imagens de referência, filtros, favoritos e botão de copiar prompt para acelerar sua criação de vídeos para TikTok Shop e Shopee.
+            Navegue por um acervo visual com imagens, categorias, favoritos e botão de copiar prompt pronto para acelerar sua criação de vídeos para TikTok Shop e Shopee.
           </p>
         </FadeIn>
 
@@ -146,7 +136,7 @@ export function PremiumBonusSection() {
         </FadeIn>
 
         {/* Benefit cards grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 max-w-3xl mx-auto mb-10">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-3xl mx-auto mb-10">
           {benefitCards.map((card, i) => (
             <FadeIn key={card.title} delay={0.1 + i * 0.05}>
               <div className="group bg-white/[0.04] backdrop-blur-sm rounded-xl border border-white/[0.06] p-4 hover:bg-white/[0.07] hover:border-white/[0.12] transition-all duration-300">
@@ -165,7 +155,7 @@ export function PremiumBonusSection() {
         {/* Exclusivity line */}
         <FadeIn delay={0.4}>
           <p className="text-center text-xs text-white/35 mb-6">
-            Disponível como bônus especial dentro do acesso completo.
+            Disponível como bônus especial no acesso vitalício.
           </p>
         </FadeIn>
 
@@ -176,16 +166,9 @@ export function PremiumBonusSection() {
               href="#planos"
               className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FE2C55] to-[#d4234a] hover:from-[#e62750] hover:to-[#c01f43] text-white font-bold py-3.5 px-8 rounded-full transition-all text-sm sm:text-base shadow-lg shadow-[#FE2C55]/25 hover:shadow-[#FE2C55]/40 hover:scale-[1.02] active:scale-[0.98]"
             >
-              Quero acessar o bônus completo
+              QUERO ACESSAR A GALERIA
             </a>
           </div>
-        </FadeIn>
-
-        {/* Subtle secondary microcopy */}
-        <FadeIn delay={0.5}>
-          <p className="text-center text-[10px] sm:text-[11px] text-white/25 mt-4 max-w-md mx-auto leading-relaxed">
-            Em vez de procurar prompts soltos, você acessa tudo em uma galeria organizada para copiar, testar e adaptar.
-          </p>
         </FadeIn>
       </div>
     </section>

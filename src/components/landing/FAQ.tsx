@@ -10,50 +10,50 @@ import {
 
 const faqs = [
   {
-    q: "Qual plano vale mais a pena?",
-    a: "O Plano Inicial é para quem quer começar com os prompts principais. O Plano Completo é a melhor escolha para quem quer todos os modos, exemplos, módulos, grupo VIP, bônus e atualizações.",
+    q: "Preciso aparecer nos vídeos?",
+    a: "Não. Você pode criar cenas com modelo IA, POV, selfie, produto na mão e outros formatos sem gravar seu próprio rosto.",
   },
   {
-    q: "O que recebo no Plano Completo?",
-    a: "O Plano Completo libera a biblioteca completa com +250 prompts organizados, modos Modelo, POV e Selfie UGC, novos módulos, bônus, aulas rápidas, exemplos prontos e acesso ao grupo VIP para compradores.",
+    q: "Funciona para TikTok Shop e Shopee?",
+    a: "Sim. Os prompts foram pensados para criativos de produtos físicos, principalmente para TikTok Shop, Shopee e vídeos de oferta.",
   },
   {
-    q: "Preciso saber editar vídeo?",
-    a: "Não. A ideia é usar prompts prontos para criar as imagens e movimentos com IA. Depois você pode ajustar o resultado na ferramenta que já usa.",
+    q: "Preciso saber criar prompt?",
+    a: "Não. A ideia é justamente copiar um prompt pronto e adaptar pequenos detalhes para o seu produto.",
   },
   {
-    q: "Serve para TikTok Shop e Shopee?",
-    a: "Sim. Os prompts foram pensados para criar vídeos de produto, roupas e criativos com estética UGC.",
+    q: "Qual a diferença entre mensal e vitalício?",
+    a: "No mensal, você acessa a plataforma pagando mês a mês. No vitalício, você paga uma vez e mantém o acesso à plataforma, módulos extras, atualizações e bônus premium.",
   },
   {
-    q: "É curso ou app?",
-    a: "É um app com prompts organizados, exemplos e aulas rápidas para usar como guia prático.",
+    q: "O Plano Vitalício tem Galeria Premium?",
+    a: "Sim. A Galeria Premium de Prompts está disponível como bônus especial dentro do acesso vitalício.",
   },
   {
     q: "Recebo acesso na hora?",
-    a: "Sim. Após a compra, o acesso é liberado imediatamente.",
+    a: "Sim. Após a confirmação do pagamento, você recebe as instruções de acesso aos conteúdos disponíveis.",
+  },
+  {
+    q: "É pagamento único?",
+    a: "O Plano Vitalício é pagamento único. O Plano Mensal é recorrente mensal.",
+  },
+  {
+    q: "Posso cancelar o mensal?",
+    a: "Sim. O plano mensal pode ser cancelado conforme as regras da plataforma de pagamento.",
+  },
+  {
+    q: "Funciona com qual ferramenta de IA?",
+    a: "Você pode adaptar os prompts para ferramentas de imagem e vídeo com IA, como Flow, Veo, Kling, Sora e outras plataformas compatíveis.",
   },
   {
     q: "Tem garantia?",
-    a: "Sim. Você tem garantia de 7 dias conforme as regras da plataforma de pagamento.",
-  },
-  {
-    q: "Os resultados são garantidos?",
-    a: "Não. Os resultados dependem do produto, oferta, criativo, tráfego e execução. O app ajuda você a criar mais criativos para testar com mais rapidez.",
-  },
-  {
-    q: "Funciona para qualquer roupa?",
-    a: "Funciona melhor para roupas com imagem clara e bem visível. O app tem categorias para blusa, calça, short, vestido, academia, jaqueta e outras peças.",
-  },
-  {
-    q: "Serve para Flow, Veo ou outras ferramentas?",
-    a: "Sim. Os prompts foram escritos para ferramentas de vídeo por IA que animam imagem de referência.",
+    a: "Sim. Você tem 7 dias de garantia para testar se o conteúdo faz sentido para você.",
   },
 ];
 
 export function FAQ() {
   return (
-    <section className="bg-black py-10 md:py-16 px-4">
+    <section className="bg-[#0D0D0D] py-10 md:py-16 px-4">
       <div className="max-w-2xl mx-auto">
         <FadeIn>
           <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white leading-tight mb-6 text-center">
