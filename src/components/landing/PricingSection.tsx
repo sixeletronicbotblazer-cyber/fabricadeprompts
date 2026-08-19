@@ -100,14 +100,14 @@ export function PricingSection() {
 
   return (
     <>
-      <section id="planos" className="bg-[#0D0D10] py-12 md:py-20 px-4 glow-pricing relative overflow-hidden">
+      <section id="planos" className="bg-[#0D0D10] py-10 sm:py-14 md:py-20 px-4 glow-pricing relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-[#FF2D55]/[0.06] rounded-full blur-[100px] pointer-events-none" />
         <div className="max-w-3xl mx-auto">
           <FadeIn>
-            <h2 className="text-2xl sm:text-3xl md:text-[2.25rem] font-black leading-[0.98] sm:leading-[1.0] text-[#F4F4F5] mb-2 text-center">
+            <h2 className="text-[1.3rem] sm:text-2xl md:text-[2rem] font-black leading-[1.1] sm:leading-[1.0] text-[#F4F4F5] mb-2 text-center">
               Escolha seu <span className="text-[#FF2D55]">acesso</span>
             </h2>
-            <p className="text-sm text-[#A1A1AA]/80 text-center mb-10 max-w-md mx-auto">
+            <p className="text-[13px] sm:text-sm text-[#A1A1AA]/80 text-center mb-6 sm:mb-10 max-w-md mx-auto">
               Comece pelo <span className="text-[#A1A1AA]">mensal</span> ou garanta o acesso <span className="text-gradient-main">vitalício</span> com todos os módulos, atualizações e <span className="text-[#FF2D55]">bônus premium</span>.
             </p>
           </FadeIn>
@@ -157,7 +157,7 @@ export function PricingSection() {
                 {/* Price warning */}
                 <div className="mb-5 rounded-lg bg-[#FF4D1A]/8 border border-[#FF4D1A]/15 px-3.5 py-2.5 text-center">
                   <p className="text-[11px] sm:text-xs text-[#FF4D1A] font-semibold">
-                    R$ 39,90 travado SÓ HOJE. Amanhã o valor volta ao normal.
+                    R$ 29,90 disponível SÓ HOJE. Amanhã volta para R$ 39,90.
                   </p>
                 </div>
 

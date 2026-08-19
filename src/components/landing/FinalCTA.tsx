@@ -5,17 +5,17 @@ import { ArrowRight } from "lucide-react";
 
 export function FinalCTA() {
   return (
-    <section className="bg-[#050505] glow-final relative overflow-hidden py-14 md:py-24 px-4">
+    <section className="bg-[#050505] glow-final relative overflow-hidden py-10 sm:py-16 md:py-20 px-4">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[300px] bg-[#FF2D55]/[0.06] rounded-full blur-[100px] pointer-events-none" />
       <div className="max-w-2xl mx-auto text-center relative z-10">
         <FadeIn>
-          <h2 className="text-2xl sm:text-3xl md:text-[2.25rem] font-black leading-[0.98] sm:leading-[1.0] text-[#F4F4F5] mb-4">
+          <h2 className="text-[1.3rem] sm:text-2xl md:text-[2rem] font-black leading-[1.1] sm:leading-[1.0] text-[#F4F4F5] mb-4">
             Pare de criar prompt <span className="text-gradient-hot">no escuro</span>.
           </h2>
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <p className="text-sm text-[#A1A1AA]/70 leading-relaxed mb-10 max-w-md mx-auto">
+          <p className="text-[13px] sm:text-sm text-[#A1A1AA]/70 leading-relaxed mb-6 sm:mb-10 max-w-md mx-auto">
             Escolha seu acesso e comece a usar prompts prontos para criar mais variações de criativos com IA.
           </p>
         </FadeIn>

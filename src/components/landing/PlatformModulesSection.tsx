@@ -91,16 +91,16 @@ const modules = [
 
 export function PlatformModulesSection() {
   return (
-    <section id="modulos" className="bg-[#08080A] py-12 md:py-[4.5rem] px-4">
+    <section id="modulos" className="bg-[#08080A] py-10 sm:py-14 md:py-16 px-4">
       <div className="max-w-3xl mx-auto">
         <FadeIn>
-          <h2 className="text-2xl sm:text-3xl md:text-[2.25rem] font-black leading-[0.98] sm:leading-[1.0] text-[#F4F4F5] mb-2 text-center">
+          <h2 className="text-[1.3rem] sm:text-2xl md:text-[2rem] font-black leading-[1.1] sm:leading-[1.0] text-[#F4F4F5] mb-2 text-center">
             Tudo que existe dentro da <span className="text-gradient-main">plataforma</span>
           </h2>
         </FadeIn>
 
         <FadeIn delay={0.05}>
-          <p className="text-sm text-[#A1A1AA]/80 text-center max-w-lg mx-auto mb-10 leading-relaxed">
+          <p className="text-[13px] sm:text-sm text-[#A1A1AA]/80 text-center max-w-lg mx-auto mb-6 sm:mb-10 leading-relaxed">
             Um acervo completo para criar, adaptar e testar criativos com IA para produtos físicos.
           </p>
         </FadeIn>

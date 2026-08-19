@@ -29,10 +29,10 @@ const refs = [
 
 export function ReferenceExamples() {
   return (
-    <section className="bg-[#0D0D10] py-12 md:py-16 px-4">
+    <section className="bg-[#0D0D10] py-10 sm:py-14 md:py-16 px-4">
       <div className="max-w-2xl mx-auto">
         <FadeIn>
-          <h2 className="text-xl sm:text-2xl md:text-[2.25rem] font-black leading-[0.98] sm:leading-[1.0] text-[#F4F4F5] mb-6 text-center">
+          <h2 className="text-[1.2rem] sm:text-xl md:text-[1.75rem] font-black leading-[1.1] sm:leading-[1.0] text-[#F4F4F5] mb-6 text-center">
             Referência: <span className="text-gradient-main">prompt + resultado</span>
           </h2>
         </FadeIn>

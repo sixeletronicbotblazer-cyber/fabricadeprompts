@@ -43,8 +43,8 @@ export function Hero() {
 
         <FadeIn delay={0.35}>
           <div className="mt-8 sm:mt-10 flex flex-col items-center gap-1">
-            <p className="text-[11px] text-[#A1A1AA]/50 text-center mb-3">
-              A partir de <span className="text-[#C4C4CC] font-semibold">R$ 17,90/mês</span> · acesso imediato
+            <p className="text-base sm:text-lg text-[#C4C4CC] font-extrabold text-center mb-4">
+              A partir de <span className="text-white">R$ 17,90</span><span className="text-[#A1A1AA] font-semibold text-sm">/mês</span>
             </p>
             <a
               href="#planos"

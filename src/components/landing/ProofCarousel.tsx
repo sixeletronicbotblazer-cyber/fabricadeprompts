@@ -35,15 +35,15 @@ function ProofCard({ proof }: { proof: (typeof proofs)[number] }) {
 
 export function ProofCarousel() {
   return (
-    <section className="bg-[#0D0D10] py-12 md:py-16 overflow-hidden">
+    <section className="bg-[#0D0D10] py-10 sm:py-14 md:py-16 overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 mb-8 text-center">
         <FadeIn>
-          <h2 className="text-xl sm:text-2xl md:text-[2.25rem] font-black leading-[0.98] sm:leading-[1.0] text-[#F4F4F5] mb-2">
+          <h2 className="text-[1.2rem] sm:text-xl md:text-[1.75rem] font-black leading-[1.1] sm:leading-[1.0] text-[#F4F4F5] mb-2">
             Quem usa o mecanismo de prompts,
             <br className="hidden sm:block" />
             <span className="text-gradient-hot"> teste mais criativos e vende mais</span>
           </h2>
-          <p className="text-xs sm:text-sm text-[#A1A1AA]/70 max-w-md mx-auto">
+          <p className="text-[12px] sm:text-sm text-[#A1A1AA]/70 max-w-md mx-auto">
             Prints reais de quem está criando vídeos com IA e faturando no TikTok Shop e Shopee.
           </p>
         </FadeIn>

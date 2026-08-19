@@ -25,7 +25,7 @@ const miniCards = [
 
 export function PremiumBonusSection() {
   return (
-    <section className="relative bg-[#0D0D10] py-12 md:py-16 px-4 overflow-hidden">
+    <section className="relative bg-[#0D0D10] py-10 sm:py-14 md:py-16 px-4 overflow-hidden">
       {/* Background glows */}
       <div className="absolute top-1/3 -left-40 w-96 h-96 bg-[#FF2D55]/[0.06] rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/3 -right-40 w-96 h-96 bg-[#22D3EE]/[0.05] rounded-full blur-[120px] pointer-events-none" />
@@ -44,7 +44,7 @@ export function PremiumBonusSection() {
 
         {/* Title */}
         <FadeIn delay={0.05}>
-          <h2 className="text-2xl sm:text-3xl md:text-[2.25rem] font-black leading-[0.98] sm:leading-[1.0] text-[#F4F4F5] text-center mb-2">
+          <h2 className="text-[1.3rem] sm:text-2xl md:text-[2rem] font-black leading-[1.1] sm:leading-[1.0] text-[#F4F4F5] text-center mb-2">
             Galeria Premium de <span className="text-gradient-pink">Prompts</span>
           </h2>
         </FadeIn>

@@ -130,7 +130,7 @@ export function SocialProofSection() {
   const row2 = reviews.slice(5, 10);
 
   return (
-    <section className="bg-[#0D0D10] py-12 md:py-16 overflow-hidden">
+    <section className="bg-[#0D0D10] py-10 sm:py-14 md:py-16 overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 mb-10 text-center">
         <FadeIn>
           {/* Rating display */}
