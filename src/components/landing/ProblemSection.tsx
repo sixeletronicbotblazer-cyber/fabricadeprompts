@@ -28,7 +28,7 @@ export function ProblemSection() {
           <p className="text-sm text-foreground/70 leading-relaxed mb-5">
             Você passa tempo escrevendo comando, testando variações, e na hora de gerar o vídeo a
             modelo fica travada, a roupa some ou o movimento fica robótico. O problema quase nunca
-            é a ferramenta — é o <span className="text-accent font-semibold">prompt que você usa.</span>
+            é a ferramenta, é o <span className="text-accent font-semibold">prompt que você usa.</span>
           </p>
         </FadeIn>
 

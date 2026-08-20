@@ -144,13 +144,13 @@ export function PlatformModulesSection() {
             <div className="rounded-2xl overflow-hidden border border-[#2A2A2E]/60 shadow-[0_0_40px_rgba(255,45,85,0.06),0_0_60px_rgba(34,211,238,0.04)]">
               <img
                 src="/images/app-preview.jpeg"
-                alt="Dentro da plataforma — organizado por modo e categoria"
+                alt="Dentro da plataforma, organizado por modo e categoria"
                 className="w-full"
                 loading="lazy"
               />
             </div>
             <p className="mt-3 text-center text-[11px] text-[#A1A1AA]/40">
-              Visualize como é por dentro — organizado por modo e categoria.
+              Visualize como é por dentro, organizado por modo e categoria.
             </p>
           </div>
         </FadeIn>

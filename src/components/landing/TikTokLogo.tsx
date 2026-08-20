@@ -24,13 +24,13 @@ const TikTokLogo: React.FC<TikTokLogoProps> = ({
       aria-label="TikTok"
       role="img"
     >
-      {/* Musical note icon — TikTok's signature shape */}
+      {/* Musical note icon, TikTok's signature shape */}
       <path
         d="M19.3 0v24.5c0 3.2-2.6 5.8-5.8 5.8s-5.8-2.6-5.8-5.8 2.6-5.8 5.8-5.8c.6 0 1.2.1 1.8.3v-6.2c-.6-.1-1.2-.2-1.8-.2C8.2 12.6 3 17.8 3 24.2S8.2 35.8 14.5 35.8 26 30.6 26 24.2V8.7c2.2 1.5 4.8 2.4 7.7 2.4V5C27.6 5 22.1 3.1 19.3 0Z"
         fill={iconColor}
       />
 
-      {/* "TikTok" wordmark — only shown in "full" variant */}
+      {/* "TikTok" wordmark, only shown in "full" variant */}
       {variant === "full" && (
         <g transform="translate(38, 4)">
           {/* T */}

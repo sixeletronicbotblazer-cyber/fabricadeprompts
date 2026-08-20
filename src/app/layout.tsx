@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "TikTok Shop Motion Prompts — Guias práticos + prompts prontos para vídeos UGC com IA",
+  title: "TikTok Shop Motion Prompts | Guias práticos + prompts prontos para vídeos UGC com IA",
   description:
     "Crie vídeos de roupas para TikTok Shop com modelos IA usando prompts prontos. InfoApp simples, acesso imediato por R$ 17,90.",
   keywords: [

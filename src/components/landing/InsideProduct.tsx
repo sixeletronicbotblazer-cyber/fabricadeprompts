@@ -19,8 +19,8 @@ const items = [
 ];
 
 const newModules = [
-  "Módulo POV — vídeos em primeira pessoa",
-  "Módulo Selfie — vídeos com olhar pra câmera",
+  "Módulo POV, vídeos em primeira pessoa",
+  "Módulo Selfie, vídeos com olhar pra câmera",
 ];
 
 export function InsideProduct() {
@@ -73,13 +73,13 @@ export function InsideProduct() {
           <div className="mt-6 rounded-2xl overflow-hidden border border-[#111]/10 shadow-lg max-w-md mx-auto">
             <img
               src="/images/app-preview.jpeg"
-              alt="Dentro do InfoApp — organizado por modo e categoria"
+              alt="Dentro do InfoApp, organizado por modo e categoria"
               className="w-full"
               loading="lazy"
             />
           </div>
           <p className="mt-3 text-center text-[11px] font-medium text-[#111]/50">
-            Visualize como é por dentro — organizado por modo e categoria.
+            Visualize como é por dentro, organizado por modo e categoria.
           </p>
         </FadeIn>
       </div>

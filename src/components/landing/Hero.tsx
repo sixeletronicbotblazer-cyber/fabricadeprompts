@@ -25,9 +25,11 @@ export function Hero() {
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <p className="text-[13px] sm:text-[15px] text-[#C4C4CC] leading-[1.5] mx-auto max-w-lg mt-3 sm:mt-4">
-            <span className="text-white font-semibold">+250 prompts</span> com preview na tela — você vê antes de criar. Tudo separado por categoria:{" "}
-            <span className="inline-flex items-center px-1.5 py-0.5 bg-[#FF2D55]/8 border border-[#FF2D55]/12 rounded text-[#FF2D55] text-[12px] sm:text-[13px] font-semibold mx-0.5">POV</span>{", "}
+          <p className="text-[13px] sm:text-[15px] text-[#C4C4CC] leading-[1.45] mx-auto max-w-md mt-3 sm:mt-4">
+            <span className="text-white font-semibold">+250 prompts</span> com preview, você vê antes de criar.
+            <br className="hidden sm:block" />
+            {" "}
+            Categorias: <span className="inline-flex items-center px-1.5 py-0.5 bg-[#FF2D55]/8 border border-[#FF2D55]/12 rounded text-[#FF2D55] text-[12px] sm:text-[13px] font-semibold mx-0.5">POV</span>{", "}
             <span className="inline-flex items-center px-1.5 py-0.5 bg-[#FF2D55]/8 border border-[#FF2D55]/12 rounded text-[#FF2D55] text-[12px] sm:text-[13px] font-semibold mx-0.5">UGC</span>{", "}
             <span className="inline-flex items-center px-1.5 py-0.5 bg-[#FF2D55]/8 border border-[#FF2D55]/12 rounded text-[#FF2D55] text-[12px] sm:text-[13px] font-semibold mx-0.5">Selfie sem rosto</span>{"."}
           </p>

@@ -98,7 +98,7 @@ export function PremiumBonusSection() {
             </FadeIn>
           </div>
 
-          {/* Video side — premium mockup */}
+          {/* Video side, premium mockup */}
           <div className="order-2 md:order-2">
             <FadeIn delay={0.15}>
               <div className="relative rounded-2xl overflow-hidden bg-[#0a0a0a] border border-[#2A2A2E]/60 shadow-[0_0_30px_rgba(168,85,247,0.08),0_0_60px_rgba(255,45,85,0.06),0_0_40px_rgba(34,211,238,0.04)]">

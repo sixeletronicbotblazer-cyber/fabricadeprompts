@@ -17,7 +17,7 @@ const completoFeatures = [
   "Grupo VIP com atualizações, troca de ideias e novidades",
   "Aulas rápidas e exemplos prontos",
   "Como ativar TIKTOK SHOP em 3 dias!",
-  "Acesso imediato — pague uma vez só",
+  "Acesso imediato, pague uma vez só",
   "Garantia simples de 7 dias",
 ];
 
@@ -120,7 +120,7 @@ export function PricingSection() {
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 items-start">
-            {/* VITALÍCIO — premium box */}
+            {/* VITALÍCIO, premium box */}
             <FadeIn>
               <div className="relative bg-[#111] rounded-2xl border-2 border-[#FE2C55]/60 p-5 sm:p-6 flex flex-col order-1 md:order-2 shadow-[0_0_40px_rgba(254,44,85,0.12),0_0_80px_rgba(37,244,238,0.05)]">
                 {/* Top badge */}
@@ -139,7 +139,7 @@ export function PricingSection() {
                     Somente hoje por esse preço.
                   </h3>
                   <p className="text-xs sm:text-[13px] text-white/45 leading-relaxed max-w-xs mx-auto">
-                    Você tem 24 horas pra garantir. Quando o cronômetro zerar, o valor volta pro cheio — sem exceção.
+                    Você tem 24 horas pra garantir. Quando o cronômetro zerar, o valor volta pro cheio, sem exceção.
                   </p>
                   <div className="inline-block mt-3 bg-[#FE2C55]/15 text-[#FE2C55] text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-[#FE2C55]/25">
                     <Zap className="size-3 inline -mt-0.5 mr-1" />
@@ -215,7 +215,7 @@ export function PricingSection() {
               </div>
             </FadeIn>
 
-            {/* MENSAL — simpler box */}
+            {/* MENSAL, simpler box */}
             <FadeIn delay={0.1}>
               <div className="bg-[#1A1A1A] rounded-2xl border border-white/[0.08] p-5 sm:p-6 flex flex-col order-2 md:order-1">
                 <div className="mb-5">
@@ -265,7 +265,7 @@ export function PricingSection() {
         </div>
       </section>
 
-      {/* Downsell Popup — R$24,90 Vitalício */}
+      {/* Downsell Popup, R$24,90 Vitalício */}
       <AnimatePresence>
         {downsellOpen && (
           <motion.div

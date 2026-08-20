@@ -20,7 +20,7 @@ export function CTAAfterProofs() {
             <span className="text-white/60">Copie, aplique, gere.</span>
           </h3>
           <p className="text-xs sm:text-sm text-white/40 mb-5 max-w-sm mx-auto">
-            O mecanismo já está pronto — prompts organizados por tipo de cena e movimento pra você só adaptar o produto e gerar o vídeo.
+            O mecanismo já está pronto, prompts organizados por tipo de cena e movimento pra você só adaptar o produto e gerar o vídeo.
           </p>
           <a
             href="#planos"
