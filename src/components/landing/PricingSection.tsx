@@ -9,38 +9,45 @@ const checkoutUrlInicial = "https://pay.cakto.com.br/7dnhb97";
 const checkoutUrlCompleto = "https://pay.cakto.com.br/oci2odo";
 const checkoutUrlDownsell = "https://pay.cakto.com.br/guw9f5r";
 
-const completoFeatures = [
-  "+250 prompts organizados prontos para copiar",
-  "Modo Modelo, POV e Selfie UGC",
-  "Novos módulos incluídos no acesso",
-  "Bônus: Galeria Premium de Prompts",
-  "Grupo VIP com atualizações, troca de ideias e novidades",
-  "Aulas rápidas e exemplos prontos",
-  "Como ativar TIKTOK SHOP em 3 dias!",
-  "Acesso imediato, pague uma vez só",
-  "Garantia simples de 7 dias",
+interface FeatureItem {
+  text: string;
+  bonus?: boolean;
+  vitalicioOnly?: boolean;
+}
+
+const baseFeatures: FeatureItem[] = [
+  { text: "+250 prompts organizados prontos para copiar" },
+  { text: "Modo Modelo, POV e Selfie UGC" },
+  { text: "Novos módulos incluídos no acesso" },
+  { text: "Bônus: Galeria Premium de Prompts", bonus: true },
+  { text: "Aulas rápidas e exemplos prontos" },
+  { text: "Como ativar TIKTOK SHOP em 3 dias!" },
 ];
 
-const inicialFeatures = [
-  "Acesso imediato",
-  "Prompts essenciais",
-  "Modo Modelo",
-  "Primeiros movimentos",
-  "Ideal para testar",
-  "Acesso aos prompts principais",
+const vitalicioExtras: FeatureItem[] = [
+  { text: "Grupo VIP com atualizações e troca de ideias", vitalicioOnly: true },
+  { text: "Todas as atualizações futuras incluídas", vitalicioOnly: true },
+];
+
+const mensalExtras: FeatureItem[] = [
+  { text: "Acesso imediato" },
+  { text: "Garantia simples de 7 dias" },
+];
+
+const vitalicioExtras2: FeatureItem[] = [
+  { text: "Acesso imediato, pague uma vez só" },
+  { text: "Garantia simples de 7 dias" },
 ];
 
 const downsellFeatures = [
   "+250 prompts organizados",
-  "Modo Modelo",
-  "Modo POV",
-  "Modo Selfie UGC",
-  "Movimentos por tipo de roupa",
-  "Exemplos prontos",
-  "Aulas rápidas",
+  "Modo Modelo, POV e Selfie UGC",
+  "Novos módulos incluídos no acesso",
+  "Bônus: Galeria Premium de Prompts",
+  "Aulas rápidas e exemplos prontos",
   "Como ativar TIKTOK SHOP em 3 dias!",
   "Grupo VIP com atualizações e troca de ideias",
-  "Bônus: Galeria Premium de Prompts",
+  "Todas as atualizações futuras incluídas",
 ];
 
 function CountdownTimer() {
@@ -115,7 +122,7 @@ export function PricingSection() {
 
           <FadeIn delay={0.05}>
             <p className="text-xs text-white/30 text-center mb-8 max-w-lg mx-auto">
-              O Plano Mensal libera o essencial. O Plano Vitalício libera tudo: todos os modos, exemplos, grupo VIP, bônus e atualizações para sempre.
+              Ambos os planos entregam o mesmo conteúdo. O Vitalício inclui Grupo VIP e atualizações futuras de graça.
             </p>
           </FadeIn>
 
@@ -181,10 +188,19 @@ export function PricingSection() {
 
                 {/* Features list */}
                 <ul className="space-y-2.5 mb-5 flex-1">
-                  {completoFeatures.map((f, i) => (
-                    <li key={f} className={`flex items-start gap-2.5 ${f.startsWith("Bônus") ? "mt-1" : ""}`}>
-                      <Check className={`size-4 shrink-0 mt-0.5 ${f.startsWith("Bônus") ? "text-[#25F4EE]" : "text-[#FE2C55]"}`} />
-                      <span className={`text-sm ${f.startsWith("Bônus") ? "text-[#25F4EE]/90 font-semibold" : "text-white/85"}`}>{f}</span>
+                  {[...baseFeatures, ...vitalicioExtras, ...vitalicioExtras2].map((f, i) => (
+                    <li key={i} className={f.bonus ? "mt-1" : ""}>
+                      <div className="flex items-start gap-2.5">
+                        <Check className={`size-4 shrink-0 mt-0.5 ${f.bonus ? "text-[#25F4EE]" : f.vitalicioOnly ? "text-[#25F4EE]" : "text-[#FE2C55]"}`} />
+                        <div className="flex-1">
+                          <span className={`text-sm ${f.bonus ? "text-[#25F4EE]/90 font-semibold" : f.vitalicioOnly ? "text-[#25F4EE]/90 font-semibold" : "text-white/85"}`}>{f.text}</span>
+                          {f.vitalicioOnly && (
+                            <span className="ml-2 inline-block text-[9px] font-bold text-[#25F4EE] bg-[#25F4EE]/10 px-1.5 py-0.5 rounded-full border border-[#25F4EE]/20 uppercase tracking-wider">
+                              Só vitalício
+                            </span>
+                          )}
+                        </div>
+                      </div>
                     </li>
                   ))}
                   <li className="ml-6.5">
@@ -223,7 +239,7 @@ export function PricingSection() {
                     Plano Mensal
                   </h3>
                   <p className="text-sm text-white/50">
-                    Acesso mensal aos prompts essenciais.
+                    Mesmo conteúdo do Vitalício, sem Grupo VIP e atualizações futuras.
                   </p>
                 </div>
 
@@ -238,12 +254,19 @@ export function PricingSection() {
                 </div>
 
                 <ul className="space-y-2.5 mb-5 flex-1">
-                  {inicialFeatures.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5">
-                      <Check className="size-4 text-white/30 shrink-0 mt-0.5" />
-                      <span className="text-sm text-white/70">{f}</span>
+                  {[...baseFeatures, ...mensalExtras].map((f, i) => (
+                    <li key={i} className={f.bonus ? "mt-1" : ""}>
+                      <div className="flex items-start gap-2.5">
+                        <Check className={`size-4 shrink-0 mt-0.5 ${f.bonus ? "text-[#25F4EE]" : "text-white/30"}`} />
+                        <span className={`text-sm ${f.bonus ? "text-[#25F4EE]/90 font-semibold" : "text-white/70"}`}>{f.text}</span>
+                      </div>
                     </li>
                   ))}
+                  <li className="ml-6.5">
+                    <span className="text-[10px] text-white/25 leading-relaxed block">
+                      Acervo visual com imagens, categorias, favoritos e botão de copiar prompt.
+                    </span>
+                  </li>
                 </ul>
 
                 <button
@@ -307,7 +330,7 @@ export function PricingSection() {
               </h3>
 
               <p className="text-sm text-white/55 leading-relaxed mb-4">
-                Você estava indo para o Plano Mensal, mas pode desbloquear o acesso vitalício com todos os modos, exemplos, módulos, bônus e atualizações por uma diferença pequena.
+                Você estava indo para o Mensal, mas por R$7 a mais leva o Vitalício com a mesma entrega, mais Grupo VIP e todas as atualizações futuras incluídas.
               </p>
 
               <div className="flex items-baseline gap-2 mb-4">
