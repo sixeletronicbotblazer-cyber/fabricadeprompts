@@ -137,40 +137,8 @@ export function PricingSection() {
                   </span>
                 </div>
 
-                {/* Urgency header */}
-                <div className="text-center mt-2 mb-5">
-                  <p className="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-2">
-                    Promoção válida por 24 horas
-                  </p>
-                  <h3 className="text-lg sm:text-xl font-extrabold text-white leading-tight mb-1.5">
-                    Somente hoje por esse preço.
-                  </h3>
-                  <p className="text-xs sm:text-[13px] text-white/45 leading-relaxed max-w-xs mx-auto">
-                    Você tem 24 horas pra garantir. Quando o cronômetro zerar, o valor volta pro cheio, sem exceção.
-                  </p>
-                  <div className="inline-block mt-3 bg-[#FE2C55]/15 text-[#FE2C55] text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-[#FE2C55]/25">
-                    <Zap className="size-3 inline -mt-0.5 mr-1" />
-                    Oferta relâmpago
-                  </div>
-                </div>
-
-                {/* Countdown */}
-                <div className="mb-4 rounded-xl bg-black/60 border border-white/[0.06] p-4">
-                  <p className="text-center text-[10px] font-bold text-white/40 uppercase tracking-widest mb-3">
-                    Promoção acaba em (24h)
-                  </p>
-                  <CountdownTimer />
-                </div>
-
-                {/* Price warning */}
-                <div className="mb-5 rounded-lg bg-amber-500/10 border border-amber-500/20 px-3.5 py-2.5 text-center">
-                  <p className="text-[11px] sm:text-xs text-amber-400 font-semibold">
-                    R$ 29,90 travado SÓ HOJE. Amanhã o valor volta ao normal.
-                  </p>
-                </div>
-
                 {/* Price area */}
-                <div className="mb-5 text-center">
+                <div className="text-center mt-2 mb-4">
                   <span className="text-base font-bold text-white/30 line-through">R$ 39,90</span>
                   <span className="inline-block ml-2 text-[10px] font-bold text-emerald-400 bg-emerald-400/15 px-2 py-0.5 rounded-full">
                     -25% OFF
@@ -180,34 +148,60 @@ export function PricingSection() {
                       R$ 29
                     </span>
                     <span className="text-lg font-bold text-white">,90</span>
+                    <span className="text-xs text-white/40 ml-2">pagamento único</span>
                   </div>
-                  <p className="text-[11px] text-white/40 mt-1.5">
-                    Pagamento único no PIX · acesso imediato
+                  <p className="text-[11px] text-white/40 mt-1">
+                    Acesso imediato no PIX
                   </p>
                 </div>
 
-                {/* Features list */}
-                <ul className="space-y-2.5 mb-5 flex-1">
-                  {[...baseFeatures, ...vitalicioExtras, ...vitalicioExtras2].map((f, i) => (
+                {/* Countdown compact */}
+                <div className="mb-5 rounded-xl bg-black/50 border border-white/[0.06] px-4 py-3 flex items-center justify-between">
+                  <div className="flex items-center gap-1.5">
+                    <Zap className="size-3.5 text-[#FE2C55]" />
+                    <span className="text-[10px] font-bold text-white/40 uppercase tracking-wider">Acaba em</span>
+                  </div>
+                  <CountdownTimer />
+                </div>
+
+                {/* Features: same base as mensal */}
+                <ul className="space-y-2 mb-4 flex-1">
+                  {baseFeatures.map((f, i) => (
                     <li key={i} className={f.bonus ? "mt-1" : ""}>
                       <div className="flex items-start gap-2.5">
-                        <Check className={`size-4 shrink-0 mt-0.5 ${f.bonus ? "text-[#25F4EE]" : f.vitalicioOnly ? "text-[#25F4EE]" : "text-[#FE2C55]"}`} />
-                        <div className="flex-1">
-                          <span className={`text-sm ${f.bonus ? "text-[#25F4EE]/90 font-semibold" : f.vitalicioOnly ? "text-[#25F4EE]/90 font-semibold" : "text-white/85"}`}>{f.text}</span>
-                          {f.vitalicioOnly && (
-                            <span className="ml-2 inline-block text-[9px] font-bold text-[#25F4EE] bg-[#25F4EE]/10 px-1.5 py-0.5 rounded-full border border-[#25F4EE]/20 uppercase tracking-wider">
-                              Só vitalício
-                            </span>
-                          )}
-                        </div>
+                        <Check className={`size-4 shrink-0 mt-0.5 ${f.bonus ? "text-[#25F4EE]" : "text-[#FE2C55]"}`} />
+                        <span className={`text-sm ${f.bonus ? "text-[#25F4EE]/90 font-semibold" : "text-white/85"}`}>{f.text}</span>
                       </div>
                     </li>
                   ))}
-                  <li className="ml-6.5">
-                    <span className="text-[10px] text-white/30 leading-relaxed block">
-                      Acervo visual com imagens, categorias, favoritos e botão de copiar prompt.
-                    </span>
-                  </li>
+                </ul>
+
+                {/* Vitalício exclusives */}
+                <div className="border-t border-white/[0.06] pt-3 mb-3">
+                  <p className="text-[10px] font-bold text-[#25F4EE]/60 uppercase tracking-wider mb-2.5">
+                    Incluído só no Vitalício
+                  </p>
+                  <ul className="space-y-2">
+                    {vitalicioExtras.map((f, i) => (
+                      <li key={i}>
+                        <div className="flex items-start gap-2.5">
+                          <Check className="size-4 shrink-0 mt-0.5 text-[#25F4EE]" />
+                          <span className="text-sm text-[#25F4EE]/90 font-semibold">{f.text}</span>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <ul className="space-y-2 mb-5">
+                  {vitalicioExtras2.map((f, i) => (
+                    <li key={i}>
+                      <div className="flex items-start gap-2.5">
+                        <Check className="size-4 shrink-0 mt-0.5 text-[#FE2C55]" />
+                        <span className="text-sm text-white/85">{f.text}</span>
+                      </div>
+                    </li>
+                  ))}
                 </ul>
 
                 {/* CTA */}
@@ -225,8 +219,8 @@ export function PricingSection() {
                   </span>
                 </div>
 
-                <p className="mt-2 text-center text-[10px] text-white/20">
-                  Depois que o cronômetro zerar, o preço volta para R$39,90.
+                <p className="mt-2 text-center text-[10px] text-amber-400/70 font-medium">
+                  R$ 29,90 travado só hoje. Amanhã volta ao normal.
                 </p>
               </div>
             </FadeIn>
@@ -253,7 +247,7 @@ export function PricingSection() {
                   </span>
                 </div>
 
-                <ul className="space-y-2.5 mb-5 flex-1">
+                <ul className="space-y-2 mb-5 flex-1">
                   {[...baseFeatures, ...mensalExtras].map((f, i) => (
                     <li key={i} className={f.bonus ? "mt-1" : ""}>
                       <div className="flex items-start gap-2.5">
@@ -262,11 +256,6 @@ export function PricingSection() {
                       </div>
                     </li>
                   ))}
-                  <li className="ml-6.5">
-                    <span className="text-[10px] text-white/25 leading-relaxed block">
-                      Acervo visual com imagens, categorias, favoritos e botão de copiar prompt.
-                    </span>
-                  </li>
                 </ul>
 
                 <button
