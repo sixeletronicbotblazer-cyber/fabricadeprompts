@@ -23,11 +23,11 @@ const withApp = [
 
 export function ComparisonSection() {
   return (
-    <section className="bg-[#08080A] py-10 sm:py-14 md:py-16 px-4">
+    <section className="bg-[#08080A] py-8 sm:py-10 md:py-12 px-4">
       <div className="max-w-2xl mx-auto">
         <FadeIn>
-          <h2 className="text-[1.3rem] sm:text-2xl md:text-[2rem] font-black leading-[1.1] sm:leading-[1.0] text-[#F4F4F5] mb-6 sm:mb-10 text-center">
-            Você pode continuar tentando criar tudo <span className="text-gradient-hot">sozinho</span>...
+          <h2 className="text-[1.3rem] sm:text-2xl md:text-[2rem] font-black leading-[1.1] sm:leading-[1.0] text-[#F4F4F5] mb-5 sm:mb-6 text-center">
+            Você pode continuar tentando criar tudo <span className="text-[#FF2D55]">sozinho</span>...
           </h2>
         </FadeIn>
 
@@ -49,12 +49,12 @@ export function ComparisonSection() {
 
           {/* With App */}
           <FadeIn delay={0.1}>
-            <div className="bg-[#111113] rounded-2xl border border-[#22D3EE]/25 p-4 sm:p-5 shadow-[0_0_30px_rgba(34,211,238,0.06)]">
-              <p className="text-sm font-bold text-gradient-main mb-4">Com Motion Prompts</p>
+            <div className="bg-[#111113] rounded-2xl border border-[#FF2D55]/25 p-4 sm:p-5">
+              <p className="text-sm font-bold text-[#FF2D55] mb-4">Com Motion Prompts</p>
               <ul className="space-y-3">
                 {withApp.map((item) => (
                   <li key={item} className="flex items-start gap-2.5">
-                    <Check className="size-4 text-[#22D3EE] shrink-0 mt-0.5" />
+                    <Check className="size-4 text-[#FF2D55] shrink-0 mt-0.5" />
                     <span className="text-sm text-[#C4C4CC]">{item}</span>
                   </li>
                 ))}

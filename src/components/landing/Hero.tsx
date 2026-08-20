@@ -3,12 +3,11 @@
 import { FadeIn } from "./FadeIn";
 import { Badge } from "@/components/ui/badge";
 import { HeroVideo } from "./HeroVideo";
-import { Zap, ArrowRight, ChevronDown } from "lucide-react";
+import { Zap, ArrowRight } from "lucide-react";
 
 export function Hero() {
   return (
-    <section id="hero" className="bg-[#050505] glow-hero relative overflow-hidden py-10 sm:py-14 md:py-20 lg:py-24 px-4">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#FF2D55]/[0.08] rounded-full blur-[120px] pointer-events-none" />
+    <section id="hero" className="bg-[#050505] relative overflow-hidden py-8 sm:py-12 md:py-16 lg:py-20 px-4">
       <div className="max-w-2xl mx-auto text-center relative z-10">
         <FadeIn>
           <div className="inline-flex items-center gap-2 mb-5">
@@ -21,7 +20,7 @@ export function Hero() {
 
         <FadeIn delay={0.1}>
           <h1 className="text-[1.65rem] sm:text-[2rem] md:text-[2.75rem] lg:text-[3rem] font-black leading-[1.08] sm:leading-[1.02] tracking-tight text-white">
-            Crie vídeos para <span className="text-gradient-main">TikTok Shop e Shopee</span> com IA <span className="text-white font-black">sem inventar prompt do zero</span>.
+            Crie vídeos para <span className="text-[#FF2D55]">TikTok Shop e Shopee</span> com IA <span className="text-white font-black">sem inventar prompt do zero</span>.
           </h1>
         </FadeIn>
 
@@ -48,17 +47,10 @@ export function Hero() {
             </p>
             <a
               href="#planos"
-              className="inline-flex items-center justify-center w-full sm:w-auto px-10 py-4 bg-cta-gradient hover:brightness-110 text-white font-extrabold tracking-wide uppercase text-[15px] sm:text-base rounded-full transition-all shadow-cta hover:shadow-cta-hover hover:scale-[1.02] active:scale-[0.98]"
+              className="inline-flex items-center justify-center w-full sm:w-auto px-10 py-4 bg-[#FF2D55] hover:brightness-110 text-white font-extrabold tracking-wide uppercase text-[15px] sm:text-base rounded-full transition-all shadow-lg shadow-[#FF2D55]/25 hover:shadow-xl hover:shadow-[#FF2D55]/35 hover:scale-[1.02] active:scale-[0.98]"
             >
               QUERO ACESSAR OS PROMPTS
               <ArrowRight className="ml-2 size-4" />
-            </a>
-            <a
-              href="#modulos"
-              className="text-[11px] text-[#A1A1AA]/50 hover:text-[#A1A1AA] mt-3 inline-flex items-center gap-1 transition-colors"
-            >
-              Ver o que vem dentro
-              <ChevronDown className="size-3" />
             </a>
           </div>
         </FadeIn>

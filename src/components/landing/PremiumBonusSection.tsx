@@ -25,17 +25,12 @@ const miniCards = [
 
 export function PremiumBonusSection() {
   return (
-    <section className="relative bg-[#0D0D10] py-10 sm:py-14 md:py-16 px-4 overflow-hidden">
-      {/* Background glows */}
-      <div className="absolute top-1/3 -left-40 w-96 h-96 bg-[#FF2D55]/[0.06] rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/3 -right-40 w-96 h-96 bg-[#22D3EE]/[0.05] rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#A855F7]/[0.03] rounded-full blur-[140px] pointer-events-none" />
-
+    <section className="relative bg-[#0D0D10] py-8 sm:py-10 md:py-12 px-4 overflow-hidden">
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Badge */}
         <FadeIn>
           <div className="flex justify-center mb-4">
-            <span className="inline-flex items-center gap-1.5 bg-gradient-to-r from-[#FF2D55]/15 via-[#A855F7]/15 to-[#22D3EE]/15 text-[#F4F4F5] text-[10px] sm:text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full border border-[#2A2A2E]/60 backdrop-blur-sm">
+            <span className="inline-flex items-center gap-1.5 bg-[#FF2D55]/10 text-[#F4F4F5] text-[10px] sm:text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full border border-[#2A2A2E]/60 backdrop-blur-sm">
               <Gift className="size-3.5 text-[#FF2D55]" />
               Super bônus de final de mês
             </span>
@@ -45,7 +40,7 @@ export function PremiumBonusSection() {
         {/* Title */}
         <FadeIn delay={0.05}>
           <h2 className="text-[1.3rem] sm:text-2xl md:text-[2rem] font-black leading-[1.1] sm:leading-[1.0] text-[#F4F4F5] text-center mb-2">
-            Galeria Premium de <span className="text-gradient-pink">Prompts</span>
+            Galeria Premium de <span className="text-[#FF2D55]">Prompts</span>
           </h2>
         </FadeIn>
 
@@ -53,18 +48,14 @@ export function PremiumBonusSection() {
           <p className="text-sm sm:text-base text-[#C4C4CC] text-center max-w-xl mx-auto mb-2 leading-relaxed">
             Veja como é a Galeria por dentro
           </p>
-          <p className="text-xs sm:text-sm text-[#A1A1AA]/70 text-center max-w-lg mx-auto mb-10 leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#A1A1AA]/70 text-center max-w-lg mx-auto mb-6 leading-relaxed">
             Um acervo visual com categorias, filtros, imagens de referência e botão de copiar prompt.
           </p>
         </FadeIn>
 
         {/* Wide mockup image — premium frame */}
         <FadeIn delay={0.15}>
-          <div className="relative max-w-4xl mx-auto mb-8">
-            {/* Neon glow border effect */}
-            <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-[#FF2D55]/40 via-[#A855F7]/20 to-[#22D3EE]/40 blur-[0.5px]" />
-            <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-[#FF2D55]/20 via-[#A855F7]/10 to-[#22D3EE]/20 blur-[8px]" />
-
+          <div className="relative max-w-4xl mx-auto mb-5">
             {/* Inner frame */}
             <div className="relative rounded-2xl overflow-hidden bg-[#0a0a0a] border border-[#2A2A2E]/60">
               {/* Top glassmorphism bar */}
@@ -95,13 +86,13 @@ export function PremiumBonusSection() {
         </FadeIn>
 
         {/* 4 Mini cards below image */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto mb-8">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto mb-5">
           {miniCards.map((card, i) => (
             <FadeIn key={card.title} delay={0.2 + i * 0.05}>
-              <div className="group bg-[#111113] rounded-xl border border-[#2A2A2E]/60 p-4 hover:bg-[#151518] hover:border-[#22D3EE]/15 card-glow-cyan transition-all duration-300 text-center">
+              <div className="group bg-[#111113] rounded-xl border border-[#2A2A2E]/60 p-4 hover:bg-[#151518] hover:border-[#22D3EE]/15 transition-all duration-300 text-center">
                 <div className="flex justify-center mb-2">
-                  <div className="size-9 rounded-lg bg-[#FF2D55]/10 border border-[#FF2D55]/15 flex items-center justify-center group-hover:bg-[#22D3EE]/10 group-hover:border-[#22D3EE]/15 transition-colors">
-                    <card.icon className="size-4 text-[#FF2D55] group-hover:text-[#22D3EE] transition-colors" />
+                  <div className="size-9 rounded-lg bg-[#FF2D55]/10 border border-[#FF2D55]/15 flex items-center justify-center group-hover:bg-[#FF2D55]/10 group-hover:border-[#FF2D55]/15 transition-colors">
+                    <card.icon className="size-4 text-[#FF2D55] group-hover:text-[#FF2D55] transition-colors" />
                   </div>
                 </div>
                 <h4 className="text-xs sm:text-sm font-bold text-[#F4F4F5]">
@@ -124,7 +115,7 @@ export function PremiumBonusSection() {
           <div className="flex justify-center">
             <a
               href="#planos"
-              className="inline-flex items-center gap-2 bg-cta-gradient hover:brightness-110 text-white font-extrabold py-3.5 px-8 rounded-full transition-all text-sm sm:text-base shadow-cta hover:shadow-cta-hover hover:scale-[1.02] active:scale-[0.98] uppercase tracking-wide"
+              className="inline-flex items-center gap-2 bg-[#FF2D55] hover:brightness-110 text-white font-extrabold py-3.5 px-8 rounded-full transition-all text-sm sm:text-base shadow-lg shadow-[#FF2D55]/25 hover:shadow-xl hover:shadow-[#FF2D55]/35 hover:scale-[1.02] active:scale-[0.98] uppercase tracking-wide"
             >
               QUERO ACESSAR A GALERIA
             </a>

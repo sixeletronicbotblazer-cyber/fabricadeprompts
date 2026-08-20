@@ -102,7 +102,7 @@ export function PricingSection() {
 
   return (
     <>
-      <section id="planos" className="bg-black py-10 md:py-16 px-4">
+      <section id="planos" className="bg-black py-8 md:py-12 px-4">
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white leading-tight mb-2 text-center">

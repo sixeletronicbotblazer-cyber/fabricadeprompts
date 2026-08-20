@@ -221,3 +221,91 @@ Stage Summary:
 - Vitalicio pricing card has gradient border, triple-glow shadow, and Galeria Premium internal block
 - All CTAs use bg-cta-gradient system with shadow-cta
 - Recovery popup fully restyled with premium border glow
+
+## Task ID: 3-a — Clean Hero + Mechanism + Dor (remove AI-looking visual effects)
+
+**Files modified:**
+
+### 1. Hero.tsx
+- Removed `glow-hero` from section className
+- Deleted the radial glow `<div>` (blur-[120px] bg-[#FF2D55]/[0.08] overlay)
+- Replaced `text-gradient-main` → `text-[#FF2D55]` (solid color on h1 span)
+- Replaced `bg-cta-gradient` → `bg-[#FF2D55]` on CTA button
+- Replaced `shadow-cta` → `shadow-lg shadow-[#FF2D55]/25`
+- Replaced `hover:shadow-cta-hover` → `hover:shadow-xl hover:shadow-[#FF2D55]/35`
+- Deleted entire `<a href="#modulos">` element ("Ver o que vem dentro" + ChevronDown)
+- Removed unused `ChevronDown` import
+
+### 2. MechanismSection.tsx
+- Replaced `text-gradient-main` → `text-[#FF2D55]` in h2
+- Removed `card-glow-cyan` from card divs
+- Changed flow step gradient: `to-[#A855F7]/30` → `to-[#FF2D55]/10` (monochrome fade)
+
+### 3. DorSection.tsx
+- Replaced `text-gradient-hot` → `text-[#FF2D55]` in h2
+- Removed `card-glow-pink` from card divs
+
+**Verification:** `npx tsc --noEmit` passes for all 3 files (4 pre-existing errors in unrelated files only). No text, structure, layout, or pricing was changed.
+
+## Task ID: 3-b
+**Summary:** Removed AI-looking visual effects from 4 landing page components, replacing custom/gradient CSS classes with clean Tailwind equivalents.
+
+### Files Modified
+
+**1. PremiumBonusSection.tsx**
+- Removed 3 background blur glow divs (pink, cyan, purple)
+- Badge: `bg-gradient-to-r from-[#FF2D55]/15 via-[#A855F7]/15 to-[#22D3EE]/15` → `bg-[#FF2D55]/10`
+- H2: `text-gradient-pink` → `text-[#FF2D55]`
+- Deleted 2 neon glow border absolute divs before the Inner frame
+- Mini cards: removed `card-glow-cyan` class
+- Mini card icons: changed group-hover from cyan to red (`group-hover:bg-[#FF2D55]/10`, `group-hover:border-[#FF2D55]/15`, `group-hover:text-[#FF2D55]`)
+- CTA: `bg-cta-gradient` → `bg-[#FF2D55]`, `shadow-cta hover:shadow-cta-hover` → `shadow-lg shadow-[#FF2D55]/25 hover:shadow-xl hover:shadow-[#FF2D55]/35`
+
+**2. ComparisonSection.tsx**
+- H2: `text-gradient-hot` → `text-[#FF2D55]`
+- Paragraph: `text-gradient-main` → `text-[#FF2D55]`
+- Right card: removed `shadow-[0_0_30px_rgba(34,211,238,0.06)]`
+- Right card border: `border-[#22D3EE]/25` → `border-[#FF2D55]/25`
+- Check icon: `text-[#22D3EE]` → `text-[#FF2D55]`
+
+**3. ReferenceExamples.tsx**
+- H2: `text-gradient-main` → `text-[#FF2D55]`
+- Cards: removed `card-glow-pink` class
+- Cards hover border: `hover:border-[#FF2D55]/15` → `hover:border-[#FF2D55]/30`
+- Copy icon: `text-[#22D3EE]` → `text-[#FF2D55]/60`
+
+**4. FinalCTA.tsx**
+- Section: removed `glow-final` class
+- Deleted radial glow background div
+- H2: `text-gradient-hot` → `text-[#FF2D55]`
+- CTA: `bg-cta-gradient` → `bg-[#FF2D55]`, `shadow-cta hover:shadow-cta-hover` → `shadow-lg shadow-[#FF2D55]/25 hover:shadow-xl hover:shadow-[#FF2D55]/35`
+- Secondary CTA border: `border-[#2A2A2E]/60` → `border-[#2A2A2E]`
+- Secondary CTA text: `text-[#A1A1AA]/60` → `text-[#A1A1AA]/70`
+
+### Verification
+- TypeScript compilation: No errors in the 4 edited files.
+- No text content, structure, layout, or pricing was changed.
+
+## Task ID: 3-c
+**Summary:** Reduced vertical padding on all 12 landing section components for shorter, more mobile-efficient page height. No text, structure, or content changed.
+
+### Files Modified (12)
+
+1. **SocialProofSection.tsx** — section `py-10 sm:py-14 md:py-16` → `py-8 sm:py-10 md:py-12`; rating container `mb-10` → `mb-6`
+2. **ProofCarousel.tsx** — section `py-10 sm:py-14 md:py-16` → `py-8 sm:py-10 md:py-12`; text container `mb-8` → `mb-5`
+3. **DorSection.tsx** — section `py-10 sm:py-14 md:py-16` → `py-8 sm:py-10 md:py-12`; description p `mb-6 sm:mb-8` → `mb-5 sm:mb-6`
+4. **MechanismSection.tsx** — section `py-10 sm:py-14 md:py-16` → `py-8 sm:py-10 md:py-12`; flow steps `mb-6 sm:mb-10` → `mb-5 sm:mb-6`
+5. **PremiumBonusSection.tsx** — section `py-10 sm:py-14 md:py-16` → `py-8 sm:py-10 md:py-12`; description p `mb-10` → `mb-6`; mockup container `mb-8` → `mb-5`; mini cards grid `mb-8` → `mb-5`
+6. **ReferenceExamples.tsx** — section `py-10 sm:py-14 md:py-16` → `py-8 sm:py-10 md:py-12`; h2 `mb-6` → `mb-5`
+7. **ComparisonSection.tsx** — section `py-10 sm:py-14 md:py-16` → `py-8 sm:py-10 md:py-12`; h2 `mb-6 sm:mb-10` → `mb-5 sm:mb-6`
+8. **PricingSection.tsx** — section `py-10 md:py-16` → `py-8 md:py-12`
+9. **GuaranteeSection.tsx** — section `py-10 sm:py-14 md:py-16` → `py-6 sm:py-8 md:py-10` (tighter for small section)
+10. **FAQ.tsx** — section `py-10 sm:py-14 md:py-16` → `py-8 sm:py-10 md:py-12`; h2 `mb-6 sm:mb-8` → `mb-5 sm:mb-6`
+11. **FinalCTA.tsx** — section `py-10 sm:py-16 md:py-20` → `py-8 sm:py-12 md:py-16`; description p `mb-6 sm:mb-10` → `mb-5 sm:mb-6`
+12. **Hero.tsx** — section `py-10 sm:py-14 md:py-20 lg:py-24` → `py-8 sm:py-12 md:py-16 lg:py-20`
+
+### Estimated Savings
+- ~20-25% reduction in section vertical padding across all breakpoints
+- Mobile (base): avg 4px removed per section edge → ~8px saved per section × 12 sections ≈ 96px total
+- Desktop (md/lg): avg 16-32px removed per section edge → ~192px+ total saved
+- Additional internal margin reductions (mb values) save ~16-40px per affected section

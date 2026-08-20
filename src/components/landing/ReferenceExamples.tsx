@@ -29,18 +29,18 @@ const refs = [
 
 export function ReferenceExamples() {
   return (
-    <section className="bg-[#0D0D10] py-10 sm:py-14 md:py-16 px-4">
+    <section className="bg-[#0D0D10] py-8 sm:py-10 md:py-12 px-4">
       <div className="max-w-2xl mx-auto">
         <FadeIn>
-          <h2 className="text-[1.2rem] sm:text-xl md:text-[1.75rem] font-black leading-[1.1] sm:leading-[1.0] text-[#F4F4F5] mb-6 text-center">
-            Referência: <span className="text-gradient-main">prompt + resultado</span>
+          <h2 className="text-[1.2rem] sm:text-xl md:text-[1.75rem] font-black leading-[1.1] sm:leading-[1.0] text-[#F4F4F5] mb-5 text-center">
+            Referência: <span className="text-[#FF2D55]">prompt + resultado</span>
           </h2>
         </FadeIn>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {refs.map((ref, i) => (
             <FadeIn key={ref.tag} delay={i * 0.08}>
-              <div className="bg-[#111113] rounded-2xl border border-[#2A2A2E]/60 overflow-hidden card-glow-pink hover:border-[#FF2D55]/15 transition-colors duration-300">
+              <div className="bg-[#111113] rounded-2xl border border-[#2A2A2E]/60 overflow-hidden hover:border-[#FF2D55]/30 transition-colors duration-300">
                 {/* Video/GIF */}
                 <div className="relative overflow-hidden bg-[#08080A] w-full aspect-[9/16]">
                   <img
@@ -63,7 +63,7 @@ export function ReferenceExamples() {
                 {/* Prompt */}
                 <div className="p-4 sm:p-5">
                   <div className="flex items-center gap-2 mb-2">
-                    <Copy className="size-3.5 text-[#22D3EE]" />
+                    <Copy className="size-3.5 text-[#FF2D55]/60" />
                     <span className="text-[10px] text-[#A1A1AA]/60 uppercase tracking-wider font-semibold">
                       Prompt do guia
                     </span>
