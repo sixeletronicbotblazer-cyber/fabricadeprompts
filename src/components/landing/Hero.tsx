@@ -19,19 +19,20 @@ export function Hero() {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <h1 className="text-[1.65rem] sm:text-[2rem] md:text-[2.75rem] lg:text-[3rem] font-black leading-[1.08] sm:leading-[1.02] tracking-tight text-white">
-            Crie vídeos para <span className="text-[#FF2D55]">TikTok Shop e Shopee</span> com IA <span className="text-white font-black">sem inventar prompt do zero</span>.
+          <h1 className="text-[1.65rem] sm:text-[2rem] md:text-[2.75rem] lg:text-[3rem] font-black leading-[1.12] sm:leading-[1.05] tracking-tight text-white">
+            Pare de tentar <span className="text-[#FF2D55]">inventar prompt</span> do zero.
           </h1>
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <p className="text-[13px] sm:text-[15px] text-[#C4C4CC] leading-[1.45] mx-auto max-w-md mt-3 sm:mt-4">
-            <span className="text-white font-semibold">+250 prompts</span> com preview, você vê antes de criar.
-            <br className="hidden sm:block" />
-            {" "}
-            Categorias: <span className="inline-flex items-center px-1.5 py-0.5 bg-[#FF2D55]/8 border border-[#FF2D55]/12 rounded text-[#FF2D55] text-[12px] sm:text-[13px] font-semibold mx-0.5">POV</span>{", "}
-            <span className="inline-flex items-center px-1.5 py-0.5 bg-[#FF2D55]/8 border border-[#FF2D55]/12 rounded text-[#FF2D55] text-[12px] sm:text-[13px] font-semibold mx-0.5">UGC</span>{", "}
-            <span className="inline-flex items-center px-1.5 py-0.5 bg-[#FF2D55]/8 border border-[#FF2D55]/12 rounded text-[#FF2D55] text-[12px] sm:text-[13px] font-semibold mx-0.5">Selfie sem rosto</span>{"."}
+          <p className="text-[13px] sm:text-[15px] text-[#C4C4CC] leading-[1.5] mx-auto max-w-md mt-3 sm:mt-4">
+            Abra o app, escolha o modo ({" "}
+            <span className="inline-flex items-center px-1.5 py-0.5 bg-[#FF2D55]/8 border border-[#FF2D55]/12 rounded text-[#FF2D55] text-[12px] sm:text-[13px] font-semibold mx-0.5">Modelo</span>{", "}
+            <span className="inline-flex items-center px-1.5 py-0.5 bg-[#FF2D55]/8 border border-[#FF2D55]/12 rounded text-[#FF2D55] text-[12px] sm:text-[13px] font-semibold mx-0.5">POV</span>{" ou "}
+            <span className="inline-flex items-center px-1.5 py-0.5 bg-[#FF2D55]/8 border border-[#FF2D55]/12 rounded text-[#FF2D55] text-[12px] sm:text-[13px] font-semibold mx-0.5">Selfie</span>),
+            copie o prompt e gere seu vídeo com{" "}
+            <span className="text-white font-semibold">movimento natural</span>{" "}
+            para <span className="text-[#FF2D55] font-semibold">TikTok Shop</span> ou <span className="text-[#FF2D55] font-semibold">Shopee</span>.
           </p>
         </FadeIn>
 
