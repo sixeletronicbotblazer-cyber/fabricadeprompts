@@ -47,9 +47,9 @@ export function Hero() {
             </p>
             <a
               href="#planos"
-              className="inline-flex items-center justify-center w-full sm:w-auto px-10 py-4 bg-[#FF2D55] hover:brightness-110 text-white font-extrabold tracking-wide uppercase text-[15px] sm:text-base rounded-full transition-all shadow-lg shadow-[#FF2D55]/25 hover:shadow-xl hover:shadow-[#FF2D55]/35 hover:scale-[1.02] active:scale-[0.98]"
+              className="inline-flex items-center justify-center w-full sm:w-auto px-8 sm:px-10 py-4 bg-[#FF2D55] whitespace-nowrap hover:brightness-110 text-white font-extrabold tracking-wide uppercase text-[15px] sm:text-base rounded-full transition-all shadow-lg shadow-[#FF2D55]/25 hover:shadow-xl hover:shadow-[#FF2D55]/35 hover:scale-[1.02] active:scale-[0.98]"
             >
-              QUERO ACESSAR OS PROMPTS
+              QUERO ACESSAR AGORA
               <ArrowRight className="ml-2 size-4" />
             </a>
           </div>

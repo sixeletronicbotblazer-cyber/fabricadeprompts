@@ -125,10 +125,6 @@ function ReviewCard({ review }: { review: typeof reviews[number] }) {
 }
 
 export function SocialProofSection() {
-  // Split reviews into 2 rows for opposite-direction scrolling
-  const row1 = reviews.slice(0, 5);
-  const row2 = reviews.slice(5, 10);
-
   return (
     <section className="bg-[#0D0D10] py-8 sm:py-10 md:py-12 overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 mb-6 text-center">
@@ -160,24 +156,13 @@ export function SocialProofSection() {
         </FadeIn>
       </div>
 
-      {/* Row 1 — scrolls left */}
-      <div className="relative mb-4">
-        <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#0D0D10] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#0D0D10] to-transparent z-10 pointer-events-none" />
-        <div className="flex animate-scroll-left">
-          {[...row1, ...row1, ...row1].map((review, i) => (
-            <ReviewCard key={`r1-${i}`} review={review} />
-          ))}
-        </div>
-      </div>
-
-      {/* Row 2 — scrolls right */}
+      {/* Single row — fast scroll */}
       <div className="relative">
-        <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#0D0D10] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#0D0D10] to-transparent z-10 pointer-events-none" />
-        <div className="flex animate-scroll-right">
-          {[...row2, ...row2, ...row2].map((review, i) => (
-            <ReviewCard key={`r2-${i}`} review={review} />
+        <div className="absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-[#0D0D10] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-[#0D0D10] to-transparent z-10 pointer-events-none" />
+        <div className="flex animate-scroll-left">
+          {[...reviews, ...reviews, ...reviews].map((review, i) => (
+            <ReviewCard key={i} review={review} />
           ))}
         </div>
       </div>
