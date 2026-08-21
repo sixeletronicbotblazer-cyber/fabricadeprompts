@@ -207,6 +207,7 @@ export function PricingSection() {
                 {/* CTA */}
                 <a
                   href={checkoutUrlCompleto}
+                  onClick={() => { (window as any).trackCheckout?.('Vitalicio', 29.90); }}
                   className="block w-full text-center bg-[#FE2C55] hover:bg-[#e62750] text-white font-bold py-3.5 px-6 rounded-full transition-all text-sm sm:text-base shadow-lg shadow-[#FE2C55]/25 hover:shadow-[#FE2C55]/40 hover:scale-[1.02] active:scale-[0.98]"
                 >
                   Quero o plano vitalício por R$29,90
@@ -354,12 +355,14 @@ export function PricingSection() {
               <div className="flex flex-col gap-3">
                 <a
                   href={checkoutUrlDownsell}
+                  onClick={() => { (window as any).trackCheckout?.('Vitalicio Downsell', 24.90); }}
                   className="block w-full text-center bg-[#FE2C55] hover:bg-[#e62750] text-white font-bold py-3.5 px-6 rounded-full transition-all text-sm sm:text-base shadow-lg shadow-[#FE2C55]/25"
                 >
                   Sim, quero o vitalício por R$24,90
                 </a>
                 <a
                   href={checkoutUrlInicial}
+                  onClick={() => { (window as any).trackCheckout?.('Mensal', 17.90); }}
                   className="block w-full text-center border border-white/15 text-white/50 hover:bg-white/5 font-medium py-3 px-6 rounded-full transition-colors text-sm"
                 >
                   Não, continuar com o Plano Mensal

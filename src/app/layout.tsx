@@ -44,11 +44,21 @@ export default function RootLayout({
         {/* Meta Pixel */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','3077945205929982');fbq('track','PageView');`,
+            __html: `!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '3077945205929982');
+fbq('track', 'PageView');`,
           }}
         />
         <noscript>
-          <img height="1" width="1" style={{display:'none'}} src="https://www.facebook.com/tr?id=3077945205929982&ev=PageView&noscript=1" alt="" />
+          <img height="1" width="1" style={{display:'none'}}
+            src="https://www.facebook.com/tr?id=3077945205929982&ev=PageView&noscript=1" alt="" />
         </noscript>
         {/* TikTok Pixel */}
         <script
@@ -70,6 +80,20 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <script
           dangerouslySetInnerHTML={{
             __html: `window.pixelId="6a51310fe21f6923f70dd7e6";var a=document.createElement("script");a.setAttribute("async","");a.setAttribute("defer","");a.setAttribute("src","https://cdn.utmify.com.br/scripts/pixel/pixel.js");document.head.appendChild(a);`,
+          }}
+        />
+        {/* Pixel tracking helper */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.trackCheckout = function(plan, value) {
+  if (typeof fbq === 'function') {
+    fbq('track', 'InitiateCheckout', {content_name: plan, currency: 'BRL', value: value});
+  }
+  if (typeof ttq !== 'undefined' && ttq.track) {
+    ttq.track('ClickButton', {contents: [{content_name: plan, content_id: plan}]});
+    ttq.track('InitiateCheckout', {contents: [{content_name: plan, content_id: plan, quantity: 1, price: value}], currency: 'BRL', value: value});
+  }
+};`,
           }}
         />
       </head>
