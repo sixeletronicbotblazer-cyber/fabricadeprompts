@@ -1,13 +1,75 @@
 "use client";
 
-import { useState } from "react";
-import { Play } from "lucide-react";
+import { useState, useRef, useEffect, useCallback } from "react";
+import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
-const IMGUR_ALBUM = "WQDSFRP";
+interface MediaData {
+  videoUrl: string | null;
+  videoType?: string | null;
+  imageUrl: string | null;
+  error?: string;
+}
 
 export function InsideAppVSL() {
   const [started, setStarted] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+  const [mediaData, setMediaData] = useState<MediaData | null>(null);
+  const [loading, setLoading] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const fetchMedia = useCallback(async () => {
+    setLoading(true);
+    try {
+      const res = await fetch("/api/imgur-album");
+      const data = await res.json();
+      setMediaData(data);
+    } catch {
+      setMediaData({ videoUrl: null, imageUrl: null, error: "Erro ao carregar" });
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (started && !mediaData && !loading) {
+      fetchMedia();
+    }
+  }, [started, mediaData, loading, fetchMedia]);
+
+  useEffect(() => {
+    if (mediaData?.videoUrl && videoRef.current) {
+      videoRef.current.play().then(() => {
+        setIsPlaying(true);
+      }).catch(() => {
+        // autoplay blocked, user can click play
+      });
+    }
+  }, [mediaData]);
+
+  const togglePlayPause = useCallback(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (v.paused) {
+      v.play();
+      setIsPlaying(true);
+    } else {
+      v.pause();
+      setIsPlaying(false);
+    }
+  }, []);
+
+  const toggleMute = useCallback(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = !v.muted;
+    setIsMuted(v.muted);
+  }, []);
+
+  const handlePlayClick = () => {
+    setStarted(true);
+  };
 
   return (
     <section className="relative bg-[#050505] py-10 sm:py-14 md:py-16 px-4 overflow-hidden">
@@ -50,13 +112,11 @@ export function InsideAppVSL() {
                   <div className="relative bg-[#0a0a0c] rounded-[22px] overflow-hidden z-0">
                     {!started ? (
                       <button
-                        onClick={() => setStarted(true)}
+                        onClick={handlePlayClick}
                         className="relative w-full aspect-[9/16] block bg-[#0a0a0c] cursor-pointer group"
                         aria-label="Reproduzir vídeo"
                       >
-                        {/* Dark overlay */}
                         <div className="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors" />
-                        {/* Play button */}
                         <div className="absolute inset-0 flex items-center justify-center">
                           <div className="size-16 sm:size-[4.5rem] rounded-full bg-[#FF2D55]/90 group-hover:bg-[#FF2D55] group-hover:scale-110 transition-all flex items-center justify-center shadow-lg shadow-[#FF2D55]/30">
                             <Play
@@ -66,14 +126,67 @@ export function InsideAppVSL() {
                           </div>
                         </div>
                       </button>
-                    ) : (
-                      <iframe
-                        src={`https://imgur.com/a/${IMGUR_ALBUM}/embed`}
-                        className="w-full aspect-[9/16] block border-0 rounded-[22px]"
-                        allowFullScreen
-                        title="Veja por dentro do Motion Prompts"
-                        loading="lazy"
+                    ) : loading || !mediaData ? (
+                      <div className="w-full aspect-[9/16] flex items-center justify-center bg-[#0a0a0c]">
+                        <div className="size-6 border-2 border-[#FF2D55]/30 border-t-[#FF2D55] rounded-full animate-spin" />
+                      </div>
+                    ) : mediaData.videoUrl ? (
+                      <div className="relative w-full aspect-[9/16] bg-black">
+                        <video
+                          ref={videoRef}
+                          src={mediaData.videoUrl}
+                          className="w-full h-full object-contain"
+                          playsInline
+                          loop
+                          muted={isMuted}
+                          preload="metadata"
+                        />
+                        {/* Custom controls */}
+                        <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 via-black/30 to-transparent z-20">
+                          <div className="flex items-center justify-end gap-2">
+                            <button
+                              onClick={togglePlayPause}
+                              className="size-9 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-white/20 transition-colors"
+                              aria-label={isPlaying ? "Pausar" : "Reproduzir"}
+                            >
+                              {isPlaying ? (
+                                <Pause className="size-4 text-white" fill="white" />
+                              ) : (
+                                <Play className="size-4 text-white ml-0.5" fill="white" />
+                              )}
+                            </button>
+                            <button
+                              onClick={toggleMute}
+                              className="size-9 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-white/20 transition-colors"
+                              aria-label={isMuted ? "Ativar som" : "Silenciar"}
+                            >
+                              {isMuted ? (
+                                <VolumeX className="size-4 text-white" />
+                              ) : (
+                                <Volume2 className="size-4 text-white" />
+                              )}
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    ) : mediaData.imageUrl ? (
+                      <img
+                        src={mediaData.imageUrl}
+                        alt="Veja por dentro do Motion Prompts"
+                        className="w-full aspect-[9/16] object-contain bg-black"
                       />
+                    ) : (
+                      <div className="w-full aspect-[9/16] flex flex-col items-center justify-center bg-[#0a0a0c] gap-3">
+                        <p className="text-[#A1A1AA]/50 text-xs text-center px-6">
+                          Conteúdo temporariamente indisponível
+                        </p>
+                        <button
+                          onClick={fetchMedia}
+                          className="text-[#FF2D55]/70 text-xs hover:text-[#FF2D55] transition-colors underline underline-offset-2"
+                        >
+                          tentar novamente
+                        </button>
+                      </div>
                     )}
                   </div>
                 </div>

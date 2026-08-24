@@ -330,3 +330,20 @@ Stage Summary:
 - YouTube embed has zero branding (no red bar, no channel info, no title overlay)
 - Only custom pause/mute controls visible to user
 - No changes to any other section
+---
+Task ID: 2
+Agent: main
+Task: Replace YouTube with Imgur, improve Hero subheadline
+
+Work Log:
+- Created /api/imgur-album API route that fetches Imgur album page, extracts og:video/og:image meta tags and mp4 URLs from HTML
+- Rewrote InsideAppVSL to use native <video> tag with custom play/pause + mute controls (same UX as previous YouTube lock-down)
+- Component flow: play button → fetch API → if video URL found → native <video> with custom controls, if image → <img>, else → friendly error with retry button
+- Shortened Hero subheadline from "Abra o app, escolha o modo (Modelo, POV ou Selfie), copie o prompt e gere seu vídeo com movimento natural para TikTok Shop ou Shopee." to "Escolha o modo (Modelo, POV ou Selfie), copie o prompt e gere vídeos com movimento natural."
+- Removed "TikTok Shop ou Shopee" from subheadline (already in badge above), changed "seu vídeo" to "vídeos", removed "Abra o app"
+- Imgur is currently rate-limited (429), so video can't be tested yet. Component handles error gracefully with retry.
+
+Stage Summary:
+- InsideAppVSL now fetches direct media URLs from Imgur via server API route
+- Native <video> element with custom controls (no YouTube/Imgur branding)
+- Hero subheadline shorter and more cohesive with headline

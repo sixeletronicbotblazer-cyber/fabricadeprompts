@@ -26,13 +26,12 @@ export function Hero() {
 
         <FadeIn delay={0.2}>
           <p className="text-[13px] sm:text-[15px] text-[#C4C4CC] leading-[1.5] mx-auto max-w-md mt-3 sm:mt-4">
-            Abra o app, escolha o modo ({" "}
+            Escolha o modo ({" "}
             <span className="inline-flex items-center px-1.5 py-0.5 bg-[#FF2D55]/8 border border-[#FF2D55]/12 rounded text-[#FF2D55] text-[12px] sm:text-[13px] font-semibold mx-0.5">Modelo</span>{", "}
             <span className="inline-flex items-center px-1.5 py-0.5 bg-[#FF2D55]/8 border border-[#FF2D55]/12 rounded text-[#FF2D55] text-[12px] sm:text-[13px] font-semibold mx-0.5">POV</span>{" ou "}
             <span className="inline-flex items-center px-1.5 py-0.5 bg-[#FF2D55]/8 border border-[#FF2D55]/12 rounded text-[#FF2D55] text-[12px] sm:text-[13px] font-semibold mx-0.5">Selfie</span>),
-            copie o prompt e gere seu vídeo com{" "}
-            <span className="text-white font-semibold">movimento natural</span>{" "}
-            para <span className="text-[#FF2D55] font-semibold">TikTok Shop</span> ou <span className="text-[#FF2D55] font-semibold">Shopee</span>.
+            copie o prompt e gere vídeos com{" "}
+            <span className="text-white font-semibold">movimento natural</span>.
           </p>
         </FadeIn>
 
