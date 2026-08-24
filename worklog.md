@@ -309,3 +309,24 @@ Stage Summary:
 - Mobile (base): avg 4px removed per section edge → ~8px saved per section × 12 sections ≈ 96px total
 - Desktop (md/lg): avg 16-32px removed per section edge → ~192px+ total saved
 - Additional internal margin reductions (mb values) save ~16-40px per affected section
+---
+Task ID: 1
+Agent: main
+Task: Simplify InsideAppVSL section - remove extras, lock YouTube embed
+
+Work Log:
+- Read existing InsideAppVSL.tsx (had badge, headline, subheadline, support text, mini-cards, CTA, label above video)
+- Removed: VEJA POR DENTRO badge, support text paragraph, 3 mini-cards (Módulos/Galeria/Prompts prontos), CTA button (desktop + mobile), Tour rápido do app label
+- Kept only: headline, subheadline, video
+- Replaced simple YouTube iframe embed with YouTube IFrame API for locked-down player
+- Player params: controls=0, modestbranding=1, rel=0, showinfo=0, iv_load_policy=3, fs=0, cc_load_policy=0, disablekb=1
+- Added pointer-events-none on iframe container to block ALL YouTube hover interactions
+- Custom overlay controls with only play/pause and mute/unmute buttons
+- Verified in browser on both mobile (390x844) and desktop (1280x900) viewports
+- Lint passed clean, dev server no errors
+
+Stage Summary:
+- InsideAppVSL now shows only headline + subheadline + locked YouTube player
+- YouTube embed has zero branding (no red bar, no channel info, no title overlay)
+- Only custom pause/mute controls visible to user
+- No changes to any other section
