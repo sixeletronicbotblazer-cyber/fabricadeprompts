@@ -7,7 +7,6 @@ import { MechanismSection } from "@/components/landing/MechanismSection";
 import { PremiumBonusSection } from "@/components/landing/PremiumBonusSection";
 import { ReferenceExamples } from "@/components/landing/ReferenceExamples";
 import { ComparisonSection } from "@/components/landing/ComparisonSection";
-import { InsideAppVSL } from "@/components/landing/InsideAppVSL";
 import { PricingSection } from "@/components/landing/PricingSection";
 import { GuaranteeSection } from "@/components/landing/GuaranteeSection";
 import { FAQ } from "@/components/landing/FAQ";
@@ -28,7 +27,6 @@ export default function Home() {
         <PremiumBonusSection />
         <ReferenceExamples />
         <ComparisonSection />
-        <InsideAppVSL />
         <PricingSection />
         <GuaranteeSection />
         <FAQ />

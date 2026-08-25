@@ -106,27 +106,34 @@ export function PricingSection() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 items-start">
 
+            {/* VITALICIO - highlighted card */}
             <FadeIn>
               <div className="relative bg-[#111] rounded-2xl border-2 border-[#FE2C55]/60 p-5 sm:p-6 flex flex-col order-1 md:order-2 shadow-[0_0_40px_rgba(254,44,85,0.12)]">
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 flex items-center gap-2">
                   <span className="inline-block bg-[#FE2C55] text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-full shadow-md shadow-[#FE2C55]/30 whitespace-nowrap">
+                    MAIS POPULAR
+                  </span>
+                  <span className="hidden sm:inline-block bg-[#25F4EE]/15 text-[#25F4EE] text-[10px] sm:text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-[#25F4EE]/25 whitespace-nowrap">
                     VITALICIO
                   </span>
                 </div>
 
-                <div className="text-center mt-1 mb-4 sm:mb-5">
-                  <span className="text-sm font-bold text-white/25 line-through">R$ 39,90</span>
-                  <span className="inline-block ml-1.5 text-[9px] sm:text-[10px] font-bold text-emerald-400 bg-emerald-400/15 px-1.5 py-0.5 rounded-full">
-                    -25%
-                  </span>
-                  <div className="mt-2.5">
-                    <span className="text-[3rem] sm:text-[3.5rem] md:text-5xl font-extrabold text-white leading-none tracking-tight">
+                {/* Price block - prominent on mobile */}
+                <div className="text-center mt-2 sm:mt-1 mb-4 sm:mb-5">
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <span className="text-sm font-bold text-white/25 line-through">R$ 39,90</span>
+                    <span className="text-[9px] sm:text-[10px] font-bold text-emerald-400 bg-emerald-400/15 px-1.5 py-0.5 rounded-full">
+                      -25%
+                    </span>
+                  </div>
+                  <div className="bg-[#FE2C55]/8 rounded-xl py-3 px-4 -mx-1">
+                    <span className="text-[3.5rem] sm:text-[3.5rem] md:text-5xl font-extrabold text-white leading-none tracking-tight">
                       R$29
                     </span>
-                    <span className="text-xl sm:text-2xl font-bold text-white">,90</span>
+                    <span className="text-2xl sm:text-2xl font-bold text-white">,90</span>
                   </div>
-                  <p className="text-[11px] text-white/35 mt-1.5 font-medium">
-                    pagamento unico / PIX
+                  <p className="text-[11px] text-white/35 mt-2 font-medium">
+                    pagamento unico / PIX / acesso para sempre
                   </p>
                 </div>
 
@@ -135,7 +142,7 @@ export function PricingSection() {
                   onClick={() => { (window as any).trackCheckout?.('Vitalicio', 29.90); }}
                   className="block w-full text-center bg-[#FE2C55] hover:bg-[#e62750] text-white font-bold py-3.5 px-6 rounded-full transition-all text-sm sm:text-base shadow-lg shadow-[#FE2C55]/25 hover:shadow-[#FE2C55]/40 hover:scale-[1.02] active:scale-[0.98] mb-3"
                 >
-                  QUERO O VITALICIO POR R$29,90
+                  QUERO MEU ACESSO VITALICIO
                 </a>
 
                 <div className="mb-4 rounded-xl bg-black/50 border border-white/[0.06] px-3.5 py-2.5 flex items-center justify-between">
@@ -182,13 +189,14 @@ export function PricingSection() {
               </div>
             </FadeIn>
 
+            {/* MENSAL card */}
             <FadeIn delay={0.1}>
               <div className="bg-[#1A1A1A] rounded-2xl border border-white/[0.08] p-5 sm:p-6 flex flex-col order-2 md:order-1">
                 <h3 className="text-base sm:text-lg font-bold text-white mb-0.5">
                   Plano Mensal
                 </h3>
                 <p className="text-xs text-white/45 mb-4">
-                  Mesmo conteudo, sem Grupo VIP e atualizacoes.
+                  Comece hoje e cancele quando quiser.
                 </p>
 
                 <div className="mb-4">
@@ -216,7 +224,7 @@ export function PricingSection() {
                   onClick={() => setDownsellOpen(true)}
                   className="block w-full text-center border-2 border-white/20 text-white hover:bg-white hover:text-black font-bold py-3.5 px-6 rounded-full transition-all text-sm sm:text-base"
                 >
-                  Assinar por R$17,90/mes
+                  QUERO COMECAR AGORA
                 </button>
 
                 <div className="flex items-center justify-center gap-1.5 mt-3">
@@ -232,6 +240,7 @@ export function PricingSection() {
         </div>
       </section>
 
+      {/* DOWNSELL MODAL */}
       <AnimatePresence>
         {downsellOpen && (
           <motion.div
@@ -277,7 +286,7 @@ export function PricingSection() {
               </p>
 
               <div className="flex items-baseline gap-2 mb-4">
-                <span className="text-sm text-white/30 line-through">De R$29,90</span>
+                <span className="text-sm text-white/30 line-through">De R$39,90</span>
                 <span className="text-sm text-white/60">por</span>
                 <span className="text-2xl sm:text-3xl font-extrabold text-[#FE2C55]">R$24,90</span>
                 <span className="ml-1.5 text-[10px] font-bold text-[#25F4EE]/80 bg-[#25F4EE]/10 px-2 py-0.5 rounded-full border border-[#25F4EE]/20">
@@ -311,7 +320,7 @@ export function PricingSection() {
                   onClick={() => { (window as any).trackCheckout?.('Vitalicio Downsell', 24.90); }}
                   className="block w-full text-center bg-[#FE2C55] hover:bg-[#e62750] text-white font-bold py-3.5 px-6 rounded-full transition-all text-sm sm:text-base shadow-lg shadow-[#FE2C55]/25"
                 >
-                  Sim, quero o vitalicio por R$24,90
+                  SIM, QUERO O VITALICIO
                 </a>
                 <a
                   href={checkoutUrlInicial}
