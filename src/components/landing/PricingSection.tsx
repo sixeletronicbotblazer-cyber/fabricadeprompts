@@ -12,42 +12,31 @@ const checkoutUrlDownsell = "https://pay.cakto.com.br/guw9f5r";
 interface FeatureItem {
   text: string;
   bonus?: boolean;
-  vitalicioOnly?: boolean;
 }
 
 const baseFeatures: FeatureItem[] = [
   { text: "+250 prompts organizados prontos para copiar" },
   { text: "Modo Modelo, POV e Selfie UGC" },
-  { text: "Novos módulos incluídos no acesso" },
-  { text: "Bônus: Galeria Premium de Prompts", bonus: true },
-  { text: "Aulas rápidas e exemplos prontos" },
+  { text: "Novos modulos incluidos no acesso" },
+  { text: "Bonus: Galeria Premium de Prompts", bonus: true },
+  { text: "Aulas rapidas e exemplos prontos" },
   { text: "Como ativar TIKTOK SHOP em 3 dias!" },
 ];
 
-const vitalicioExtras: FeatureItem[] = [
-  { text: "Grupo VIP com atualizações e troca de ideias", vitalicioOnly: true },
-  { text: "Todas as atualizações futuras incluídas", vitalicioOnly: true },
-];
-
-const mensalExtras: FeatureItem[] = [
-  { text: "Acesso imediato" },
-  { text: "Garantia simples de 7 dias" },
-];
-
-const vitalicioExtras2: FeatureItem[] = [
-  { text: "Acesso imediato, pague uma vez só" },
-  { text: "Garantia simples de 7 dias" },
+const vitalicioExtras: string[] = [
+  "Grupo VIP com atualizacoes e troca de ideias",
+  "Todas as atualizacoes futuras incluidas",
 ];
 
 const downsellFeatures = [
   "+250 prompts organizados",
   "Modo Modelo, POV e Selfie UGC",
-  "Novos módulos incluídos no acesso",
-  "Bônus: Galeria Premium de Prompts",
-  "Aulas rápidas e exemplos prontos",
+  "Novos modulos incluidos no acesso",
+  "Bonus: Galeria Premium de Prompts",
+  "Aulas rapidas e exemplos prontos",
   "Como ativar TIKTOK SHOP em 3 dias!",
-  "Grupo VIP com atualizações e troca de ideias",
-  "Todas as atualizações futuras incluídas",
+  "Grupo VIP com atualizacoes e troca de ideias",
+  "Todas as atualizacoes futuras incluidas",
 ];
 
 function CountdownTimer() {
@@ -84,19 +73,14 @@ function CountdownTimer() {
   const pad = (n: number) => String(n).padStart(2, "0");
 
   return (
-    <div className="flex items-center justify-center gap-2.5">
+    <div className="flex items-center gap-2">
       {([time.h, time.m, time.s] as const).map((val, i) => (
-        <div key={i} className="flex items-center gap-2.5">
-          <div className="flex flex-col items-center">
-            <span className="text-2xl sm:text-3xl font-extrabold text-white tabular-nums leading-none">
-              {pad(val)}
-            </span>
-            <span className="text-[9px] sm:text-[10px] text-white/40 font-medium mt-1 uppercase tracking-wider">
-              {["Horas", "Min", "Seg"][i]}
-            </span>
-          </div>
+        <div key={i} className="flex items-center gap-1.5">
+          <span className="text-lg sm:text-2xl font-extrabold text-white tabular-nums leading-none">
+            {pad(val)}
+          </span>
           {i < 2 && (
-            <span className="text-xl font-bold text-white/20 -mt-3">:</span>
+            <span className="text-sm font-bold text-white/20">:</span>
           )}
         </div>
       ))}
@@ -112,148 +96,117 @@ export function PricingSection() {
       <section id="planos" className="bg-black py-8 md:py-12 px-4">
         <div className="max-w-3xl mx-auto">
           <FadeIn>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white leading-tight mb-2 text-center">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white leading-tight mb-1 text-center">
               Escolha o seu <span className="text-[#FE2C55]">plano</span>
             </h2>
-            <p className="text-sm text-white/50 text-center mb-2 max-w-md mx-auto">
-              3 modos de vídeo prontos para TikTok Shop e Shopee.
-            </p>
-          </FadeIn>
-
-          <FadeIn delay={0.05}>
-            <p className="text-xs text-white/30 text-center mb-8 max-w-lg mx-auto">
-              Ambos os planos entregam o mesmo conteúdo. O Vitalício inclui Grupo VIP e atualizações futuras de graça.
+            <p className="text-xs sm:text-sm text-white/40 text-center mb-6 max-w-sm mx-auto">
+              Ambos os planos entregam o mesmo conteudo.
             </p>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 items-start">
-            {/* VITALÍCIO, premium box */}
+
             <FadeIn>
-              <div className="relative bg-[#111] rounded-2xl border-2 border-[#FE2C55]/60 p-5 sm:p-6 flex flex-col order-1 md:order-2 shadow-[0_0_40px_rgba(254,44,85,0.12),0_0_80px_rgba(37,244,238,0.05)]">
-                {/* Top badge */}
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="inline-block bg-[#FE2C55] text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider px-4 sm:px-5 py-1.5 rounded-full shadow-md shadow-[#FE2C55]/30 whitespace-nowrap">
-                    VITALÍCIO
+              <div className="relative bg-[#111] rounded-2xl border-2 border-[#FE2C55]/60 p-5 sm:p-6 flex flex-col order-1 md:order-2 shadow-[0_0_40px_rgba(254,44,85,0.12)]">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <span className="inline-block bg-[#FE2C55] text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-full shadow-md shadow-[#FE2C55]/30 whitespace-nowrap">
+                    VITALICIO
                   </span>
                 </div>
 
-                {/* Price area */}
-                <div className="text-center mt-2 mb-4">
-                  <span className="text-base font-bold text-white/30 line-through">R$ 39,90</span>
-                  <span className="inline-block ml-2 text-[10px] font-bold text-emerald-400 bg-emerald-400/15 px-2 py-0.5 rounded-full">
-                    -25% OFF
+                <div className="text-center mt-1 mb-4 sm:mb-5">
+                  <span className="text-sm font-bold text-white/25 line-through">R$ 39,90</span>
+                  <span className="inline-block ml-1.5 text-[9px] sm:text-[10px] font-bold text-emerald-400 bg-emerald-400/15 px-1.5 py-0.5 rounded-full">
+                    -25%
                   </span>
-                  <div className="mt-2">
-                    <span className="text-4xl sm:text-5xl font-extrabold text-white">
-                      R$ 29
+                  <div className="mt-2.5">
+                    <span className="text-[3rem] sm:text-[3.5rem] md:text-5xl font-extrabold text-white leading-none tracking-tight">
+                      R$29
                     </span>
-                    <span className="text-lg font-bold text-white">,90</span>
-                    <span className="text-xs text-white/40 ml-2">pagamento único</span>
+                    <span className="text-xl sm:text-2xl font-bold text-white">,90</span>
                   </div>
-                  <p className="text-[11px] text-white/40 mt-1">
-                    Acesso imediato no PIX
+                  <p className="text-[11px] text-white/35 mt-1.5 font-medium">
+                    pagamento unico / PIX
                   </p>
                 </div>
 
-                {/* Countdown compact */}
-                <div className="mb-5 rounded-xl bg-black/50 border border-white/[0.06] px-4 py-3 flex items-center justify-between">
+                <a
+                  href={checkoutUrlCompleto}
+                  onClick={() => { (window as any).trackCheckout?.('Vitalicio', 29.90); }}
+                  className="block w-full text-center bg-[#FE2C55] hover:bg-[#e62750] text-white font-bold py-3.5 px-6 rounded-full transition-all text-sm sm:text-base shadow-lg shadow-[#FE2C55]/25 hover:shadow-[#FE2C55]/40 hover:scale-[1.02] active:scale-[0.98] mb-3"
+                >
+                  QUERO O VITALICIO POR R$29,90
+                </a>
+
+                <div className="mb-4 rounded-xl bg-black/50 border border-white/[0.06] px-3.5 py-2.5 flex items-center justify-between">
                   <div className="flex items-center gap-1.5">
-                    <Zap className="size-3.5 text-[#FE2C55]" />
-                    <span className="text-[10px] font-bold text-white/40 uppercase tracking-wider">Acaba em</span>
+                    <Zap className="size-3 text-[#FE2C55]" />
+                    <span className="text-[10px] font-bold text-white/35 uppercase tracking-wider">Acaba em</span>
                   </div>
                   <CountdownTimer />
                 </div>
 
-                {/* Features: same base as mensal */}
-                <ul className="space-y-2 mb-4 flex-1">
+                <ul className="space-y-1.5 mb-3">
                   {baseFeatures.map((f, i) => (
-                    <li key={i} className={f.bonus ? "mt-1" : ""}>
-                      <div className="flex items-start gap-2.5">
-                        <Check className={`size-4 shrink-0 mt-0.5 ${f.bonus ? "text-[#25F4EE]" : "text-[#FE2C55]"}`} />
-                        <span className={`text-sm ${f.bonus ? "text-[#25F4EE]/90 font-semibold" : "text-white/85"}`}>{f.text}</span>
+                    <li key={i}>
+                      <div className="flex items-center gap-2">
+                        <Check className={`size-3.5 shrink-0 ${f.bonus ? "text-[#25F4EE]" : "text-[#FE2C55]"}`} />
+                        <span className={`text-[13px] leading-tight ${f.bonus ? "text-[#25F4EE]/90 font-semibold" : "text-white/80"}`}>{f.text}</span>
                       </div>
                     </li>
                   ))}
                 </ul>
 
-                {/* Vitalício exclusives */}
-                <div className="border-t border-white/[0.06] pt-3 mb-3">
-                  <p className="text-[10px] font-bold text-[#25F4EE]/60 uppercase tracking-wider mb-2.5">
-                    Incluído só no Vitalício
+                <div className="border-t border-white/[0.06] pt-2.5 mb-3">
+                  <p className="text-[9px] font-bold text-[#25F4EE]/50 uppercase tracking-wider mb-2">
+                    So no Vitalicio
                   </p>
-                  <ul className="space-y-2">
-                    {vitalicioExtras.map((f, i) => (
+                  <ul className="space-y-1.5">
+                    {vitalicioExtras.map((text, i) => (
                       <li key={i}>
-                        <div className="flex items-start gap-2.5">
-                          <Check className="size-4 shrink-0 mt-0.5 text-[#25F4EE]" />
-                          <span className="text-sm text-[#25F4EE]/90 font-semibold">{f.text}</span>
+                        <div className="flex items-center gap-2">
+                          <Check className="size-3.5 shrink-0 text-[#25F4EE]" />
+                          <span className="text-[13px] text-[#25F4EE]/90 font-semibold leading-tight">{text}</span>
                         </div>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <ul className="space-y-2 mb-5">
-                  {vitalicioExtras2.map((f, i) => (
-                    <li key={i}>
-                      <div className="flex items-start gap-2.5">
-                        <Check className="size-4 shrink-0 mt-0.5 text-[#FE2C55]" />
-                        <span className="text-sm text-white/85">{f.text}</span>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* CTA */}
-                <a
-                  href={checkoutUrlCompleto}
-                  onClick={() => { (window as any).trackCheckout?.('Vitalicio', 29.90); }}
-                  className="block w-full text-center bg-[#FE2C55] hover:bg-[#e62750] text-white font-bold py-3.5 px-6 rounded-full transition-all text-sm sm:text-base shadow-lg shadow-[#FE2C55]/25 hover:shadow-[#FE2C55]/40 hover:scale-[1.02] active:scale-[0.98]"
-                >
-                  Quero o plano vitalício por R$29,90
-                </a>
-
-                <div className="flex items-center justify-center gap-1.5 mt-3">
-                  <Shield className="size-3 text-white/25" />
-                  <span className="text-[10px] text-white/25">
-                    Pagamento seguro • Garantia 7 dias
+                <div className="flex items-center justify-center gap-1.5 mt-auto pt-1">
+                  <Shield className="size-3 text-white/20" />
+                  <span className="text-[10px] text-white/20">
+                    Pagamento seguro / Garantia 7 dias
                   </span>
                 </div>
-
-                <p className="mt-2 text-center text-[10px] text-amber-400/70 font-medium">
-                  R$ 29,90 travado só hoje. Amanhã volta ao normal.
-                </p>
               </div>
             </FadeIn>
 
-            {/* MENSAL, simpler box */}
             <FadeIn delay={0.1}>
               <div className="bg-[#1A1A1A] rounded-2xl border border-white/[0.08] p-5 sm:p-6 flex flex-col order-2 md:order-1">
-                <div className="mb-5">
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-0.5">
-                    Plano Mensal
-                  </h3>
-                  <p className="text-sm text-white/50">
-                    Mesmo conteúdo do Vitalício, sem Grupo VIP e atualizações futuras.
-                  </p>
-                </div>
+                <h3 className="text-base sm:text-lg font-bold text-white mb-0.5">
+                  Plano Mensal
+                </h3>
+                <p className="text-xs text-white/45 mb-4">
+                  Mesmo conteudo, sem Grupo VIP e atualizacoes.
+                </p>
 
-                <div className="mb-5">
-                  <span className="text-4xl sm:text-5xl font-extrabold text-white">
-                    R$ 17
+                <div className="mb-4">
+                  <span className="text-[2.5rem] sm:text-5xl font-extrabold text-white leading-none tracking-tight">
+                    R$17
                   </span>
-                  <span className="text-lg font-bold text-white">,90</span>
-                  <span className="text-xs text-white/40 ml-1.5">
-                    /mês
+                  <span className="text-lg sm:text-2xl font-bold text-white">,90</span>
+                  <span className="text-xs text-white/35 ml-1.5 font-medium">
+                    /mes
                   </span>
                 </div>
 
-                <ul className="space-y-2 mb-5 flex-1">
-                  {[...baseFeatures, ...mensalExtras].map((f, i) => (
-                    <li key={i} className={f.bonus ? "mt-1" : ""}>
-                      <div className="flex items-start gap-2.5">
-                        <Check className={`size-4 shrink-0 mt-0.5 ${f.bonus ? "text-[#25F4EE]" : "text-white/30"}`} />
-                        <span className={`text-sm ${f.bonus ? "text-[#25F4EE]/90 font-semibold" : "text-white/70"}`}>{f.text}</span>
+                <ul className="space-y-1.5 mb-4 flex-1">
+                  {baseFeatures.map((f, i) => (
+                    <li key={i}>
+                      <div className="flex items-center gap-2">
+                        <Check className={`size-3.5 shrink-0 ${f.bonus ? "text-[#25F4EE]/70" : "text-white/25"}`} />
+                        <span className={`text-[13px] leading-tight ${f.bonus ? "text-[#25F4EE]/70 font-semibold" : "text-white/60"}`}>{f.text}</span>
                       </div>
                     </li>
                   ))}
@@ -263,22 +216,22 @@ export function PricingSection() {
                   onClick={() => setDownsellOpen(true)}
                   className="block w-full text-center border-2 border-white/20 text-white hover:bg-white hover:text-black font-bold py-3.5 px-6 rounded-full transition-all text-sm sm:text-base"
                 >
-                  Assinar por R$17,90/mês
+                  Assinar por R$17,90/mes
                 </button>
 
                 <div className="flex items-center justify-center gap-1.5 mt-3">
-                  <Shield className="size-3 text-white/20" />
-                  <span className="text-[10px] text-white/20">
-                    Acesso imediato • PIX seguro • Garantia de 7 dias
+                  <Shield className="size-3 text-white/15" />
+                  <span className="text-[10px] text-white/15">
+                    Acesso imediato / PIX / Garantia 7 dias
                   </span>
                 </div>
               </div>
             </FadeIn>
+
           </div>
         </div>
       </section>
 
-      {/* Downsell Popup, R$24,90 Vitalício */}
       <AnimatePresence>
         {downsellOpen && (
           <motion.div
@@ -311,33 +264,33 @@ export function PricingSection() {
               </button>
 
               <p className="text-[10px] font-bold text-white/40 uppercase tracking-wider mb-1">
-                Antes de continuar…
+                Antes de continuar...
               </p>
 
               <h3 className="text-lg sm:text-xl font-extrabold text-white mb-1.5 leading-tight">
-                Libere o Plano Vitalício por apenas{" "}
+                Libere o Vitalicio por apenas{" "}
                 <span className="text-[#FE2C55]">R$7 a mais</span>
               </h3>
 
               <p className="text-sm text-white/55 leading-relaxed mb-4">
-                Você estava indo para o Mensal, mas por R$7 a mais leva o Vitalício com a mesma entrega, mais Grupo VIP e todas as atualizações futuras incluídas.
+                Mesma entrega do Mensal, mais Grupo VIP e todas as atualizacoes futuras incluidas.
               </p>
 
               <div className="flex items-baseline gap-2 mb-4">
                 <span className="text-sm text-white/30 line-through">De R$29,90</span>
                 <span className="text-sm text-white/60">por</span>
-                <span className="text-xl sm:text-2xl font-extrabold text-[#FE2C55]">R$24,90</span>
+                <span className="text-2xl sm:text-3xl font-extrabold text-[#FE2C55]">R$24,90</span>
                 <span className="ml-1.5 text-[10px] font-bold text-[#25F4EE]/80 bg-[#25F4EE]/10 px-2 py-0.5 rounded-full border border-[#25F4EE]/20">
-                  VITALÍCIO
+                  VITALICIO
                 </span>
               </div>
 
               <div className="flex flex-wrap items-center gap-2 mb-4">
                 <span className="inline-block bg-[#FE2C55]/15 text-[#FE2C55] text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border border-[#FE2C55]/25">
-                  Oferta especial nesta tela
+                  Oferta especial
                 </span>
                 <span className="inline-block text-[10px] font-bold text-[#25F4EE]/80 bg-[#25F4EE]/10 px-2.5 py-0.5 rounded-full border border-[#25F4EE]/20">
-                  Acesso vitalício
+                  Acesso vitalicio
                 </span>
               </div>
 
@@ -358,19 +311,19 @@ export function PricingSection() {
                   onClick={() => { (window as any).trackCheckout?.('Vitalicio Downsell', 24.90); }}
                   className="block w-full text-center bg-[#FE2C55] hover:bg-[#e62750] text-white font-bold py-3.5 px-6 rounded-full transition-all text-sm sm:text-base shadow-lg shadow-[#FE2C55]/25"
                 >
-                  Sim, quero o vitalício por R$24,90
+                  Sim, quero o vitalicio por R$24,90
                 </a>
                 <a
                   href={checkoutUrlInicial}
                   onClick={() => { (window as any).trackCheckout?.('Mensal', 17.90); }}
                   className="block w-full text-center border border-white/15 text-white/50 hover:bg-white/5 font-medium py-3 px-6 rounded-full transition-colors text-sm"
                 >
-                  Não, continuar com o Plano Mensal
+                  Nao, continuar com o Mensal
                 </a>
               </div>
 
               <p className="mt-3 text-center text-[10px] text-white/25">
-                A diferença é de apenas R$7 para acessar o plano vitalício.
+                A diferenca e de apenas R$7 para o plano vitalicio.
               </p>
             </motion.div>
           </motion.div>
