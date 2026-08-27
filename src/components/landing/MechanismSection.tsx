@@ -28,14 +28,14 @@ export function MechanismSection() {
     <section className="bg-[#0D0D10] py-8 sm:py-10 md:py-12 px-4">
       <div className="max-w-3xl mx-auto">
         <FadeIn>
-          <h2 className="text-[1.3rem] sm:text-2xl md:text-[2rem] font-black text-white leading-[1.1] sm:leading-[1.0] mb-2 text-center">
-            O segredo <span className="text-[#A1A1AA]/80">não é só gerar vídeo</span>. É <span className="text-[#FF2D55]">guiar a IA</span> como um <span className="text-[#F4F4F5] font-black">criativo real</span>.
+          <h2 className="text-lg sm:text-xl font-black text-white leading-tight mb-2 text-center">
+            Guiar a IA como um <span className="text-[#FF2D55]">criativo real</span>.
           </h2>
         </FadeIn>
 
         <FadeIn delay={0.05}>
-          <p className="text-[13px] sm:text-sm text-[#A1A1AA]/70 max-w-lg mx-auto mb-6 sm:mb-8 text-center">
-            Os prompts foram organizados para orientar a IA sobre cenário, enquadramento, movimento, estilo UGC, produto, câmera e formato vertical.
+          <p className="text-[13px] text-[#A1A1AA]/70 max-w-md mx-auto mb-6 text-center">
+            Prompts organizados para orientar a IA sobre cenario, movimento e produto.
           </p>
         </FadeIn>
 
