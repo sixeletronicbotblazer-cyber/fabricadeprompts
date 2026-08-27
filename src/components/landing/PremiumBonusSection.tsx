@@ -93,7 +93,7 @@ export function PremiumBonusSection() {
                 href="#planos"
                 className="inline-flex items-center justify-center bg-[#FF2D55] hover:brightness-110 text-white font-extrabold py-3.5 px-8 rounded-full transition-all text-sm sm:text-base shadow-lg shadow-[#FF2D55]/25 hover:shadow-xl hover:shadow-[#FF2D55]/35 hover:scale-[1.02] active:scale-[0.98] uppercase tracking-wide"
               >
-                QUERO VER A GALERIA
+                QUERO ACESSAR AGORA
               </a>
             </FadeIn>
           </div>

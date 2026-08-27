@@ -25,7 +25,7 @@ export function FinalCTA() {
               href="#planos"
               className="block w-full text-center bg-[#FF2D55] hover:brightness-110 shadow-lg shadow-[#FF2D55]/25 hover:shadow-xl hover:shadow-[#FF2D55]/35 font-extrabold tracking-wide uppercase rounded-xl text-[15px] sm:text-base py-4 px-6 transition-all mb-4"
             >
-              QUERO O ACESSO VITALÍCIO <ArrowRight className="inline size-4 ml-2" />
+              QUERO ACESSAR AGORA <ArrowRight className="inline size-4 ml-2" />
             </a>
             <a
               href="#planos"

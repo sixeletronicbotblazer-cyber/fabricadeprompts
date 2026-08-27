@@ -1,0 +1,56 @@
+"use client";
+
+import { useState, useEffect, useCallback } from "react";
+
+export function MobileStickyCTA() {
+  const [visible, setVisible] = useState(false);
+
+  const onScroll = useCallback(() => {
+    const scrollY = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight;
+    const winHeight = window.innerHeight;
+    const scrollPercent = scrollY / (docHeight - winHeight);
+
+    // Show after ~8% scroll
+    if (scrollPercent < 0.08) {
+      setVisible(false);
+      return;
+    }
+
+    // Hide when near pricing section (don't cover checkout buttons)
+    const planosEl = document.getElementById("planos");
+    if (planosEl) {
+      const rect = planosEl.getBoundingClientRect();
+      // If pricing section is within viewport, hide sticky CTA
+      if (rect.top < winHeight + 60 && rect.bottom > 0) {
+        setVisible(false);
+        return;
+      }
+    }
+
+    setVisible(true);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [onScroll]);
+
+  if (!visible) return null;
+
+  return (
+    <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden pb-[env(safe-area-inset-bottom)]">
+      <a
+        href="#planos"
+        className="flex items-center justify-center w-full bg-gradient-to-r from-[#FF2D55] to-[#FF2D55]/90 backdrop-blur-md py-3 px-6 shadow-[0_-4px_20px_rgba(255,45,85,0.3)] transition-all active:scale-[0.99]"
+      >
+        <span className="text-white/80 font-bold text-[13px] mr-2.5">R$17,90</span>
+        <span className="w-px h-3.5 bg-white/25" />
+        <span className="text-white font-extrabold text-[13px] ml-2.5 tracking-wide uppercase">
+          Quero acessar
+        </span>
+      </a>
+    </div>
+  );
+}
