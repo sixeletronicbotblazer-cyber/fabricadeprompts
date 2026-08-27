@@ -26,8 +26,8 @@ export function ComparisonSection() {
     <section className="bg-[#08080A] py-8 sm:py-10 md:py-12 px-4">
       <div className="max-w-2xl mx-auto">
         <FadeIn>
-          <h2 className="text-lg sm:text-xl font-black text-[#F4F4F5] leading-tight mb-5 text-center">
-            Criando tudo <span className="text-[#FF2D55]">sozinho</span>?
+          <h2 className="text-[1.3rem] sm:text-2xl md:text-[2rem] font-black leading-[1.1] sm:leading-[1.0] text-[#F4F4F5] mb-5 sm:mb-6 text-center">
+            Você pode continuar tentando criar tudo <span className="text-[#FF2D55]">sozinho</span>...
           </h2>
         </FadeIn>
 

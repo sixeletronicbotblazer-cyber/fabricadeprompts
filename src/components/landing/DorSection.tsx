@@ -44,14 +44,16 @@ export function DorSection() {
         </FadeIn>
 
         <FadeIn delay={0.05}>
-          <h2 className="text-lg sm:text-xl font-black text-white leading-tight mb-2 text-center">
-            Falta <span className="text-[#FF2D55]">comando certo</span>.
+          <h2 className="text-[1.3rem] sm:text-2xl md:text-[2rem] font-black text-white leading-[1.1] sm:leading-[1.0] mb-2 text-center">
+            Hoje não falta <span className="text-[#A1A1AA]">ferramenta</span>. Falta <span className="text-[#FF2D55]">comando certo</span>.
           </h2>
         </FadeIn>
 
         <FadeIn delay={0.05}>
-          <p className="text-[13px] text-[#A1A1AA]/80 max-w-md mx-auto mb-5 text-center">
-            Se o prompt for fraco, o video sai estranho ou muda o produto.
+          <p className="text-[13px] sm:text-sm text-[#A1A1AA]/80 max-w-lg mx-auto mb-5 sm:mb-6 text-center">
+            Você pode usar Veo, Flow, Kling, Sora ou qualquer IA. Mas se o prompt
+            for fraco, o vídeo sai estranho, genérico ou muda completamente o
+            produto.
           </p>
         </FadeIn>
 

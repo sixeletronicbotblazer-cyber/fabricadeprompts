@@ -51,8 +51,10 @@ export function InsideAppVSL() {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <p className="text-sm text-[#A1A1AA]/70 leading-relaxed max-w-sm mb-8 text-center">
-            Veja os modulos, a biblioteca de prompts e como copiar e gerar seus criativos.
+          <p className="text-sm text-[#A1A1AA]/70 leading-relaxed max-w-md mb-8 text-center">
+            Em menos de 1 minuto, veja os módulos, a biblioteca de prompts e
+            como funciona o caminho para copiar, adaptar e gerar seus
+            criativos.
           </p>
         </FadeIn>
 
