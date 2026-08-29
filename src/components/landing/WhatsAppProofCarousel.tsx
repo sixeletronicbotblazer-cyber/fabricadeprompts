@@ -98,7 +98,7 @@ export function WhatsAppProofCarousel() {
           </p>
         </FadeIn>
 
-        {/* Infinite carousel */
+        {/* Infinite carousel */}
         <FadeIn delay={0.1}>
           <div
             className="overflow-hidden"
