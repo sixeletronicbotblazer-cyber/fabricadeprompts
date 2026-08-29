@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { useEffect, useRef, useCallback } from "react";
+import { ArrowRight } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
 const images = [
@@ -13,162 +13,116 @@ const images = [
 
 export function WhatsAppProofCarousel() {
   const trackRef = useRef<HTMLDivElement>(null);
-  const [activeIdx, setActiveIdx] = useState(0);
-  const [userInteracted, setUserInteracted] = useState(false);
-  const interactionTimer = useRef<ReturnType<typeof setTimeout>>();
+  const offsetRef = useRef(0);
+  const rafRef = useRef<number>(0);
+  const pausedRef = useRef(false);
+  const pauseTimerRef = useRef<ReturnType<typeof setTimeout>>();
 
-  const updateActive = useCallback(() => {
-    const el = trackRef.current;
-    if (!el) return;
-    const scrollLeft = el.scrollLeft;
-    const childWidth = el.firstElementChild?.getBoundingClientRect().width ?? el.clientWidth;
-    const idx = Math.round(scrollLeft / childWidth);
-    setActiveIdx(Math.min(idx, images.length - 1));
-  }, []);
-
-  const scrollToIdx = useCallback((idx: number) => {
-    const el = trackRef.current;
-    if (!el) return;
-    const child = el.children[idx];
-    if (!child) return;
-    child.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" });
-    setActiveIdx(idx);
-  }, []);
-
-  const next = useCallback(() => {
-    const nextIdx = (activeIdx + 1) % images.length;
-    scrollToIdx(nextIdx);
-  }, [activeIdx, scrollToIdx]);
-
-  const prev = useCallback(() => {
-    const prevIdx = (activeIdx - 1 + images.length) % images.length;
-    scrollToIdx(prevIdx);
-  }, [activeIdx, scrollToIdx]);
-
-  const markInteraction = useCallback(() => {
-    setUserInteracted(true);
-    clearTimeout(interactionTimer.current);
-    interactionTimer.current = setTimeout(() => setUserInteracted(false), 12000);
-  }, []);
-
+  // Infinite loop continuous scroll using requestAnimationFrame
   useEffect(() => {
-    if (userInteracted) return;
-    const id = setInterval(() => {
-      const el = trackRef.current;
-      if (!el) return;
-      const childWidth = el.firstElementChild?.getBoundingClientRect().width ?? el.clientWidth;
-      const scrollLeft = el.scrollLeft;
-      const maxScroll = el.scrollWidth - el.clientWidth;
-      if (scrollLeft + childWidth >= maxScroll - 1) {
-        scrollToIdx(0);
-      } else {
-        next();
+    let lastTime = performance.now();
+    const speed = 35; // pixels per second
+
+    const animate = (time: number) => {
+      const delta = (time - lastTime) / 1000;
+      lastTime = time;
+
+      if (!pausedRef.current && trackRef.current) {
+        offsetRef.current += speed * delta;
+        const halfWidth = trackRef.current.scrollWidth / 2;
+        if (halfWidth > 0 && offsetRef.current >= halfWidth) {
+          offsetRef.current -= halfWidth;
+        }
+        trackRef.current.style.transform = `translateX(-${offsetRef.current}px)`;
       }
-    }, 4500);
-    return () => clearInterval(id);
-  }, [userInteracted, next, scrollToIdx]);
+
+      rafRef.current = requestAnimationFrame(animate);
+    };
+
+    rafRef.current = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, []);
+
+  const pause = useCallback(() => {
+    pausedRef.current = true;
+    clearTimeout(pauseTimerRef.current);
+  }, []);
+
+  const resume = useCallback(() => {
+    pausedRef.current = false;
+  }, []);
+
+  const handleTouchStart = useCallback(() => {
+    pause();
+    pauseTimerRef.current = setTimeout(resume, 3000);
+  }, [pause, resume]);
+
+  const handleMouseEnter = useCallback(() => {
+    pause();
+  }, [pause]);
+
+  const handleMouseLeave = useCallback(() => {
+    resume();
+  }, [resume]);
+
+  // Cleanup pause timer on unmount
+  useEffect(() => {
+    return () => clearTimeout(pauseTimerRef.current);
+  }, []);
 
   return (
-    <section className="bg-[#0D0D10] pt-6 pb-10 sm:pt-8 sm:pb-12">
+    <section className="bg-[#0D0D10] pt-4 pb-8 sm:pt-5 sm:pb-10">
       <div className="max-w-5xl mx-auto px-4">
 
-        {/* Rating seal */}
-        <FadeIn>
-          <div className="flex justify-center mb-3">
-            <div className="inline-flex flex-col items-center gap-0.5">
-              <div className="flex items-center gap-[3px]">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star
-                    key={i}
-                    className={`size-3.5 ${
-                      i < 4
-                        ? "fill-amber-400 text-amber-400"
-                        : "fill-amber-400/50 text-amber-400/50"
-                    }`}
-                  />
-                ))}
-              </div>
-              <div className="flex items-baseline gap-1">
-                <span className="text-xl sm:text-2xl font-black text-[#F4F4F5] leading-none">4,8</span>
-                <span className="text-[11px] text-[#A1A1AA]/50 font-medium">de 5,0</span>
-              </div>
-              <p className="text-[10px] text-[#A1A1AA]/50 leading-tight">
-                <span className="text-[#C4C4CC]/70 font-semibold">+400 usuarias</span> satisfeitas
-              </p>
-            </div>
-          </div>
-        </FadeIn>
-
         {/* Badge */}
-        <FadeIn delay={0.05}>
-          <div className="flex justify-center mb-2.5">
+        <FadeIn>
+          <div className="flex justify-center mb-2">
             <span className="text-[9px] sm:text-[10px] font-bold text-[#FF2D55]/90 uppercase tracking-[0.18em] bg-[#FF2D55]/8 border border-[#FF2D55]/20 px-3.5 py-1 rounded-full shadow-[0_0_12px_rgba(255,45,85,0.15)]">
               Provas reais
             </span>
           </div>
         </FadeIn>
 
-        {/* Title - mobile manual break, desktop single line */}
-        <FadeIn delay={0.08}>
-          <div className="text-center mb-1.5">
-            {/* Mobile: manual 2-line break */}
-            <h2 className="text-[1.25rem] leading-[1.15] font-extrabold text-[#F4F4F5] sm:hidden max-w-[280px] mx-auto">
-              Quem entrou ja comecou{" "}
-              <span className="text-[#FF2D55]">a aplicar</span>
-            </h2>
-            {/* Desktop: single line */}
-            <h2 className="hidden sm:block text-2xl lg:text-[1.7rem] leading-[1.2] font-extrabold text-[#F4F4F5] max-w-lg mx-auto">
-              Quem entrou ja comecou{" "}
-              <span className="text-[#FF2D55]">a aplicar</span>
-            </h2>
-          </div>
+        {/* Title */}
+        <FadeIn delay={0.05}>
+          <h2 className="text-[1.15rem] sm:text-2xl lg:text-[1.6rem] font-extrabold text-[#F4F4F5] leading-[1.15] sm:leading-[1.2] text-center max-w-md sm:max-w-lg mx-auto mb-1.5">
+            Quem acessou ja comecou a{" "}
+            <span className="text-[#FF2D55]">usar</span>
+          </h2>
         </FadeIn>
 
         {/* Subtitle */}
-        <FadeIn delay={0.12}>
-          <p className="text-[11.5px] sm:text-[13px] text-[#A1A1AA]/60 max-w-sm mx-auto text-center leading-relaxed mb-7 sm:mb-9">
-            Veja relatos reais de quem entrou, testou e comecou a usar os prompts nos criativos.
+        <FadeIn delay={0.08}>
+          <p className="text-[11.5px] sm:text-[13px] text-[#A1A1AA]/60 max-w-sm mx-auto text-center leading-relaxed mb-6 sm:mb-8">
+            Veja duvidas e relatos de quem entrou e comecou a aplicar os prompts nos criativos.
           </p>
         </FadeIn>
 
-        {/* Carousel */}
-        <FadeIn delay={0.15}>
-          <div className="relative">
-            {/* Desktop arrows - outside overflow-hidden */}
-            <button
-              onClick={() => { prev(); markInteraction(); }}
-              className="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 z-20 size-9 items-center justify-center rounded-full bg-[#111113]/95 border border-[#2A2A2E]/50 text-white/40 hover:text-white hover:border-[#FF2D55]/40 hover:bg-[#1A1A1E] transition-all"
-              aria-label="Anterior"
-            >
-              <ChevronLeft className="size-4" />
-            </button>
-            <button
-              onClick={() => { next(); markInteraction(); }}
-              className="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 z-20 size-9 items-center justify-center rounded-full bg-[#111113]/95 border border-[#2A2A2E]/50 text-white/40 hover:text-white hover:border-[#FF2D55]/40 hover:bg-[#1A1A1E] transition-all"
-              aria-label="Proximo"
-            >
-              <ChevronRight className="size-4" />
-            </button>
-
-            {/* Scrollable track */}
+        {/* Infinite carousel */
+        <FadeIn delay={0.1}>
+          <div
+            className="overflow-hidden"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchStart}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
             <div
               ref={trackRef}
-              onScroll={updateActive}
-              onTouchStart={markInteraction}
-              onMouseDown={markInteraction}
-              className="flex gap-3 sm:gap-4 overflow-x-auto scroll-smooth snap-x snap-proximity"
-              style={{ scrollbarWidth: "none", msOverflowStyle: "none", touchAction: "pan-y" }}
+              className="flex will-change-transform"
+              style={{ touchAction: "pan-y" }}
             >
-              {images.map((src, i) => (
+              {/* Duplicate images for infinite loop */}
+              {[...images, ...images].map((src, i) => (
                 <div
                   key={i}
-                  className="snap-start flex-shrink-0 w-[90%] sm:w-[47%] lg:w-[31.5%]"
+                  className="flex-shrink-0 w-[92%] sm:w-[47%] lg:w-[31.5%] pr-3 sm:pr-4"
                 >
-                  <div className="bg-[#111113] rounded-2xl border border-[#222225]/80 p-2 sm:p-2.5 shadow-[0_0_25px_rgba(255,45,85,0.05),0_0_10px_rgba(34,211,238,0.03)]">
+                  <div className="bg-[#111113] rounded-2xl border border-[#2A2A2E]/50 p-2.5 sm:p-3 shadow-[0_0_20px_rgba(255,45,85,0.04),0_0_8px_rgba(34,211,238,0.03)]">
                     <img
                       src={src}
-                      alt={`Prova social ${i + 1}`}
-                      loading={i === 0 ? "eager" : "lazy"}
+                      alt={`Prova social WhatsApp ${i % images.length + 1}`}
+                      loading={i < 2 ? "eager" : "lazy"}
                       className="w-full h-auto object-contain rounded-xl"
                       draggable={false}
                     />
@@ -177,23 +131,21 @@ export function WhatsAppProofCarousel() {
               ))}
             </div>
           </div>
+        </FadeIn>
 
-          {/* Pagination dots */}
-          <div className="flex items-center justify-center gap-2 mt-5">
-            {images.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => { scrollToIdx(i); markInteraction(); }}
-                className={`rounded-full transition-all duration-300 ${
-                  i === activeIdx
-                    ? "w-6 h-2 bg-[#FF2D55]"
-                    : "w-2 h-2 bg-white/15 hover:bg-white/30"
-                }`}
-                aria-label={`Slide ${i + 1}`}
-              />
-            ))}
+        {/* CTA */}
+        <FadeIn delay={0.15}>
+          <div className="text-center mt-6 sm:mt-8">
+            <a
+              href="#planos"
+              className="inline-flex items-center justify-center w-[80%] sm:w-auto sm:min-w-[240px] px-8 py-3.5 bg-[#FF2D55] hover:brightness-110 text-white font-extrabold tracking-wide uppercase text-[14px] sm:text-[15px] rounded-full transition-all shadow-lg shadow-[#FF2D55]/25 hover:shadow-xl hover:shadow-[#FF2D55]/35 hover:scale-[1.02] active:scale-[0.98]"
+            >
+              QUERO ACESSAR
+              <ArrowRight className="ml-2 size-3.5" />
+            </a>
           </div>
         </FadeIn>
+
       </div>
     </section>
   );

@@ -5,7 +5,7 @@ import { FadeIn } from "./FadeIn";
 
 export function SocialProofSection() {
   return (
-    <section className="bg-[#0D0D10] py-6 sm:py-8">
+    <section className="bg-[#050505] pb-1 pt-4 sm:pt-5">
       <div className="max-w-md mx-auto px-4 text-center">
         <FadeIn>
           <div className="inline-flex flex-col items-center gap-1.5">
