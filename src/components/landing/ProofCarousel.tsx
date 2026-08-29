@@ -26,7 +26,7 @@ function ProofCard({ proof }: { proof: (typeof proofs)[number] }) {
           src={proof.src}
           alt={proof.label}
           loading="lazy"
-          className="w-full aspect-[4/3] object-cover"
+          className="w-full aspect-[4/3] object-contain bg-black"
         />
       </div>
     </div>
