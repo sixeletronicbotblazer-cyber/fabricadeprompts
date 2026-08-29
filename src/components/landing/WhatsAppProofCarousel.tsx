@@ -71,8 +71,17 @@ export function WhatsAppProofCarousel() {
     <section className="bg-[#0D0D10] pt-4 pb-8 sm:pt-5 sm:pb-10">
       <div className="max-w-5xl mx-auto px-4">
 
-        {/* Title */}
+        {/* Badge */}
         <FadeIn>
+          <div className="flex justify-center mb-2">
+            <span className="text-[9px] sm:text-[10px] font-bold text-[#FF2D55]/90 uppercase tracking-[0.18em] bg-[#FF2D55]/8 border border-[#FF2D55]/20 px-3.5 py-1 rounded-full shadow-[0_0_12px_rgba(255,45,85,0.15)]">
+              Provas reais
+            </span>
+          </div>
+        </FadeIn>
+
+        {/* Title */}
+        <FadeIn delay={0.05}>
           <h2 className="text-[1.15rem] sm:text-2xl lg:text-[1.6rem] font-extrabold text-[#F4F4F5] leading-[1.15] sm:leading-[1.2] text-center max-w-md sm:max-w-lg mx-auto mb-1.5">
             Quem acessou ja comecou a{" "}
             <span className="text-[#FF2D55]">usar</span>
@@ -87,7 +96,7 @@ export function WhatsAppProofCarousel() {
         </FadeIn>
 
         {/* Infinite carousel */}
-        <FadeIn delay={0.08}>
+        <FadeIn delay={0.1}>
           <div
             className="overflow-hidden"
             onTouchStart={handleTouchStart}
