@@ -2,7 +2,7 @@ import { UrgencyBar } from "@/components/landing/UrgencyBar";
 import { Hero } from "@/components/landing/Hero";
 import { MiniDecisionBlock } from "@/components/landing/MiniDecisionBlock";
 import { SocialProofSection } from "@/components/landing/SocialProofSection";
-import { ProofCarousel } from "@/components/landing/ProofCarousel";
+import { WhatsAppProofCarousel } from "@/components/landing/WhatsAppProofCarousel";
 import { DorSection } from "@/components/landing/DorSection";
 import { MechanismSection } from "@/components/landing/MechanismSection";
 import { PremiumBonusSection } from "@/components/landing/PremiumBonusSection";
@@ -25,7 +25,7 @@ export default function Home() {
         <Hero />
         <MiniDecisionBlock />
         <SocialProofSection />
-        <ProofCarousel />
+        <WhatsAppProofCarousel />
         <DorSection />
         <MechanismSection />
         <PremiumBonusSection />
