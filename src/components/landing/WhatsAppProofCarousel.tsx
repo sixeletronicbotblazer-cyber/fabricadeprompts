@@ -12,55 +12,67 @@ const images = [
 ];
 
 export function WhatsAppProofCarousel() {
-  const [current, setCurrent] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
-  const startX = useRef(0);
-  const autoplayRef = useRef<ReturnType<typeof setInterval>>;
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [activeIdx, setActiveIdx] = useState(0);
+  const [userInteracted, setUserInteracted] = useState(false);
+  const interactionTimer = useRef<ReturnType<typeof setTimeout>>;
 
-  const goTo = useCallback((index: number) => {
-    setCurrent((index + images.length) % images.length);
+  // Track which slide is most visible
+  const updateActive = useCallback(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    const scrollLeft = el.scrollLeft;
+    const childWidth = el.firstElementChild?.getBoundingClientRect().width ?? el.clientWidth;
+    const idx = Math.round(scrollLeft / childWidth);
+    setActiveIdx(Math.min(idx, images.length - 1));
   }, []);
 
-  const next = useCallback(() => goTo(current + 1), [current, goTo]);
-  const prev = useCallback(() => goTo(current - 1), [current, goTo]);
+  const scrollToIdx = useCallback((idx: number) => {
+    const el = trackRef.current;
+    if (!el) return;
+    const child = el.children[idx];
+    if (!child) return;
+    child.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" });
+    setActiveIdx(idx);
+  }, []);
 
+  const next = useCallback(() => {
+    const nextIdx = (activeIdx + 1) % images.length;
+    scrollToIdx(nextIdx);
+  }, [activeIdx, scrollToIdx]);
+
+  const prev = useCallback(() => {
+    const prevIdx = (activeIdx - 1 + images.length) % images.length;
+    scrollToIdx(prevIdx);
+  }, [activeIdx, scrollToIdx]);
+
+  const markInteraction = useCallback(() => {
+    setUserInteracted(true);
+    clearTimeout(interactionTimer.current);
+    interactionTimer.current = setTimeout(() => setUserInteracted(false), 12000);
+  }, []);
+
+  // Autoplay
   useEffect(() => {
-    if (isDragging) return;
-    autoplayRef.current = setInterval(next, 4500);
-    return () => clearInterval(autoplayRef.current);
-  }, [isDragging, next]);
-
-  const handleTouchStart = useCallback((e: React.TouchEvent) => {
-    setIsDragging(true);
-    startX.current = e.touches[0].clientX;
-  }, []);
-
-  const handleTouchEnd = useCallback((e: React.TouchEvent) => {
-    if (!isDragging) return;
-    const diff = startX.current - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 40) {
-      diff > 0 ? next() : prev();
-    }
-    setIsDragging(false);
-  }, [isDragging, next, prev]);
-
-  const handleMouseDown = useCallback((e: React.MouseEvent) => {
-    setIsDragging(true);
-    startX.current = e.clientX;
-  }, []);
-
-  const handleMouseUp = useCallback((e: React.MouseEvent) => {
-    if (!isDragging) return;
-    const diff = startX.current - e.clientX;
-    if (Math.abs(diff) > 40) {
-      diff > 0 ? next() : prev();
-    }
-    setIsDragging(false);
-  }, [isDragging, next, prev]);
+    if (userInteracted) return;
+    const id = setInterval(() => {
+      const el = trackRef.current;
+      if (!el) return;
+      const childWidth = el.firstElementChild?.getBoundingClientRect().width ?? el.clientWidth;
+      const scrollLeft = el.scrollLeft;
+      const maxScroll = el.scrollWidth - el.clientWidth;
+      if (scrollLeft + childWidth >= maxScroll - 1) {
+        scrollToIdx(0);
+      } else {
+        next();
+      }
+    }, 4500);
+    return () => clearInterval(id);
+  }, [userInteracted, next, scrollToIdx]);
 
   return (
     <section className="bg-[#0D0D10] py-8 sm:py-10 px-4">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <FadeIn>
           <div className="flex justify-center mb-3">
             <span className="text-[9px] sm:text-[10px] font-bold text-[#22D3EE]/80 uppercase tracking-[0.15em] bg-[#22D3EE]/8 border border-[#22D3EE]/15 px-3 py-1 rounded-full">
@@ -83,57 +95,58 @@ export function WhatsAppProofCarousel() {
 
         <FadeIn delay={0.15}>
           <div className="relative">
+            {/* Desktop arrows */}
             <button
-              onClick={prev}
-              className="hidden md:flex absolute -left-3 top-1/2 -translate-y-1/2 z-20 size-9 items-center justify-center rounded-full bg-[#111113]/90 border border-[#2A2A2E]/60 text-white/50 hover:text-white hover:border-[#FF2D55]/30 transition-all"
+              onClick={() => { prev(); markInteraction(); }}
+              className="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 z-20 size-9 items-center justify-center rounded-full bg-[#111113]/90 border border-[#2A2A2E]/60 text-white/50 hover:text-white hover:border-[#FF2D55]/30 transition-all"
               aria-label="Anterior"
             >
               <ChevronLeft className="size-4" />
             </button>
             <button
-              onClick={next}
-              className="hidden md:flex absolute -right-3 top-1/2 -translate-y-1/2 z-20 size-9 items-center justify-center rounded-full bg-[#111113]/90 border border-[#2A2A2E]/60 text-white/50 hover:text-white hover:border-[#FF2D55]/30 transition-all"
+              onClick={() => { next(); markInteraction(); }}
+              className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 z-20 size-9 items-center justify-center rounded-full bg-[#111113]/90 border border-[#2A2A2E]/60 text-white/50 hover:text-white hover:border-[#FF2D55]/30 transition-all"
               aria-label="Proximo"
             >
               <ChevronRight className="size-4" />
             </button>
 
+            {/* Scrollable track - scroll-snap for native feel */}
             <div
-              className="overflow-hidden rounded-2xl"
-              onTouchStart={handleTouchStart}
-              onTouchEnd={handleTouchEnd}
-              onMouseDown={handleMouseDown}
-              onMouseUp={handleMouseUp}
-              onMouseLeave={() => setIsDragging(false)}
+              ref={trackRef}
+              onScroll={updateActive}
+              onTouchStart={markInteraction}
+              onMouseDown={markInteraction}
+              className="flex gap-3 overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide px-0.5"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             >
-              <div
-                className="flex transition-transform duration-500 ease-out"
-                style={{ transform: `translateX(-${current * 100}%)` }}
-              >
-                {images.map((src, i) => (
-                  <div key={i} className="w-full flex-shrink-0 px-1">
-                    <div className="bg-[#111113] rounded-2xl border border-[#2A2A2E]/60 p-2 sm:p-2.5 shadow-[0_0_30px_rgba(255,45,85,0.06),0_0_15px_rgba(34,211,238,0.04)]">
-                      <img
-                        src={src}
-                        alt={`Prova social ${i + 1}`}
-                        loading={i === 0 ? "eager" : "lazy"}
-                        className="w-full max-h-[55vh] sm:max-h-[60vh] object-contain rounded-xl"
-                        draggable={false}
-                      />
-                    </div>
+              {images.map((src, i) => (
+                <div
+                  key={i}
+                  className="snap-start flex-shrink-0 w-[92%] sm:w-[48%] lg:w-[32%]"
+                >
+                  <div className="bg-[#111113] rounded-2xl border border-[#2A2A2E]/60 p-2 sm:p-2.5 shadow-[0_0_30px_rgba(255,45,85,0.06),0_0_15px_rgba(34,211,238,0.04)]">
+                    <img
+                      src={src}
+                      alt={`Prova social ${i + 1}`}
+                      loading={i === 0 ? "eager" : "lazy"}
+                      className="w-full h-auto object-contain rounded-xl"
+                      draggable={false}
+                    />
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
 
+          {/* Pagination dots */}
           <div className="flex items-center justify-center gap-2 mt-4">
             {images.map((_, i) => (
               <button
                 key={i}
-                onClick={() => goTo(i)}
+                onClick={() => { scrollToIdx(i); markInteraction(); }}
                 className={`rounded-full transition-all duration-300 ${
-                  i === current
+                  i === activeIdx
                     ? "w-6 h-2 bg-[#FF2D55]"
                     : "w-2 h-2 bg-white/20 hover:bg-white/35"
                 }`}
