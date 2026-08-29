@@ -1,7 +1,6 @@
 import { UrgencyBar } from "@/components/landing/UrgencyBar";
 import { Hero } from "@/components/landing/Hero";
 import { MiniDecisionBlock } from "@/components/landing/MiniDecisionBlock";
-import { SocialProofSection } from "@/components/landing/SocialProofSection";
 import { WhatsAppProofCarousel } from "@/components/landing/WhatsAppProofCarousel";
 import { DorSection } from "@/components/landing/DorSection";
 import { MechanismSection } from "@/components/landing/MechanismSection";
@@ -24,7 +23,6 @@ export default function Home() {
       <main className="flex-1 pb-14 md:pb-0">
         <Hero />
         <MiniDecisionBlock />
-        <SocialProofSection />
         <WhatsAppProofCarousel />
         <DorSection />
         <MechanismSection />
