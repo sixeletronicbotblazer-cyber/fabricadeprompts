@@ -3,10 +3,9 @@ import { Hero } from "@/components/landing/Hero";
 import { MiniDecisionBlock } from "@/components/landing/MiniDecisionBlock";
 import { SocialProofSection } from "@/components/landing/SocialProofSection";
 import { WhatsAppProofCarousel } from "@/components/landing/WhatsAppProofCarousel";
-import { DorSection } from "@/components/landing/DorSection";
-import { MechanismSection } from "@/components/landing/MechanismSection";
-import { PremiumBonusSection } from "@/components/landing/PremiumBonusSection";
 import { ResultsProofsSection } from "@/components/landing/ResultsProofsSection";
+import { DorSection } from "@/components/landing/DorSection";
+import { PremiumBonusSection } from "@/components/landing/PremiumBonusSection";
 import { ReferenceExamples } from "@/components/landing/ReferenceExamples";
 import { ComparisonSection } from "@/components/landing/ComparisonSection";
 import { ObjectionCards } from "@/components/landing/ObjectionCards";
@@ -27,9 +26,8 @@ export default function Home() {
         <MiniDecisionBlock />
         <SocialProofSection />
         <WhatsAppProofCarousel />
-        <DorSection />
-        <MechanismSection />
         <ResultsProofsSection />
+        <DorSection />
         <PremiumBonusSection />
         <ReferenceExamples />
         <ComparisonSection />
