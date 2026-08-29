@@ -6,6 +6,7 @@ import { WhatsAppProofCarousel } from "@/components/landing/WhatsAppProofCarouse
 import { DorSection } from "@/components/landing/DorSection";
 import { MechanismSection } from "@/components/landing/MechanismSection";
 import { PremiumBonusSection } from "@/components/landing/PremiumBonusSection";
+import { ResultsProofsSection } from "@/components/landing/ResultsProofsSection";
 import { ReferenceExamples } from "@/components/landing/ReferenceExamples";
 import { ComparisonSection } from "@/components/landing/ComparisonSection";
 import { ObjectionCards } from "@/components/landing/ObjectionCards";
@@ -28,6 +29,7 @@ export default function Home() {
         <WhatsAppProofCarousel />
         <DorSection />
         <MechanismSection />
+        <ResultsProofsSection />
         <PremiumBonusSection />
         <ReferenceExamples />
         <ComparisonSection />
