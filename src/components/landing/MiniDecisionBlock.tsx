@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, ArrowRight } from "lucide-react";
+import { Check } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
 const chips = [
@@ -41,18 +41,9 @@ export function MiniDecisionBlock() {
         </FadeIn>
 
         <FadeIn delay={0.12}>
-          <div className="text-center">
-            <p className="text-xs text-[#A1A1AA]/60 mb-2.5">
-              Acesso a partir de <span className="text-white font-bold">R$17,90</span>
-            </p>
-            <a
-              href="#planos"
-              className="inline-flex items-center justify-center w-full sm:w-auto px-8 sm:px-10 py-3.5 bg-[#FF2D55] hover:brightness-110 text-white font-extrabold tracking-wide uppercase text-[14px] sm:text-[15px] rounded-full transition-all shadow-lg shadow-[#FF2D55]/25 hover:shadow-xl hover:shadow-[#FF2D55]/35 hover:scale-[1.02] active:scale-[0.98]"
-            >
-              QUERO ACESSAR AGORA
-              <ArrowRight className="ml-2 size-3.5" />
-            </a>
-          </div>
+          <p className="text-[11px] text-[#A1A1AA]/50 text-center leading-relaxed">
+            Acesso a partir de <span className="text-white font-bold">R$17,90</span>
+          </p>
         </FadeIn>
       </div>
     </section>

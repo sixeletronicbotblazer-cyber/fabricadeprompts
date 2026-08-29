@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
-import { ChevronLeft, ChevronRight, ArrowRight, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
 const images = [
@@ -156,8 +156,8 @@ export function WhatsAppProofCarousel() {
               onScroll={updateActive}
               onTouchStart={markInteraction}
               onMouseDown={markInteraction}
-              className="flex gap-3 sm:gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory overflow-y-hidden"
-              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+              className="flex gap-3 sm:gap-4 overflow-x-auto scroll-smooth snap-x snap-proximity"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none", touchAction: "pan-y" }}
             >
               {images.map((src, i) => (
                 <div
@@ -194,20 +194,6 @@ export function WhatsAppProofCarousel() {
             ))}
           </div>
         </FadeIn>
-
-        {/* CTA */}
-        <FadeIn delay={0.2}>
-          <div className="text-center mt-8">
-            <a
-              href="#planos"
-              className="inline-flex items-center justify-center w-[85%] sm:w-auto sm:min-w-[280px] px-8 py-3.5 bg-[#FF2D55] hover:brightness-110 text-white font-extrabold tracking-wide uppercase text-[14px] sm:text-[15px] rounded-full transition-all shadow-lg shadow-[#FF2D55]/25 hover:shadow-xl hover:shadow-[#FF2D55]/35 hover:scale-[1.02] active:scale-[0.98]"
-            >
-              QUERO ACESSAR AGORA
-              <ArrowRight className="ml-2 size-3.5" />
-            </a>
-          </div>
-        </FadeIn>
-
       </div>
     </section>
   );
