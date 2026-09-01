@@ -68,13 +68,13 @@ export function WhatsAppProofCarousel() {
   }, []);
 
   return (
-    <section className="bg-[#0D0D10] pt-4 pb-8 sm:pt-5 sm:pb-10">
+    <section className="bg-[#0D0D12] pt-4 pb-8 sm:pt-5 sm:pb-10">
       <div className="max-w-5xl mx-auto px-4">
 
         {/* Badge */}
         <FadeIn>
           <div className="flex justify-center mb-2">
-            <span className="text-[9px] sm:text-[10px] font-bold text-[#FF2D55]/90 uppercase tracking-[0.18em] bg-[#FF2D55]/8 border border-[#FF2D55]/20 px-3.5 py-1 rounded-full shadow-[0_0_12px_rgba(255,45,85,0.15)]">
+            <span className="text-[9px] sm:text-[10px] font-bold text-[#7C3AED]/90 uppercase tracking-[0.18em] bg-[#7C3AED]/8 border border-[#7C3AED]/15 px-3.5 py-1 rounded-full">
               Provas reais
             </span>
           </div>
@@ -82,15 +82,15 @@ export function WhatsAppProofCarousel() {
 
         {/* Title */}
         <FadeIn delay={0.05}>
-          <h2 className="text-[1.15rem] sm:text-2xl lg:text-[1.6rem] font-extrabold text-[#F4F4F5] leading-[1.15] sm:leading-[1.2] text-center max-w-md sm:max-w-lg mx-auto mb-1.5">
+          <h2 className="text-[1.15rem] sm:text-2xl lg:text-[1.6rem] font-extrabold text-[#F4F4F6] leading-[1.15] sm:leading-[1.2] text-center max-w-md sm:max-w-lg mx-auto mb-1.5">
             Quem acessou ja comecou a{" "}
-            <span className="text-[#FF2D55]">usar</span>
+            <span className="text-[#7C3AED]">usar</span>
           </h2>
         </FadeIn>
 
         {/* Subtitle */}
         <FadeIn delay={0.05}>
-          <p className="text-[11px] sm:text-[13px] text-[#A1A1AA]/60 max-w-sm mx-auto text-center leading-relaxed mb-6 sm:mb-8">
+          <p className="text-[11px] sm:text-[13px] text-[#A7A7B2]/60 max-w-sm mx-auto text-center leading-relaxed mb-6 sm:mb-8">
             Veja duvidas e relatos reais de quem entrou para a biblioteca de prompts e comecou a aplicar nos criativos.
           </p>
         </FadeIn>
@@ -114,12 +114,12 @@ export function WhatsAppProofCarousel() {
                   key={i}
                   className="flex-shrink-0 w-[92%] sm:w-[47%] lg:w-[31.5%] pr-3 sm:pr-4"
                 >
-                  <div className="bg-[#111113] rounded-2xl border border-[#2A2A2E]/40 p-2 sm:p-2.5 shadow-[0_0_15px_rgba(255,45,85,0.04)]">
+                  <div className="bg-[#111118] rounded-[18px] border border-white/[0.08] p-2 sm:p-2.5">
                     <img
                       src={src}
                       alt={`Prova social WhatsApp ${i % images.length + 1}`}
                       loading={i < 2 ? "eager" : "lazy"}
-                      className="w-full h-auto object-contain rounded-xl"
+                      className="w-full h-auto object-contain rounded-2xl"
                       draggable={false}
                     />
                   </div>

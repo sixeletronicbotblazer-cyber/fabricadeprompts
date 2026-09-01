@@ -54,9 +54,9 @@ export function WhatYouReceiveSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {items.map((item, i) => (
             <FadeIn key={item.title} delay={i * 0.06}>
-              <div className="bg-[#1A1A1A] border border-white/[0.06] rounded-2xl p-5 h-full">
-                <div className="flex items-center justify-center size-9 rounded-lg bg-[#FE2C55]/10 border border-[#FE2C55]/15 mb-3">
-                  <item.icon className="size-4.5 text-[#FE2C55]" />
+              <div className="bg-[#15151D] border border-white/[0.06] rounded-2xl p-5 h-full">
+                <div className="flex items-center justify-center size-9 rounded-lg bg-[#7C3AED]/10 border border-[#7C3AED]/15 mb-3">
+                  <item.icon className="size-4.5 text-[#7C3AED]" />
                 </div>
                 <h3 className="text-sm font-bold text-white mb-1">{item.title}</h3>
                 <p className="text-xs text-white/40 leading-relaxed">{item.text}</p>

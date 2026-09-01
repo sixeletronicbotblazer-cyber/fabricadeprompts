@@ -57,7 +57,7 @@ function VideoCard({ video, index }: { video: (typeof videos)[number]; index: nu
 
         {/* Badge top-left */}
         <div className="absolute top-2.5 left-2.5 z-20">
-          <span className="inline-flex items-center gap-1 bg-[#FE2C55]/90 backdrop-blur-sm text-[9px] sm:text-[10px] font-bold text-white px-2 py-0.5 rounded-full">
+          <span className="inline-flex items-center gap-1 bg-[#7C3AED]/90 backdrop-blur-sm text-[9px] sm:text-[10px] font-bold text-white px-2 py-0.5 rounded-full">
             <Play className="size-2" fill="currentColor" />
             Prompt aplicado
           </span>

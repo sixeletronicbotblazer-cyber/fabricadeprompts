@@ -19,8 +19,8 @@ const modes = [
     icon: Camera,
     label: "Modo Selfie",
     tag: "Lançamento",
-    tagColor: "#FE2C55",
-    badgeColor: "#FE2C55",
+    tagColor: "#7C3AED",
+    badgeColor: "#7C3AED",
     prompt:
       "Vídeo em estilo selfie, modelo IA olhando diretamente para a câmera como se estivesse mandando foto. Sorriso leve, mão segurando celular, iluminação de ambiente. Movimento natural de ajustar o cabelo e mostrar a roupa. Sem fala, sem dança, estilo UGC casual para TikTok Shop.",
     image: "/images/result-selfie.gif",
@@ -35,7 +35,7 @@ export function ModeExamples() {
         <div className="space-y-8">
           {modes.map((mode, idx) => (
             <FadeIn key={mode.label} delay={idx * 0.1}>
-              <div className="bg-[#1A1A1A] rounded-2xl border border-white/[0.08] overflow-hidden">
+              <div className="bg-[#15151D] rounded-2xl border border-white/[0.08] overflow-hidden">
                 {/* Header */}
                 <div className="px-4 sm:px-5 pt-4 sm:pt-5 pb-3 flex items-center justify-between">
                   <div className="flex items-center gap-2">

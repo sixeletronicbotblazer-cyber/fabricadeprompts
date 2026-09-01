@@ -12,10 +12,10 @@ const chips = [
 
 export function MiniDecisionBlock() {
   return (
-    <section className="bg-[#050505] py-5 sm:py-6 px-4">
+    <section className="bg-[#07070A] py-5 sm:py-6 px-4">
       <div className="max-w-md mx-auto">
         <FadeIn>
-          <p className="text-xs sm:text-sm font-bold text-white/50 uppercase tracking-wider text-center mb-3">
+          <p className="text-xs sm:text-sm font-bold text-white/40 uppercase tracking-wider text-center mb-3">
             Voce recebe acesso a:
           </p>
         </FadeIn>
@@ -25,9 +25,9 @@ export function MiniDecisionBlock() {
             {chips.map((chip, i) => (
               <span
                 key={i}
-                className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-semibold text-[#C4C4CC] bg-[#111113] border border-[#2A2A2E]/60 rounded-full px-3 py-1.5"
+                className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-semibold text-[#C4C4CC] bg-[#111118] border border-white/[0.08] rounded-full px-3 py-1.5"
               >
-                <Check className="size-3 text-[#FF2D55]" />
+                <Check className="size-3 text-[#7C3AED]" />
                 {chip}
               </span>
             ))}
@@ -35,13 +35,13 @@ export function MiniDecisionBlock() {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <p className="text-[11px] text-[#A1A1AA]/50 text-center mb-3 leading-relaxed">
+          <p className="text-[11px] text-[#A7A7B2]/50 text-center mb-3 leading-relaxed">
             Tudo organizado para copiar, adaptar e usar nos seus criativos.
           </p>
         </FadeIn>
 
         <FadeIn delay={0.12}>
-          <p className="text-[11px] text-[#A1A1AA]/50 text-center leading-relaxed">
+          <p className="text-[11px] text-[#A7A7B2]/50 text-center leading-relaxed">
             Acesso a partir de <span className="text-white font-bold">R$17,90</span>
           </p>
         </FadeIn>

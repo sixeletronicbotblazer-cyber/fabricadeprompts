@@ -18,13 +18,13 @@ export function ResultsShowcase() {
         <FadeIn>
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-1.5 mb-2">
-              <User className="size-3.5 text-[#FE2C55]" />
-              <span className="text-[10px] font-bold text-[#FE2C55] uppercase tracking-wider">
+              <User className="size-3.5 text-[#7C3AED]" />
+              <span className="text-[10px] font-bold text-[#7C3AED] uppercase tracking-wider">
                 Modo Modelo
               </span>
             </div>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white leading-tight mb-2">
-              Prompts de <span className="text-[#FE2C55]">movimento realista</span>
+              Prompts de <span className="text-[#7C3AED]">movimento realista</span>
             </h2>
             <p className="text-sm text-white/50 max-w-md mx-auto">
               Vídeo gerado copiando e colando o prompt do guia. Sem editar, sem filtro.
@@ -35,7 +35,7 @@ export function ResultsShowcase() {
         <div className="space-y-5">
           {results.map((item, idx) => (
             <FadeIn key={item.image} delay={idx * 0.1}>
-              <div className="bg-[#1A1A1A] rounded-2xl border border-white/[0.08] overflow-hidden">
+              <div className="bg-[#15151D] rounded-2xl border border-white/[0.08] overflow-hidden">
                 <div className="relative overflow-hidden bg-black/50 w-full aspect-[9/16] max-w-[320px] mx-auto sm:max-w-[280px]">
                   <img
                     src={item.image}
@@ -44,7 +44,7 @@ export function ResultsShowcase() {
                     loading="lazy"
                   />
                   <div className="absolute top-3 left-3">
-                    <span className="inline-flex items-center gap-1.5 bg-[#FE2C55]/90 backdrop-blur-sm text-[10px] sm:text-xs font-semibold text-white px-2.5 py-1 rounded-full">
+                    <span className="inline-flex items-center gap-1.5 bg-[#7C3AED]/90 backdrop-blur-sm text-[10px] sm:text-xs font-semibold text-white px-2.5 py-1 rounded-full">
                       <Play className="size-2.5" />
                       Modo Modelo
                     </span>

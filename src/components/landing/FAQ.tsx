@@ -10,32 +10,32 @@ import {
 
 const faqs = [
   {
-    q: "Preciso aparecer nos vídeos?",
-    a: "Não. Você pode criar cenas com modelo IA, POV, selfie, produto na mão e outros formatos sem gravar seu próprio rosto.",
+    q: "Preciso aparecer nos videos?",
+    a: "Nao. Voce pode criar cenas com modelo IA, POV, selfie, produto na mao e outros formatos sem gravar seu proprio rosto.",
   },
   {
     q: "Funciona para TikTok Shop e Shopee?",
-    a: "Sim. Os prompts foram pensados para criativos de produtos físicos, principalmente para TikTok Shop, Shopee e vídeos de oferta.",
+    a: "Sim. Os prompts foram pensados para criativos de produtos fisicos, principalmente para TikTok Shop, Shopee e videos de oferta.",
   },
   {
     q: "Preciso saber criar prompt?",
-    a: "Não. A ideia é justamente copiar um prompt pronto e adaptar pequenos detalhes para o seu produto.",
+    a: "Nao. A ideia e justamente copiar um prompt pronto e adaptar pequenos detalhes para o seu produto.",
   },
   {
-    q: "Qual a diferença entre mensal e vitalício?",
-    a: "No mensal, você acessa a plataforma pagando mês a mês. No vitalício, você paga uma vez e mantém o acesso à plataforma, módulos extras, atualizações e bônus premium.",
+    q: "Qual a diferenca entre mensal e vitalicio?",
+    a: "No mensal, voce acessa a plataforma pagando mes a mes. No vitalicio, voce paga uma vez e mantem o acesso a plataforma, modulos extras, atualizacoes e bonus premium.",
   },
   {
-    q: "O Plano Vitalício tem Galeria Premium?",
-    a: "Sim. A Galeria Premium de Prompts está disponível como bônus especial dentro do acesso vitalício.",
+    q: "O Plano Vitalicio tem Galeria Premium?",
+    a: "Sim. A Galeria Premium de Prompts esta disponivel como bonus especial dentro do acesso vitalicio.",
   },
   {
     q: "Recebo acesso na hora?",
-    a: "Sim. Após a confirmação do pagamento, você recebe as instruções de acesso aos conteúdos disponíveis.",
+    a: "Sim. Apos a confirmacao do pagamento, voce recebe as instrucoes de acesso aos conteudos disponiveis.",
   },
   {
-    q: "É pagamento único?",
-    a: "O Plano Vitalício é pagamento único. O Plano Mensal é recorrente mensal.",
+    q: "E pagamento unico?",
+    a: "O Plano Vitalicio e pagamento unico. O Plano Mensal e recorrente mensal.",
   },
   {
     q: "Posso cancelar o mensal?",
@@ -43,21 +43,21 @@ const faqs = [
   },
   {
     q: "Funciona com qual ferramenta de IA?",
-    a: "Você pode adaptar os prompts para ferramentas de imagem e vídeo com IA, como Flow, Veo, Kling, Sora e outras plataformas compatíveis.",
+    a: "Voce pode adaptar os prompts para ferramentas de imagem e video com IA, como Flow, Veo, Kling, Sora e outras plataformas compativeis.",
   },
   {
     q: "Tem garantia?",
-    a: "Sim. Você tem 7 dias de garantia para testar se o conteúdo faz sentido para você.",
+    a: "Sim. Voce tem 7 dias de garantia para testar se o conteudo faz sentido para voce.",
   },
 ];
 
 export function FAQ() {
   return (
-    <section className="bg-[#08080A] py-8 sm:py-10 md:py-12 px-4">
+    <section className="bg-[#09090D] py-8 sm:py-10 md:py-12 px-4">
       <div className="max-w-2xl mx-auto">
         <FadeIn>
-          <h2 className="text-[1.3rem] sm:text-2xl md:text-[2rem] font-black text-[#F4F4F5] leading-[1.1] sm:leading-[1.0] mb-5 sm:mb-6 text-center">
-            Dúvidas frequentes
+          <h2 className="text-[1.3rem] sm:text-2xl md:text-[2rem] font-black text-[#F4F4F6] leading-[1.1] sm:leading-[1.0] mb-5 sm:mb-6 text-center">
+            Duvidas frequentes
           </h2>
         </FadeIn>
 
@@ -67,12 +67,12 @@ export function FAQ() {
               <AccordionItem
                 key={i}
                 value={`faq-${i}`}
-                className="bg-[#111113] rounded-xl mb-2.5 px-5 border border-[#2A2A2E]/60 hover:border-[#2A2A2E] transition-colors overflow-hidden"
+                className="bg-[#111118] rounded-[16px] mb-2.5 px-5 border border-white/[0.08] hover:border-white/[0.12] transition-colors overflow-hidden"
               >
-                <AccordionTrigger className="text-sm font-semibold text-[#C4C4CC] hover:no-underline py-4 data-[state=open]:text-[#FF2D55] transition-colors">
+                <AccordionTrigger className="text-sm font-semibold text-[#C4C4CC] hover:no-underline py-4 data-[state=open]:text-[#7C3AED] transition-colors">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-sm text-[#A1A1AA]/80 leading-relaxed">
+                <AccordionContent className="text-sm text-[#A7A7B2]/80 leading-relaxed">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>

@@ -34,24 +34,24 @@ export function InsideAppVSL() {
   }, []);
 
   return (
-    <section className="relative bg-[#050505] py-10 sm:py-14 md:py-16 px-4 overflow-hidden">
+    <section className="relative bg-[#07070A] py-10 sm:py-14 md:py-16 px-4 overflow-hidden">
       {/* Subtle radial glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#FF2D55]/[0.04] rounded-full blur-[120px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#7C3AED]/[0.04] rounded-full blur-[120px]" />
         <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-[#22D3EE]/[0.03] rounded-full blur-[100px]" />
       </div>
 
       <div className="max-w-5xl mx-auto relative z-10 flex flex-col items-center">
         {/* Headline */}
         <FadeIn>
-          <h2 className="text-[1.4rem] sm:text-2xl md:text-[1.85rem] font-black leading-[1.1] text-[#F4F4F5] mb-3 text-center">
+          <h2 className="text-[1.4rem] sm:text-2xl md:text-[1.85rem] font-black leading-[1.1] text-[#F4F4F6] mb-3 text-center">
             Veja por dentro antes de{" "}
-            <span className="text-[#FF2D55]">acessar</span>
+            <span className="text-[#7C3AED]">acessar</span>
           </h2>
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <p className="text-sm text-[#A1A1AA]/70 leading-relaxed max-w-md mb-8 text-center">
+          <p className="text-sm text-[#A7A7B2]/70 leading-relaxed max-w-md mb-8 text-center">
             Em menos de 1 minuto, veja os módulos, a biblioteca de prompts e
             como funciona o caminho para copiar, adaptar e gerar seus
             criativos.
@@ -61,9 +61,9 @@ export function InsideAppVSL() {
         {/* Video card */}
         <FadeIn delay={0.15}>
           <div className="relative w-full max-w-[320px] sm:max-w-[340px]">
-            <div className="relative rounded-3xl overflow-hidden bg-[#0a0a0c] p-[2px] shadow-[0_0_40px_rgba(255,45,85,0.08),0_0_60px_rgba(34,211,238,0.05)]">
+            <div className="relative rounded-3xl overflow-hidden bg-[#0a0a0c] p-[2px] shadow-[0_0_40px_rgba(124,58,237,0.08),0_0_60px_rgba(34,211,238,0.05)]">
               {/* Gradient border */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#FF2D55]/30 via-[#FF2D55]/10 to-[#22D3EE]/20 pointer-events-none z-10" />
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#7C3AED]/30 via-[#7C3AED]/10 to-[#22D3EE]/20 pointer-events-none z-10" />
 
               <div className="relative bg-[#0a0a0c] rounded-[22px] overflow-hidden z-0">
                 {!started ? (
@@ -81,7 +81,7 @@ export function InsideAppVSL() {
                     />
                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors" />
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="size-16 sm:size-[4.5rem] rounded-full bg-[#FF2D55]/90 group-hover:bg-[#FF2D55] group-hover:scale-110 transition-all flex items-center justify-center shadow-lg shadow-[#FF2D55]/30">
+                      <div className="size-16 sm:size-[4.5rem] rounded-full bg-[#7C3AED]/90 group-hover:bg-[#7C3AED] group-hover:scale-110 transition-all flex items-center justify-center shadow-lg shadow-[#7C3AED]/30">
                         <Play
                           className="size-7 text-white ml-1"
                           fill="white"

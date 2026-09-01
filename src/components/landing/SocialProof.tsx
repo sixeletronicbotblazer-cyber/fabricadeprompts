@@ -18,7 +18,7 @@ const proofs = [
   { name: "Fernanda O.", delay: 215000, duration: 4000 },
   { name: "Matheus P.", delay: 245000, duration: 3500 },
   { name: "Isabela G.", delay: 278000, duration: 4000 },
-  { name: "André V.", delay: 312000, duration: 3500 },
+  { name: "Andre V.", delay: 312000, duration: 3500 },
   { name: "Larissa T.", delay: 348000, duration: 4000 },
   { name: "Bruno E.", delay: 385000, duration: 3500 },
   { name: "Carolina B.", delay: 420000, duration: 4000 },
@@ -66,15 +66,15 @@ export function SocialProof() {
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="pointer-events-auto"
           >
-            <div className="bg-[#151518]/95 backdrop-blur-md border border-[#2A2A2E]/60 rounded-2xl px-4 py-3 flex items-center gap-3 shadow-xl shadow-black/40">
-              <div className="flex-shrink-0 size-9 rounded-full bg-[#FF2D55]/10 border border-[#FF2D55]/15 flex items-center justify-center">
-                <ShoppingCart className="size-4 text-[#FF2D55]" />
+            <div className="bg-[#15151D]/95 backdrop-blur-md border border-white/[0.08] rounded-[18px] px-4 py-3 flex items-center gap-3 shadow-xl shadow-black/40">
+              <div className="flex-shrink-0 size-9 rounded-full bg-[#7C3AED]/10 border border-[#7C3AED]/12 flex items-center justify-center">
+                <ShoppingCart className="size-4 text-[#7C3AED]" />
               </div>
               <div className="min-w-0">
-                <p className="text-[13px] font-semibold text-[#F4F4F5] truncate">
+                <p className="text-[13px] font-semibold text-[#F4F4F6] truncate">
                   {current}
                 </p>
-                <p className="text-[11px] text-[#A1A1AA]/70">
+                <p className="text-[11px] text-[#A7A7B2]/70">
                   comprou agora
                 </p>
               </div>

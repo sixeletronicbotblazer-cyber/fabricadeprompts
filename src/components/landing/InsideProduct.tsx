@@ -29,24 +29,24 @@ export function InsideProduct() {
       <div className="max-w-3xl mx-auto">
         <FadeIn>
           <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#111] leading-tight mb-6 text-center">
-            O que você recebe no <span className="text-[#FE2C55]">InfoApp</span>
+            O que você recebe no <span className="text-[#7C3AED]">InfoApp</span>
           </h2>
         </FadeIn>
 
         {/* NEW modules highlight */}
         <FadeIn delay={0.05}>
-          <div className="mb-4 rounded-xl bg-gradient-to-r from-[#FE2C55]/10 to-[#25F4EE]/10 border border-[#FE2C55]/20 p-3 sm:p-4">
+          <div className="mb-4 rounded-xl bg-gradient-to-r from-[#7C3AED]/10 to-[#25F4EE]/10 border border-[#7C3AED]/20 p-3 sm:p-4">
             <div className="flex items-center gap-2 mb-3">
-              <Sparkles className="size-3.5 text-[#FE2C55]" />
-              <span className="text-[10px] font-bold uppercase tracking-wider text-[#FE2C55]">
+              <Sparkles className="size-3.5 text-[#7C3AED]" />
+              <span className="text-[10px] font-bold uppercase tracking-wider text-[#7C3AED]">
                 Novos módulos
               </span>
             </div>
             <div className="space-y-2">
               {newModules.map((m) => (
                 <div key={m} className="flex items-center gap-3">
-                  <div className="flex-shrink-0 size-5 rounded-full bg-[#FE2C55]/15 flex items-center justify-center">
-                    <Check className="size-3 text-[#FE2C55]" />
+                  <div className="flex-shrink-0 size-5 rounded-full bg-[#7C3AED]/15 flex items-center justify-center">
+                    <Check className="size-3 text-[#7C3AED]" />
                   </div>
                   <span className="text-sm font-semibold text-[#111]">{m}</span>
                 </div>
@@ -59,8 +59,8 @@ export function InsideProduct() {
           {items.map((item, i) => (
             <FadeIn key={item} delay={i * 0.04}>
               <div className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 shadow-sm">
-                <div className="flex-shrink-0 size-5 rounded-full bg-[#FE2C55]/10 flex items-center justify-center">
-                  <Check className="size-3 text-[#FE2C55]" />
+                <div className="flex-shrink-0 size-5 rounded-full bg-[#7C3AED]/10 flex items-center justify-center">
+                  <Check className="size-3 text-[#7C3AED]" />
                 </div>
                 <span className="text-sm font-medium text-[#111]">{item}</span>
               </div>

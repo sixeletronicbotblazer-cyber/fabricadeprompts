@@ -9,7 +9,7 @@ const modes = [
     label: "Modo Modelo",
     title: "Vídeo com modelo IA mostrando a roupa",
     desc: "A persona mais usada no TikTok Shop. Modelo de frente, movimento natural, caimento realista. É o padrão que mais converte.",
-    color: "#FE2C55",
+    color: "#7C3AED",
   },
   {
     icon: Eye,
@@ -23,7 +23,7 @@ const modes = [
     label: "Modo Selfie",
     title: "Vídeo estilo selfie — olhar para a câmera",
     desc: "Modelo IA olhando direto pra câmera, como alguém mandando foto pro amigo. Gera conexão instantânea. Perfeito para reel e feed.",
-    color: "#FE2C55",
+    color: "#7C3AED",
   },
 ];
 
@@ -34,8 +34,8 @@ export function ModesSection() {
         <FadeIn>
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-1.5 mb-3">
-              <Zap className="size-3.5 text-[#FE2C55]" />
-              <span className="text-[10px] font-bold text-[#FE2C55] uppercase tracking-wider">
+              <Zap className="size-3.5 text-[#7C3AED]" />
+              <span className="text-[10px] font-bold text-[#7C3AED] uppercase tracking-wider">
                 Os 3 modos que mais vendem
               </span>
             </div>
@@ -51,7 +51,7 @@ export function ModesSection() {
         <div className="space-y-3">
           {modes.map((mode, i) => (
             <FadeIn key={mode.label} delay={i * 0.08}>
-              <div className="bg-[#1A1A1A] rounded-2xl border border-white/[0.08] p-4 sm:p-5 flex gap-4">
+              <div className="bg-[#15151D] rounded-2xl border border-white/[0.08] p-4 sm:p-5 flex gap-4">
                 <div
                   className="flex-shrink-0 size-10 rounded-xl flex items-center justify-center"
                   style={{ backgroundColor: `${mode.color}15` }}

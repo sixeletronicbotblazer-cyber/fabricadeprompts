@@ -37,7 +37,7 @@ export function EntryPopup() {
           />
 
           <motion.div
-            className="relative bg-[#111113] rounded-t-2xl sm:rounded-2xl border border-[#FF2D55]/20 shadow-[0_0_60px_rgba(255,45,85,0.10)] w-full sm:max-w-sm z-10"
+            className="relative bg-[#111118] rounded-t-2xl sm:rounded-2xl border border-[#7C3AED]/20 shadow-[0_0_60px_rgba(124,58,237,0.10)] w-full sm:max-w-sm z-10"
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 60 }}
@@ -45,7 +45,7 @@ export function EntryPopup() {
         >
             <button
               onClick={() => { setOpen(false); setClosed(true); }}
-              className="absolute top-3 right-3 size-7 flex items-center justify-center rounded-full text-[#A1A1AA]/40 hover:text-[#F4F4F5] hover:bg-white/10 transition-colors"
+              className="absolute top-3 right-3 size-7 flex items-center justify-center rounded-full text-[#A7A7B2]/40 hover:text-[#F4F4F6] hover:bg-white/10 transition-colors"
               aria-label="Fechar"
             >
               <X className="size-4" />
@@ -54,17 +54,17 @@ export function EntryPopup() {
             <div className="p-5 sm:p-6">
               <div className="flex items-center gap-2 mb-3">
                 <Sparkles className="size-4 text-[#22D3EE]" />
-                <span className="text-[10px] font-bold text-[#A1A1AA]/60 uppercase tracking-wider">
+                <span className="text-[10px] font-bold text-[#A7A7B2]/60 uppercase tracking-wider">
                   Condição especial
                 </span>
               </div>
 
-              <h3 className="text-lg font-black text-[#F4F4F5] mb-1.5 leading-tight">
+              <h3 className="text-lg font-black text-[#F4F4F6] mb-1.5 leading-tight">
                 Acesso vitalício com todos os módulos por{" "}
                 <span className="text-[#FF2D55]">R$ 22,90</span>
               </h3>
 
-              <p className="text-[13px] text-[#A1A1AA]/70 leading-relaxed mb-4">
+              <p className="text-[13px] text-[#A7A7B2]/70 leading-relaxed mb-4">
                 Libere todos os modos, exemplos, módulos, bônus premium e acesso ao grupo VIP por esse preço exclusivo.
               </p>
 
@@ -73,10 +73,10 @@ export function EntryPopup() {
                   <Crown className="size-2.5" />
                   Vitalício
                 </span>
-                <span className="text-[9px] font-bold text-[#A1A1AA]/50 bg-white/5 px-2 py-0.5 rounded-full border border-[#2A2A2E]/60">
+                <span className="text-[9px] font-bold text-[#A7A7B2]/50 bg-white/5 px-2 py-0.5 rounded-full border border-[#2A2A2E]/60">
                   Pagamento único
                 </span>
-                <span className="text-[9px] font-bold text-[#A1A1AA]/50 bg-white/5 px-2 py-0.5 rounded-full border border-[#2A2A2E]/60">
+                <span className="text-[9px] font-bold text-[#A7A7B2]/50 bg-white/5 px-2 py-0.5 rounded-full border border-[#2A2A2E]/60">
                   Sem mensalidade
                 </span>
               </div>
@@ -90,7 +90,7 @@ export function EntryPopup() {
 
               <button
                 onClick={() => { setOpen(false); setClosed(true); }}
-                className="block w-full text-center text-[#A1A1AA]/30 hover:text-[#A1A1AA]/50 text-xs mt-3 py-1 transition-colors"
+                className="block w-full text-center text-[#A7A7B2]/30 hover:text-[#A7A7B2]/50 text-xs mt-3 py-1 transition-colors"
               >
                 não obrigado
               </button>
