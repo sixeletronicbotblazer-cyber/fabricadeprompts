@@ -46,7 +46,7 @@ export function MobileStickyCTA() {
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden pb-[env(safe-area-inset-bottom)]">
       <a
         href="#planos"
-        className="flex items-center justify-center w-full bg-gradient-to-r from-[#7C3AED] to-[#EC4899] backdrop-blur-md py-3.5 px-6 shadow-[0_-4px_20px_rgba(124,58,237,0.25)] transition-all active:scale-[0.99]"
+        className="flex items-center justify-center w-full bg-[#FF2D55] backdrop-blur-md py-3.5 px-6 shadow-[0_-4px_20px_rgba(255,45,85,0.25)] transition-all active:scale-[0.99]"
       >
         <span className="text-white/80 font-bold text-[13px] mr-2.5">R$17,90</span>
         <span className="w-px h-3.5 bg-white/25" />

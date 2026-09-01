@@ -53,10 +53,10 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section className="bg-[#09090D] py-8 sm:py-10 md:py-12 px-4">
+    <section className="bg-[#08080A] py-8 sm:py-10 md:py-12 px-4">
       <div className="max-w-2xl mx-auto">
         <FadeIn>
-          <h2 className="text-[1.3rem] sm:text-2xl md:text-[2rem] font-black text-[#F4F4F6] leading-[1.1] sm:leading-[1.0] mb-5 sm:mb-6 text-center">
+          <h2 className="text-[1.3rem] sm:text-2xl md:text-[2rem] font-black text-[#F4F4F5] leading-[1.1] sm:leading-[1.0] mb-5 sm:mb-6 text-center">
             Duvidas frequentes
           </h2>
         </FadeIn>
@@ -67,12 +67,12 @@ export function FAQ() {
               <AccordionItem
                 key={i}
                 value={`faq-${i}`}
-                className="bg-[#111118] rounded-[16px] mb-2.5 px-5 border border-white/[0.08] hover:border-white/[0.12] transition-colors overflow-hidden"
+                className="bg-[#111113] rounded-xl mb-2.5 px-5 border border-[#2A2A2E]/60 hover:border-white/[0.12] transition-colors overflow-hidden"
               >
-                <AccordionTrigger className="text-sm font-semibold text-[#C4C4CC] hover:no-underline py-4 data-[state=open]:text-[#7C3AED] transition-colors">
+                <AccordionTrigger className="text-sm font-semibold text-[#C4C4CC] hover:no-underline py-4 data-[state=open]:text-[#FF2D55] transition-colors">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-sm text-[#A7A7B2]/80 leading-relaxed">
+                <AccordionContent className="text-sm text-[#A1A1AA]/80 leading-relaxed">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>

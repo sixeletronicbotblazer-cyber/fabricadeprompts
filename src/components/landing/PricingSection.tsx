@@ -93,11 +93,11 @@ export function PricingSection() {
 
   return (
     <>
-      <section id="planos" className="bg-[#07070A] py-8 md:py-12 px-4">
+      <section id="planos" className="bg-[#050505] py-8 md:py-12 px-4">
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white leading-tight mb-1 text-center">
-              Escolha o seu <span className="text-[#7C3AED]">plano</span>
+              Escolha o seu <span className="text-[#FF2D55]">plano</span>
             </h2>
             <p className="text-xs sm:text-sm text-white/40 text-center mb-6 max-w-sm mx-auto">
               Ambos os planos entregam o mesmo conteudo.
@@ -108,9 +108,9 @@ export function PricingSection() {
 
             {/* VITALICIO - highlighted card */}
             <FadeIn>
-              <div className="relative bg-[#111118] rounded-[22px] border border-[#7C3AED]/30 p-5 sm:p-6 flex flex-col order-1 md:order-2 shadow-[0_0_40px_rgba(124,58,237,0.1)]">
+              <div className="relative bg-[#111113] rounded-2xl border border-[#FF2D55]/30 p-5 sm:p-6 flex flex-col order-1 md:order-2 shadow-[0_0_40px_rgba(255,45,85,0.1)]">
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 flex items-center gap-2">
-                  <span className="inline-block bg-gradient-to-r from-[#7C3AED] to-[#EC4899] text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-full shadow-md shadow-[#7C3AED]/30 whitespace-nowrap">
+                  <span className="inline-block bg-[#FF2D55] text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-full shadow-md shadow-[#FF2D55]/30 whitespace-nowrap">
                     MAIS POPULAR
                   </span>
                   <span className="hidden sm:inline-block bg-[#25F4EE]/10 text-[#25F4EE] text-[10px] sm:text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-[#25F4EE]/20 whitespace-nowrap">
@@ -126,15 +126,15 @@ export function PricingSection() {
                       -25%
                     </span>
                   </div>
-                  <div className="bg-[#7C3AED]/6 rounded-2xl py-4 px-4 -mx-1 border border-[#7C3AED]/10">
-                    <p className="text-[10px] sm:text-[11px] text-[#A7A7B2]/50 uppercase tracking-wider font-semibold mb-1">Acesso imediato</p>
+                  <div className="bg-[#FF2D55]/6 rounded-2xl py-4 px-4 -mx-1 border border-[#FF2D55]/10">
+                    <p className="text-[10px] sm:text-[11px] text-[#A1A1AA]/50 uppercase tracking-wider font-semibold mb-1">Acesso imediato</p>
                     <div className="flex items-baseline justify-center">
                       <span className="text-[3.8rem] sm:text-[4rem] md:text-[4.5rem] font-extrabold text-white leading-none tracking-tight">
                         R$29
                       </span>
                       <span className="text-2xl sm:text-3xl font-bold text-white">,90</span>
                     </div>
-                    <p className="text-[11px] text-[#A7A7B2]/40 mt-1.5 font-semibold uppercase tracking-wider">
+                    <p className="text-[11px] text-[#A1A1AA]/40 mt-1.5 font-semibold uppercase tracking-wider">
                       Pagamento unico
                     </p>
                   </div>
@@ -143,14 +143,14 @@ export function PricingSection() {
                 <a
                   href={checkoutUrlCompleto}
                   onClick={() => { (window as any).trackCheckout?.('Vitalicio', 29.90); }}
-                  className="block w-full text-center bg-gradient-to-r from-[#7C3AED] to-[#EC4899] hover:brightness-110 text-white font-bold py-4 px-6 rounded-2xl transition-all text-sm sm:text-base shadow-lg shadow-[#7C3AED]/25 hover:shadow-[#7C3AED]/35 hover:scale-[1.02] active:scale-[0.98] mb-3 cta-glow"
+                  className="block w-full text-center bg-[#FF2D55] hover:brightness-110 text-white font-bold py-4 px-6 rounded-2xl transition-all text-sm sm:text-base shadow-lg shadow-[#FF2D55]/25 hover:shadow-[#FF2D55]/35 hover:scale-[1.02] active:scale-[0.98] mb-3"
                 >
                   QUERO MEU ACESSO VITALICIO
                 </a>
 
-                <div className="mb-4 rounded-xl bg-black/50 border border-white/[0.06] px-3.5 py-2.5 flex items-center justify-between">
+                <div className="mb-4 rounded-xl bg-black/50 border border-[#2A2A2E]/50 px-3.5 py-2.5 flex items-center justify-between">
                   <div className="flex items-center gap-1.5">
-                    <Zap className="size-3 text-[#7C3AED]" />
+                    <Zap className="size-3 text-[#FF2D55]" />
                     <span className="text-[10px] font-bold text-white/35 uppercase tracking-wider">Acaba em</span>
                   </div>
                   <CountdownTimer />
@@ -160,14 +160,14 @@ export function PricingSection() {
                   {baseFeatures.map((f, i) => (
                     <li key={i}>
                       <div className="flex items-center gap-2">
-                        <Check className={`size-3.5 shrink-0 ${f.bonus ? "text-[#25F4EE]" : "text-[#7C3AED]"}`} />
+                        <Check className={`size-3.5 shrink-0 ${f.bonus ? "text-[#25F4EE]" : "text-[#FF2D55]"}`} />
                         <span className={`text-[13px] leading-tight ${f.bonus ? "text-[#25F4EE]/90 font-semibold" : "text-white/80"}`}>{f.text}</span>
                       </div>
                     </li>
                   ))}
                 </ul>
 
-                <div className="border-t border-white/[0.06] pt-2.5 mb-3">
+                <div className="border-t border-[#2A2A2E]/50 pt-2.5 mb-3">
                   <p className="text-[9px] font-bold text-[#25F4EE]/50 uppercase tracking-wider mb-2">
                     So no Vitalicio
                   </p>
@@ -194,7 +194,7 @@ export function PricingSection() {
 
             {/* MENSAL card */}
             <FadeIn delay={0.1}>
-              <div className="bg-[#111118] rounded-[22px] border border-white/[0.08] p-5 sm:p-6 flex flex-col order-2 md:order-1">
+              <div className="bg-[#111113] rounded-2xl border border-[#2A2A2E]/60 p-5 sm:p-6 flex flex-col order-2 md:order-1">
                 <h3 className="text-base sm:text-lg font-bold text-white mb-0.5">
                   Plano Mensal
                 </h3>
@@ -261,7 +261,7 @@ export function PricingSection() {
             />
 
             <motion.div
-              className="relative bg-[#15151D] rounded-[22px] border border-white/[0.08] shadow-2xl w-full max-w-md p-6 sm:p-8 z-10"
+              className="relative bg-[#151518] rounded-2xl border border-[#2A2A2E]/60 shadow-2xl w-full max-w-md p-6 sm:p-8 z-10"
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -281,7 +281,7 @@ export function PricingSection() {
 
               <h3 className="text-lg sm:text-xl font-extrabold text-white mb-1.5 leading-tight">
                 Libere o Vitalicio por apenas{" "}
-                <span className="text-[#EC4899]">R$7 a mais</span>
+                <span className="text-[#FF2D55]">R$7 a mais</span>
               </h3>
 
               <p className="text-sm text-white/55 leading-relaxed mb-4">
@@ -291,14 +291,14 @@ export function PricingSection() {
               <div className="flex items-baseline gap-2 mb-4">
                 <span className="text-sm text-white/30 line-through">De R$39,90</span>
                 <span className="text-sm text-white/60">por</span>
-                <span className="text-2xl sm:text-3xl font-extrabold text-[#EC4899]">R$24,90</span>
+                <span className="text-2xl sm:text-3xl font-extrabold text-[#FF2D55]">R$24,90</span>
                 <span className="ml-1.5 text-[10px] font-bold text-[#25F4EE]/80 bg-[#25F4EE]/10 px-2 py-0.5 rounded-full border border-[#25F4EE]/20">
                   VITALICIO
                 </span>
               </div>
 
               <div className="flex flex-wrap items-center gap-2 mb-4">
-                <span className="inline-block bg-[#EC4899]/10 text-[#EC4899] text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border border-[#EC4899]/20">
+                <span className="inline-block bg-[#FF2D55]/10 text-[#FF2D55] text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border border-[#FF2D55]/20">
                   Oferta especial
                 </span>
                 <span className="inline-block text-[10px] font-bold text-[#25F4EE]/80 bg-[#25F4EE]/10 px-2.5 py-0.5 rounded-full border border-[#25F4EE]/20">
@@ -306,7 +306,7 @@ export function PricingSection() {
                 </span>
               </div>
 
-              <div className="rounded-2xl bg-gradient-to-r from-[#7C3AED]/8 to-[#EC4899]/8 border border-[#7C3AED]/15 p-4 mb-5">
+              <div className="rounded-2xl bg-[#FF2D55]/8 border border-[#FF2D55]/15 p-4 mb-5">
                 <div className="space-y-2">
                   {downsellFeatures.map((f) => (
                     <div key={f} className="flex items-start gap-2">
@@ -321,14 +321,14 @@ export function PricingSection() {
                 <a
                   href={checkoutUrlDownsell}
                   onClick={() => { (window as any).trackCheckout?.('Vitalicio Downsell', 24.90); }}
-                  className="block w-full text-center bg-gradient-to-r from-[#7C3AED] to-[#EC4899] hover:brightness-110 text-white font-bold py-4 px-6 rounded-2xl transition-all text-sm sm:text-base shadow-lg shadow-[#7C3AED]/25"
+                  className="block w-full text-center bg-[#FF2D55] hover:brightness-110 text-white font-bold py-4 px-6 rounded-2xl transition-all text-sm sm:text-base shadow-lg shadow-[#FF2D55]/25"
                 >
                   SIM, QUERO O VITALICIO
                 </a>
                 <a
                   href={checkoutUrlInicial}
                   onClick={() => { (window as any).trackCheckout?.('Mensal', 17.90); }}
-                  className="block w-full text-center border border-white/[0.08] text-white/50 hover:bg-white/5 font-medium py-3 px-6 rounded-2xl transition-colors text-sm"
+                  className="block w-full text-center border border-[#2A2A2E]/60 text-white/50 hover:bg-white/5 font-medium py-3 px-6 rounded-2xl transition-colors text-sm"
                 >
                   Nao, continuar com o Mensal
                 </a>

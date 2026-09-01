@@ -4,22 +4,22 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-background: #07070A;
-  --color-foreground: #F4F4F6;
-  --color-card: #111118;
-  --color-card-foreground: #F4F4F6;
-  --color-primary: #7C3AED;
+  --color-background: #050505;
+  --color-foreground: #F4F4F5;
+  --color-card: #111113;
+  --color-card-foreground: #F4F4F5;
+  --color-primary: #FF2D55;
   --color-primary-foreground: #ffffff;
-  --color-secondary: #15151D;
+  --color-secondary: #151518;
   --color-secondary-foreground: #ffffff;
-  --color-muted: #15151D;
-  --color-muted-foreground: #A7A7B2;
-  --color-accent: #7C3AED;
+  --color-muted: #151518;
+  --color-muted-foreground: #A1A1AA;
+  --color-accent: #FF2D55;
   --color-accent-foreground: #ffffff;
   --color-destructive: #ef4444;
-  --color-border: rgba(255,255,255,0.08);
-  --color-input: rgba(255,255,255,0.08);
-  --color-ring: #7C3AED;
+  --color-border: #2A2A2E;
+  --color-input: #2A2A2E;
+  --color-ring: #FF2D55;
   --font-sans: var(--font-inter);
   --radius-sm: 0.375rem;
   --radius-md: 0.5rem;
@@ -42,7 +42,7 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #07070A;
+  background: #050505;
 }
 ::-webkit-scrollbar-thumb {
   background: #333;
@@ -54,9 +54,9 @@
 
 /* === Clean Dark Landing System === */
 
-/* CTA button gradient (purple → pink) */
+/* CTA button gradient (red → orange) */
 .bg-cta-gradient {
-  background: linear-gradient(135deg, #7C3AED, #EC4899);
+  background: linear-gradient(135deg, #FF2D55, #FF4D1A);
 }
 
 /* CTA glow - very subtle breathing */
@@ -71,7 +71,7 @@
 
 /* Accent text gradient for key highlights */
 .text-gradient-accent {
-  background: linear-gradient(135deg, #7C3AED, #A855F7);
+  background: linear-gradient(135deg, #FF2D55, #FF4D1A);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -79,15 +79,10 @@
 
 /* TikTok brand gradient (cyan → pink) - use sparingly */
 .tiktok-text-gradient {
-  background: linear-gradient(135deg, #25F4EE, #EC4899);
+  background: linear-gradient(135deg, #25F4EE, #FE2C55);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-/* Shopee orange accent - use sparingly */
-.shopee-text {
-  color: #F97316;
 }
 
 /* Carousel animations */

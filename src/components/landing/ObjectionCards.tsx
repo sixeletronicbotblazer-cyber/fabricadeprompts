@@ -23,7 +23,7 @@ const items = [
 
 export function ObjectionCards() {
     return (
-        <section className="bg-[#09090D] py-6 sm:py-8 px-4">
+        <section className="bg-[#08080A] py-6 sm:py-8 px-4">
             <div className="max-w-md mx-auto">
                 <FadeIn>
                     <p className="text-xs font-bold text-white/30 uppercase tracking-wider text-center mb-4">
@@ -36,14 +36,14 @@ export function ObjectionCards() {
                         const Icon = item.icon;
                         return (
                             <FadeIn key={item.title} delay={i * 0.06}>
-                                <div className="bg-[#111118] border border-white/[0.08] rounded-[18px] p-3.5 sm:p-4">
+                                <div className="bg-[#111113] border border-[#2A2A2E]/60 rounded-2xl p-3.5 sm:p-4">
                                     <div className="flex items-center gap-2 mb-1.5">
-                                        <Icon className="size-3.5 text-[#7C3AED] shrink-0" />
-                                        <h3 className="text-[12px] sm:text-[13px] font-bold text-[#F4F4F6] leading-tight">
+                                        <Icon className="size-3.5 text-[#FF2D55] shrink-0" />
+                                        <h3 className="text-[12px] sm:text-[13px] font-bold text-[#F4F4F5] leading-tight">
                                             {item.title}
                                         </h3>
                                     </div>
-                                    <p className="text-[11px] sm:text-xs text-[#A7A7B2]/65 leading-relaxed">
+                                    <p className="text-[11px] sm:text-xs text-[#A1A1AA]/65 leading-relaxed">
                                         {item.text}
                                     </p>
                                 </div>

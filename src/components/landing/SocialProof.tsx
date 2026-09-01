@@ -66,15 +66,15 @@ export function SocialProof() {
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="pointer-events-auto"
           >
-            <div className="bg-[#15151D]/95 backdrop-blur-md border border-white/[0.08] rounded-[18px] px-4 py-3 flex items-center gap-3 shadow-xl shadow-black/40">
-              <div className="flex-shrink-0 size-9 rounded-full bg-[#7C3AED]/10 border border-[#7C3AED]/12 flex items-center justify-center">
-                <ShoppingCart className="size-4 text-[#7C3AED]" />
+            <div className="bg-[#151518]/95 backdrop-blur-md border border-[#2A2A2E]/60 rounded-2xl px-4 py-3 flex items-center gap-3 shadow-xl shadow-black/40">
+              <div className="flex-shrink-0 size-9 rounded-full bg-[#FF2D55]/10 border border-[#FF2D55]/12 flex items-center justify-center">
+                <ShoppingCart className="size-4 text-[#FF2D55]" />
               </div>
               <div className="min-w-0">
-                <p className="text-[13px] font-semibold text-[#F4F4F6] truncate">
+                <p className="text-[13px] font-semibold text-[#F4F4F5] truncate">
                   {current}
                 </p>
-                <p className="text-[11px] text-[#A7A7B2]/70">
+                <p className="text-[11px] text-[#A1A1AA]/70">
                   comprou agora
                 </p>
               </div>
