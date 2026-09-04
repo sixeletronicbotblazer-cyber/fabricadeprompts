@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Check, X, Shield, Zap } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
-const checkoutUrlInicial = "https://pay.cakto.com.br/7dnhb97";
-const checkoutUrlCompleto = "https://pay.cakto.com.br/oci2odo";
-const checkoutUrlDownsell = "https://pay.cakto.com.br/guw9f5r";
+const checkoutUrlInicial = "https://checkout.perfectpay.com.br/pay/PPU38CQFSJH";
+const checkoutUrlCompleto = "https://checkout.perfectpay.com.br/pay/PPU38CQFSJE";
+const checkoutUrlDownsell = "https://checkout.perfectpay.com.br/pay/PPU38CQFSJG";
 
 interface FeatureItem {
   text: string;
@@ -281,7 +281,7 @@ export function PricingSection() {
 
               <h3 className="text-lg sm:text-xl font-extrabold text-white mb-1.5 leading-tight">
                 Libere o Vitalicio por apenas{" "}
-                <span className="text-[#FF2D55]">R$7 a mais</span>
+                <span className="text-[#FF2D55]">R$5 a mais</span>
               </h3>
 
               <p className="text-sm text-white/55 leading-relaxed mb-4">
@@ -291,7 +291,7 @@ export function PricingSection() {
               <div className="flex items-baseline gap-2 mb-4">
                 <span className="text-sm text-white/30 line-through">De R$39,90</span>
                 <span className="text-sm text-white/60">por</span>
-                <span className="text-2xl sm:text-3xl font-extrabold text-[#FF2D55]">R$24,90</span>
+                <span className="text-2xl sm:text-3xl font-extrabold text-[#FF2D55]">R$22,90</span>
                 <span className="ml-1.5 text-[10px] font-bold text-[#25F4EE]/80 bg-[#25F4EE]/10 px-2 py-0.5 rounded-full border border-[#25F4EE]/20">
                   VITALICIO
                 </span>
@@ -320,7 +320,7 @@ export function PricingSection() {
               <div className="flex flex-col gap-3">
                 <a
                   href={checkoutUrlDownsell}
-                  onClick={() => { (window as any).trackCheckout?.('Vitalicio Downsell', 24.90); }}
+                  onClick={() => { (window as any).trackCheckout?.('Vitalicio Downsell', 22.90); }}
                   className="block w-full text-center bg-[#FF2D55] hover:brightness-110 text-white font-bold py-4 px-6 rounded-2xl transition-all text-sm sm:text-base shadow-lg shadow-[#FF2D55]/25"
                 >
                   SIM, QUERO O VITALICIO
@@ -335,7 +335,7 @@ export function PricingSection() {
               </div>
 
               <p className="mt-3 text-center text-[10px] text-white/25">
-                A diferenca e de apenas R$7 para o plano vitalicio.
+                A diferenca e de apenas R$5 para o plano vitalicio.
               </p>
             </motion.div>
           </motion.div>
