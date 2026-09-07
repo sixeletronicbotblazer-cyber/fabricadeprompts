@@ -382,3 +382,32 @@ Stage Summary:
 - Pricing card has "ACESSO IMEDIATO" and "PAGAMENTO UNICO" labels with larger price text
 - All conversion tracking, checkout URLs, and copy preserved exactly
 - Lint clean, browser verified on mobile (375px) and desktop (1440px)
+---
+Task ID: 1
+Agent: Main Agent
+Task: Optimize landing page for mobile clarity and plan selection
+
+Work Log:
+- Explored full project structure: 41 landing components, understood page composition order
+- Updated Hero.tsx: replaced subheadline with new messaging, added video caption, clarified "/mês" price
+- Rebuilt MiniDecisionBlock.tsx: two distinct cards for Motion Prompts and Biblioteca Promptly Prompts with visual prominence on the latter
+- Rebuilt PremiumBonusSection.tsx: replaced 4 benefit cards with 3-step flow (Veja a prévia → Prepare a imagem inicial → Adapte e anime), added clarification line about external tools, replaced "Disponível como bônus especial no acesso vitalício" with "Confira o acesso incluído em cada plano abaixo"
+- Reordered page.tsx: moved PremiumBonusSection and ReferenceExamples right after MiniDecisionBlock, before social proof sections
+- Updated ReferenceExamples.tsx: made prompts expandable on mobile with "Ver exemplo de prompt" button, full display on desktop
+- Compacted DorSection.tsx: shortened card text and main paragraph to reduce repetition
+- Updated PricingSection.tsx: changed title to "Escolha como quer acessar", removed contradictory "Ambos os planos entregam o mesmo conteudo", replaced with "Confira o acesso incluído em cada plano abaixo", harmonized feature text to "Biblioteca Promptly Prompts (Galeria Premium)", added external AI tools note, clarified mensal description and /mês notation, fixed accents
+- Rebuilt FAQ.tsx: reordered with plan/library/AI tool questions first, added new questions "A biblioteca cria o vídeo automaticamente?" and "Posso usar no Flow ou Seedance?", updated answers per spec
+- Updated MobileStickyCTA.tsx: added "/mês" to price display
+- Updated UrgencyBar.tsx: added "/mês" to desktop price
+- Updated FinalCTA.tsx: simplified secondary CTA text
+- All lint checks pass cleanly
+- Agent Browser verification passed: all 17 content checks, mobile 360px and desktop 1280px, FAQ accordion and prompt expansion work, no layout issues
+
+Stage Summary:
+- All requested optimizations implemented and verified
+- Checkout URLs preserved: PerfectPay PPU38CQFSJH (mensal), PPU38CQFSJE (vitalício), PPU38CQFSJG (downsell)
+- Analytics preserved: Meta Pixel, TikTok Pixel, UTMify, Clarity, trackCheckout helper
+- No new analytics or events added
+- Commercial uncertainty: The section "Confira o acesso incluído em cada plano abaixo" was used because the Mensal plan lists Biblioteca Promptly Prompts as a feature while the gallery section previously said "Disponível como bônus especial no acesso vitalício" — the exclusivity needs commercial confirmation
+- "Galeria Premium" is now consistently referenced as "Biblioteca Promptly Prompts (Galeria Premium)" in pricing features, with the section badge saying "BIBLIOTECA PROMPTLY PROMPTS"
+- Version: 2025-03-04 optimization pass

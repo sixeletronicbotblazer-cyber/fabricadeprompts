@@ -10,32 +10,40 @@ import {
 
 const faqs = [
   {
-    q: "Preciso aparecer nos videos?",
-    a: "Nao. Voce pode criar cenas com modelo IA, POV, selfie, produto na mao e outros formatos sem gravar seu proprio rosto.",
+    q: "Preciso saber criar prompts?",
+    a: "Você parte de uma base pronta e adapta os detalhes ao seu produto. As referências e orientações ajudam a entender o que fazer em cada etapa.",
+  },
+  {
+    q: "A biblioteca cria o vídeo automaticamente?",
+    a: "Não. Ela reúne referências e prompts para orientar a criação. Você prepara a imagem inicial e usa o prompt de animação na ferramenta de IA escolhida.",
+  },
+  {
+    q: "Posso usar no Flow ou Seedance?",
+    a: "Você adapta os prompts à ferramenta e ao formato de geração que utilizar. As opções e os resultados podem variar conforme o modelo de IA.",
+  },
+  {
+    q: "Qual a diferença entre mensal e vitalício?",
+    a: "No mensal, você acessa pagando mês a mês e pode cancelar quando quiser. No vitalício, você paga uma vez e mantém o acesso à plataforma, módulos extras, atualizações e bônus premium.",
+  },
+  {
+    q: "O Plano Vitalício tem acesso à Biblioteca Promptly Prompts?",
+    a: "Sim. A Biblioteca Promptly Prompts (Galeria Premium) está disponível como bônus especial dentro do acesso vitalício.",
+  },
+  {
+    q: "Preciso aparecer nos vídeos?",
+    a: "Não. Você pode criar cenas com modelo IA, POV, selfie, produto na mão e outros formatos sem gravar seu próprio rosto.",
   },
   {
     q: "Funciona para TikTok Shop e Shopee?",
-    a: "Sim. Os prompts foram pensados para criativos de produtos fisicos, principalmente para TikTok Shop, Shopee e videos de oferta.",
-  },
-  {
-    q: "Preciso saber criar prompt?",
-    a: "Nao. A ideia e justamente copiar um prompt pronto e adaptar pequenos detalhes para o seu produto.",
-  },
-  {
-    q: "Qual a diferenca entre mensal e vitalicio?",
-    a: "No mensal, voce acessa a plataforma pagando mes a mes. No vitalicio, voce paga uma vez e mantem o acesso a plataforma, modulos extras, atualizacoes e bonus premium.",
-  },
-  {
-    q: "O Plano Vitalicio tem Galeria Premium?",
-    a: "Sim. A Galeria Premium de Prompts esta disponivel como bonus especial dentro do acesso vitalicio.",
+    a: "Sim. Os prompts foram pensados para criativos de produtos físicos, principalmente para TikTok Shop, Shopee e vídeos de oferta.",
   },
   {
     q: "Recebo acesso na hora?",
-    a: "Sim. Apos a confirmacao do pagamento, voce recebe as instrucoes de acesso aos conteudos disponiveis.",
+    a: "Sim. Após a confirmação do pagamento, você recebe as instruções de acesso aos conteúdos disponíveis.",
   },
   {
-    q: "E pagamento unico?",
-    a: "O Plano Vitalicio e pagamento unico. O Plano Mensal e recorrente mensal.",
+    q: "É pagamento único?",
+    a: "O Plano Vitalício é pagamento único. O Plano Mensal é recorrente mensal.",
   },
   {
     q: "Posso cancelar o mensal?",
@@ -43,11 +51,11 @@ const faqs = [
   },
   {
     q: "Funciona com qual ferramenta de IA?",
-    a: "Voce pode adaptar os prompts para ferramentas de imagem e video com IA, como Flow, Veo, Kling, Sora e outras plataformas compativeis.",
+    a: "Você pode adaptar os prompts para ferramentas de imagem e vídeo com IA, como Flow, Veo, Kling, Sora e outras plataformas. Os resultados podem variar conforme o modelo.",
   },
   {
     q: "Tem garantia?",
-    a: "Sim. Voce tem 7 dias de garantia para testar se o conteudo faz sentido para voce.",
+    a: "Sim. Você tem 7 dias de garantia para testar se o conteúdo faz sentido para você.",
   },
 ];
 
@@ -57,7 +65,7 @@ export function FAQ() {
       <div className="max-w-2xl mx-auto">
         <FadeIn>
           <h2 className="text-[1.3rem] sm:text-2xl md:text-[2rem] font-black text-[#F4F4F5] leading-[1.1] sm:leading-[1.0] mb-5 sm:mb-6 text-center">
-            Duvidas frequentes
+            Dúvidas frequentes
           </h2>
         </FadeIn>
 

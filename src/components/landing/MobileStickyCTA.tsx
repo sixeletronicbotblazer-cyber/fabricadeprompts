@@ -48,7 +48,7 @@ export function MobileStickyCTA() {
         href="#planos"
         className="flex items-center justify-center w-full bg-[#FF2D55] backdrop-blur-md py-3.5 px-6 shadow-[0_-4px_20px_rgba(255,45,85,0.25)] transition-all active:scale-[0.99]"
       >
-        <span className="text-white/80 font-bold text-[13px] mr-2.5">R$17,90</span>
+        <span className="text-white/80 font-bold text-[13px] mr-2.5">R$17,90<span className="text-[10px] text-white/50 font-medium">/mês</span></span>
         <span className="w-px h-3.5 bg-white/25" />
         <span className="text-white font-extrabold text-[13px] ml-2.5 tracking-wide uppercase">
           Quero acessar

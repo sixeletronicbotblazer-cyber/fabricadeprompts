@@ -37,12 +37,7 @@ export function Hero() {
 
         <FadeIn delay={0.2}>
           <p className="text-[13px] sm:text-[15px] text-[#C4C4CC] leading-[1.5] mx-auto max-w-md mt-3 sm:mt-4">
-            Escolha o modo ({" "}
-            <span className="inline-flex items-center px-1.5 py-0.5 bg-[#FF2D55]/8 border border-[#FF2D55]/15 rounded text-[#FF2D55] text-[12px] sm:text-[13px] font-semibold mx-0.5">Modelo</span>{", "}
-            <span className="inline-flex items-center px-1.5 py-0.5 bg-[#FF2D55]/8 border border-[#FF2D55]/15 rounded text-[#FF2D55] text-[12px] sm:text-[13px] font-semibold mx-0.5">POV</span>{" ou "}
-            <span className="inline-flex items-center px-1.5 py-0.5 bg-[#FF2D55]/8 border border-[#FF2D55]/15 rounded text-[#FF2D55] text-[12px] sm:text-[13px] font-semibold mx-0.5">Selfie</span>),
-            copie o prompt e gere videos com{" "}
-            <span className="text-white font-semibold">movimento natural</span>.
+            Crie vídeos para TikTok Shop e Shopee com uma base pronta: veja a prévia, prepare a imagem do seu produto e adapte o prompt para animar.
           </p>
         </FadeIn>
 
@@ -50,10 +45,16 @@ export function Hero() {
           <HeroVideo />
         </FadeIn>
 
+        <FadeIn delay={0.28}>
+          <p className="text-[10px] sm:text-[11px] text-[#A1A1AA]/40 text-center mt-2.5 italic">
+            Motion Prompts em uso: criação de personagem e preparação da cena.
+          </p>
+        </FadeIn>
+
         <FadeIn delay={0.35}>
           <div className="mt-8 sm:mt-10 flex flex-col items-center gap-1">
             <p className="text-base sm:text-lg text-[#C4C4CC] font-extrabold text-center mb-4">
-              A partir de <span className="text-white">R$ 17,90</span><span className="text-[#A1A1AA] font-semibold text-sm">/mes</span>
+              A partir de <span className="text-white">R$ 17,90</span><span className="text-[#A1A1AA] font-semibold text-sm">/mês</span>
             </p>
             <a
               href="#planos"

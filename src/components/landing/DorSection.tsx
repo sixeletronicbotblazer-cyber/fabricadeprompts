@@ -6,21 +6,21 @@ import { FadeIn } from './FadeIn';
 const cards = [
   {
     icon: AlertTriangle,
-    title: 'Prompt generico',
-    titleHighlight: 'generico',
-    text: 'A IA nao entende camera, cenario, movimento e intencao do video.',
+    title: 'Prompt genérico',
+    titleHighlight: 'genérico',
+    text: 'A IA não entende câmera, cenário e intenção do vídeo.',
   },
   {
     icon: Shuffle,
     title: 'Produto mudando',
     titleHighlight: 'mudando',
-    text: 'Cor, textura, formato e detalhes podem sumir quando o comando nao protege a referencia.',
+    text: 'Cor, textura e detalhes podem sumir sem o comando certo.',
   },
   {
     icon: Bot,
-    title: 'Video com cara de IA',
+    title: 'Vídeo com cara de IA',
     titleHighlight: 'cara de IA',
-    text: 'Movimento travado, pele artificial, cenario falso e resultado pouco natural.',
+    text: 'Movimento travado, pele artificial e resultado pouco natural.',
   },
 ];
 
@@ -39,21 +39,19 @@ export function DorSection() {
       <div className="max-w-2xl mx-auto">
         <FadeIn>
           <div className="flex justify-center mb-3">
-            <span className="text-[9px] sm:text-[10px] font-bold text-[#FF2D55]/80 uppercase tracking-[0.15em] bg-[#FF2D55]/8 border border-[#FF2D55]/12 px-3 py-1 rounded-full">ESSE E O PROBLEMA</span>
+            <span className="text-[9px] sm:text-[10px] font-bold text-[#FF2D55]/80 uppercase tracking-[0.15em] bg-[#FF2D55]/8 border border-[#FF2D55]/12 px-3 py-1 rounded-full">O PROBLEMA</span>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.05}>
-          <h2 className="text-[1.3rem] sm:text-2xl md:text-[2rem] font-black text-white leading-[1.1] sm:leading-[1.0] mb-2 text-center">
-            Hoje nao falta <span className="text-[#A1A1AA]">ferramenta</span>. Falta <span className="text-[#FF2D55]">comando certo</span>.
+          <h2 className="text-[1.2rem] sm:text-2xl md:text-[2rem] font-black text-white leading-[1.1] sm:leading-[1.0] mb-2 text-center">
+            Não falta <span className="text-[#A1A1AA]">ferramenta</span>. Falta <span className="text-[#FF2D55]">comando certo</span>.
           </h2>
         </FadeIn>
 
         <FadeIn delay={0.05}>
-          <p className="text-[13px] sm:text-sm text-[#A1A1AA]/80 max-w-lg mx-auto mb-5 sm:mb-6 text-center">
-            Voce pode usar Veo, Flow, Kling, Sora ou qualquer IA. Mas se o prompt
-            for fraco, o video sai estranho, generico ou muda completamente o
-            produto.
+          <p className="text-[12px] sm:text-sm text-[#A1A1AA]/70 max-w-md mx-auto mb-5 sm:mb-6 text-center">
+            Se o prompt for fraco, o vídeo sai estranho ou muda completamente o produto — em qualquer IA.
           </p>
         </FadeIn>
 

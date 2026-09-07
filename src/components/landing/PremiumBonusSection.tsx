@@ -1,28 +1,23 @@
 "use client";
 
-import { Eye, Filter, Play, ClipboardCopy } from "lucide-react";
+import { Eye, ImageIcon, Play, ArrowRight } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
-const benefitCards = [
+const steps = [
   {
     icon: Eye,
-    title: "Visual primeiro",
-    text: "Veja a referencia antes de copiar o comando.",
+    title: "Veja a prévia",
+    text: "Escolha uma referência do estilo que você quer criar.",
   },
   {
-    icon: Filter,
-    title: "Categorias prontas",
-    text: "Filtre por Video, UGC, POV, Selfie, Produto, Roupas e muito mais.",
+    icon: ImageIcon,
+    title: "Prepare a imagem inicial",
+    text: "Use a base para criar a cena: produto na mão, modelo vestindo ou outro formato disponível.",
   },
   {
     icon: Play,
-    title: "Preview do criativo",
-    text: "Abra o card e entenda o tipo de cena antes de usar.",
-  },
-  {
-    icon: ClipboardCopy,
-    title: "Copiar prompt",
-    text: "Copie o comando em poucos segundos e adapte para seu produto.",
+    title: "Adapte e anime",
+    text: "Ajuste o prompt para seu produto e use na ferramenta de IA.",
   },
 ];
 
@@ -32,63 +27,68 @@ export function PremiumBonusSection() {
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Badge */}
         <FadeIn>
-          <div className="flex justify-center mb-4">
+          <div className="flex justify-center mb-3">
             <span className="inline-flex items-center gap-1.5 bg-white/[0.04] text-[#C4C4CC] text-[10px] sm:text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full border border-[#2A2A2E]/60">
-              VEJA POR DENTRO
+              BIBLIOTECA PROMPTLY PROMPTS
             </span>
           </div>
         </FadeIn>
 
+        {/* Title */}
+        <FadeIn delay={0.05}>
+          <h2 className="text-[1.2rem] sm:text-xl md:text-[1.75rem] font-black leading-[1.1] text-[#F4F4F5] mb-2 text-center max-w-lg mx-auto">
+            Veja a referência. Prepare a imagem.{" "}
+            <span className="text-[#FF2D55]">Anime com uma base pronta.</span>
+          </h2>
+        </FadeIn>
+
+        <FadeIn delay={0.08}>
+          <p className="text-[12px] sm:text-sm text-[#A1A1AA]/70 leading-relaxed mb-5 max-w-md mx-auto text-center">
+            Escolha o estilo de vídeo na biblioteca, prepare a imagem inicial com o seu produto e adapte o prompt de animação para usar na ferramenta de IA.
+          </p>
+        </FadeIn>
+
         {/* Content grid: text left, video right */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
-          {/* Text side */}
+          {/* Text side - 3 steps */}
           <div className="order-1 md:order-1">
-            <FadeIn delay={0.05}>
-              <h2 className="text-[1.3rem] sm:text-2xl md:text-[1.75rem] font-black leading-[1.1] text-[#F4F4F5] mb-3">
-                Escolha uma referencia. Abra o prompt.{' '}
-                <span className="text-[#FF2D55]">Copie em segundos.</span>
-              </h2>
-            </FadeIn>
-
-            <FadeIn delay={0.1}>
-              <p className="text-sm text-[#A1A1AA]/70 leading-relaxed mb-5 max-w-md">
-                Dentro da Galeria Premium, voce navega por ideias visuais, filtra por categoria, abre a previa do criativo e copia o prompt pronto para adaptar no seu produto.
-              </p>
-            </FadeIn>
-
-            {/* 4 benefit cards */}
-            <div className="grid grid-cols-2 gap-2.5 mb-5">
-              {benefitCards.map((card, i) => {
-                const Icon = card.icon;
+            <div className="space-y-3 mb-4">
+              {steps.map((step, i) => {
+                const Icon = step.icon;
                 return (
-                  <FadeIn key={card.title} delay={0.15 + i * 0.05}>
-                    <div className="bg-[#111113] rounded-xl border border-[#2A2A2E]/60 p-3 sm:p-3.5">
-                      <div className="flex items-center gap-2 mb-1.5">
-                        <div className="size-7 rounded-lg bg-[#FF2D55]/10 border border-[#FF2D55]/12 flex items-center justify-center shrink-0">
-                          <Icon className="size-3.5 text-[#FF2D55]" />
+                  <FadeIn key={step.title} delay={0.1 + i * 0.06}>
+                    <div className="flex gap-3 items-start">
+                      <div className="flex flex-col items-center shrink-0">
+                        <div className="size-8 rounded-lg bg-[#FF2D55]/10 border border-[#FF2D55]/12 flex items-center justify-center">
+                          <Icon className="size-4 text-[#FF2D55]" />
                         </div>
-                        <h4 className="text-xs sm:text-[13px] font-bold text-[#F4F4F5] leading-tight">
-                          {card.title}
-                        </h4>
+                        {i < steps.length - 1 && (
+                          <div className="w-px h-3 bg-[#2A2A2E]/60 mt-1" />
+                        )}
                       </div>
-                      <p className="text-[11px] text-[#A1A1AA]/60 leading-relaxed">
-                        {card.text}
-                      </p>
+                      <div className="pt-0.5">
+                        <h4 className="text-[13px] sm:text-sm font-bold text-[#F4F4F5] leading-tight mb-0.5">
+                          {step.title}
+                        </h4>
+                        <p className="text-[11px] sm:text-xs text-[#A1A1AA]/70 leading-relaxed">
+                          {step.text}
+                        </p>
+                      </div>
                     </div>
                   </FadeIn>
                 );
               })}
             </div>
 
-            {/* Microcopy */}
-            <FadeIn delay={0.35}>
-              <p className="text-xs text-[#A1A1AA]/50 mb-4">
-                Disponivel como bonus especial no acesso vitalicio.
+            {/* Clarification line */}
+            <FadeIn delay={0.3}>
+              <p className="text-[10px] sm:text-[11px] text-[#A1A1AA]/45 leading-relaxed mb-4">
+                A biblioteca fornece as referências e os prompts. A geração das imagens e dos vídeos acontece nas ferramentas de IA que você utilizar.
               </p>
             </FadeIn>
 
             {/* CTA */}
-            <FadeIn delay={0.4}>
+            <FadeIn delay={0.35}>
               <a
                 href="#planos"
                 className="inline-flex items-center justify-center bg-[#FF2D55] hover:brightness-110 text-white font-extrabold py-3.5 px-8 rounded-2xl transition-all text-sm sm:text-base shadow-lg shadow-[#FF2D55]/25 hover:scale-[1.02] active:scale-[0.98] uppercase tracking-wide"
@@ -136,11 +136,18 @@ export function PremiumBonusSection() {
             {/* Sub-video phrase */}
             <FadeIn delay={0.25}>
               <p className="mt-3 text-center md:text-left text-[11px] sm:text-xs text-[#A1A1AA]/40 leading-relaxed">
-                E como ter um acervo visual de criativos pronto para consultar sempre que faltar ideia.
+                É como ter um acervo visual de criativos pronto para consultar sempre que faltar ideia.
               </p>
             </FadeIn>
           </div>
         </div>
+
+        {/* Confira os planos note */}
+        <FadeIn delay={0.4}>
+          <p className="text-[10px] sm:text-[11px] text-[#A1A1AA]/40 text-center mt-6">
+            Confira o acesso incluído em cada plano abaixo.
+          </p>
+        </FadeIn>
       </div>
     </section>
   );

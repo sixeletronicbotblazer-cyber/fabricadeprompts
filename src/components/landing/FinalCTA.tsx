@@ -15,7 +15,7 @@ export function FinalCTA() {
 
         <FadeIn delay={0.1}>
           <p className="text-[13px] sm:text-sm text-[#A1A1AA]/70 leading-relaxed mb-5 sm:mb-6 max-w-md mx-auto">
-            Escolha seu acesso e comece a usar prompts prontos para criar mais variacoes de criativos com IA.
+            Veja a referência, prepare a imagem e anime com uma base pronta de prompts.
           </p>
         </FadeIn>
 
@@ -31,7 +31,7 @@ export function FinalCTA() {
               href="#planos"
               className="block w-full text-center border border-[#2A2A2E]/60 text-[#A1A1AA]/70 hover:bg-white/5 hover:text-[#C4C4CC] rounded-2xl transition-colors text-sm py-3 px-6"
             >
-              Ver plano mensal
+              Ver planos
             </a>
           </div>
         </FadeIn>

@@ -17,26 +17,26 @@ interface FeatureItem {
 const baseFeatures: FeatureItem[] = [
   { text: "+250 prompts organizados prontos para copiar" },
   { text: "Modo Modelo, POV e Selfie UGC" },
-  { text: "Novos modulos incluidos no acesso" },
-  { text: "Bonus: Galeria Premium de Prompts", bonus: true },
-  { text: "Aulas rapidas e exemplos prontos" },
+  { text: "Novos módulos incluídos no acesso" },
+  { text: "Biblioteca Promptly Prompts (Galeria Premium)", bonus: true },
+  { text: "Aulas rápidas e exemplos prontos" },
   { text: "Como ativar TIKTOK SHOP em 3 dias!" },
 ];
 
 const vitalicioExtras: string[] = [
-  "Grupo VIP com atualizacoes e troca de ideias",
-  "Todas as atualizacoes futuras incluidas",
+  "Grupo VIP com atualizações e troca de ideias",
+  "Todas as atualizações futuras incluídas",
 ];
 
 const downsellFeatures = [
   "+250 prompts organizados",
   "Modo Modelo, POV e Selfie UGC",
-  "Novos modulos incluidos no acesso",
-  "Bonus: Galeria Premium de Prompts",
-  "Aulas rapidas e exemplos prontos",
+  "Novos módulos incluídos no acesso",
+  "Biblioteca Promptly Prompts (Galeria Premium)",
+  "Aulas rápidas e exemplos prontos",
   "Como ativar TIKTOK SHOP em 3 dias!",
-  "Grupo VIP com atualizacoes e troca de ideias",
-  "Todas as atualizacoes futuras incluidas",
+  "Grupo VIP com atualizações e troca de ideias",
+  "Todas as atualizações futuras incluídas",
 ];
 
 function CountdownTimer() {
@@ -97,10 +97,10 @@ export function PricingSection() {
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white leading-tight mb-1 text-center">
-              Escolha o seu <span className="text-[#FF2D55]">plano</span>
+              Escolha como quer <span className="text-[#FF2D55]">acessar</span>
             </h2>
             <p className="text-xs sm:text-sm text-white/40 text-center mb-6 max-w-sm mx-auto">
-              Ambos os planos entregam o mesmo conteudo.
+              Confira o acesso incluído em cada plano abaixo.
             </p>
           </FadeIn>
 
@@ -135,7 +135,7 @@ export function PricingSection() {
                       <span className="text-2xl sm:text-3xl font-bold text-white">,90</span>
                     </div>
                     <p className="text-[11px] text-[#A1A1AA]/40 mt-1.5 font-semibold uppercase tracking-wider">
-                      Pagamento unico
+                      Pagamento único
                     </p>
                   </div>
                 </div>
@@ -169,7 +169,7 @@ export function PricingSection() {
 
                 <div className="border-t border-[#2A2A2E]/50 pt-2.5 mb-3">
                   <p className="text-[9px] font-bold text-[#25F4EE]/50 uppercase tracking-wider mb-2">
-                    So no Vitalicio
+                    Só no Vitalício
                   </p>
                   <ul className="space-y-1.5">
                     {vitalicioExtras.map((text, i) => (
@@ -199,7 +199,7 @@ export function PricingSection() {
                   Plano Mensal
                 </h3>
                 <p className="text-xs text-white/45 mb-4">
-                  Comece hoje e cancele quando quiser.
+                  Assinatura mensal. Cancele quando quiser.
                 </p>
 
                 <div className="mb-4">
@@ -208,7 +208,7 @@ export function PricingSection() {
                   </span>
                   <span className="text-lg sm:text-2xl font-bold text-white">,90</span>
                   <span className="text-xs text-white/35 ml-1.5 font-medium">
-                    /mes
+                    /mês
                   </span>
                 </div>
 
@@ -240,6 +240,13 @@ export function PricingSection() {
             </FadeIn>
 
           </div>
+
+          {/* External AI tools note */}
+          <FadeIn delay={0.15}>
+            <p className="text-[11px] sm:text-xs text-[#A1A1AA]/50 text-center mt-5 max-w-md mx-auto leading-relaxed">
+              Você recebe acesso aos conteúdos e prompts indicados no plano. Ferramentas externas de IA podem exigir conta e créditos próprios.
+            </p>
+          </FadeIn>
         </div>
       </section>
 

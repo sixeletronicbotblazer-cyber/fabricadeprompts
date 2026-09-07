@@ -9,7 +9,7 @@ export function UrgencyBar() {
             Oferta de entrada liberada hoje • {" "}
             <span className="hidden sm:inline">
               acesso imediato a partir de{" "}
-              <span className="text-[#FF2D55] font-extrabold">R$17,90</span>
+              <span className="text-[#FF2D55] font-extrabold">R$17,90/mês</span>
             </span>
             <span className="sm:hidden">
               acesso imediato
