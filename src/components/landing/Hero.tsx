@@ -45,12 +45,6 @@ export function Hero() {
           <HeroVideo />
         </FadeIn>
 
-        <FadeIn delay={0.28}>
-          <p className="text-[10px] sm:text-[11px] text-[#A1A1AA]/40 text-center mt-2.5 italic">
-            Motion Prompts em uso: criação de personagem e preparação da cena.
-          </p>
-        </FadeIn>
-
         <FadeIn delay={0.35}>
           <div className="mt-8 sm:mt-10 flex flex-col items-center gap-1">
             <p className="text-base sm:text-lg text-[#C4C4CC] font-extrabold text-center mb-4">
