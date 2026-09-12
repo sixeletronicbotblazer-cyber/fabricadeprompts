@@ -282,25 +282,20 @@ export function PricingSection() {
                 <X className="size-4" />
               </button>
 
-              {/* Headline */}
+              {/* Headline with +R$8 anchoring */}
               <h3 className="text-lg sm:text-xl font-extrabold text-white leading-tight text-center mb-1">
-                Libere o acesso vitalício por apenas
+                Por apenas{" "}
+                <span className="text-[#FF2D55]">+R$8</span>, você libera o acesso vitalício
               </h3>
 
-              {/* Big price */}
-              <div className="flex items-baseline justify-center my-4">
-                <span className="text-[3rem] sm:text-[3.4rem] font-extrabold text-[#FF2D55] leading-none tracking-tight">
-                  R$32
-                </span>
-                <span className="text-xl sm:text-2xl font-bold text-[#FF2D55]">,90</span>
-              </div>
-
-              {/* Vitalício label */}
-              <p className="text-[11px] text-white/50 uppercase tracking-[0.15em] font-semibold text-center mb-5">
-                Vitalício · Pagamento único
+              {/* Subheadline */}
+              <p className="text-[13px] text-white/45 leading-relaxed text-center mb-4">
+                Pagamento único de{" "}
+                <span className="text-white font-semibold">R$32,90</span>{" "}
+                e acesso completo para sempre.
               </p>
 
-              {/* Short benefits */}
+              {/* Benefits */}
               <div className="space-y-2 mb-5">
                 <div className="flex items-center gap-2">
                   <Check className="size-3.5 shrink-0 text-[#25F4EE]" />
