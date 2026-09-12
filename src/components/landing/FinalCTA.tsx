@@ -3,7 +3,7 @@
 import { FadeIn } from "./FadeIn";
 import { ArrowRight } from "lucide-react";
 
-const CHECKOUT_URL = "#LINK_VITALICIO_AQUI";
+const CHECKOUT_URL = "https://checkout.perfectpay.com.br/pay/PPU38CQFUC3";
 
 export function FinalCTA() {
   return (

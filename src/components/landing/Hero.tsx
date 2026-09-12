@@ -51,7 +51,7 @@ export function Hero() {
               Acesso vitalício <span className="text-white">R$ 49,90</span>
             </p>
             <a
-              href="#LINK_VITALICIO_AQUI"
+              href="https://checkout.perfectpay.com.br/pay/PPU38CQFUC3"
               onClick={() => { (window as any).trackCheckout?.('Vitalicio', 49.90); }}
               className="inline-flex items-center justify-center w-full sm:w-auto px-8 sm:px-10 py-4 bg-[#FF2D55] whitespace-nowrap hover:brightness-110 text-white font-extrabold tracking-wide uppercase text-[15px] sm:text-base rounded-2xl transition-all shadow-lg shadow-[#FF2D55]/25 hover:scale-[1.02] active:scale-[0.98]"
             >

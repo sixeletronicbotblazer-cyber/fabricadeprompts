@@ -49,7 +49,7 @@ const formats = [
   },
 ];
 
-const CHECKOUT_URL = "#LINK_VITALICIO_AQUI";
+const CHECKOUT_URL = "https://checkout.perfectpay.com.br/pay/PPU38CQFUC3";
 
 function FormatCard({ item }: { item: (typeof formats)[0] }) {
   return (
