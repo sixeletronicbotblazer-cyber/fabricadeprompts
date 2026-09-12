@@ -268,71 +268,81 @@ export function PricingSection() {
             />
 
             <motion.div
-              className="relative bg-[#151518] rounded-2xl border border-[#FF2D55]/20 shadow-2xl w-full max-w-[360px] sm:max-w-sm p-6 sm:p-7 z-10"
+              className="relative bg-[#151518] rounded-2xl border border-[#FF2D55]/20 shadow-2xl w-full max-w-[370px] sm:max-w-sm z-10 overflow-hidden"
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
             >
-              <button
-                onClick={() => setRecoveryOpen(false)}
-                className="absolute top-3 right-3 size-7 flex items-center justify-center rounded-full text-white/30 hover:text-white/70 hover:bg-white/10 transition-colors"
-                aria-label="Fechar"
-              >
-                <X className="size-4" />
-              </button>
-
-              {/* Headline with +R$8 anchoring */}
-              <h3 className="text-lg sm:text-xl font-extrabold text-white leading-tight text-center mb-1">
-                Por apenas{" "}
-                <span className="text-[#FF2D55]">+R$8</span>, você libera o acesso vitalício
-              </h3>
-
-              {/* Subheadline */}
-              <p className="text-[13px] text-white/45 leading-relaxed text-center mb-4">
-                Pagamento único de{" "}
-                <span className="text-white font-semibold">R$32,90</span>{" "}
-                e acesso completo para sempre.
-              </p>
-
-              {/* Benefits */}
-              <div className="space-y-2 mb-5">
-                <div className="flex items-center gap-2">
-                  <Check className="size-3.5 shrink-0 text-[#25F4EE]" />
-                  <span className="text-[13px] text-white/75">Biblioteca Premium + Academy completa</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Check className="size-3.5 shrink-0 text-[#25F4EE]" />
-                  <span className="text-[13px] text-white/75">Grupo VIP e atualizações futuras</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Check className="size-3.5 shrink-0 text-[#25F4EE]" />
-                  <span className="text-[13px] text-white/75">Sem mensalidade, acesso para sempre</span>
-                </div>
+              {/* Top discount banner */}
+              <div className="bg-[#FF2D55] py-2 px-4 text-center">
+                <p className="text-[11px] sm:text-xs font-bold text-white uppercase tracking-wider">
+                  🎁 Você ganhou um desconto!
+                </p>
               </div>
 
-              {/* Urgency */}
-              <p className="text-[11px] text-white/35 text-center mb-4">
-                Essa condição aparece apenas agora.
-              </p>
+              <div className="p-5 sm:p-6">
+                <button
+                  onClick={() => setRecoveryOpen(false)}
+                  className="absolute top-2 right-3 size-7 flex items-center justify-center rounded-full text-white/40 hover:text-white/80 hover:bg-white/10 transition-colors"
+                  aria-label="Fechar"
+                >
+                  <X className="size-4" />
+                </button>
 
-              {/* Primary CTA */}
-              <a
-                href={checkoutUrlRecovery}
-                onClick={() => { (window as any).trackCheckout?.('Vitalicio Recovery', 32.90); }}
-                className="block w-full text-center bg-[#FF2D55] hover:brightness-110 text-white font-extrabold py-4 px-6 rounded-2xl transition-all text-sm sm:text-base shadow-lg shadow-[#FF2D55]/25 hover:shadow-[#FF2D55]/35 hover:scale-[1.02] active:scale-[0.98] mb-3"
-              >
-                QUERO O VITALÍCIO
-              </a>
+                {/* Headline */}
+                <h3 className="text-lg sm:text-xl font-extrabold text-white leading-tight text-center mb-4">
+                  Por apenas{" "}
+                  <span className="text-[#FF2D55]">+R$8</span>{" "}
+                  você pode ter o acesso vitalício
+                </h3>
 
-              {/* Secondary button */}
-              <a
-                href={checkoutUrlMensal}
-                onClick={() => { (window as any).trackCheckout?.('Mensal', 24.90); }}
-                className="block w-full text-center border border-[#2A2A2E]/60 text-white/35 hover:text-white/50 hover:bg-white/[0.03] font-medium py-2.5 px-6 rounded-xl transition-colors text-[12px]"
-              >
-                Não, continuar com o Mensal
-              </a>
+                {/* Price box */}
+                <div className="rounded-2xl bg-[#FF2D55]/[0.07] border border-[#FF2D55]/15 px-6 py-5 mb-5 shadow-[0_0_30px_rgba(255,45,85,0.08)]">
+                  <p className="text-[10px] text-white/40 uppercase tracking-[0.15em] font-semibold text-center mb-2">
+                    Acesso vitalício
+                  </p>
+                  <div className="flex items-baseline justify-center">
+                    <span className="text-[3rem] sm:text-[3.4rem] font-extrabold text-white leading-none tracking-tight">
+                      R$32
+                    </span>
+                    <span className="text-xl sm:text-2xl font-bold text-white">,90</span>
+                  </div>
+                  <p className="text-[11px] text-white/40 text-center mt-1.5 font-medium">
+                    Pagamento único
+                  </p>
+                </div>
+
+                {/* Pulsing CTA */}
+                <motion.a
+                  href={checkoutUrlRecovery}
+                  onClick={() => { (window as any).trackCheckout?.('Vitalicio Recovery', 32.90); }}
+                  className="block w-full text-center bg-[#FF2D55] hover:brightness-110 text-white font-extrabold py-4 px-6 rounded-2xl transition-all text-sm sm:text-base shadow-lg shadow-[#FF2D55]/30 mb-4"
+                  animate={{
+                    boxShadow: [
+                      "0 4px 20px rgba(255,45,85,0.3)",
+                      "0 4px 35px rgba(255,45,85,0.55)",
+                      "0 4px 20px rgba(255,45,85,0.3)",
+                    ],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
+                  QUERO O VITALÍCIO
+                </motion.a>
+
+                {/* Secondary button */}
+                <a
+                  href={checkoutUrlMensal}
+                  onClick={() => { (window as any).trackCheckout?.('Mensal', 24.90); }}
+                  className="block w-full text-center border border-[#2A2A2E]/60 text-white/35 hover:text-white/50 hover:bg-white/[0.03] font-medium py-2.5 px-6 rounded-xl transition-colors text-[12px]"
+                >
+                  Não, continuar com o Mensal
+                </a>
+              </div>
             </motion.div>
           </motion.div>
         )}
