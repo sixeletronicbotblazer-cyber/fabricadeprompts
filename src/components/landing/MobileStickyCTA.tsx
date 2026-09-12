@@ -45,8 +45,7 @@ export function MobileStickyCTA() {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden pb-[env(safe-area-inset-bottom)]">
       <a
-        href="https://checkout.perfectpay.com.br/pay/PPU38CQFUC3"
-        onClick={() => { (window as any).trackCheckout?.('Vitalicio', 49.90); }}
+        href="#planos"
         className="flex items-center justify-center w-full bg-[#FF2D55] backdrop-blur-md py-3.5 px-6 shadow-[0_-4px_20px_rgba(255,45,85,0.25)] transition-all active:scale-[0.99]"
       >
         <span className="text-white/80 font-bold text-[13px] mr-2.5">R$49,90</span>

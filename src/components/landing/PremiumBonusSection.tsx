@@ -90,7 +90,7 @@ export function PremiumBonusSection() {
             {/* CTA */}
             <FadeIn delay={0.35}>
               <a
-                href="https://checkout.perfectpay.com.br/pay/PPU38CQFUC3"
+                href="#planos"
                 className="inline-flex items-center justify-center bg-[#FF2D55] hover:brightness-110 text-white font-extrabold py-3.5 px-8 rounded-2xl transition-all text-sm sm:text-base shadow-lg shadow-[#FF2D55]/25 hover:scale-[1.02] active:scale-[0.98] uppercase tracking-wide"
               >
                 QUERO MEU ACESSO VITALÍCIO

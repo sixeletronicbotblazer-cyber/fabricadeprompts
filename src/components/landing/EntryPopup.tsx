@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Sparkles, Crown } from "lucide-react";
 
-const checkoutUrlRecovery = "https://pay.cakto.com.br/guw9f5r";
+const checkoutUrlRecovery = "https://go.perfectpay.com.br/PPU38CQFSJH";
 
 export function EntryPopup() {
   const [open, setOpen] = useState(false);
