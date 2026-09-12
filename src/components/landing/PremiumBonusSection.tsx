@@ -37,15 +37,8 @@ export function PremiumBonusSection() {
         {/* Title */}
         <FadeIn delay={0.05}>
           <h2 className="text-[1.2rem] sm:text-xl md:text-[1.75rem] font-black leading-[1.1] text-[#F4F4F5] mb-2 text-center max-w-lg mx-auto">
-            Veja a referência. Prepare a imagem.{" "}
-            <span className="text-[#FF2D55]">Anime com uma base pronta.</span>
+            Veja a <span className="text-[#FF2D55]">prévia</span>. Prepare a imagem. Anime.
           </h2>
-        </FadeIn>
-
-        <FadeIn delay={0.08}>
-          <p className="text-[12px] sm:text-sm text-[#A1A1AA]/70 leading-relaxed mb-5 max-w-md mx-auto text-center">
-            Escolha o estilo de vídeo na biblioteca, prepare a imagem inicial com o seu produto e adapte o prompt de animação para usar na ferramenta de IA. Além dos formatos principais como Modelo, POV e Selfie UGC, você também encontra categorias para Dancinha, Ganchos, Transições, Produto na Mão, Moda Feminina, Casa, Calçados, Acessórios, Pet, Infantil, Masculino, Trend Viral, datas comemorativas e muito mais.
-          </p>
         </FadeIn>
 
         {/* Content grid: text left, video right */}

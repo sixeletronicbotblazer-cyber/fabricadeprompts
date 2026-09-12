@@ -1,71 +1,111 @@
 "use client";
 
-import { Sparkles, BookOpen, Check } from "lucide-react";
+import { Check, Video, FolderOpen } from "lucide-react";
 import { FadeIn } from "./FadeIn";
+
+const formatos = [
+  "Modelo",
+  "POV",
+  "Selfie UGC",
+  "Produto na mão",
+  "Dancinha",
+  "Transição",
+  "Gancho",
+  "Trend Viral",
+];
+
+const categorias = [
+  "Moda feminina",
+  "Casa",
+  "Calçados",
+  "Acessórios",
+  "Pet",
+  "Infantil",
+  "Masculino",
+  "Datas comemorativas",
+];
 
 export function MiniDecisionBlock() {
   return (
-    <section id="beneficios" className="bg-[#050505] py-5 sm:py-6 px-4">
-      <div className="max-w-lg mx-auto">
+    <section id="beneficios" className="bg-[#050505] py-8 sm:py-10 md:py-14 px-4">
+      <div className="max-w-2xl mx-auto">
+        {/* Headline */}
         <FadeIn>
-          <p className="text-xs sm:text-sm font-bold text-white/40 uppercase tracking-wider text-center mb-4">
-            Uma base pronta para criar seus vídeos
+          <div className="text-center mb-2">
+            <h2 className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] font-black leading-[1.1] tracking-tight">
+              <span className="text-[#FF2D55]">+500</span>{" "}
+              <span className="text-[#F4F4F5]">prompts prontos</span>
+            </h2>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.05}>
+          <p className="text-sm sm:text-base md:text-lg font-bold text-[#25F4EE] text-center mb-1">
+            para criar vídeos com IA
           </p>
         </FadeIn>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
-          {/* Motion Prompts */}
-          <FadeIn delay={0.05}>
-            <div className="bg-[#111113] border border-[#2A2A2E]/60 rounded-xl p-3.5 sm:p-4">
-              <div className="flex items-center gap-2 mb-1.5">
+        <FadeIn delay={0.08}>
+          <p className="text-xs sm:text-sm text-[#A1A1AA]/70 text-center mb-6 sm:mb-8 max-w-md mx-auto">
+            Escolha o formato, copie a base e adapte para o seu produto.
+          </p>
+        </FadeIn>
+
+        {/* 2 Column Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-5 sm:mb-6">
+          {/* Card 1 - Formatos de vídeo */}
+          <FadeIn delay={0.1}>
+            <div className="bg-[#111113] border border-[#FF2D55]/15 rounded-xl p-4 sm:p-5 shadow-[0_0_20px_rgba(255,45,85,0.04)]">
+              <div className="flex items-center gap-2 mb-3">
                 <div className="size-7 rounded-lg bg-[#FF2D55]/10 border border-[#FF2D55]/12 flex items-center justify-center shrink-0">
-                  <Sparkles className="size-3.5 text-[#FF2D55]" />
+                  <Video className="size-3.5 text-[#FF2D55]" />
                 </div>
-                <h3 className="text-[13px] sm:text-sm font-bold text-[#F4F4F5] leading-tight">
-                  Motion Prompts
+                <h3 className="text-sm sm:text-base font-bold text-[#F4F4F5] leading-tight">
+                  Formatos de vídeo
                 </h3>
               </div>
-              <p className="text-[11px] sm:text-xs text-[#A1A1AA]/70 leading-relaxed">
-                Orientação para criar personagens e preparar diferentes formatos de vídeo.
-              </p>
+              <ul className="space-y-1.5">
+                {formatos.map((item) => (
+                  <li key={item} className="flex items-center gap-2">
+                    <Check className="size-3.5 text-[#FF2D55]/70 shrink-0" />
+                    <span className="text-xs sm:text-sm text-[#C4C4CC]/80 leading-tight">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </FadeIn>
 
-          {/* Biblioteca Promptly Prompts - more prominent */}
-          <FadeIn delay={0.1}>
-            <div className="bg-[#111113] border border-[#FF2D55]/20 rounded-xl p-3.5 sm:p-4 shadow-[0_0_20px_rgba(255,45,85,0.06)]">
-              <div className="flex items-center gap-2 mb-1.5">
-                <div className="size-7 rounded-lg bg-[#FF2D55]/10 border border-[#FF2D55]/12 flex items-center justify-center shrink-0">
-                  <BookOpen className="size-3.5 text-[#FF2D55]" />
+          {/* Card 2 - Categorias prontas */}
+          <FadeIn delay={0.15}>
+            <div className="bg-[#111113] border border-[#25F4EE]/15 rounded-xl p-4 sm:p-5 shadow-[0_0_20px_rgba(37,244,238,0.04)]">
+              <div className="flex items-center gap-2 mb-3">
+                <div className="size-7 rounded-lg bg-[#25F4EE]/10 border border-[#25F4EE]/12 flex items-center justify-center shrink-0">
+                  <FolderOpen className="size-3.5 text-[#25F4EE]" />
                 </div>
-                <h3 className="text-[13px] sm:text-sm font-bold text-[#F4F4F5] leading-tight">
-                  Biblioteca Promptly Prompts
+                <h3 className="text-sm sm:text-base font-bold text-[#F4F4F5] leading-tight">
+                  Categorias prontas
                 </h3>
               </div>
-              <p className="text-[11px] sm:text-xs text-[#C4C4CC]/80 leading-relaxed">
-                Mais de 250 prompts com referências para preparar a imagem inicial e animar seu produto.
-              </p>
+              <ul className="space-y-1.5">
+                {categorias.map((item) => (
+                  <li key={item} className="flex items-center gap-2">
+                    <Check className="size-3.5 text-[#25F4EE]/70 shrink-0" />
+                    <span className="text-xs sm:text-sm text-[#C4C4CC]/80 leading-tight">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </FadeIn>
         </div>
 
-        <FadeIn delay={0.15}>
-          <div className="flex flex-wrap justify-center gap-1.5">
-            {["Aulas rápidas", "Novos módulos", "Ativar TikTok Shop"].map((chip) => (
-              <span
-                key={chip}
-                className="inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-[#A1A1AA]/60 bg-[#111113] border border-[#2A2A2E]/50 rounded-full px-2.5 py-1"
-              >
-                <Check className="size-2.5 text-[#FF2D55]/60" />
-                {chip}
-              </span>
-            ))}
-          </div>
-        </FadeIn>
-
-        <FadeIn delay={0.18}>
-          <p className="text-[11px] text-[#A1A1AA]/50 text-center mt-3 leading-relaxed">
-            Acesso vitalício por <span className="text-white font-bold">R$49,90</span> ou mensal <span className="text-white font-bold">R$24,90/mês</span>
+        {/* Closing phrase */}
+        <FadeIn delay={0.2}>
+          <p className="text-xs sm:text-sm text-[#A1A1AA]/50 text-center leading-relaxed">
+            Copie, adapte e use na sua ferramenta de IA.
           </p>
         </FadeIn>
       </div>
