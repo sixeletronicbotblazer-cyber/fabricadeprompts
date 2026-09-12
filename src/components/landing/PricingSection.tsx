@@ -260,7 +260,7 @@ export function PricingSection() {
             exit={{ opacity: 0 }}
           >
             <motion.div
-              className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+              className="absolute inset-0 bg-black/85 backdrop-blur-md"
               onClick={() => setRecoveryOpen(false)}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -268,7 +268,7 @@ export function PricingSection() {
             />
 
             <motion.div
-              className="relative bg-[#151518] rounded-2xl border border-[#FF2D55]/20 shadow-2xl w-full max-w-md p-6 sm:p-8 z-10"
+              className="relative bg-[#111113] rounded-2xl border border-[#FF2D55]/25 shadow-[0_0_60px_rgba(255,45,85,0.12)] w-full max-w-[380px] sm:max-w-[400px] p-6 sm:p-8 z-10"
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -276,64 +276,84 @@ export function PricingSection() {
             >
               <button
                 onClick={() => setRecoveryOpen(false)}
-                className="absolute top-4 right-4 size-8 flex items-center justify-center rounded-full text-white/40 hover:text-white hover:bg-white/10 transition-colors"
+                className="absolute top-3 right-3 size-7 flex items-center justify-center rounded-full text-white/30 hover:text-white/70 hover:bg-white/10 transition-colors"
                 aria-label="Fechar"
               >
-                <X className="size-5" />
+                <X className="size-4" />
               </button>
 
-              <p className="text-[10px] font-bold text-white/40 uppercase tracking-wider mb-1">
-                Antes de continuar no mensal…
+              {/* Eyebrow */}
+              <p className="text-[10px] font-bold text-[#FF2D55]/80 uppercase tracking-[0.2em] mb-2 text-center">
+                OFERTA ESPECIAL
               </p>
 
-              <h3 className="text-lg sm:text-xl font-extrabold text-white mb-1.5 leading-tight">
-                Libere o acesso vitalício por apenas{" "}
-                <span className="text-[#FF2D55]">R$32,90</span>
+              {/* Headline */}
+              <h3 className="text-xl sm:text-2xl font-extrabold text-white mb-2 leading-tight text-center">
+                Por mais R$8, você libera o{" "}
+                <span className="text-[#FF2D55]">acesso vitalício</span>
               </h3>
 
-              <p className="text-sm text-white/55 leading-relaxed mb-4">
-                Por pouco mais que uma mensalidade, você garante pagamento único, acesso completo e não precisa se preocupar com mensalidade.
+              {/* Subheadline */}
+              <p className="text-[13px] sm:text-sm text-white/50 leading-relaxed mb-6 text-center">
+                Transforme sua escolha em acesso completo, pagamento único e sem mensalidade.
               </p>
 
-              <div className="grid grid-cols-2 gap-3 mb-4">
-                <div className="rounded-xl bg-white/[0.03] border border-[#2A2A2E]/60 p-3">
-                  <p className="text-[9px] text-white/30 uppercase tracking-wider font-bold mb-1.5">Plano Mensal</p>
-                  <p className="text-lg font-extrabold text-white/60 leading-none mb-1">R$24,90<span className="text-[10px] text-white/30">/mês</span></p>
-                  <p className="text-[10px] text-white/30 leading-relaxed">Acesso inicial</p>
-                  <p className="text-[10px] text-white/30 leading-relaxed">Sem atualizações futuras completas</p>
+              {/* Central highlight box */}
+              <div className="rounded-2xl bg-[#FF2D55]/[0.06] border border-[#FF2D55]/20 px-6 sm:px-8 py-6 sm:py-8 mb-5 shadow-[0_0_30px_rgba(255,45,85,0.08)]">
+                <p className="text-[10px] font-bold text-white/40 uppercase tracking-[0.18em] mb-3 text-center">
+                  ACESSO VITALÍCIO
+                </p>
+                <div className="flex items-baseline justify-center mb-2">
+                  <span className="text-[3.2rem] sm:text-[3.6rem] font-extrabold text-white leading-none tracking-tight">
+                    R$32
+                  </span>
+                  <span className="text-xl sm:text-2xl font-bold text-white">,90</span>
                 </div>
-                <div className="rounded-xl bg-[#FF2D55]/6 border border-[#FF2D55]/20 p-3 shadow-[0_0_20px_rgba(255,45,85,0.08)]">
-                  <p className="text-[9px] text-[#FF2D55]/80 uppercase tracking-wider font-bold mb-1.5">Oferta Especial</p>
-                  <p className="text-lg font-extrabold text-[#FF2D55] leading-none mb-1">R$32,90</p>
-                  <p className="text-[10px] text-[#25F4EE]/80 leading-relaxed font-medium">Pagamento único</p>
-                  <p className="text-[10px] text-[#25F4EE]/80 leading-relaxed font-medium">Acesso vitalício</p>
-                  <p className="text-[10px] text-[#25F4EE]/80 leading-relaxed font-medium">Biblioteca Premium + Academy</p>
+                <p className="text-[11px] text-white/40 uppercase tracking-wider font-semibold mb-5 text-center">
+                  Pagamento único
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 justify-center">
+                    <Check className="size-3.5 shrink-0 text-[#25F4EE]" />
+                    <span className="text-[13px] text-white/85 font-medium">Acesso vitalício</span>
+                  </div>
+                  <div className="flex items-center gap-2 justify-center">
+                    <Check className="size-3.5 shrink-0 text-[#25F4EE]" />
+                    <span className="text-[13px] text-white/85 font-medium">Biblioteca Premium + Academy</span>
+                  </div>
+                  <div className="flex items-center gap-2 justify-center">
+                    <Check className="size-3.5 shrink-0 text-[#25F4EE]" />
+                    <span className="text-[13px] text-white/85 font-medium">Sem mensalidade</span>
+                  </div>
                 </div>
               </div>
 
-              <p className="text-[11px] text-[#A1A1AA]/50 leading-relaxed mb-4 text-center">
-                Essa condição aparece apenas agora para quem estava prestes a escolher o plano mensal.
+              {/* Urgency text */}
+              <p className="text-[12px] sm:text-[13px] text-white/45 leading-relaxed mb-4 text-center font-medium">
+                Essa condição especial aparece apenas agora.
               </p>
 
-              <div className="flex flex-col gap-3">
-                <a
-                  href={checkoutUrlRecovery}
-                  onClick={() => { (window as any).trackCheckout?.('Vitalicio Recovery', 32.90); }}
-                  className="block w-full text-center bg-[#FF2D55] hover:brightness-110 text-white font-bold py-4 px-6 rounded-2xl transition-all text-sm sm:text-base shadow-lg shadow-[#FF2D55]/25"
-                >
-                  QUERO O VITALÍCIO POR R$32,90
-                </a>
-                <a
-                  href={checkoutUrlMensal}
-                  onClick={() => { (window as any).trackCheckout?.('Mensal', 24.90); }}
-                  className="block w-full text-center border border-[#2A2A2E]/60 text-white/50 hover:bg-white/5 font-medium py-3 px-6 rounded-2xl transition-colors text-sm"
-                >
-                  Não, quero continuar no mensal
-                </a>
-              </div>
+              {/* Primary CTA */}
+              <a
+                href={checkoutUrlRecovery}
+                onClick={() => { (window as any).trackCheckout?.('Vitalicio Recovery', 32.90); }}
+                className="block w-full text-center bg-[#FF2D55] hover:brightness-110 text-white font-extrabold py-4 sm:py-5 px-6 rounded-2xl transition-all text-base sm:text-lg shadow-lg shadow-[#FF2D55]/30 hover:shadow-[#FF2D55]/45 hover:scale-[1.02] active:scale-[0.98] mb-3"
+              >
+                QUERO LIBERAR O VITALÍCIO
+              </a>
 
-              <p className="mt-3 text-center text-[10px] text-white/25">
-                Acesso completo sem mensalidade. Pagamento único.
+              {/* Secondary button */}
+              <a
+                href={checkoutUrlMensal}
+                onClick={() => { (window as any).trackCheckout?.('Mensal', 24.90); }}
+                className="block w-full text-center border border-white/10 text-white/35 hover:text-white/50 hover:bg-white/[0.03] font-medium py-2.5 px-6 rounded-xl transition-colors text-[12px]"
+              >
+                Não, quero continuar no mensal
+              </a>
+
+              {/* Footer microtext */}
+              <p className="mt-4 text-center text-[10px] text-white/20">
+                Acesso completo. Pagamento único. Sem mensalidade.
               </p>
             </motion.div>
           </motion.div>
