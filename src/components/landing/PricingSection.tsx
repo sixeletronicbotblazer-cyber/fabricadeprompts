@@ -5,54 +5,38 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Check, X, Shield, Zap } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
-const checkoutUrlInicial = "https://checkout.perfectpay.com.br/pay/PPU38CQFSJH";
-const checkoutUrlCompleto = "https://checkout.perfectpay.com.br/pay/PPU38CQFSJE";
-const checkoutUrlDownsell = "https://checkout.perfectpay.com.br/pay/PPU38CQFSJG";
+const checkoutUrlVitalicio = "#LINK_VITALICIO_AQUI";
+const checkoutUrlMensal = "#LINK_MENSAL_AQUI";
+const checkoutUrlRecovery = "#LINK_RECUPERACAO_3290_AQUI";
 
-/* ═══ VITALÍCIO — acesso completo ═══ */
 const vitalicioFeatures = [
-  { text: "+250 prompts organizados prontos para copiar" },
-  { text: "Biblioteca completa de prompts", highlight: true },
-  { text: "Galeria Premium / PromptVault", highlight: true },
+  { text: "Biblioteca Premium de prompts", highlight: true },
+  { text: "Academy com formatos virais validados", highlight: true },
+  { text: "+250 prompts organizados para copiar e adaptar" },
+  { text: "Galeria de referências visuais", highlight: true },
   { text: "Modo Modelo, POV e Selfie UGC" },
   { text: "Prompts para produto na mão, unboxing e vídeos de oferta" },
-  { text: "Novos módulos incluídos no acesso" },
-  { text: "Aulas rápidas e exemplos prontos" },
-  { text: "Como ativar TikTok Shop em 3 dias" },
+  { text: "Formatos para Dancinha, Movimento, Manequim e Fábrica" },
+  { text: "Formatos sazonais: Natal, Dia dos Pais e datas comemorativas" },
+  { text: "Formatos para Casa, Calçados, Acessórios, Pet e Infantil" },
+  { text: "Formatos para Masculino, Feminino, Lingerie e Moda" },
+  { text: "Ganchos, transições e movimentos prontos" },
+  { text: "Aulas rápidas e exemplos práticos" },
+  { text: "Grupo VIP com atualizações e troca de ideias" },
+  { text: "Todas as atualizações futuras incluídas", highlight: true },
+  { text: "Acesso vitalício, sem mensalidade", highlight: true },
 ];
 
-const vitalicioExtras = [
-  "Grupo VIP com atualizações e troca de ideias",
-  "Todas as atualizações futuras incluídas",
-  "Acesso completo sem mensalidade",
-  "Pagamento único",
-];
-
-/* ═══ MENSAL — opção de entrada/teste ═══ */
 const mensalFeatures = [
   "Acesso aos prompts essenciais",
   "Categorias iniciais para começar",
   "Modo Modelo, POV e Selfie UGC básico",
-  "Aulas rápidas de introdução",
   "Exemplos simples de aplicação",
+  "Aulas rápidas de introdução",
   "Ideal para testar a ferramenta",
 ];
 
-const mensalLimitation = "Não inclui Galeria Premium, PromptVault, Grupo VIP e atualizações futuras.";
-
-/* ═══ DOWNSELL ═══ */
-const downsellFeatures = [
-  "+250 prompts organizados prontos para copiar",
-  "Biblioteca completa de prompts",
-  "Galeria Premium / PromptVault",
-  "Modo Modelo, POV e Selfie UGC",
-  "Novos módulos incluídos no acesso",
-  "Aulas rápidas e exemplos prontos",
-  "Como ativar TikTok Shop em 3 dias",
-  "Grupo VIP com atualizações e troca de ideias",
-  "Todas as atualizações futuras incluídas",
-  "Acesso completo sem mensalidade",
-];
+const mensalLimitation = "Não inclui Biblioteca Premium completa, Galeria avançada, Grupo VIP e atualizações futuras.";
 
 function CountdownTimer() {
   const [time, setTime] = useState({ h: 23, m: 59, s: 59 });
@@ -104,7 +88,7 @@ function CountdownTimer() {
 }
 
 export function PricingSection() {
-  const [downsellOpen, setDownsellOpen] = useState(false);
+  const [recoveryOpen, setRecoveryOpen] = useState(false);
 
   return (
     <>
@@ -112,16 +96,16 @@ export function PricingSection() {
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white leading-tight mb-1 text-center">
-              Escolha seu <span className="text-[#FF2D55]">acesso</span>
+              Libere seu <span className="text-[#FF2D55]">acesso completo</span>
             </h2>
             <p className="text-xs sm:text-sm text-white/40 text-center mb-6 max-w-lg mx-auto">
-              Comece pelo mensal ou libere a biblioteca completa no vitalício com Galeria Premium, Grupo VIP e atualizações futuras.
+              Pagamento único, acesso vitalício e todos os recursos da Biblioteca Premium + Academy em um só lugar.
             </p>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 items-start">
 
-            {/* ═══ VITALÍCIO — à esquerda, mais forte ═══ */}
+            {/* VITALICIO */}
             <FadeIn>
               <div className="relative bg-[#111113] rounded-2xl border border-[#FF2D55]/30 p-5 sm:p-6 flex flex-col order-1 md:order-1 shadow-[0_0_40px_rgba(255,45,85,0.1)]">
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 flex items-center gap-2">
@@ -133,35 +117,36 @@ export function PricingSection() {
                   </span>
                 </div>
 
-                {/* Price block */}
                 <div className="text-center mt-2 sm:mt-1 mb-4 sm:mb-5">
-                  <div className="flex items-center justify-center gap-2 mb-2">
-                    <span className="text-sm font-bold text-white/25 line-through">R$ 39,90</span>
-                    <span className="text-[9px] sm:text-[10px] font-bold text-emerald-400 bg-emerald-400/15 px-1.5 py-0.5 rounded-full">
-                      -25%
-                    </span>
-                  </div>
                   <div className="bg-[#FF2D55]/6 rounded-2xl py-4 px-4 -mx-1 border border-[#FF2D55]/10">
-                    <p className="text-[10px] sm:text-[11px] text-[#A1A1AA]/50 uppercase tracking-wider font-semibold mb-1">Acesso imediato</p>
+                    <p className="text-[10px] sm:text-[11px] text-[#A1A1AA]/50 uppercase tracking-wider font-semibold mb-1">ACESSO COMPLETO</p>
+                    <p className="text-sm text-white/30 line-through mb-0.5">De R$97,00</p>
                     <div className="flex items-baseline justify-center">
                       <span className="text-[3.8rem] sm:text-[4rem] md:text-[4.5rem] font-extrabold text-white leading-none tracking-tight">
-                        R$29
+                        R$49
                       </span>
                       <span className="text-2xl sm:text-3xl font-bold text-white">,90</span>
                     </div>
                     <p className="text-[11px] text-[#A1A1AA]/40 mt-1.5 font-semibold uppercase tracking-wider">
                       Pagamento único
                     </p>
+                    <p className="text-[11px] text-[#25F4EE]/70 mt-1 font-semibold">
+                      Você paga uma vez e mantém o acesso.
+                    </p>
                   </div>
                 </div>
 
                 <a
-                  href={checkoutUrlCompleto}
-                  onClick={() => { (window as any).trackCheckout?.('Vitalicio', 29.90); }}
-                  className="block w-full text-center bg-[#FF2D55] hover:brightness-110 text-white font-bold py-4 px-6 rounded-2xl transition-all text-sm sm:text-base shadow-lg shadow-[#FF2D55]/25 hover:shadow-[#FF2D55]/35 hover:scale-[1.02] active:scale-[0.98] mb-3"
+                  href={checkoutUrlVitalicio}
+                  onClick={() => { (window as any).trackCheckout?.('Vitalicio', 49.90); }}
+                  className="block w-full text-center bg-[#FF2D55] hover:brightness-110 text-white font-bold py-4 px-6 rounded-2xl transition-all text-sm sm:text-base shadow-lg shadow-[#FF2D55]/25 hover:shadow-[#FF2D55]/35 hover:scale-[1.02] active:scale-[0.98] mb-2"
                 >
                   QUERO MEU ACESSO VITALÍCIO
                 </a>
+
+                <p className="text-[11px] text-[#25F4EE]/70 font-semibold text-center mb-4 leading-relaxed">
+                  Sem mensalidade. Acesso completo à Biblioteca Premium + Academy.
+                </p>
 
                 <div className="mb-4 rounded-xl bg-black/50 border border-[#2A2A2E]/50 px-3.5 py-2.5 flex items-center justify-between">
                   <div className="flex items-center gap-1.5">
@@ -171,7 +156,7 @@ export function PricingSection() {
                   <CountdownTimer />
                 </div>
 
-                <ul className="space-y-1.5 mb-2">
+                <ul className="space-y-1.5 mb-3">
                   {vitalicioFeatures.map((f, i) => (
                     <li key={i}>
                       <div className="flex items-center gap-2">
@@ -182,25 +167,14 @@ export function PricingSection() {
                   ))}
                 </ul>
 
-                <div className="border-t border-[#25F4EE]/15 pt-2.5 mb-3">
-                  <p className="text-[9px] font-bold text-[#25F4EE]/70 uppercase tracking-wider mb-2">
-                    SÓ NO VITALÍCIO
+                <div className="rounded-xl bg-[#25F4EE]/5 border border-[#25F4EE]/10 px-4 py-3 mb-3">
+                  <p className="text-[12px] sm:text-[13px] font-bold text-[#25F4EE]/90 text-center mb-0.5">
+                    Tudo incluso em um único pagamento.
                   </p>
-                  <ul className="space-y-1.5">
-                    {vitalicioExtras.map((text, i) => (
-                      <li key={i}>
-                        <div className="flex items-center gap-2">
-                          <Check className="size-3.5 shrink-0 text-[#25F4EE]" />
-                          <span className="text-[13px] text-[#25F4EE]/90 font-semibold leading-tight">{text}</span>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
+                  <p className="text-[10px] sm:text-[11px] text-white/50 text-center leading-relaxed">
+                    Depois da compra, você recebe acesso à biblioteca, aos módulos, aos formatos e às próximas atualizações disponíveis.
+                  </p>
                 </div>
-
-                <p className="text-[10px] text-white/30 text-center mb-2 leading-relaxed">
-                  Pague uma vez e mantenha o acesso completo à biblioteca.
-                </p>
 
                 <div className="flex items-center justify-center gap-1.5 mt-auto pt-1">
                   <Shield className="size-3 text-white/20" />
@@ -211,25 +185,29 @@ export function PricingSection() {
               </div>
             </FadeIn>
 
-            {/* ═══ MENSAL — à direita, discreto ═══ */}
+            {/* MENSAL */}
             <FadeIn delay={0.1}>
               <div className="bg-[#111113] rounded-2xl border border-[#2A2A2E]/60 p-5 sm:p-6 flex flex-col order-2 md:order-2">
                 <h3 className="text-base sm:text-lg font-bold text-white mb-0.5">
                   Plano Mensal
                 </h3>
                 <p className="text-xs text-white/45 mb-4">
-                  Assinatura mensal. Cancele quando quiser.
+                  Para começar a testar os prompts essenciais.
                 </p>
 
                 <div className="mb-4">
                   <span className="text-[2.5rem] sm:text-5xl font-extrabold text-white leading-none tracking-tight">
-                    R$17
+                    R$24
                   </span>
                   <span className="text-lg sm:text-2xl font-bold text-white">,90</span>
                   <span className="text-xs text-white/35 ml-1.5 font-medium">
                     /mês
                   </span>
                 </div>
+
+                <p className="text-[11px] text-white/40 mb-4 leading-relaxed">
+                  Uma opção de entrada para quem quer conhecer a biblioteca e começar a aplicar os prompts principais.
+                </p>
 
                 <ul className="space-y-1.5 mb-3 flex-1">
                   {mensalFeatures.map((text, i) => (
@@ -247,10 +225,10 @@ export function PricingSection() {
                 </p>
 
                 <button
-                  onClick={() => setDownsellOpen(true)}
+                  onClick={() => setRecoveryOpen(true)}
                   className="block w-full text-center border border-white/15 text-white hover:bg-white hover:text-black font-bold py-4 px-6 rounded-2xl transition-all text-sm sm:text-base"
                 >
-                  QUERO COMEÇAR AGORA
+                  COMEÇAR PELO MENSAL
                 </button>
 
                 <div className="flex items-center justify-center gap-1.5 mt-3">
@@ -264,7 +242,6 @@ export function PricingSection() {
 
           </div>
 
-          {/* External AI tools note */}
           <FadeIn delay={0.15}>
             <p className="text-[11px] sm:text-xs text-[#A1A1AA]/50 text-center mt-5 max-w-md mx-auto leading-relaxed">
               Você recebe acesso aos conteúdos e prompts indicados no plano. Ferramentas externas de IA podem exigir conta e créditos próprios.
@@ -273,9 +250,9 @@ export function PricingSection() {
         </div>
       </section>
 
-      {/* DOWNSELL MODAL */}
+      {/* RECOVERY POPUP */}
       <AnimatePresence>
-        {downsellOpen && (
+        {recoveryOpen && (
           <motion.div
             className="fixed inset-0 z-50 flex items-center justify-center p-4"
             initial={{ opacity: 0 }}
@@ -284,21 +261,21 @@ export function PricingSection() {
           >
             <motion.div
               className="absolute inset-0 bg-black/80 backdrop-blur-sm"
-              onClick={() => setDownsellOpen(false)}
+              onClick={() => setRecoveryOpen(false)}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             />
 
             <motion.div
-              className="relative bg-[#151518] rounded-2xl border border-[#2A2A2E]/60 shadow-2xl w-full max-w-md p-6 sm:p-8 z-10"
+              className="relative bg-[#151518] rounded-2xl border border-[#FF2D55]/20 shadow-2xl w-full max-w-md p-6 sm:p-8 z-10"
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
             >
               <button
-                onClick={() => setDownsellOpen(false)}
+                onClick={() => setRecoveryOpen(false)}
                 className="absolute top-4 right-4 size-8 flex items-center justify-center rounded-full text-white/40 hover:text-white hover:bg-white/10 transition-colors"
                 aria-label="Fechar"
               >
@@ -306,66 +283,57 @@ export function PricingSection() {
               </button>
 
               <p className="text-[10px] font-bold text-white/40 uppercase tracking-wider mb-1">
-                Antes de continuar...
+                Antes de continuar no mensal…
               </p>
 
               <h3 className="text-lg sm:text-xl font-extrabold text-white mb-1.5 leading-tight">
-                Libere o Vitalício por apenas{" "}
-                <span className="text-[#FF2D55]">R$5 a mais</span>
+                Libere o acesso vitalício por apenas{" "}
+                <span className="text-[#FF2D55]">R$32,90</span>
               </h3>
 
               <p className="text-sm text-white/55 leading-relaxed mb-4">
-                Acesso completo à biblioteca, Grupo VIP e todas as atualizações futuras incluídas.
+                Por pouco mais que uma mensalidade, você garante pagamento único, acesso completo e não precisa se preocupar com mensalidade.
               </p>
 
-              <div className="flex items-baseline gap-2 mb-4">
-                <span className="text-sm text-white/30 line-through">De R$39,90</span>
-                <span className="text-sm text-white/60">por</span>
-                <span className="text-2xl sm:text-3xl font-extrabold text-[#FF2D55]">R$22,90</span>
-                <span className="ml-1.5 text-[10px] font-bold text-[#25F4EE]/80 bg-[#25F4EE]/10 px-2 py-0.5 rounded-full border border-[#25F4EE]/20">
-                  VITALÍCIO
-                </span>
-              </div>
-
-              <div className="flex flex-wrap items-center gap-2 mb-4">
-                <span className="inline-block bg-[#FF2D55]/10 text-[#FF2D55] text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border border-[#FF2D55]/20">
-                  Oferta especial
-                </span>
-                <span className="inline-block text-[10px] font-bold text-[#25F4EE]/80 bg-[#25F4EE]/10 px-2.5 py-0.5 rounded-full border border-[#25F4EE]/20">
-                  Acesso vitalício
-                </span>
-              </div>
-
-              <div className="rounded-2xl bg-[#FF2D55]/8 border border-[#FF2D55]/15 p-4 mb-5">
-                <div className="space-y-2">
-                  {downsellFeatures.map((f) => (
-                    <div key={f} className="flex items-start gap-2">
-                      <Check className="size-3.5 text-[#25F4EE] shrink-0 mt-0.5" />
-                      <span className="text-xs text-white/70">{f}</span>
-                    </div>
-                  ))}
+              <div className="grid grid-cols-2 gap-3 mb-4">
+                <div className="rounded-xl bg-white/[0.03] border border-[#2A2A2E]/60 p-3">
+                  <p className="text-[9px] text-white/30 uppercase tracking-wider font-bold mb-1.5">Plano Mensal</p>
+                  <p className="text-lg font-extrabold text-white/60 leading-none mb-1">R$24,90<span className="text-[10px] text-white/30">/mês</span></p>
+                  <p className="text-[10px] text-white/30 leading-relaxed">Acesso inicial</p>
+                  <p className="text-[10px] text-white/30 leading-relaxed">Sem atualizações futuras completas</p>
+                </div>
+                <div className="rounded-xl bg-[#FF2D55]/6 border border-[#FF2D55]/20 p-3 shadow-[0_0_20px_rgba(255,45,85,0.08)]">
+                  <p className="text-[9px] text-[#FF2D55]/80 uppercase tracking-wider font-bold mb-1.5">Oferta Especial</p>
+                  <p className="text-lg font-extrabold text-[#FF2D55] leading-none mb-1">R$32,90</p>
+                  <p className="text-[10px] text-[#25F4EE]/80 leading-relaxed font-medium">Pagamento único</p>
+                  <p className="text-[10px] text-[#25F4EE]/80 leading-relaxed font-medium">Acesso vitalício</p>
+                  <p className="text-[10px] text-[#25F4EE]/80 leading-relaxed font-medium">Biblioteca Premium + Academy</p>
                 </div>
               </div>
 
+              <p className="text-[11px] text-[#A1A1AA]/50 leading-relaxed mb-4 text-center">
+                Essa condição aparece apenas agora para quem estava prestes a escolher o plano mensal.
+              </p>
+
               <div className="flex flex-col gap-3">
                 <a
-                  href={checkoutUrlDownsell}
-                  onClick={() => { (window as any).trackCheckout?.('Vitalicio Downsell', 22.90); }}
+                  href={checkoutUrlRecovery}
+                  onClick={() => { (window as any).trackCheckout?.('Vitalicio Recovery', 32.90); }}
                   className="block w-full text-center bg-[#FF2D55] hover:brightness-110 text-white font-bold py-4 px-6 rounded-2xl transition-all text-sm sm:text-base shadow-lg shadow-[#FF2D55]/25"
                 >
-                  SIM, QUERO O VITALÍCIO
+                  QUERO O VITALÍCIO POR R$32,90
                 </a>
                 <a
-                  href={checkoutUrlInicial}
-                  onClick={() => { (window as any).trackCheckout?.('Mensal', 17.90); }}
+                  href={checkoutUrlMensal}
+                  onClick={() => { (window as any).trackCheckout?.('Mensal', 24.90); }}
                   className="block w-full text-center border border-[#2A2A2E]/60 text-white/50 hover:bg-white/5 font-medium py-3 px-6 rounded-2xl transition-colors text-sm"
                 >
-                  Não, continuar com o Mensal
+                  Não, quero continuar no mensal
                 </a>
               </div>
 
               <p className="mt-3 text-center text-[10px] text-white/25">
-                A diferença é de apenas R$5 para o plano vitalício.
+                Acesso completo sem mensalidade. Pagamento único.
               </p>
             </motion.div>
           </motion.div>

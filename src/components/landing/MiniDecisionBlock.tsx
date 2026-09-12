@@ -65,7 +65,7 @@ export function MiniDecisionBlock() {
 
         <FadeIn delay={0.18}>
           <p className="text-[11px] text-[#A1A1AA]/50 text-center mt-3 leading-relaxed">
-            Acesso a partir de <span className="text-white font-bold">R$17,90/mês</span>
+            Acesso vitalício por <span className="text-white font-bold">R$49,90</span> ou mensal <span className="text-white font-bold">R$24,90/mês</span>
           </p>
         </FadeIn>
       </div>

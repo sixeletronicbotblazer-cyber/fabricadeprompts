@@ -1,13 +1,13 @@
 import { UrgencyBar } from "@/components/landing/UrgencyBar";
 import { Hero } from "@/components/landing/Hero";
+import { FormatosVirais } from "@/components/landing/FormatosVirais";
 import { MiniDecisionBlock } from "@/components/landing/MiniDecisionBlock";
 import { PremiumBonusSection } from "@/components/landing/PremiumBonusSection";
-import { ReferenceExamples } from "@/components/landing/ReferenceExamples";
 import { SocialProofSection } from "@/components/landing/SocialProofSection";
 import { WhatsAppProofCarousel } from "@/components/landing/WhatsAppProofCarousel";
-import { ResultsProofsSection } from "@/components/landing/ResultsProofsSection";
 import { DorSection } from "@/components/landing/DorSection";
 import { ComparisonSection } from "@/components/landing/ComparisonSection";
+import { ResultsProofsSection } from "@/components/landing/ResultsProofsSection";
 import { ObjectionCards } from "@/components/landing/ObjectionCards";
 import { PricingSection } from "@/components/landing/PricingSection";
 import { GuaranteeSection } from "@/components/landing/GuaranteeSection";
@@ -23,15 +23,15 @@ export default function Home() {
       <UrgencyBar />
       <main className="flex-1 pb-14 md:pb-0">
         <Hero />
+        <FormatosVirais />
         <MiniDecisionBlock />
         <PremiumBonusSection />
-        <ReferenceExamples />
         <SocialProofSection />
         <WhatsAppProofCarousel />
-        <ResultsProofsSection />
         <DorSection />
         <ComparisonSection />
         <ObjectionCards />
+        <ResultsProofsSection />
         <PricingSection />
         <GuaranteeSection />
         <FAQ />

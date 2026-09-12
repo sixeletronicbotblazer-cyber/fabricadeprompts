@@ -44,7 +44,7 @@ export function PremiumBonusSection() {
 
         <FadeIn delay={0.08}>
           <p className="text-[12px] sm:text-sm text-[#A1A1AA]/70 leading-relaxed mb-5 max-w-md mx-auto text-center">
-            Escolha o estilo de vídeo na biblioteca, prepare a imagem inicial com o seu produto e adapte o prompt de animação para usar na ferramenta de IA.
+            Escolha o estilo de vídeo na biblioteca, prepare a imagem inicial com o seu produto e adapte o prompt de animação para usar na ferramenta de IA. Além dos formatos principais como Modelo, POV e Selfie UGC, você também encontra categorias para Dancinha, Ganchos, Transições, Produto na Mão, Moda Feminina, Casa, Calçados, Acessórios, Pet, Infantil, Masculino, Trend Viral, datas comemorativas e muito mais.
           </p>
         </FadeIn>
 
@@ -90,10 +90,10 @@ export function PremiumBonusSection() {
             {/* CTA */}
             <FadeIn delay={0.35}>
               <a
-                href="#planos"
+                href="#LINK_VITALICIO_AQUI"
                 className="inline-flex items-center justify-center bg-[#FF2D55] hover:brightness-110 text-white font-extrabold py-3.5 px-8 rounded-2xl transition-all text-sm sm:text-base shadow-lg shadow-[#FF2D55]/25 hover:scale-[1.02] active:scale-[0.98] uppercase tracking-wide"
               >
-                QUERO ACESSAR AGORA
+                QUERO MEU ACESSO VITALÍCIO
               </a>
             </FadeIn>
           </div>
@@ -145,7 +145,7 @@ export function PremiumBonusSection() {
         {/* Confira os planos note */}
         <FadeIn delay={0.4}>
           <p className="text-[10px] sm:text-[11px] text-[#A1A1AA]/40 text-center mt-6">
-            Confira o acesso incluído em cada plano abaixo.
+            Biblioteca com formatos para diferentes nichos, produtos e campanhas. Confira o acesso incluído em cada plano abaixo.
           </p>
         </FadeIn>
       </div>

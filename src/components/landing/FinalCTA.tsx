@@ -3,6 +3,8 @@
 import { FadeIn } from "./FadeIn";
 import { ArrowRight } from "lucide-react";
 
+const CHECKOUT_URL = "#LINK_VITALICIO_AQUI";
+
 export function FinalCTA() {
   return (
     <section className="bg-[#050505] relative overflow-hidden py-8 sm:py-12 md:py-16 px-4">
@@ -22,17 +24,15 @@ export function FinalCTA() {
         <FadeIn delay={0.2}>
           <div className="max-w-md mx-auto">
             <a
-              href="#planos"
+              href={CHECKOUT_URL}
+              onClick={() => { (window as any).trackCheckout?.('Vitalicio', 49.90); }}
               className="block w-full text-center bg-[#FF2D55] hover:brightness-110 shadow-lg shadow-[#FF2D55]/25 font-extrabold tracking-wide uppercase rounded-2xl text-[15px] sm:text-base py-4 px-6 transition-all mb-4 hover:scale-[1.02] active:scale-[0.98]"
             >
-              QUERO ACESSAR A BIBLIOTECA <ArrowRight className="inline size-4 ml-2" />
+              QUERO MEU ACESSO VITALÍCIO <ArrowRight className="inline size-4 ml-2" />
             </a>
-            <a
-              href="#planos"
-              className="block w-full text-center border border-[#2A2A2E]/60 text-[#A1A1AA]/70 hover:bg-white/5 hover:text-[#C4C4CC] rounded-2xl transition-colors text-sm py-3 px-6"
-            >
-              Ver planos
-            </a>
+            <p className="text-[11px] text-[#A1A1AA]/50">
+              Pagamento único · Acesso vitalício · Sem mensalidade
+            </p>
           </div>
         </FadeIn>
       </div>

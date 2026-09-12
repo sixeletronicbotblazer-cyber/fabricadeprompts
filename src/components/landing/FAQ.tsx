@@ -23,10 +23,14 @@ const faqs = [
   },
   {
     q: "Qual a diferença entre mensal e vitalício?",
-    a: "No mensal, você acessa pagando mês a mês e pode cancelar quando quiser. No vitalício, você paga uma vez e mantém o acesso à plataforma, módulos extras, atualizações e bônus premium.",
+    a: "No mensal, você acessa pagando mês a mês e pode cancelar quando quiser. No vitalício, você paga uma vez e mantém o acesso completo à Biblioteca Premium, Academy, módulos extras, Grupo VIP e todas as atualizações futuras.",
   },
   {
-    q: "O Plano Vitalício tem acesso à Biblioteca Promptly Prompts?",
+    q: "O que eu recebo?",
+    a: "Você recebe acesso à Biblioteca Premium + Academy, com prompts, formatos e referências organizadas para criar vídeos com IA para TikTok Shop e Shopee. Inclui categorias como Modelo, POV, Selfie UGC, Produto na Mão, Dancinha, Ganchos, Transições, Moda, Casa, Acessórios, Pet, datas comemorativas e outras atualizações.",
+  },
+  {
+    q: "O acesso inclui a Biblioteca Promptly Prompts?",
     a: "Sim. A Biblioteca Promptly Prompts (Galeria Premium) está disponível como bônus especial dentro do acesso vitalício.",
   },
   {
