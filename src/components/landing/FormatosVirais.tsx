@@ -103,7 +103,7 @@ export function FormatosVirais() {
   }, []);
 
   return (
-    <section className="bg-[#050505] py-8 sm:py-10 md:py-12 px-4">
+    <section id="formatos" className="bg-[#050505] py-8 sm:py-10 md:py-12 px-4">
       <div className="max-w-5xl mx-auto">
         <FadeIn>
           <div className="flex justify-center mb-3">
@@ -154,10 +154,10 @@ export function FormatosVirais() {
         <FadeIn delay={0.2}>
           <div className="flex justify-center mt-5">
             <a
-              href="#planos"
-              className="inline-flex items-center justify-center bg-[#FF2D55] hover:brightness-110 text-white font-extrabold py-3.5 px-8 rounded-2xl transition-all text-sm sm:text-base shadow-lg shadow-[#FF2D55]/25 hover:scale-[1.02] active:scale-[0.98] uppercase tracking-wide"
+              href="#beneficios"
+              className="inline-flex items-center justify-center border border-[#25F4EE]/25 bg-[#25F4EE]/5 hover:bg-[#25F4EE]/15 text-[#25F4EE] font-extrabold py-3.5 px-8 rounded-2xl transition-all text-sm sm:text-base hover:scale-[1.02] active:scale-[0.98] uppercase tracking-wide"
             >
-              QUERO ACESSAR A BIBLIOTECA
+              VER O QUE VEM INCLUSO
             </a>
           </div>
         </FadeIn>

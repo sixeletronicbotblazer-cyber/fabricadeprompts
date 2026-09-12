@@ -46,17 +46,17 @@ export function Hero() {
         </FadeIn>
 
         <FadeIn delay={0.35}>
-          <div className="mt-8 sm:mt-10 flex flex-col items-center gap-1">
-            <p className="text-base sm:text-lg text-[#C4C4CC] font-extrabold text-center mb-4">
-              Acesso vitalício <span className="text-white">R$ 49,90</span>
-            </p>
+          <div className="mt-8 sm:mt-10 flex flex-col items-center gap-2">
             <a
-              href="#planos"
-              className="inline-flex items-center justify-center w-full sm:w-auto px-8 sm:px-10 py-4 bg-[#FF2D55] whitespace-nowrap hover:brightness-110 text-white font-extrabold tracking-wide uppercase text-[15px] sm:text-base rounded-2xl transition-all shadow-lg shadow-[#FF2D55]/25 hover:scale-[1.02] active:scale-[0.98]"
+              href="#formatos"
+              className="inline-flex items-center justify-center w-full sm:w-auto px-8 sm:px-10 py-4 bg-[#25F4EE]/10 border border-[#25F4EE]/25 whitespace-nowrap hover:bg-[#25F4EE]/20 text-[#25F4EE] font-extrabold tracking-wide uppercase text-[15px] sm:text-base rounded-2xl transition-all hover:scale-[1.02] active:scale-[0.98]"
             >
-              QUERO MEU ACESSO VITALÍCIO
+              VER COMO FUNCIONA
               <ArrowRight className="ml-2 size-4" />
             </a>
+            <p className="text-[11px] text-white/30">
+              Veja a prévia antes de escolher seu acesso.
+            </p>
           </div>
         </FadeIn>
       </div>

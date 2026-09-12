@@ -3,7 +3,7 @@
 import { FadeIn } from "./FadeIn";
 import { Check } from "lucide-react";
 
-const checkoutUrl = "#planos";
+const checkoutUrl = "#formatos";
 
 const includes = [
   "Guia passo a passo",

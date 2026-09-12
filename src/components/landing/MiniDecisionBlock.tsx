@@ -5,7 +5,7 @@ import { FadeIn } from "./FadeIn";
 
 export function MiniDecisionBlock() {
   return (
-    <section className="bg-[#050505] py-5 sm:py-6 px-4">
+    <section id="beneficios" className="bg-[#050505] py-5 sm:py-6 px-4">
       <div className="max-w-lg mx-auto">
         <FadeIn>
           <p className="text-xs sm:text-sm font-bold text-white/40 uppercase tracking-wider text-center mb-4">

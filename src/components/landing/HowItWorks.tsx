@@ -3,7 +3,7 @@
 import { FadeIn } from "./FadeIn";
 import { Search, UserPlus, Image, Shirt, Play, ArrowRight } from "lucide-react";
 
-const checkoutUrl = "#planos";
+const checkoutUrl = "#formatos";
 
 const steps = [
   {

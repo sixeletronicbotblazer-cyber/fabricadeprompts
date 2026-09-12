@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Check, X, Shield, Zap } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
-const checkoutUrlVitalicio = "https://go.perfectpay.com.br/PPU38CQFUC3";
-const checkoutUrlMensal = "https://go.perfectpay.com.br/PPU38CQFSJG";
-const checkoutUrlRecovery = "https://go.perfectpay.com.br/PPU38CQFSJH";
+const checkoutUrlVitalicio = "https://pay.cakto.com.br/3dtfnag_968205";
+const checkoutUrlMensal = "https://pay.cakto.com.br/guw9f5r";
+const checkoutUrlRecovery = "https://pay.cakto.com.br/7dnhb97";
 
 const vitalicioFeatures = [
   { text: "Biblioteca Premium de prompts", highlight: true },
