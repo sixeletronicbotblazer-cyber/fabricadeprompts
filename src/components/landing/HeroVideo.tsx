@@ -1,8 +1,20 @@
 "use client";
 
-import { Eye } from "lucide-react";
+import { useState, useRef, useCallback } from "react";
+import { Eye, Volume2, VolumeX } from "lucide-react";
 
 export function HeroVideo() {
+  const [muted, setMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleMute = useCallback(() => {
+    if (videoRef.current) {
+      const next = !muted;
+      videoRef.current.muted = next;
+      setMuted(next);
+    }
+  }, [muted]);
+
   return (
     <div className="mt-6 sm:mt-8 mx-auto w-full max-w-[340px] sm:max-w-[380px] md:max-w-[420px] lg:max-w-[460px]">
       <div className="relative rounded-2xl overflow-hidden bg-black shadow-[0_0_40px_rgba(255,45,85,0.12)] border border-[#2A2A2E]/60">
@@ -21,8 +33,18 @@ export function HeroVideo() {
           </div>
         </div>
 
+        {/* Botão mute/unmute - canto inferior esquerdo */}
+        <button
+          onClick={toggleMute}
+          aria-label={muted ? "Ativar som" : "Desativar som"}
+          className="absolute bottom-3 left-3 z-20 size-9 flex items-center justify-center rounded-full bg-black/60 backdrop-blur-sm border border-white/15 text-white/80 hover:text-white hover:bg-black/80 transition-all"
+        >
+          {muted ? <VolumeX className="size-4" /> : <Volume2 className="size-4" />}
+        </button>
+
         {/* Vídeo vertical 9:16 */}
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
