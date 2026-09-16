@@ -51,7 +51,7 @@ export function MobileStickyCTA() {
         <span className="text-white/80 font-bold text-[13px] mr-2.5">R$49,90</span>
         <span className="w-px h-3.5 bg-white/25" />
         <span className="text-white font-extrabold text-[13px] ml-2.5 tracking-wide uppercase">
-          Quero o Pacote Especial
+          Acessar a Biblioteca
         </span>
       </a>
     </div>

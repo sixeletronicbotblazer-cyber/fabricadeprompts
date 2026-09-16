@@ -1,8 +1,6 @@
 import { UrgencyBar } from "@/components/landing/UrgencyBar";
 import { Hero } from "@/components/landing/Hero";
-import { MicroChamada } from "@/components/landing/MicroChamada";
 import { FormatosVirais } from "@/components/landing/FormatosVirais";
-import { MiniDecisionBlock } from "@/components/landing/MiniDecisionBlock";
 import { PremiumBonusSection } from "@/components/landing/PremiumBonusSection";
 import { SocialProofSection } from "@/components/landing/SocialProofSection";
 import { WhatsAppProofCarousel } from "@/components/landing/WhatsAppProofCarousel";
@@ -24,9 +22,7 @@ export default function Home() {
       <UrgencyBar />
       <main className="flex-1 pb-14 md:pb-0">
         <Hero />
-        <MicroChamada />
         <FormatosVirais />
-        <MiniDecisionBlock />
         <PremiumBonusSection />
         <SocialProofSection />
         <WhatsAppProofCarousel />

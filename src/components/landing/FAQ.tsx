@@ -10,8 +10,8 @@ import {
 
 const faqs = [
   {
-    q: "Preciso saber criar prompts?",
-    a: "Você parte de uma base pronta e adapta os detalhes ao seu produto. As referências e orientações ajudam a entender o que fazer em cada etapa.",
+    q: "O que eu recebo?",
+    a: "Acesso a uma biblioteca com +500 prompts organizados por tipo de vídeo e categoria, com pré-visualização, atualizações semanais e todos os formatos para TikTok Shop e Shopee.",
   },
   {
     q: "A biblioteca cria o vídeo automaticamente?",
@@ -19,19 +19,7 @@ const faqs = [
   },
   {
     q: "Posso usar no Flow ou Seedance?",
-    a: "Você adapta os prompts à ferramenta e ao formato de geração que utilizar. As opções e os resultados podem variar conforme o modelo de IA.",
-  },
-  {
-    q: "Qual a diferença entre os pacotes?",
-    a: "O Pacote Simples inclui 250 prompts essenciais e acesso à biblioteca padrão. O Pacote Especial tem 500+ prompts completos, pré-visualização, atualizações semanais, todos os formatos, Biblioteca Premium e suporte VIP.",
-  },
-  {
-    q: "O que eu recebo?",
-    a: "Você recebe acesso à Biblioteca Premium + Academy, com prompts, formatos e referências organizadas para criar vídeos com IA para TikTok Shop e Shopee. Inclui categorias como Modelo, POV, Selfie UGC, Produto na Mão, Dancinha, Ganchos, Transições, Moda, Casa, Acessórios, Pet, datas comemorativas e outras atualizações.",
-  },
-  {
-    q: "O acesso inclui a Biblioteca Promptly Prompts?",
-    a: "Sim. A Biblioteca Promptly Prompts (Galeria Premium) está disponível como bônus especial dentro do Pacote Especial.",
+    a: "Você adapta os prompts à ferramenta e ao formato de geração que utilizar. Os resultados podem variar conforme o modelo de IA.",
   },
   {
     q: "Preciso aparecer nos vídeos?",
@@ -42,16 +30,12 @@ const faqs = [
     a: "Sim. Os prompts foram pensados para criativos de produtos físicos, principalmente para TikTok Shop, Shopee e vídeos de oferta.",
   },
   {
-    q: "Recebo acesso na hora?",
-    a: "Sim. Após a confirmação do pagamento, você recebe as instruções de acesso aos conteúdos disponíveis.",
-  },
-  {
     q: "É pagamento único?",
-    a: "Sim. Ambos os pacotes são pagamento único. Sem mensalidade.",
+    a: "Sim. Você paga R$49,90 uma vez e mantém o acesso vitalício. Sem mensalidade.",
   },
   {
-    q: "Posso cancelar?",
-    a: "Como é pagamento único, não há assinatura para cancelar. Você paga uma vez e mantém o acesso.",
+    q: "Recebo acesso na hora?",
+    a: "Sim. Após a confirmação do pagamento, o acesso é liberado imediatamente.",
   },
   {
     q: "Funciona com qual ferramenta de IA?",
@@ -59,7 +43,7 @@ const faqs = [
   },
   {
     q: "Tem garantia?",
-    a: "Sim. Você tem 7 dias de garantia para testar se o conteúdo faz sentido para você.",
+    a: "Sim. Você tem 7 dias de garantia para testar se a biblioteca faz sentido para você.",
   },
 ];
 

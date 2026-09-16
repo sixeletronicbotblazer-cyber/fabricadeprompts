@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Sparkles, Crown } from "lucide-react";
 
-const checkoutUrlRecovery = "https://pay.cakto.com.br/7dnhb97";
+const checkoutUrl = "https://pay.cakto.com.br/3dtfnag_968205";
 
 export function EntryPopup() {
   const [open, setOpen] = useState(false);
@@ -37,7 +37,7 @@ export function EntryPopup() {
           />
 
           <motion.div
-            className="relative bg-[#111118] rounded-t-2xl sm:rounded-2xl border border-[#7C3AED]/20 shadow-[0_0_60px_rgba(124,58,237,0.10)] w-full sm:max-w-sm z-10"
+            className="relative bg-[#111118] rounded-t-2xl sm:rounded-2xl border border-[#FF2D55]/20 shadow-[0_0_60px_rgba(255,45,85,0.12)] w-full sm:max-w-sm z-10"
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 60 }}
@@ -53,39 +53,37 @@ export function EntryPopup() {
 
             <div className="p-5 sm:p-6">
               <div className="flex items-center gap-2 mb-3">
-                <Sparkles className="size-4 text-[#22D3EE]" />
-                <span className="text-[10px] font-bold text-[#A7A7B2]/60 uppercase tracking-wider">
-                  Condição especial
+                <Sparkles className="size-4 text-[#25F4EE]" />
+                <span className="text-xs font-bold text-[#A7A7B2]/60 uppercase tracking-wider">
+                  Oferta especial
                 </span>
               </div>
 
               <h3 className="text-lg font-black text-[#F4F4F6] mb-1.5 leading-tight">
-                Pacote Especial com todos os módulos por{" "}
-                <span className="text-[#FF2D55]">R$ 22,90</span>
+                Biblioteca completa com +500 prompts por{" "}
+                <span className="text-[#FF2D55]">R$49,90</span>
               </h3>
 
-              <p className="text-[13px] text-[#A7A7B2]/70 leading-relaxed mb-4">
-                Libere todos os modos, exemplos, módulos, bônus premium e acesso ao grupo VIP por esse preço exclusivo.
+              <p className="text-sm text-[#A7A7B2]/70 leading-relaxed mb-4">
+                Pré-visualização, atualizações semanais, todos os formatos e acesso vitalício.
               </p>
 
               <div className="flex flex-wrap gap-2 mb-4">
-                <span className="inline-flex items-center gap-1 text-[9px] font-bold text-[#22D3EE] bg-[#22D3EE]/10 px-2 py-0.5 rounded-full border border-[#22D3EE]/20">
+                <span className="inline-flex items-center gap-1 text-[10px] font-bold text-[#25F4EE] bg-[#25F4EE]/10 px-2.5 py-0.5 rounded-full border border-[#25F4EE]/20">
                   <Crown className="size-2.5" />
-                  Completo
+                  Vitalício
                 </span>
-                <span className="text-[9px] font-bold text-[#A7A7B2]/50 bg-white/5 px-2 py-0.5 rounded-full border border-[#2A2A2E]/60">
+                <span className="text-[10px] font-bold text-[#A7A7B2]/50 bg-white/5 px-2.5 py-0.5 rounded-full border border-[#2A2A2E]/60">
                   Pagamento único
-                </span>
-                <span className="text-[9px] font-bold text-[#A7A7B2]/50 bg-white/5 px-2 py-0.5 rounded-full border border-[#2A2A2E]/60">
-                  Sem mensalidade
                 </span>
               </div>
 
               <a
-                href={checkoutUrlRecovery}
-                className="block w-full text-center bg-cta-gradient hover:brightness-110 shadow-cta font-extrabold uppercase tracking-wide rounded-xl text-sm py-3.5 px-6 transition-all"
+                href={checkoutUrl}
+                onClick={() => { (window as any).trackCheckout?.('Vitalicio Entry', 49.90); }}
+                className="block w-full text-center bg-[#FF2D55] hover:brightness-110 shadow-lg shadow-[#FF2D55]/25 font-extrabold uppercase tracking-wide rounded-xl text-sm py-3.5 px-6 transition-all"
               >
-                QUERO O PACOTE ESPECIAL POR R$ 22,90
+                QUERO ACESSAR A BIBLIOTECA
               </a>
 
               <button

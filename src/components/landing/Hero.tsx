@@ -50,7 +50,7 @@ export function Hero() {
               <ArrowRight className="ml-2 size-4" />
             </a>
             <p className="text-sm text-white/40">
-              A partir de R$24,90 · Pagamento único
+              R$49,90 · Pagamento único
             </p>
           </div>
         </FadeIn>
