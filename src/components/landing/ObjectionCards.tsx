@@ -7,17 +7,17 @@ const items = [
     {
         icon: HelpCircle,
         title: "Preciso aparecer?",
-        text: "Nao. Voce pode criar videos com IA usando modelo, POV, produto na mao e selfie UGC.",
+        text: "Nao. Voce cria videos com IA usando modelo, POV, produto na mao e selfie UGC.",
     },
     {
         icon: GraduationCap,
         title: "Serve para iniciante?",
-        text: "Sim. Os prompts ja vem separados por estilo para copiar, adaptar e usar.",
+        text: "Sim. A biblioteca ja tem tudo separado por formato. So copiar e adaptar.",
     },
     {
         icon: Zap,
         title: "Recebo na hora?",
-        text: "Sim. O acesso e liberado apos a compra.",
+        text: "Sim. Acesso liberado apos o pagamento unico.",
     },
 ];
 
@@ -27,7 +27,7 @@ export function ObjectionCards() {
             <div className="max-w-md mx-auto">
                 <FadeIn>
                     <p className="text-xs font-bold text-white/30 uppercase tracking-wider text-center mb-4">
-                        Antes de acessar, entenda:
+                        Antes de acessar:
                     </p>
                 </FadeIn>
 

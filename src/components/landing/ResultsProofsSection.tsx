@@ -84,7 +84,7 @@ export function ResultsProofsSection() {
         {/* Title */}
         <FadeIn>
           <h2 className="text-[1.15rem] sm:text-2xl lg:text-[1.6rem] font-extrabold text-[#F4F4F5] leading-[1.15] sm:leading-[1.2] text-center max-w-md sm:max-w-lg mx-auto mb-1.5">
-            Quem usa esse mecanismo, consegue{" "}
+            Quem usa a biblioteca, consegue{" "}
             <span className="text-[#FF2D55]">testar mais criativos</span>
           </h2>
         </FadeIn>
@@ -92,14 +92,14 @@ export function ResultsProofsSection() {
         {/* Subtitle */}
         <FadeIn delay={0.05}>
           <p className="text-[11px] sm:text-[13px] text-[#A1A1AA]/60 max-w-sm mx-auto text-center leading-relaxed mb-1">
-            Com os prompts certos, fica mais facil sair do zero, criar variacoes e testar mais videos para TikTok Shop.
+            Com os prompts da biblioteca, fica mais facil sair do zero, criar variacoes e testar mais videos para TikTok Shop.
           </p>
         </FadeIn>
 
         {/* Support paragraph */}
         <FadeIn delay={0.08}>
           <p className="text-[10px] sm:text-[11px] text-[#A1A1AA]/40 max-w-sm mx-auto text-center leading-relaxed mb-6 sm:mb-8">
-            A ideia nao e depender de sorte ou tentar inventar tudo sozinho. O metodo ajuda voce a ter direcao para criar, copiar, adaptar e testar diferentes formatos de criativo.
+            A ideia nao e depender de sorte ou inventar tudo sozinho. A biblioteca ajuda voce a ter direcao para copiar, adaptar e testar diferentes formatos de criativo.
           </p>
         </FadeIn>
 

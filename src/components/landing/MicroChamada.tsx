@@ -8,24 +8,24 @@ export function MicroChamada() {
     <section className="bg-[#050505] py-4 sm:py-5 px-4">
       <div className="max-w-lg mx-auto text-center">
         <FadeIn>
-          <span className="inline-flex items-center gap-1.5 text-[9px] sm:text-[10px] font-bold text-[#A1A1AA]/40 uppercase tracking-[0.15em] bg-white/[0.03] border border-[#2A2A2E]/50 px-3 py-1 rounded-full mb-2.5">
-            ANTES DE ACESSAR
+          <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#A1A1AA]/50 uppercase tracking-[0.12em] bg-white/[0.03] border border-[#2A2A2E]/50 px-3.5 py-1 rounded-full mb-2.5">
+            COMO FUNCIONA
           </span>
         </FadeIn>
         <FadeIn delay={0.05}>
-          <h3 className="text-sm sm:text-base font-extrabold text-white leading-tight mb-1.5">
-            Veja primeiro o que você recebe por dentro
+          <h3 className="text-base sm:text-lg font-extrabold text-white leading-tight mb-1.5">
+            Veja a prévia. Copie o prompt. Crie o vídeo.
           </h3>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <p className="text-[12px] sm:text-[13px] text-[#A1A1AA]/50 leading-relaxed max-w-sm mx-auto">
-            Em poucos segundos você entende os formatos, a biblioteca e como usar os prompts para criar criativos com IA.
+          <p className="text-sm text-[#A1A1AA]/55 leading-relaxed max-w-sm mx-auto">
+            A biblioteca tem tudo organizado. Você só precisa escolher, copiar e adaptar para o seu produto.
           </p>
         </FadeIn>
         <FadeIn delay={0.15}>
           <div className="mt-3">
-            <span className="inline-flex items-center gap-1 text-[10px] text-[#25F4EE]/50">
-              <ArrowDown className="size-3 animate-bounce" />
+            <span className="inline-flex items-center gap-1 text-sm text-[#25F4EE]/50">
+              <ArrowDown className="size-3.5 animate-bounce" />
             </span>
           </div>
         </FadeIn>

@@ -10,16 +10,16 @@ const checkoutUrlSimples = "https://pay.cakto.com.br/guw9f5r";
 const checkoutUrlRecovery = "https://pay.cakto.com.br/7dnhb97";
 
 const especialFeatures = [
-  { text: "+500 prompts organizados por tipo de cena", highlight: true },
+  { text: "Biblioteca completa com +500 prompts", highlight: true },
   { text: "Pré-visualização de cada prompt antes de usar", highlight: true },
   { text: "Atualizações semanais com novos prompts", highlight: true },
-  { text: "Formatos: Modelo, POV, UGC, Produto na mão, Dancinha…" },
+  { text: "Todos os formatos e categorias incluídos" },
   { text: "Ganchos, transições e movimentos prontos" },
-  { text: "Grupo VIP com troca de ideias" },
+  { text: "Acesso vitalício, pagamento único" },
 ];
 
 const simplesFeatures = [
-  "250 prompts essenciais para começar",
+  "250 prompts essenciais",
   "Categorias principais de formatos",
   "Exemplos práticos de aplicação",
 ];
@@ -82,10 +82,10 @@ export function PricingSection() {
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white leading-tight mb-1 text-center">
-              Escolha seu <span className="text-[#FF2D55]">pacote</span>
+              Acesse a <span className="text-[#FF2D55]">biblioteca completa</span>
             </h2>
             <p className="text-xs sm:text-sm text-white/40 text-center mb-6 max-w-lg mx-auto">
-              Pagamento único. Sem mensalidade.
+              Pagamento único. Acesso vitalício.
             </p>
           </FadeIn>
 
@@ -201,7 +201,7 @@ export function PricingSection() {
                 </ul>
 
                 <p className="text-sm text-[#FF2D55]/60 mb-4 leading-relaxed border-t border-[#2A2A2E]/40 pt-3 font-medium">
-                  Para pré-visualização, atualizações e prompts completos, veja o Pacote Especial.
+                  Para biblioteca completa com pré-visualização e atualizações, veja o Pacote Especial.
                 </p>
 
                 <button

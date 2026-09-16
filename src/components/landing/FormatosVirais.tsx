@@ -115,13 +115,13 @@ export function FormatosVirais() {
 
         <FadeIn delay={0.05}>
           <h2 className="text-[1.2rem] sm:text-xl md:text-[1.75rem] font-black leading-[1.1] sm:leading-[1.0] text-[#F4F4F5] mb-2 text-center max-w-lg mx-auto">
-            Os formatos de vídeo com IA mais <span className="text-[#FF2D55]">virais</span> para vender no TikTok Shop
+            Alguns dos formatos que você encontra <span className="text-[#FF2D55]">na biblioteca</span>
           </h2>
         </FadeIn>
 
         <FadeIn delay={0.08}>
           <p className="text-[12px] sm:text-sm text-[#A1A1AA]/60 leading-relaxed mb-6 sm:mb-8 max-w-md mx-auto text-center">
-            Veja alguns dos formatos que você encontra dentro da Biblioteca Premium + Academy para copiar, adaptar e transformar em criativos com IA.
+            Todos organizados na biblioteca para você copiar, adaptar para seu produto e criar vídeos com IA.
           </p>
         </FadeIn>
 
@@ -141,13 +141,13 @@ export function FormatosVirais() {
 
         <FadeIn delay={0.15}>
           <p className="text-[12px] sm:text-sm text-[#A1A1AA]/70 text-center mt-6 sm:mt-8 max-w-md mx-auto leading-relaxed">
-            Você não precisa começar do zero. Escolha um formato, copie o prompt e adapte para o seu produto.
+            Escolha o formato, copie o prompt e adapte para o seu produto. Tudo pronto na biblioteca.
           </p>
         </FadeIn>
 
         <FadeIn delay={0.18}>
           <p className="text-[11px] sm:text-xs text-[#A1A1AA]/50 text-center mt-3 max-w-md mx-auto leading-relaxed">
-            Esses são apenas alguns exemplos. A biblioteca também inclui categorias por nicho, movimento, produto, datas e estilos de criativo.
+            A biblioteca também inclui categorias por nicho, movimento, produto, datas comemorativas e estilos de criativo.
           </p>
         </FadeIn>
 
@@ -157,7 +157,7 @@ export function FormatosVirais() {
               href="#beneficios"
               className="inline-flex items-center justify-center border border-[#25F4EE]/25 bg-[#25F4EE]/5 hover:bg-[#25F4EE]/15 text-[#25F4EE] font-extrabold py-3.5 px-8 rounded-2xl transition-all text-sm sm:text-base hover:scale-[1.02] active:scale-[0.98] uppercase tracking-wide"
             >
-              VER O QUE VEM INCLUSO
+              VER A BIBLIOTECA COMPLETA
             </a>
           </div>
         </FadeIn>

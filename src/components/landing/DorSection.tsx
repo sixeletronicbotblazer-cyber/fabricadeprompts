@@ -45,13 +45,13 @@ export function DorSection() {
 
         <FadeIn delay={0.05}>
           <h2 className="text-[1.2rem] sm:text-2xl md:text-[2rem] font-black text-white leading-[1.1] sm:leading-[1.0] mb-2 text-center">
-            Não falta <span className="text-[#A1A1AA]">ferramenta</span>. Falta <span className="text-[#FF2D55]">comando certo</span>.
+            Não falta <span className="text-[#A1A1AA]">IA</span>. Falta <span className="text-[#FF2D55]">prompt certo</span>.
           </h2>
         </FadeIn>
 
         <FadeIn delay={0.05}>
           <p className="text-[12px] sm:text-sm text-[#A1A1AA]/70 max-w-md mx-auto mb-5 sm:mb-6 text-center">
-            Se o prompt for fraco, o vídeo sai estranho ou muda completamente o produto — em qualquer IA.
+            Se o prompt for vago, o vídeo sai estranho ou muda completamente o produto — em qualquer ferramenta de IA.
           </p>
         </FadeIn>
 

@@ -13,10 +13,10 @@ export function GuaranteeSection() {
               <ShieldCheck className="size-5 text-emerald-400" />
             </div>
             <h2 className="text-xl sm:text-2xl font-black text-[#F4F4F5] leading-tight mb-3">
-              Garantia simples de 7 dias
+              Garantia de 7 dias
             </h2>
             <p className="text-sm text-[#A1A1AA]/70 leading-relaxed max-w-md mx-auto">
-              Voce tem 7 dias para acessar o conteudo e testar se ele faz sentido para o seu fluxo de criacao. Caso nao seja para voce, e so acionar a garantia dentro do prazo.
+              Voce tem 7 dias para acessar a biblioteca e testar se ela faz sentido para o seu fluxo de criacao. Caso nao seja para voce, e so acionar a garantia dentro do prazo.
             </p>
           </div>
         </FadeIn>

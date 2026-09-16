@@ -4,10 +4,10 @@ import { Sparkles, BookOpen, Check } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
 const chips = [
-  "Aulas rápidas",
-  "Novos módulos",
+  "Pré-visualização",
+  "Atualizações semanais",
   "Formatos validados",
-  "Atualizações constantes",
+  "Pagamento único",
 ];
 
 export function MiniDecisionBlock() {
@@ -21,20 +21,20 @@ export function MiniDecisionBlock() {
               <span className="bg-gradient-to-r from-[#37E7FF] to-[#FF3D7F] bg-clip-text text-transparent">
                 +500
               </span>{" "}
-              <span className="text-white">prompts prontos</span>
+              <span className="text-white">prompts na biblioteca</span>
             </h2>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.04}>
           <p className="text-sm sm:text-base md:text-lg font-semibold text-[#37E7FF]/80 text-center mb-2">
-            para criar vídeos com IA
+            organizados por tipo de vídeo e categoria
           </p>
         </FadeIn>
 
         <FadeIn delay={0.08}>
-          <p className="text-xs sm:text-sm text-[#A8B1C7]/80 text-center mb-6 sm:mb-8 max-w-lg mx-auto leading-relaxed">
-            Dois aplicativos complementares para criar, adaptar e testar vídeos com mais velocidade.
+          <p className="text-sm text-[#A8B1C7]/80 text-center mb-6 sm:mb-8 max-w-lg mx-auto leading-relaxed">
+            Dois aplicativos complementares: orientação para criar e uma biblioteca com prompts prontos para copiar e adaptar.
           </p>
         </FadeIn>
 
@@ -51,8 +51,8 @@ export function MiniDecisionBlock() {
                   Motion Prompts
                 </h3>
               </div>
-              <p className="text-xs sm:text-sm text-[#A8B1C7]/75 leading-relaxed">
-                Orientação para criar personagens, preparar imagens e entender os formatos de vídeo para usar com mais consistência.
+              <p className="text-sm text-[#A8B1C7]/75 leading-relaxed">
+                Orientação para preparar imagens e entender os formatos de vídeo com mais consistência.
               </p>
             </div>
           </FadeIn>
@@ -68,8 +68,8 @@ export function MiniDecisionBlock() {
                   Biblioteca Promptly Prompts
                 </h3>
               </div>
-              <p className="text-xs sm:text-sm text-[#A8B1C7]/75 leading-relaxed">
-                Mais de 500 prompts prontos, organizados por formatos e categorias, para adaptar e usar nos seus criativos.
+              <p className="text-sm text-[#A8B1C7]/75 leading-relaxed">
+                +500 prompts organizados por formato e categoria, com pré-visualização e atualizações semanais.
               </p>
             </div>
           </FadeIn>
@@ -77,13 +77,13 @@ export function MiniDecisionBlock() {
 
         {/* Chips */}
         <FadeIn delay={0.2}>
-          <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2">
+          <div className="flex flex-wrap justify-center gap-2">
             {chips.map((chip) => (
               <span
                 key={chip}
-                className="inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-[#A8B1C7]/70 bg-[#0C1220] border border-[#1C2438] rounded-full px-2.5 py-1"
+                className="inline-flex items-center gap-1 text-xs sm:text-sm font-medium text-[#A8B1C7]/70 bg-[#0C1220] border border-[#1C2438] rounded-full px-3 py-1.5"
               >
-                <Check className="size-2.5 text-[#37E7FF]/60" />
+                <Check className="size-3 text-[#37E7FF]/60" />
                 {chip}
               </span>
             ))}

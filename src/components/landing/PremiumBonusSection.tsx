@@ -37,7 +37,7 @@ export function PremiumBonusSection() {
         {/* Title */}
         <FadeIn delay={0.05}>
           <h2 className="text-[1.2rem] sm:text-xl md:text-[1.75rem] font-black leading-[1.1] text-[#F4F4F5] mb-2 text-center max-w-lg mx-auto">
-            Veja a <span className="text-[#FF2D55]">prévia</span>. Prepare a imagem. Anime.
+            Veja a <span className="text-[#FF2D55]">prévia</span>. Copie o prompt. Crie o vídeo.
           </h2>
         </FadeIn>
 
@@ -138,7 +138,7 @@ export function PremiumBonusSection() {
         {/* Confira os planos note */}
         <FadeIn delay={0.4}>
           <p className="text-[10px] sm:text-[11px] text-[#A1A1AA]/40 text-center mt-6">
-            Biblioteca com formatos para diferentes nichos, produtos e campanhas. Confira o que cada pacote inclui abaixo.
+            Biblioteca com formatos para diferentes nichos, produtos e campanhas. Confira o que está incluso em cada pacote abaixo.
           </p>
         </FadeIn>
       </div>

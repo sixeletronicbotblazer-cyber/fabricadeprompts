@@ -27,7 +27,7 @@ export function ComparisonSection() {
       <div className="max-w-2xl mx-auto">
         <FadeIn>
           <h2 className="text-[1.3rem] sm:text-2xl md:text-[2rem] font-black leading-[1.1] sm:leading-[1.0] text-[#F4F4F5] mb-5 sm:mb-6 text-center">
-            Voce pode continuar tentando criar tudo <span className="text-[#FF2D55]">sozinho</span>...
+            Voce pode continuar <span className="text-[#FF2D55]">inventando prompt</span> do zero...
           </h2>
         </FadeIn>
 
@@ -50,7 +50,7 @@ export function ComparisonSection() {
           {/* With App */}
           <FadeIn delay={0.1}>
             <div className="bg-[#111113] rounded-2xl border border-[#FF2D55]/25 p-4 sm:p-5">
-              <p className="text-sm font-bold text-[#FF2D55] mb-4">Com Motion Prompts</p>
+              <p className="text-sm font-bold text-[#FF2D55] mb-4">Com a biblioteca</p>
               <ul className="space-y-3">
                 {withApp.map((item) => (
                   <li key={item} className="flex items-start gap-2.5">
