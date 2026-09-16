@@ -23,7 +23,7 @@ export function EntryPopup() {
     <AnimatePresence>
       {open && (
         <motion.div
-          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4"
+          className="fixed inset-0 z-[60] flex items-end sm:items-center justify-center p-0 sm:p-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -37,7 +37,7 @@ export function EntryPopup() {
           />
 
           <motion.div
-            className="relative bg-[#111118] rounded-t-2xl sm:rounded-2xl border border-[#FF2D55]/20 shadow-[0_0_60px_rgba(255,45,85,0.12)] w-full sm:max-w-sm z-10"
+            className="relative bg-[#111118] rounded-t-2xl sm:rounded-2xl border border-[#FF2D55]/20 shadow-[0_0_60px_rgba(255,45,85,0.12)] w-full sm:max-w-sm z-10 mb-14 sm:mb-0"
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 60 }}
@@ -59,12 +59,12 @@ export function EntryPopup() {
                 </span>
               </div>
 
-              <h3 className="text-lg font-black text-[#F4F4F6] mb-1.5 leading-tight">
+              <h3 className="text-lg sm:text-xl font-black text-[#F4F4F6] mb-2 leading-tight">
                 Biblioteca completa com +500 prompts por{" "}
                 <span className="text-[#FF2D55]">R$49,90</span>
               </h3>
 
-              <p className="text-sm text-[#A7A7B2]/70 leading-relaxed mb-4">
+              <p className="text-sm text-[#A7A7B2]/70 leading-relaxed mb-5">
                 Pré-visualização, atualizações semanais, todos os formatos e acesso vitalício.
               </p>
 
@@ -81,14 +81,14 @@ export function EntryPopup() {
               <a
                 href={checkoutUrl}
                 onClick={() => { (window as any).trackCheckout?.('Vitalicio Entry', 49.90); }}
-                className="block w-full text-center bg-[#FF2D55] hover:brightness-110 shadow-lg shadow-[#FF2D55]/25 font-extrabold uppercase tracking-wide rounded-xl text-sm py-3.5 px-6 transition-all"
+                className="block w-full text-center bg-[#FF2D55] hover:brightness-110 shadow-lg shadow-[#FF2D55]/25 font-extrabold uppercase tracking-wide rounded-xl text-base py-4 px-6 transition-all"
               >
                 QUERO ACESSAR A BIBLIOTECA
               </a>
 
               <button
                 onClick={() => { setOpen(false); setClosed(true); }}
-                className="block w-full text-center text-[#A7A7B2]/30 hover:text-[#A7A7B2]/50 text-xs mt-3 py-1 transition-colors"
+                className="block w-full text-center text-[#A7A7B2]/30 hover:text-[#A7A7B2]/50 text-sm mt-4 py-1.5 transition-colors"
               >
                 não obrigado
               </button>

@@ -69,20 +69,20 @@ function CountdownTimer() {
 
 export function PricingSection() {
   return (
-    <section id="oferta" className="bg-[#050505] py-8 md:py-14 px-4">
+    <section id="oferta" className="bg-[#050505] py-12 md:py-18 px-4">
       <div className="max-w-xl mx-auto">
 
         <FadeIn>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white leading-tight mb-1 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight mb-2 text-center">
             Acesse a <span className="text-[#FF2D55]">biblioteca completa</span>
           </h2>
-          <p className="text-sm text-white/40 text-center mb-6">
+          <p className="text-base text-white/40 text-center mb-8">
             Pagamento único. Acesso vitalício.
           </p>
         </FadeIn>
 
         <FadeIn delay={0.08}>
-          <div className="relative bg-[#111113] rounded-2xl border border-[#FF2D55]/30 p-5 sm:p-7 shadow-[0_0_50px_rgba(255,45,85,0.12)]">
+          <div className="relative bg-[#111113] rounded-2xl border border-[#FF2D55]/30 p-6 sm:p-8 shadow-[0_0_50px_rgba(255,45,85,0.12)]">
 
             {/* OFERTA badge */}
             <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 flex items-center gap-2">
@@ -93,7 +93,7 @@ export function PricingSection() {
             </div>
 
             {/* Countdown */}
-            <div className="rounded-xl bg-black/40 border border-[#2A2A2E]/50 px-3.5 py-2 flex items-center justify-between mb-5 mt-1">
+            <div className="rounded-xl bg-black/40 border border-[#2A2A2E]/50 px-4 py-2.5 flex items-center justify-between mb-6 mt-2">
               <div className="flex items-center gap-1.5">
                 <Zap className="size-3.5 text-[#FF2D55]" />
                 <span className="text-xs font-bold text-white/40 uppercase tracking-wider">Oferta acaba em</span>
@@ -102,7 +102,7 @@ export function PricingSection() {
             </div>
 
             {/* Price block with R$97 strikethrough */}
-            <div className="bg-[#FF2D55]/[0.06] rounded-2xl py-5 px-4 border border-[#FF2D55]/10 mb-5 text-center">
+            <div className="bg-[#FF2D55]/[0.06] rounded-2xl py-6 px-5 border border-[#FF2D55]/10 mb-6 text-center">
               <p className="text-xs text-white/40 uppercase tracking-wider font-semibold mb-2">
                 PACOTE VITALÍCIO
               </p>
@@ -131,13 +131,13 @@ export function PricingSection() {
             <a
               href={checkoutUrl}
               onClick={() => { (window as any).trackCheckout?.('Vitalicio', 49.90); }}
-              className="block w-full text-center bg-[#FF2D55] hover:brightness-110 text-white font-extrabold py-4 px-6 rounded-2xl transition-all text-base sm:text-lg shadow-lg shadow-[#FF2D55]/25 hover:shadow-[#FF2D55]/40 hover:scale-[1.02] active:scale-[0.98] mb-5 uppercase tracking-wide"
+              className="block w-full text-center bg-[#FF2D55] hover:brightness-110 text-white font-extrabold py-5 px-6 rounded-2xl transition-all text-lg sm:text-xl shadow-lg shadow-[#FF2D55]/25 hover:shadow-[#FF2D55]/40 hover:scale-[1.02] active:scale-[0.98] mb-6 uppercase tracking-wide"
             >
               QUERO ACESSAR A BIBLIOTECA
             </a>
 
             {/* Features */}
-            <ul className="space-y-2.5 mb-5">
+            <ul className="space-y-3 mb-6">
               {features.map((f, i) => (
                 <li key={i} className="flex items-center gap-2.5">
                   <Check className={`size-4 shrink-0 ${f.highlight ? "text-[#25F4EE]" : "text-[#FF2D55]/70"}`} />
@@ -147,7 +147,7 @@ export function PricingSection() {
             </ul>
 
             {/* Tudo incluso box */}
-            <div className="rounded-xl bg-[#25F4EE]/5 border border-[#25F4EE]/10 px-4 py-3 mb-5">
+            <div className="rounded-xl bg-[#25F4EE]/5 border border-[#25F4EE]/10 px-4 py-3.5 mb-5">
               <p className="text-sm font-bold text-[#25F4EE]/90 text-center">
                 Tudo incluso em um único pagamento.
               </p>

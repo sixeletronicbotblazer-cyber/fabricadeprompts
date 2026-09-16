@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 
 export function Hero() {
   return (
-    <section id="hero" className="bg-[#050505] relative overflow-hidden py-10 sm:py-14 md:py-20 px-4">
+    <section id="hero" className="bg-[#050505] relative overflow-hidden py-14 sm:py-18 md:py-24 px-4">
       <div className="max-w-2xl mx-auto text-center relative z-10">
         {/* Platform qualifier */}
         <FadeIn>
@@ -23,33 +23,33 @@ export function Hero() {
         </FadeIn>
 
         <FadeIn delay={0.08}>
-          <p className="text-xs sm:text-sm text-[#A1A1AA]/50 uppercase tracking-[0.12em] font-semibold mb-3">
+          <p className="text-xs sm:text-sm text-[#A1A1AA]/50 uppercase tracking-[0.12em] font-semibold mb-4">
             BIBLIOTECA DE PROMPTS PARA VÍDEOS COM IA
           </p>
         </FadeIn>
 
         <FadeIn delay={0.15}>
-          <h1 className="text-[1.65rem] sm:text-[2rem] md:text-[2.75rem] lg:text-[3rem] font-black leading-[1.12] sm:leading-[1.05] tracking-tight text-white">
+          <h1 className="text-[1.75rem] sm:text-[2.15rem] md:text-[2.85rem] lg:text-[3.15rem] font-black leading-[1.15] sm:leading-[1.08] tracking-tight text-white">
             Uma biblioteca com <span className="text-[#FF2D55]">+500 prompts</span> prontos para criar vídeos com IA
           </h1>
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <p className="text-sm sm:text-base text-[#C4C4CC] leading-[1.6] mx-auto max-w-lg mt-4">
+          <p className="text-sm sm:text-base text-[#C4C4CC] leading-[1.6] mx-auto max-w-lg mt-5">
             Veja a prévia de cada prompt, copie o que funciona para seu produto, adapte e crie vídeos para TikTok Shop e Shopee. Pagamento único. Acesso vitalício.
           </p>
         </FadeIn>
 
         <FadeIn delay={0.3}>
-          <div className="mt-8 sm:mt-10 flex flex-col items-center gap-2">
+          <div className="mt-10 sm:mt-12 flex flex-col items-center gap-3">
             <a
               href="#oferta"
-              className="inline-flex items-center justify-center w-full sm:w-auto px-8 sm:px-10 py-4 bg-[#FF2D55] hover:brightness-110 text-white font-extrabold tracking-wide uppercase text-base sm:text-lg rounded-2xl transition-all shadow-lg shadow-[#FF2D55]/25 hover:shadow-[#FF2D55]/40 hover:scale-[1.02] active:scale-[0.98]"
+              className="inline-flex items-center justify-center w-full sm:w-auto px-9 sm:px-12 py-5 bg-[#FF2D55] hover:brightness-110 text-white font-extrabold tracking-wide uppercase text-base sm:text-lg rounded-2xl transition-all shadow-lg shadow-[#FF2D55]/25 hover:shadow-[#FF2D55]/40 hover:scale-[1.02] active:scale-[0.98]"
             >
               QUERO ACESSAR A BIBLIOTECA
               <ArrowRight className="ml-2 size-4" />
             </a>
-            <p className="text-sm text-white/40">
+            <p className="text-sm text-white/40 mt-1">
               R$49,90 · Pagamento único
             </p>
           </div>
