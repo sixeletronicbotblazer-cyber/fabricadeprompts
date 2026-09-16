@@ -2,62 +2,26 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, X, Shield, Zap, Eye, RefreshCw, BookOpen, Users, Layers } from "lucide-react";
+import { Check, X, Shield, Zap } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
 const checkoutUrlEspecial = "https://pay.cakto.com.br/3dtfnag_968205";
 const checkoutUrlSimples = "https://pay.cakto.com.br/guw9f5r";
 const checkoutUrlRecovery = "https://pay.cakto.com.br/7dnhb97";
 
-const comparisonRows = [
-  {
-    icon: Layers,
-    label: "Prompts",
-    simples: "250 essenciais",
-    especial: "500+ completos",
-    simplesFull: false,
-    especialFull: true,
-  },
-  {
-    icon: Eye,
-    label: "Pré-visualização",
-    simples: null,
-    especial: "Inclusa",
-    simplesFull: false,
-    especialFull: true,
-  },
-  {
-    icon: RefreshCw,
-    label: "Atualizações",
-    simples: null,
-    especial: "Semanais",
-    simplesFull: false,
-    especialFull: true,
-  },
-  {
-    icon: BookOpen,
-    label: "Formatos",
-    simples: "Básicos",
-    especial: "Todos + sazonais",
-    simplesFull: false,
-    especialFull: true,
-  },
-  {
-    icon: BookOpen,
-    label: "Biblioteca",
-    simples: "Padrão",
-    especial: "Premium",
-    simplesFull: true,
-    especialFull: true,
-  },
-  {
-    icon: Users,
-    label: "Suporte VIP",
-    simples: null,
-    especial: "Incluso",
-    simplesFull: false,
-    especialFull: true,
-  },
+const especialFeatures = [
+  { text: "+500 prompts organizados por tipo de cena", highlight: true },
+  { text: "Pré-visualização de cada prompt antes de usar", highlight: true },
+  { text: "Atualizações semanais com novos prompts", highlight: true },
+  { text: "Formatos: Modelo, POV, UGC, Produto na mão, Dancinha…" },
+  { text: "Ganchos, transições e movimentos prontos" },
+  { text: "Grupo VIP com troca de ideias" },
+];
+
+const simplesFeatures = [
+  "250 prompts essenciais para começar",
+  "Categorias principais de formatos",
+  "Exemplos práticos de aplicação",
 ];
 
 function CountdownTimer() {
@@ -114,85 +78,90 @@ export function PricingSection() {
 
   return (
     <>
-      <section id="oferta" className="bg-[#050505] py-10 md:py-16 px-4">
+      <section id="oferta" className="bg-[#050505] py-8 md:py-12 px-4">
         <div className="max-w-3xl mx-auto">
           <FadeIn>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight mb-2 text-center">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white leading-tight mb-1 text-center">
               Escolha seu <span className="text-[#FF2D55]">pacote</span>
             </h2>
-            <p className="text-sm sm:text-base text-white/50 text-center mb-8 max-w-md mx-auto">
+            <p className="text-xs sm:text-sm text-white/40 text-center mb-6 max-w-lg mx-auto">
               Pagamento único. Sem mensalidade.
             </p>
           </FadeIn>
 
-          {/* Price cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 items-start mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 items-start">
 
             {/* PACOTE ESPECIAL */}
             <FadeIn>
-              <div className="relative bg-[#111113] rounded-2xl border border-[#FF2D55]/30 p-6 sm:p-7 flex flex-col order-1 md:order-1 shadow-[0_0_40px_rgba(255,45,85,0.1)]">
-                {/* Badge */}
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="inline-block bg-[#FF2D55] text-white text-xs sm:text-sm font-bold uppercase tracking-wider px-5 py-1.5 rounded-full shadow-md shadow-[#FF2D55]/30 whitespace-nowrap">
+              <div className="relative bg-[#111113] rounded-2xl border border-[#FF2D55]/30 p-5 sm:p-6 flex flex-col order-1 md:order-1 shadow-[0_0_40px_rgba(255,45,85,0.1)]">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 flex items-center gap-2">
+                  <span className="inline-block bg-[#FF2D55] text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-full shadow-md shadow-[#FF2D55]/30 whitespace-nowrap">
                     MAIS ESCOLHIDO
+                  </span>
+                  <span className="hidden sm:inline-block bg-[#25F4EE]/10 text-[#25F4EE] text-[10px] sm:text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-[#25F4EE]/20 whitespace-nowrap">
+                    COMPLETO
                   </span>
                 </div>
 
-                {/* Name */}
-                <h3 className="text-lg sm:text-xl font-bold text-white text-center mt-3 mb-4">
-                  Pacote Especial
-                </h3>
-
-                {/* Price */}
-                <div className="bg-[#FF2D55]/[0.07] rounded-2xl py-5 px-4 -mx-1 border border-[#FF2D55]/10 mb-5">
-                  <div className="flex items-baseline justify-center">
-                    <span className="text-[3.5rem] sm:text-[4rem] md:text-[4.5rem] font-extrabold text-white leading-none tracking-tight">
-                      R$49
-                    </span>
-                    <span className="text-2xl sm:text-3xl font-bold text-white">,90</span>
+                <div className="text-center mt-2 sm:mt-1 mb-4 sm:mb-5">
+                  <div className="bg-[#FF2D55]/6 rounded-2xl py-4 px-4 -mx-1 border border-[#FF2D55]/10">
+                    <p className="text-[11px] sm:text-xs text-[#A1A1AA]/50 uppercase tracking-wider font-semibold mb-1">PACOTE ESPECIAL</p>
+                    <p className="text-sm text-white/30 line-through mb-0.5">De R$97,00</p>
+                    <div className="flex items-baseline justify-center">
+                      <span className="text-[3.8rem] sm:text-[4rem] md:text-[4.5rem] font-extrabold text-white leading-none tracking-tight">
+                        R$49
+                      </span>
+                      <span className="text-2xl sm:text-3xl font-bold text-white">,90</span>
+                    </div>
+                    <p className="text-xs text-[#A1A1AA]/40 mt-1.5 font-semibold uppercase tracking-wider">
+                      Pagamento único
+                    </p>
+                    <p className="text-xs text-[#25F4EE]/70 mt-1 font-semibold">
+                      Você paga uma vez e mantém o acesso.
+                    </p>
                   </div>
-                  <p className="text-sm text-[#25F4EE]/80 mt-2 font-semibold text-center">
-                    Pagamento único
-                  </p>
                 </div>
 
-                {/* CTA */}
                 <a
                   href={checkoutUrlEspecial}
                   onClick={() => { (window as any).trackCheckout?.('Especial', 49.90); }}
-                  className="block w-full text-center bg-[#FF2D55] hover:brightness-110 text-white font-extrabold py-4 px-6 rounded-2xl transition-all text-base sm:text-lg shadow-lg shadow-[#FF2D55]/25 hover:shadow-[#FF2D55]/35 hover:scale-[1.02] active:scale-[0.98] mb-3 uppercase tracking-wide"
+                  className="block w-full text-center bg-[#FF2D55] hover:brightness-110 text-white font-bold py-4 px-6 rounded-2xl transition-all text-sm sm:text-base shadow-lg shadow-[#FF2D55]/25 hover:shadow-[#FF2D55]/35 hover:scale-[1.02] active:scale-[0.98] mb-2"
                 >
                   QUERO O PACOTE ESPECIAL
                 </a>
 
-                {/* Countdown */}
-                <div className="rounded-xl bg-black/50 border border-[#2A2A2E]/50 px-4 py-2.5 flex items-center justify-between mb-5">
-                  <div className="flex items-center gap-2">
-                    <Zap className="size-4 text-[#FF2D55]" />
-                    <span className="text-xs font-bold text-white/40 uppercase tracking-wider">Oferta acaba em</span>
+                <p className="text-xs text-[#25F4EE]/70 font-semibold text-center mb-4 leading-relaxed">
+                  Acesso completo. Sem mensalidade.
+                </p>
+
+                <div className="mb-4 rounded-xl bg-black/50 border border-[#2A2A2E]/50 px-3.5 py-2.5 flex items-center justify-between">
+                  <div className="flex items-center gap-1.5">
+                    <Zap className="size-3 text-[#FF2D55]" />
+                    <span className="text-[11px] font-bold text-white/35 uppercase tracking-wider">Acaba em</span>
                   </div>
                   <CountdownTimer />
                 </div>
 
-                {/* Feature list */}
-                <ul className="space-y-3">
-                  {comparisonRows.filter(r => r.especialFull).map((row, i) => {
-                    const Icon = row.icon;
-                    return (
-                      <li key={i} className="flex items-center gap-3">
-                        <div className="size-7 rounded-lg bg-[#25F4EE]/10 border border-[#25F4EE]/15 flex items-center justify-center shrink-0">
-                          <Icon className="size-3.5 text-[#25F4EE]" />
-                        </div>
-                        <span className="text-sm sm:text-base text-white/90 font-medium">{row.especial}</span>
-                      </li>
-                    );
-                  })}
+                <ul className="space-y-2 mb-3">
+                  {especialFeatures.map((f, i) => (
+                    <li key={i}>
+                      <div className="flex items-center gap-2">
+                        <Check className={`size-4 shrink-0 ${f.highlight ? "text-[#25F4EE]" : "text-[#FF2D55]"}`} />
+                        <span className={`text-sm leading-tight ${f.highlight ? "text-[#25F4EE]/90 font-semibold" : "text-white/80"}`}>{f.text}</span>
+                      </div>
+                    </li>
+                  ))}
                 </ul>
 
-                {/* Trust */}
-                <div className="flex items-center justify-center gap-2 mt-5 pt-3 border-t border-[#2A2A2E]/40">
-                  <Shield className="size-3.5 text-white/25" />
-                  <span className="text-xs text-white/25">
+                <div className="rounded-xl bg-[#25F4EE]/5 border border-[#25F4EE]/10 px-4 py-3 mb-3">
+                  <p className="text-sm font-bold text-[#25F4EE]/90 text-center">
+                    Tudo incluso em um único pagamento.
+                  </p>
+                </div>
+
+                <div className="flex items-center justify-center gap-1.5 mt-auto pt-1">
+                  <Shield className="size-3 text-white/20" />
+                  <span className="text-xs text-white/20">
                     Pagamento seguro · Garantia 7 dias
                   </span>
                 </div>
@@ -201,61 +170,49 @@ export function PricingSection() {
 
             {/* PACOTE SIMPLES */}
             <FadeIn delay={0.1}>
-              <div className="bg-[#111113] rounded-2xl border border-[#2A2A2E]/60 p-6 sm:p-7 flex flex-col order-2 md:order-2">
-                {/* Name */}
-                <h3 className="text-lg sm:text-xl font-bold text-white text-center mb-4">
+              <div className="bg-[#111113] rounded-2xl border border-[#2A2A2E]/60 p-5 sm:p-6 flex flex-col order-2 md:order-2">
+                <h3 className="text-base sm:text-lg font-bold text-white mb-0.5">
                   Pacote Simples
                 </h3>
+                <p className="text-sm text-white/45 mb-4">
+                  Para começar a usar os prompts principais.
+                </p>
 
-                {/* Price */}
-                <div className="py-5 px-4 -mx-1 mb-5">
-                  <div className="flex items-baseline justify-center">
-                    <span className="text-[3.5rem] sm:text-[4rem] md:text-[4.5rem] font-extrabold text-white leading-none tracking-tight">
-                      R$24
-                    </span>
-                    <span className="text-2xl sm:text-3xl font-bold text-white">,90</span>
-                  </div>
-                  <p className="text-sm text-white/40 mt-2 font-semibold text-center">
-                    Pagamento único
-                  </p>
+                <div className="mb-4">
+                  <span className="text-[2.5rem] sm:text-5xl font-extrabold text-white leading-none tracking-tight">
+                    R$24
+                  </span>
+                  <span className="text-lg sm:text-2xl font-bold text-white">,90</span>
                 </div>
 
-                {/* CTA */}
+                <p className="text-sm text-white/40 mb-5 leading-relaxed">
+                  Pagamento único.
+                </p>
+
+                <ul className="space-y-2 mb-4 flex-1">
+                  {simplesFeatures.map((text, i) => (
+                    <li key={i}>
+                      <div className="flex items-center gap-2">
+                        <Check className="size-4 shrink-0 text-white/25" />
+                        <span className="text-sm leading-tight text-white/60">{text}</span>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+
+                <p className="text-sm text-[#FF2D55]/60 mb-4 leading-relaxed border-t border-[#2A2A2E]/40 pt-3 font-medium">
+                  Para pré-visualização, atualizações e prompts completos, veja o Pacote Especial.
+                </p>
+
                 <button
                   onClick={() => setRecoveryOpen(true)}
-                  className="block w-full text-center border border-white/15 text-white hover:bg-white hover:text-black font-extrabold py-4 px-6 rounded-2xl transition-all text-base sm:text-lg mb-3 uppercase tracking-wide"
+                  className="block w-full text-center border border-white/15 text-white hover:bg-white hover:text-black font-bold py-4 px-6 rounded-2xl transition-all text-sm sm:text-base"
                 >
                   COMEÇAR PELO SIMPLES
                 </button>
 
-                {/* Spacer to align with countdown */}
-                <div className="h-12 mb-5" />
-
-                {/* Feature list with X for missing */}
-                <ul className="space-y-3">
-                  {comparisonRows.map((row, i) => {
-                    const Icon = row.icon;
-                    const included = row.simples !== null;
-                    return (
-                      <li key={i} className="flex items-center gap-3">
-                        <div className={`size-7 rounded-lg border flex items-center justify-center shrink-0 ${included ? "bg-white/[0.04] border-white/[0.08]" : "bg-transparent border-white/[0.06]"}`}>
-                          {included ? (
-                            <Icon className="size-3.5 text-white/30" />
-                          ) : (
-                            <X className="size-3.5 text-white/15" />
-                          )}
-                        </div>
-                        <span className={`text-sm sm:text-base ${included ? "text-white/60 font-medium" : "text-white/25 line-through"}`}>
-                          {included ? row.simples : `Sem ${row.label.toLowerCase()}`}
-                        </span>
-                      </li>
-                    );
-                  })}
-                </ul>
-
-                {/* Trust */}
-                <div className="flex items-center justify-center gap-2 mt-5 pt-3 border-t border-[#2A2A2E]/40">
-                  <Shield className="size-3.5 text-white/15" />
+                <div className="flex items-center justify-center gap-1.5 mt-3">
+                  <Shield className="size-3 text-white/15" />
                   <span className="text-xs text-white/15">
                     Pagamento seguro · Garantia 7 dias
                   </span>
@@ -265,46 +222,11 @@ export function PricingSection() {
 
           </div>
 
-          {/* Comparison table - desktop */}
           <FadeIn delay={0.15}>
-            <div className="hidden md:block rounded-2xl border border-[#2A2A2E]/50 overflow-hidden bg-[#111113]/60">
-              <table className="w-full">
-                <thead>
-                  <tr className="border-b border-[#2A2A2E]/50">
-                    <th className="text-left py-4 px-5 text-sm font-bold text-white/40 uppercase tracking-wider">O que você recebe</th>
-                    <th className="text-center py-4 px-5 text-sm font-bold text-white/50">Simples</th>
-                    <th className="text-center py-4 px-5 text-sm font-bold text-[#25F4EE]">Especial</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparisonRows.map((row, i) => {
-                    const Icon = row.icon;
-                    return (
-                      <tr key={i} className={`${i < comparisonRows.length - 1 ? "border-b border-[#2A2A2E]/30" : ""}`}>
-                        <td className="py-3.5 px-5">
-                          <div className="flex items-center gap-2.5">
-                            <Icon className="size-4 text-white/30" />
-                            <span className="text-sm font-medium text-white/70">{row.label}</span>
-                          </div>
-                        </td>
-                        <td className="py-3.5 px-5 text-center">
-                          {row.simples ? (
-                            <span className="text-sm text-white/50">{row.simples}</span>
-                          ) : (
-                            <X className="size-4 text-white/15 mx-auto" />
-                          )}
-                        </td>
-                        <td className="py-3.5 px-5 text-center">
-                          <span className="text-sm font-semibold text-[#25F4EE]">{row.especial}</span>
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
+            <p className="text-xs sm:text-sm text-[#A1A1AA]/50 text-center mt-5 max-w-md mx-auto leading-relaxed">
+              Você recebe acesso aos conteúdos e prompts indicados no pacote. Ferramentas externas de IA podem exigir conta e créditos próprios.
+            </p>
           </FadeIn>
-
         </div>
       </section>
 
@@ -348,38 +270,24 @@ export function PricingSection() {
                   <X className="size-4" />
                 </button>
 
-                {/* Headline */}
                 <h3 className="text-lg sm:text-xl font-extrabold text-white leading-tight text-center mb-5">
                   Libere o <span className="text-[#FF2D55]">Pacote Especial</span> por apenas{" "}
                   <span className="text-[#25F4EE]">R$32,90</span>
                 </h3>
 
-                {/* Checklist */}
                 <ul className="space-y-2.5 mb-5">
-                  <li className="flex items-center gap-2.5">
-                    <Check className="size-4 text-[#25F4EE] shrink-0" />
-                    <span className="text-sm text-white/80">500+ prompts completos</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="size-4 text-[#25F4EE] shrink-0" />
-                    <span className="text-sm text-white/80">Pré-visualização inclusa</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="size-4 text-[#25F4EE] shrink-0" />
-                    <span className="text-sm text-white/80">Atualizações semanais</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="size-4 text-[#25F4EE] shrink-0" />
-                    <span className="text-sm text-white/80">Todos os formatos e categorias</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="size-4 text-[#25F4EE] shrink-0" />
-                    <span className="text-sm text-white/80">Biblioteca Premium + Suporte VIP</span>
-                  </li>
+                  {especialFeatures.map((f, i) => (
+                    <li key={i} className="flex items-center gap-2.5">
+                      <Check className={`size-4 shrink-0 ${f.highlight ? "text-[#25F4EE]" : "text-white/40"}`} />
+                      <span className={`text-sm ${f.highlight ? "text-white/90 font-medium" : "text-white/70"}`}>{f.text}</span>
+                    </li>
+                  ))}
                 </ul>
 
-                {/* Price box */}
                 <div className="rounded-2xl bg-[#FF2D55]/[0.07] border border-[#FF2D55]/15 px-5 py-4 mb-5 shadow-[0_0_30px_rgba(255,45,85,0.08)]">
+                  <p className="text-[11px] text-white/40 uppercase tracking-[0.15em] font-semibold text-center mb-2">
+                    Pacote Especial
+                  </p>
                   <div className="flex items-baseline justify-center">
                     <span className="text-[3rem] sm:text-[3.4rem] font-extrabold text-white leading-none tracking-tight">
                       R$32
@@ -391,7 +299,6 @@ export function PricingSection() {
                   </p>
                 </div>
 
-                {/* Pulsing CTA */}
                 <motion.a
                   href={checkoutUrlRecovery}
                   onClick={() => { (window as any).trackCheckout?.('Especial Recovery', 32.90); }}
@@ -412,7 +319,6 @@ export function PricingSection() {
                   QUERO O PACOTE ESPECIAL
                 </motion.a>
 
-                {/* Secondary link */}
                 <a
                   href={checkoutUrlSimples}
                   onClick={() => { (window as any).trackCheckout?.('Simples', 24.90); }}
