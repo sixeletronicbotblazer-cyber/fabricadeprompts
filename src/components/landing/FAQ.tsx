@@ -22,8 +22,8 @@ const faqs = [
     a: "Você adapta os prompts à ferramenta e ao formato de geração que utilizar. As opções e os resultados podem variar conforme o modelo de IA.",
   },
   {
-    q: "Qual a diferença entre mensal e vitalício?",
-    a: "No mensal, você acessa pagando mês a mês e pode cancelar quando quiser. No vitalício, você paga uma vez e mantém o acesso completo à Biblioteca Premium, Academy, módulos extras, Grupo VIP e todas as atualizações futuras.",
+    q: "Qual a diferença entre os pacotes?",
+    a: "O Pacote Simples inclui 250 prompts essenciais e acesso à biblioteca padrão. O Pacote Especial tem 500+ prompts completos, pré-visualização, atualizações semanais, todos os formatos, Biblioteca Premium e suporte VIP.",
   },
   {
     q: "O que eu recebo?",
@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     q: "O acesso inclui a Biblioteca Promptly Prompts?",
-    a: "Sim. A Biblioteca Promptly Prompts (Galeria Premium) está disponível como bônus especial dentro do acesso vitalício.",
+    a: "Sim. A Biblioteca Promptly Prompts (Galeria Premium) está disponível como bônus especial dentro do Pacote Especial.",
   },
   {
     q: "Preciso aparecer nos vídeos?",
@@ -47,11 +47,11 @@ const faqs = [
   },
   {
     q: "É pagamento único?",
-    a: "O Plano Vitalício é pagamento único. O Plano Mensal é recorrente mensal.",
+    a: "Sim. Ambos os pacotes são pagamento único. Sem mensalidade.",
   },
   {
-    q: "Posso cancelar o mensal?",
-    a: "Sim. O plano mensal pode ser cancelado conforme as regras da plataforma de pagamento.",
+    q: "Posso cancelar?",
+    a: "Como é pagamento único, não há assinatura para cancelar. Você paga uma vez e mantém o acesso.",
   },
   {
     q: "Funciona com qual ferramenta de IA?",

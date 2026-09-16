@@ -23,7 +23,7 @@ export function CTAAfterProofs() {
             O mecanismo já está pronto, prompts organizados por tipo de cena e movimento pra você só adaptar o produto e gerar o vídeo.
           </p>
           <a
-            href="#planos"
+            href="#oferta"
             className="inline-flex items-center justify-center w-full sm:w-auto px-8 sm:px-10 py-3.5 bg-[#FE2C55] hover:bg-[#e62750] text-white font-bold text-sm sm:text-base rounded-full transition-all shadow-lg shadow-[#FE2C55]/25 hover:shadow-[#FE2C55]/40 hover:scale-[1.02] active:scale-[0.98]"
           >
             Quero acessar os prompts agora

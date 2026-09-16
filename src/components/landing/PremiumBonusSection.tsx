@@ -83,10 +83,10 @@ export function PremiumBonusSection() {
             {/* CTA */}
             <FadeIn delay={0.35}>
               <a
-                href="#planos"
+                href="#oferta"
                 className="inline-flex items-center justify-center bg-[#FF2D55] hover:brightness-110 text-white font-extrabold py-3.5 px-8 rounded-2xl transition-all text-sm sm:text-base shadow-lg shadow-[#FF2D55]/25 hover:scale-[1.02] active:scale-[0.98] uppercase tracking-wide"
               >
-                QUERO MEU ACESSO VITALÍCIO
+                QUERO O PACOTE ESPECIAL
               </a>
             </FadeIn>
           </div>
@@ -138,7 +138,7 @@ export function PremiumBonusSection() {
         {/* Confira os planos note */}
         <FadeIn delay={0.4}>
           <p className="text-[10px] sm:text-[11px] text-[#A1A1AA]/40 text-center mt-6">
-            Biblioteca com formatos para diferentes nichos, produtos e campanhas. Confira o acesso incluído em cada plano abaixo.
+            Biblioteca com formatos para diferentes nichos, produtos e campanhas. Confira o que cada pacote inclui abaixo.
           </p>
         </FadeIn>
       </div>

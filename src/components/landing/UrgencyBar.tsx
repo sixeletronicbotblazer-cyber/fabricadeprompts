@@ -8,11 +8,11 @@ export function UrgencyBar() {
           <p className="text-[11px] sm:text-xs font-medium text-[#A1A1AA]">
             Oferta de entrada liberada hoje • {" "}
             <span className="hidden sm:inline">
-              acesso vitalício por{" "}
+              Pacote Especial por{" "}
               <span className="text-[#FF2D55] font-extrabold">R$49,90</span>
             </span>
             <span className="sm:hidden">
-              acesso vitalício R$49,90
+              Pacote Especial R$49,90
             </span>
           </p>
         </div>

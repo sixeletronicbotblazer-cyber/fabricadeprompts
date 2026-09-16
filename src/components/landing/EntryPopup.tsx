@@ -60,7 +60,7 @@ export function EntryPopup() {
               </div>
 
               <h3 className="text-lg font-black text-[#F4F4F6] mb-1.5 leading-tight">
-                Acesso vitalício com todos os módulos por{" "}
+                Pacote Especial com todos os módulos por{" "}
                 <span className="text-[#FF2D55]">R$ 22,90</span>
               </h3>
 
@@ -71,7 +71,7 @@ export function EntryPopup() {
               <div className="flex flex-wrap gap-2 mb-4">
                 <span className="inline-flex items-center gap-1 text-[9px] font-bold text-[#22D3EE] bg-[#22D3EE]/10 px-2 py-0.5 rounded-full border border-[#22D3EE]/20">
                   <Crown className="size-2.5" />
-                  Vitalício
+                  Completo
                 </span>
                 <span className="text-[9px] font-bold text-[#A7A7B2]/50 bg-white/5 px-2 py-0.5 rounded-full border border-[#2A2A2E]/60">
                   Pagamento único
@@ -85,7 +85,7 @@ export function EntryPopup() {
                 href={checkoutUrlRecovery}
                 className="block w-full text-center bg-cta-gradient hover:brightness-110 shadow-cta font-extrabold uppercase tracking-wide rounded-xl text-sm py-3.5 px-6 transition-all"
               >
-                QUERO O VITALÍCIO POR R$ 22,90
+                QUERO O PACOTE ESPECIAL POR R$ 22,90
               </a>
 
               <button

@@ -2,41 +2,63 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, X, Shield, Zap } from "lucide-react";
+import { Check, X, Shield, Zap, Eye, RefreshCw, BookOpen, Users, Layers } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
-const checkoutUrlVitalicio = "https://pay.cakto.com.br/3dtfnag_968205";
-const checkoutUrlMensal = "https://pay.cakto.com.br/guw9f5r";
+const checkoutUrlEspecial = "https://pay.cakto.com.br/3dtfnag_968205";
+const checkoutUrlSimples = "https://pay.cakto.com.br/guw9f5r";
 const checkoutUrlRecovery = "https://pay.cakto.com.br/7dnhb97";
 
-const vitalicioFeatures = [
-  { text: "Biblioteca Premium de prompts", highlight: true },
-  { text: "Academy com formatos virais validados", highlight: true },
-  { text: "+250 prompts organizados para copiar e adaptar" },
-  { text: "Galeria de referências visuais", highlight: true },
-  { text: "Modo Modelo, POV e Selfie UGC" },
-  { text: "Prompts para produto na mão, unboxing e vídeos de oferta" },
-  { text: "Formatos para Dancinha, Movimento, Manequim e Fábrica" },
-  { text: "Formatos sazonais: Natal, Dia dos Pais e datas comemorativas" },
-  { text: "Formatos para Casa, Calçados, Acessórios, Pet e Infantil" },
-  { text: "Formatos para Masculino, Feminino, Lingerie e Moda" },
-  { text: "Ganchos, transições e movimentos prontos" },
-  { text: "Aulas rápidas e exemplos práticos" },
-  { text: "Grupo VIP com atualizações e troca de ideias" },
-  { text: "Todas as atualizações futuras incluídas", highlight: true },
-  { text: "Acesso vitalício, sem mensalidade", highlight: true },
+const comparisonRows = [
+  {
+    icon: Layers,
+    label: "Prompts",
+    simples: "250 essenciais",
+    especial: "500+ completos",
+    simplesFull: false,
+    especialFull: true,
+  },
+  {
+    icon: Eye,
+    label: "Pré-visualização",
+    simples: null,
+    especial: "Inclusa",
+    simplesFull: false,
+    especialFull: true,
+  },
+  {
+    icon: RefreshCw,
+    label: "Atualizações",
+    simples: null,
+    especial: "Semanais",
+    simplesFull: false,
+    especialFull: true,
+  },
+  {
+    icon: BookOpen,
+    label: "Formatos",
+    simples: "Básicos",
+    especial: "Todos + sazonais",
+    simplesFull: false,
+    especialFull: true,
+  },
+  {
+    icon: BookOpen,
+    label: "Biblioteca",
+    simples: "Padrão",
+    especial: "Premium",
+    simplesFull: true,
+    especialFull: true,
+  },
+  {
+    icon: Users,
+    label: "Suporte VIP",
+    simples: null,
+    especial: "Incluso",
+    simplesFull: false,
+    especialFull: true,
+  },
 ];
-
-const mensalFeatures = [
-  "Acesso aos prompts essenciais",
-  "Categorias iniciais para começar",
-  "Modo Modelo, POV e Selfie UGC básico",
-  "Exemplos simples de aplicação",
-  "Aulas rápidas de introdução",
-  "Ideal para testar a ferramenta",
-];
-
-const mensalLimitation = "Não inclui Biblioteca Premium completa, Galeria avançada, Grupo VIP e atualizações futuras.";
 
 function CountdownTimer() {
   const [time, setTime] = useState({ h: 23, m: 59, s: 59 });
@@ -92,149 +114,150 @@ export function PricingSection() {
 
   return (
     <>
-      <section id="planos" className="bg-[#050505] py-8 md:py-12 px-4">
+      <section id="oferta" className="bg-[#050505] py-10 md:py-16 px-4">
         <div className="max-w-3xl mx-auto">
           <FadeIn>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white leading-tight mb-1 text-center">
-              Libere seu <span className="text-[#FF2D55]">acesso completo</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight mb-2 text-center">
+              Escolha seu <span className="text-[#FF2D55]">pacote</span>
             </h2>
-            <p className="text-xs sm:text-sm text-white/40 text-center mb-6 max-w-lg mx-auto">
-              Pagamento único, acesso vitalício e todos os recursos da Biblioteca Premium + Academy em um só lugar.
+            <p className="text-sm sm:text-base text-white/50 text-center mb-8 max-w-md mx-auto">
+              Pagamento único. Sem mensalidade.
             </p>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 items-start">
+          {/* Price cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 items-start mb-8">
 
-            {/* VITALICIO */}
+            {/* PACOTE ESPECIAL */}
             <FadeIn>
-              <div className="relative bg-[#111113] rounded-2xl border border-[#FF2D55]/30 p-5 sm:p-6 flex flex-col order-1 md:order-1 shadow-[0_0_40px_rgba(255,45,85,0.1)]">
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 flex items-center gap-2">
-                  <span className="inline-block bg-[#FF2D55] text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-full shadow-md shadow-[#FF2D55]/30 whitespace-nowrap">
-                    MAIS POPULAR
-                  </span>
-                  <span className="hidden sm:inline-block bg-[#25F4EE]/10 text-[#25F4EE] text-[10px] sm:text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-[#25F4EE]/20 whitespace-nowrap">
-                    VITALÍCIO
+              <div className="relative bg-[#111113] rounded-2xl border border-[#FF2D55]/30 p-6 sm:p-7 flex flex-col order-1 md:order-1 shadow-[0_0_40px_rgba(255,45,85,0.1)]">
+                {/* Badge */}
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <span className="inline-block bg-[#FF2D55] text-white text-xs sm:text-sm font-bold uppercase tracking-wider px-5 py-1.5 rounded-full shadow-md shadow-[#FF2D55]/30 whitespace-nowrap">
+                    MAIS ESCOLHIDO
                   </span>
                 </div>
 
-                <div className="text-center mt-2 sm:mt-1 mb-4 sm:mb-5">
-                  <div className="bg-[#FF2D55]/6 rounded-2xl py-4 px-4 -mx-1 border border-[#FF2D55]/10">
-                    <p className="text-[10px] sm:text-[11px] text-[#A1A1AA]/50 uppercase tracking-wider font-semibold mb-1">ACESSO COMPLETO</p>
-                    <p className="text-sm text-white/30 line-through mb-0.5">De R$97,00</p>
-                    <div className="flex items-baseline justify-center">
-                      <span className="text-[3.8rem] sm:text-[4rem] md:text-[4.5rem] font-extrabold text-white leading-none tracking-tight">
-                        R$49
-                      </span>
-                      <span className="text-2xl sm:text-3xl font-bold text-white">,90</span>
-                    </div>
-                    <p className="text-[11px] text-[#A1A1AA]/40 mt-1.5 font-semibold uppercase tracking-wider">
-                      Pagamento único
-                    </p>
-                    <p className="text-[11px] text-[#25F4EE]/70 mt-1 font-semibold">
-                      Você paga uma vez e mantém o acesso.
-                    </p>
+                {/* Name */}
+                <h3 className="text-lg sm:text-xl font-bold text-white text-center mt-3 mb-4">
+                  Pacote Especial
+                </h3>
+
+                {/* Price */}
+                <div className="bg-[#FF2D55]/[0.07] rounded-2xl py-5 px-4 -mx-1 border border-[#FF2D55]/10 mb-5">
+                  <div className="flex items-baseline justify-center">
+                    <span className="text-[3.5rem] sm:text-[4rem] md:text-[4.5rem] font-extrabold text-white leading-none tracking-tight">
+                      R$49
+                    </span>
+                    <span className="text-2xl sm:text-3xl font-bold text-white">,90</span>
                   </div>
+                  <p className="text-sm text-[#25F4EE]/80 mt-2 font-semibold text-center">
+                    Pagamento único
+                  </p>
                 </div>
 
+                {/* CTA */}
                 <a
-                  href={checkoutUrlVitalicio}
-                  onClick={() => { (window as any).trackCheckout?.('Vitalicio', 49.90); }}
-                  className="block w-full text-center bg-[#FF2D55] hover:brightness-110 text-white font-bold py-4 px-6 rounded-2xl transition-all text-sm sm:text-base shadow-lg shadow-[#FF2D55]/25 hover:shadow-[#FF2D55]/35 hover:scale-[1.02] active:scale-[0.98] mb-2"
+                  href={checkoutUrlEspecial}
+                  onClick={() => { (window as any).trackCheckout?.('Especial', 49.90); }}
+                  className="block w-full text-center bg-[#FF2D55] hover:brightness-110 text-white font-extrabold py-4 px-6 rounded-2xl transition-all text-base sm:text-lg shadow-lg shadow-[#FF2D55]/25 hover:shadow-[#FF2D55]/35 hover:scale-[1.02] active:scale-[0.98] mb-3 uppercase tracking-wide"
                 >
-                  QUERO MEU ACESSO VITALÍCIO
+                  QUERO O PACOTE ESPECIAL
                 </a>
 
-                <p className="text-[11px] text-[#25F4EE]/70 font-semibold text-center mb-4 leading-relaxed">
-                  Sem mensalidade. Acesso completo à Biblioteca Premium + Academy.
-                </p>
-
-                <div className="mb-4 rounded-xl bg-black/50 border border-[#2A2A2E]/50 px-3.5 py-2.5 flex items-center justify-between">
-                  <div className="flex items-center gap-1.5">
-                    <Zap className="size-3 text-[#FF2D55]" />
-                    <span className="text-[10px] font-bold text-white/35 uppercase tracking-wider">Acaba em</span>
+                {/* Countdown */}
+                <div className="rounded-xl bg-black/50 border border-[#2A2A2E]/50 px-4 py-2.5 flex items-center justify-between mb-5">
+                  <div className="flex items-center gap-2">
+                    <Zap className="size-4 text-[#FF2D55]" />
+                    <span className="text-xs font-bold text-white/40 uppercase tracking-wider">Oferta acaba em</span>
                   </div>
                   <CountdownTimer />
                 </div>
 
-                <ul className="space-y-1.5 mb-3">
-                  {vitalicioFeatures.map((f, i) => (
-                    <li key={i}>
-                      <div className="flex items-center gap-2">
-                        <Check className={`size-3.5 shrink-0 ${f.highlight ? "text-[#25F4EE]" : "text-[#FF2D55]"}`} />
-                        <span className={`text-[13px] leading-tight ${f.highlight ? "text-[#25F4EE]/90 font-semibold" : "text-white/80"}`}>{f.text}</span>
-                      </div>
-                    </li>
-                  ))}
+                {/* Feature list */}
+                <ul className="space-y-3">
+                  {comparisonRows.filter(r => r.especialFull).map((row, i) => {
+                    const Icon = row.icon;
+                    return (
+                      <li key={i} className="flex items-center gap-3">
+                        <div className="size-7 rounded-lg bg-[#25F4EE]/10 border border-[#25F4EE]/15 flex items-center justify-center shrink-0">
+                          <Icon className="size-3.5 text-[#25F4EE]" />
+                        </div>
+                        <span className="text-sm sm:text-base text-white/90 font-medium">{row.especial}</span>
+                      </li>
+                    );
+                  })}
                 </ul>
 
-                <div className="rounded-xl bg-[#25F4EE]/5 border border-[#25F4EE]/10 px-4 py-3 mb-3">
-                  <p className="text-[12px] sm:text-[13px] font-bold text-[#25F4EE]/90 text-center mb-0.5">
-                    Tudo incluso em um único pagamento.
-                  </p>
-                  <p className="text-[10px] sm:text-[11px] text-white/50 text-center leading-relaxed">
-                    Depois da compra, você recebe acesso à biblioteca, aos módulos, aos formatos e às próximas atualizações disponíveis.
-                  </p>
-                </div>
-
-                <div className="flex items-center justify-center gap-1.5 mt-auto pt-1">
-                  <Shield className="size-3 text-white/20" />
-                  <span className="text-[10px] text-white/20">
-                    Pagamento seguro / Garantia 7 dias
+                {/* Trust */}
+                <div className="flex items-center justify-center gap-2 mt-5 pt-3 border-t border-[#2A2A2E]/40">
+                  <Shield className="size-3.5 text-white/25" />
+                  <span className="text-xs text-white/25">
+                    Pagamento seguro · Garantia 7 dias
                   </span>
                 </div>
               </div>
             </FadeIn>
 
-            {/* MENSAL */}
+            {/* PACOTE SIMPLES */}
             <FadeIn delay={0.1}>
-              <div className="bg-[#111113] rounded-2xl border border-[#2A2A2E]/60 p-5 sm:p-6 flex flex-col order-2 md:order-2">
-                <h3 className="text-base sm:text-lg font-bold text-white mb-0.5">
-                  Plano Mensal
+              <div className="bg-[#111113] rounded-2xl border border-[#2A2A2E]/60 p-6 sm:p-7 flex flex-col order-2 md:order-2">
+                {/* Name */}
+                <h3 className="text-lg sm:text-xl font-bold text-white text-center mb-4">
+                  Pacote Simples
                 </h3>
-                <p className="text-xs text-white/45 mb-4">
-                  Para começar a testar os prompts essenciais.
-                </p>
 
-                <div className="mb-4">
-                  <span className="text-[2.5rem] sm:text-5xl font-extrabold text-white leading-none tracking-tight">
-                    R$24
-                  </span>
-                  <span className="text-lg sm:text-2xl font-bold text-white">,90</span>
-                  <span className="text-xs text-white/35 ml-1.5 font-medium">
-                    /mês
-                  </span>
+                {/* Price */}
+                <div className="py-5 px-4 -mx-1 mb-5">
+                  <div className="flex items-baseline justify-center">
+                    <span className="text-[3.5rem] sm:text-[4rem] md:text-[4.5rem] font-extrabold text-white leading-none tracking-tight">
+                      R$24
+                    </span>
+                    <span className="text-2xl sm:text-3xl font-bold text-white">,90</span>
+                  </div>
+                  <p className="text-sm text-white/40 mt-2 font-semibold text-center">
+                    Pagamento único
+                  </p>
                 </div>
 
-                <p className="text-[11px] text-white/40 mb-4 leading-relaxed">
-                  Uma opção de entrada para quem quer conhecer a biblioteca e começar a aplicar os prompts principais.
-                </p>
-
-                <ul className="space-y-1.5 mb-3 flex-1">
-                  {mensalFeatures.map((text, i) => (
-                    <li key={i}>
-                      <div className="flex items-center gap-2">
-                        <Check className="size-3.5 shrink-0 text-white/20" />
-                        <span className="text-[13px] leading-tight text-white/50">{text}</span>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-
-                <p className="text-[10px] text-white/25 mb-4 leading-relaxed border-t border-[#2A2A2E]/40 pt-2.5">
-                  {mensalLimitation}
-                </p>
-
+                {/* CTA */}
                 <button
                   onClick={() => setRecoveryOpen(true)}
-                  className="block w-full text-center border border-white/15 text-white hover:bg-white hover:text-black font-bold py-4 px-6 rounded-2xl transition-all text-sm sm:text-base"
+                  className="block w-full text-center border border-white/15 text-white hover:bg-white hover:text-black font-extrabold py-4 px-6 rounded-2xl transition-all text-base sm:text-lg mb-3 uppercase tracking-wide"
                 >
-                  COMEÇAR PELO MENSAL
+                  COMEÇAR PELO SIMPLES
                 </button>
 
-                <div className="flex items-center justify-center gap-1.5 mt-3">
-                  <Shield className="size-3 text-white/15" />
-                  <span className="text-[10px] text-white/15">
-                    Acesso imediato / PIX / Garantia 7 dias
+                {/* Spacer to align with countdown */}
+                <div className="h-12 mb-5" />
+
+                {/* Feature list with X for missing */}
+                <ul className="space-y-3">
+                  {comparisonRows.map((row, i) => {
+                    const Icon = row.icon;
+                    const included = row.simples !== null;
+                    return (
+                      <li key={i} className="flex items-center gap-3">
+                        <div className={`size-7 rounded-lg border flex items-center justify-center shrink-0 ${included ? "bg-white/[0.04] border-white/[0.08]" : "bg-transparent border-white/[0.06]"}`}>
+                          {included ? (
+                            <Icon className="size-3.5 text-white/30" />
+                          ) : (
+                            <X className="size-3.5 text-white/15" />
+                          )}
+                        </div>
+                        <span className={`text-sm sm:text-base ${included ? "text-white/60 font-medium" : "text-white/25 line-through"}`}>
+                          {included ? row.simples : `Sem ${row.label.toLowerCase()}`}
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ul>
+
+                {/* Trust */}
+                <div className="flex items-center justify-center gap-2 mt-5 pt-3 border-t border-[#2A2A2E]/40">
+                  <Shield className="size-3.5 text-white/15" />
+                  <span className="text-xs text-white/15">
+                    Pagamento seguro · Garantia 7 dias
                   </span>
                 </div>
               </div>
@@ -242,11 +265,46 @@ export function PricingSection() {
 
           </div>
 
+          {/* Comparison table - desktop */}
           <FadeIn delay={0.15}>
-            <p className="text-[11px] sm:text-xs text-[#A1A1AA]/50 text-center mt-5 max-w-md mx-auto leading-relaxed">
-              Você recebe acesso aos conteúdos e prompts indicados no plano. Ferramentas externas de IA podem exigir conta e créditos próprios.
-            </p>
+            <div className="hidden md:block rounded-2xl border border-[#2A2A2E]/50 overflow-hidden bg-[#111113]/60">
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-[#2A2A2E]/50">
+                    <th className="text-left py-4 px-5 text-sm font-bold text-white/40 uppercase tracking-wider">O que você recebe</th>
+                    <th className="text-center py-4 px-5 text-sm font-bold text-white/50">Simples</th>
+                    <th className="text-center py-4 px-5 text-sm font-bold text-[#25F4EE]">Especial</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparisonRows.map((row, i) => {
+                    const Icon = row.icon;
+                    return (
+                      <tr key={i} className={`${i < comparisonRows.length - 1 ? "border-b border-[#2A2A2E]/30" : ""}`}>
+                        <td className="py-3.5 px-5">
+                          <div className="flex items-center gap-2.5">
+                            <Icon className="size-4 text-white/30" />
+                            <span className="text-sm font-medium text-white/70">{row.label}</span>
+                          </div>
+                        </td>
+                        <td className="py-3.5 px-5 text-center">
+                          {row.simples ? (
+                            <span className="text-sm text-white/50">{row.simples}</span>
+                          ) : (
+                            <X className="size-4 text-white/15 mx-auto" />
+                          )}
+                        </td>
+                        <td className="py-3.5 px-5 text-center">
+                          <span className="text-sm font-semibold text-[#25F4EE]">{row.especial}</span>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
           </FadeIn>
+
         </div>
       </section>
 
@@ -274,14 +332,14 @@ export function PricingSection() {
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
             >
-              {/* Top discount banner */}
-              <div className="bg-[#FF2D55] py-2 px-4 text-center">
-                <p className="text-[11px] sm:text-xs font-bold text-white uppercase tracking-wider">
-                  🎁 Você ganhou um desconto!
+              {/* Top banner */}
+              <div className="bg-[#FF2D55] py-2.5 px-4 text-center">
+                <p className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">
+                  OFERTA ESPECIAL
                 </p>
               </div>
 
-              <div className="p-5 sm:p-6">
+              <div className="p-6 sm:p-7">
                 <button
                   onClick={() => setRecoveryOpen(false)}
                   className="absolute top-2 right-3 size-7 flex items-center justify-center rounded-full text-white/40 hover:text-white/80 hover:bg-white/10 transition-colors"
@@ -291,24 +349,44 @@ export function PricingSection() {
                 </button>
 
                 {/* Headline */}
-                <h3 className="text-lg sm:text-xl font-extrabold text-white leading-tight text-center mb-4">
-                  Por apenas{" "}
-                  <span className="text-[#FF2D55]">+R$8</span>{" "}
-                  você pode ter o acesso vitalício
+                <h3 className="text-lg sm:text-xl font-extrabold text-white leading-tight text-center mb-5">
+                  Libere o <span className="text-[#FF2D55]">Pacote Especial</span> por apenas{" "}
+                  <span className="text-[#25F4EE]">R$32,90</span>
                 </h3>
 
+                {/* Checklist */}
+                <ul className="space-y-2.5 mb-5">
+                  <li className="flex items-center gap-2.5">
+                    <Check className="size-4 text-[#25F4EE] shrink-0" />
+                    <span className="text-sm text-white/80">500+ prompts completos</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <Check className="size-4 text-[#25F4EE] shrink-0" />
+                    <span className="text-sm text-white/80">Pré-visualização inclusa</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <Check className="size-4 text-[#25F4EE] shrink-0" />
+                    <span className="text-sm text-white/80">Atualizações semanais</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <Check className="size-4 text-[#25F4EE] shrink-0" />
+                    <span className="text-sm text-white/80">Todos os formatos e categorias</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <Check className="size-4 text-[#25F4EE] shrink-0" />
+                    <span className="text-sm text-white/80">Biblioteca Premium + Suporte VIP</span>
+                  </li>
+                </ul>
+
                 {/* Price box */}
-                <div className="rounded-2xl bg-[#FF2D55]/[0.07] border border-[#FF2D55]/15 px-6 py-5 mb-5 shadow-[0_0_30px_rgba(255,45,85,0.08)]">
-                  <p className="text-[10px] text-white/40 uppercase tracking-[0.15em] font-semibold text-center mb-2">
-                    Acesso vitalício
-                  </p>
+                <div className="rounded-2xl bg-[#FF2D55]/[0.07] border border-[#FF2D55]/15 px-5 py-4 mb-5 shadow-[0_0_30px_rgba(255,45,85,0.08)]">
                   <div className="flex items-baseline justify-center">
                     <span className="text-[3rem] sm:text-[3.4rem] font-extrabold text-white leading-none tracking-tight">
                       R$32
                     </span>
                     <span className="text-xl sm:text-2xl font-bold text-white">,90</span>
                   </div>
-                  <p className="text-[11px] text-white/40 text-center mt-1.5 font-medium">
+                  <p className="text-sm text-white/40 text-center mt-1.5 font-medium">
                     Pagamento único
                   </p>
                 </div>
@@ -316,8 +394,8 @@ export function PricingSection() {
                 {/* Pulsing CTA */}
                 <motion.a
                   href={checkoutUrlRecovery}
-                  onClick={() => { (window as any).trackCheckout?.('Vitalicio Recovery', 32.90); }}
-                  className="block w-full text-center bg-[#FF2D55] hover:brightness-110 text-white font-extrabold py-4 px-6 rounded-2xl transition-all text-sm sm:text-base shadow-lg shadow-[#FF2D55]/30 mb-4"
+                  onClick={() => { (window as any).trackCheckout?.('Especial Recovery', 32.90); }}
+                  className="block w-full text-center bg-[#FF2D55] hover:brightness-110 text-white font-extrabold py-4 px-6 rounded-2xl transition-all text-base sm:text-lg shadow-lg shadow-[#FF2D55]/30 mb-4 uppercase tracking-wide"
                   animate={{
                     boxShadow: [
                       "0 4px 20px rgba(255,45,85,0.3)",
@@ -331,16 +409,16 @@ export function PricingSection() {
                     ease: "easeInOut",
                   }}
                 >
-                  QUERO O VITALÍCIO
+                  QUERO O PACOTE ESPECIAL
                 </motion.a>
 
-                {/* Secondary button */}
+                {/* Secondary link */}
                 <a
-                  href={checkoutUrlMensal}
-                  onClick={() => { (window as any).trackCheckout?.('Mensal', 24.90); }}
-                  className="block w-full text-center border border-[#2A2A2E]/60 text-white/35 hover:text-white/50 hover:bg-white/[0.03] font-medium py-2.5 px-6 rounded-xl transition-colors text-[12px]"
+                  href={checkoutUrlSimples}
+                  onClick={() => { (window as any).trackCheckout?.('Simples', 24.90); }}
+                  className="block w-full text-center border border-[#2A2A2E]/60 text-white/35 hover:text-white/50 hover:bg-white/[0.03] font-medium py-2.5 px-6 rounded-xl transition-colors text-sm"
                 >
-                  Não, continuar com o Mensal
+                  Não, continuar com o Simples
                 </a>
               </div>
             </motion.div>

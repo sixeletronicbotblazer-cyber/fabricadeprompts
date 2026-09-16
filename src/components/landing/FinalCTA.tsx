@@ -22,13 +22,13 @@ export function FinalCTA() {
         <FadeIn delay={0.2}>
           <div className="max-w-md mx-auto">
             <a
-              href="#planos"
+              href="#oferta"
               className="block w-full text-center bg-[#FF2D55] hover:brightness-110 shadow-lg shadow-[#FF2D55]/25 font-extrabold tracking-wide uppercase rounded-2xl text-[15px] sm:text-base py-4 px-6 transition-all mb-4 hover:scale-[1.02] active:scale-[0.98]"
             >
-              QUERO MEU ACESSO VITALÍCIO <ArrowRight className="inline size-4 ml-2" />
+              QUERO O PACOTE ESPECIAL <ArrowRight className="inline size-4 ml-2" />
             </a>
             <p className="text-[11px] text-[#A1A1AA]/50">
-              Pagamento único · Acesso vitalício · Sem mensalidade
+              Pagamento único · Acesso completo · Sem mensalidade
             </p>
           </div>
         </FadeIn>
