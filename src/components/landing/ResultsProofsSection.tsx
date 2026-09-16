@@ -78,12 +78,12 @@ export function ResultsProofsSection() {
   }, []);
 
   return (
-    <section className="bg-[#08080A] pt-4 pb-8 sm:pt-5 sm:pb-10">
+    <section className="bg-[#08080A] pt-6 pb-10 sm:pt-8 sm:pb-14">
       <div className="max-w-5xl mx-auto px-4">
 
         {/* Title */}
         <FadeIn>
-          <h2 className="text-[1.15rem] sm:text-2xl lg:text-[1.6rem] font-extrabold text-[#F4F4F5] leading-[1.15] sm:leading-[1.2] text-center max-w-md sm:max-w-lg mx-auto mb-1.5">
+          <h2 className="text-[1.2rem] sm:text-2xl lg:text-[1.7rem] font-extrabold text-[#F4F4F5] leading-[1.15] sm:leading-[1.2] text-center max-w-md sm:max-w-lg mx-auto mb-2">
             Quem usa a biblioteca, consegue{" "}
             <span className="text-[#FF2D55]">testar mais criativos</span>
           </h2>

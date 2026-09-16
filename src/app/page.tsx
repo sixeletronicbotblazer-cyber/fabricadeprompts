@@ -15,6 +15,7 @@ import { FinalCTA } from "@/components/landing/FinalCTA";
 import { Footer } from "@/components/landing/Footer";
 import { SocialProof } from "@/components/landing/SocialProof";
 import { MobileStickyCTA } from "@/components/landing/MobileStickyCTA";
+import { EntryPopup } from "@/components/landing/EntryPopup";
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
         <FinalCTA />
       </main>
       <MobileStickyCTA />
+      <EntryPopup />
       <Footer />
       <SocialProof />
     </div>

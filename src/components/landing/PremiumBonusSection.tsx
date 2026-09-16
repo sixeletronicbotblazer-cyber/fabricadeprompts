@@ -23,7 +23,7 @@ const steps = [
 
 export function PremiumBonusSection() {
   return (
-    <section className="relative bg-[#0D0D10] py-8 sm:py-10 md:py-12 px-4 overflow-hidden">
+    <section className="relative bg-[#0D0D10] py-10 sm:py-14 md:py-16 px-4 overflow-hidden">
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Badge */}
         <FadeIn>
@@ -36,7 +36,7 @@ export function PremiumBonusSection() {
 
         {/* Title */}
         <FadeIn delay={0.05}>
-          <h2 className="text-[1.2rem] sm:text-xl md:text-[1.75rem] font-black leading-[1.1] text-[#F4F4F5] mb-2 text-center max-w-lg mx-auto">
+          <h2 className="text-[1.3rem] sm:text-xl md:text-[1.85rem] font-black leading-[1.15] text-[#F4F4F5] mb-3 text-center max-w-lg mx-auto">
             Veja a <span className="text-[#FF2D55]">prévia</span>. Copie o prompt. Crie o vídeo.
           </h2>
         </FadeIn>
@@ -84,7 +84,7 @@ export function PremiumBonusSection() {
             <FadeIn delay={0.35}>
               <a
                 href="#oferta"
-                className="inline-flex items-center justify-center bg-[#FF2D55] hover:brightness-110 text-white font-extrabold py-3.5 px-8 rounded-2xl transition-all text-sm sm:text-base shadow-lg shadow-[#FF2D55]/25 hover:scale-[1.02] active:scale-[0.98] uppercase tracking-wide"
+                className="inline-flex items-center justify-center bg-[#FF2D55] hover:brightness-110 text-white font-extrabold py-4 px-9 rounded-2xl transition-all text-sm sm:text-base shadow-lg shadow-[#FF2D55]/25 hover:scale-[1.02] active:scale-[0.98] uppercase tracking-wide"
               >
                 QUERO O PACOTE ESPECIAL
               </a>

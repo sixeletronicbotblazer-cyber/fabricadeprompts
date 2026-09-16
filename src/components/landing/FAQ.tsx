@@ -49,10 +49,10 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section className="bg-[#08080A] py-8 sm:py-10 md:py-12 px-4">
+    <section className="bg-[#08080A] py-10 sm:py-14 md:py-16 px-4">
       <div className="max-w-2xl mx-auto">
         <FadeIn>
-          <h2 className="text-[1.3rem] sm:text-2xl md:text-[2rem] font-black text-[#F4F4F5] leading-[1.1] sm:leading-[1.0] mb-5 sm:mb-6 text-center">
+          <h2 className="text-[1.4rem] sm:text-2xl md:text-[2rem] font-black text-[#F4F4F5] leading-[1.15] sm:leading-[1.1] mb-6 sm:mb-8 text-center">
             Dúvidas frequentes
           </h2>
         </FadeIn>

@@ -103,7 +103,7 @@ export function FormatosVirais() {
   }, []);
 
   return (
-    <section id="formatos" className="bg-[#050505] py-8 sm:py-10 md:py-12 px-4">
+    <section id="formatos" className="bg-[#050505] py-10 sm:py-14 md:py-16 px-4">
       <div className="max-w-5xl mx-auto">
         <FadeIn>
           <div className="flex justify-center mb-3">
@@ -114,13 +114,13 @@ export function FormatosVirais() {
         </FadeIn>
 
         <FadeIn delay={0.05}>
-          <h2 className="text-[1.2rem] sm:text-xl md:text-[1.75rem] font-black leading-[1.1] sm:leading-[1.0] text-[#F4F4F5] mb-2 text-center max-w-lg mx-auto">
+          <h2 className="text-[1.3rem] sm:text-xl md:text-[1.85rem] font-black leading-[1.15] sm:leading-[1.1] text-[#F4F4F5] mb-3 text-center max-w-lg mx-auto">
             Alguns dos formatos que você encontra <span className="text-[#FF2D55]">na biblioteca</span>
           </h2>
         </FadeIn>
 
         <FadeIn delay={0.08}>
-          <p className="text-[12px] sm:text-sm text-[#A1A1AA]/60 leading-relaxed mb-6 sm:mb-8 max-w-md mx-auto text-center">
+          <p className="text-[12px] sm:text-sm text-[#A1A1AA]/60 leading-relaxed mb-8 sm:mb-10 max-w-md mx-auto text-center">
             Todos organizados na biblioteca para você copiar, adaptar para seu produto e criar vídeos com IA.
           </p>
         </FadeIn>
@@ -155,7 +155,7 @@ export function FormatosVirais() {
           <div className="flex justify-center mt-5">
             <a
               href="#beneficios"
-              className="inline-flex items-center justify-center border border-[#25F4EE]/25 bg-[#25F4EE]/5 hover:bg-[#25F4EE]/15 text-[#25F4EE] font-extrabold py-3.5 px-8 rounded-2xl transition-all text-sm sm:text-base hover:scale-[1.02] active:scale-[0.98] uppercase tracking-wide"
+              className="inline-flex items-center justify-center border border-[#25F4EE]/25 bg-[#25F4EE]/5 hover:bg-[#25F4EE]/15 text-[#25F4EE] font-extrabold py-4 px-9 rounded-2xl transition-all text-sm sm:text-base hover:scale-[1.02] active:scale-[0.98] uppercase tracking-wide"
             >
               VER A BIBLIOTECA COMPLETA
             </a>

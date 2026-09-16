@@ -29,25 +29,25 @@ export function Hero() {
         </FadeIn>
 
         <FadeIn delay={0.15}>
-          <h1 className="text-[1.75rem] sm:text-[2.15rem] md:text-[2.85rem] lg:text-[3.15rem] font-black leading-[1.15] sm:leading-[1.08] tracking-tight text-white">
-            Uma biblioteca com <span className="text-[#FF2D55]">+500 prompts</span> prontos para criar vídeos com IA
+          <h1 className="text-[1.75rem] sm:text-[2.25rem] md:text-[3rem] lg:text-[3.35rem] font-black leading-[1.15] sm:leading-[1.08] tracking-tight text-white">
+            Pare de tentar inventar <span className="text-[#FF2D55]">prompt do zero</span>.
           </h1>
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <p className="text-sm sm:text-base text-[#C4C4CC] leading-[1.6] mx-auto max-w-lg mt-5">
-            Veja a prévia de cada prompt, copie o que funciona para seu produto, adapte e crie vídeos para TikTok Shop e Shopee. Pagamento único. Acesso vitalício.
+          <p className="text-sm sm:text-base md:text-lg text-[#C4C4CC] leading-[1.6] mx-auto max-w-lg mt-6">
+            Acesse uma galeria com <span className="text-white font-semibold">+500 prompts prontos</span> para criar vídeos com IA para TikTok Shop e Shopee.
           </p>
         </FadeIn>
 
         <FadeIn delay={0.3}>
-          <div className="mt-10 sm:mt-12 flex flex-col items-center gap-3">
+          <div className="mt-10 sm:mt-14 flex flex-col items-center gap-4">
             <a
               href="#oferta"
-              className="inline-flex items-center justify-center w-full sm:w-auto px-9 sm:px-12 py-5 bg-[#FF2D55] hover:brightness-110 text-white font-extrabold tracking-wide uppercase text-base sm:text-lg rounded-2xl transition-all shadow-lg shadow-[#FF2D55]/25 hover:shadow-[#FF2D55]/40 hover:scale-[1.02] active:scale-[0.98]"
+              className="inline-flex items-center justify-center w-full sm:w-auto px-10 sm:px-14 py-5 sm:py-6 bg-[#FF2D55] hover:brightness-110 text-white font-extrabold tracking-wide uppercase text-base sm:text-lg rounded-2xl transition-all shadow-lg shadow-[#FF2D55]/25 hover:shadow-[#FF2D55]/40 hover:scale-[1.02] active:scale-[0.98]"
             >
               QUERO ACESSAR A BIBLIOTECA
-              <ArrowRight className="ml-2 size-4" />
+              <ArrowRight className="ml-2.5 size-4" />
             </a>
             <p className="text-sm text-white/40 mt-1">
               R$49,90 · Pagamento único

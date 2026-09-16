@@ -37,7 +37,7 @@ export function EntryPopup() {
           />
 
           <motion.div
-            className="relative bg-[#111118] rounded-t-2xl sm:rounded-2xl border border-[#FF2D55]/20 shadow-[0_0_60px_rgba(255,45,85,0.12)] w-full sm:max-w-sm z-10 mb-14 sm:mb-0"
+            className="relative bg-[#111118] rounded-t-2xl sm:rounded-2xl border border-[#FF2D55]/20 shadow-[0_0_60px_rgba(255,45,85,0.12)] w-full sm:max-w-sm z-10 mb-16 sm:mb-0"
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 60 }}
@@ -81,7 +81,7 @@ export function EntryPopup() {
               <a
                 href={checkoutUrl}
                 onClick={() => { (window as any).trackCheckout?.('Vitalicio Entry', 49.90); }}
-                className="block w-full text-center bg-[#FF2D55] hover:brightness-110 shadow-lg shadow-[#FF2D55]/25 font-extrabold uppercase tracking-wide rounded-xl text-base py-4 px-6 transition-all"
+                className="block w-full text-center bg-[#FF2D55] hover:brightness-110 shadow-lg shadow-[#FF2D55]/25 font-extrabold uppercase tracking-wide rounded-xl text-base py-5 px-6 transition-all"
               >
                 QUERO ACESSAR A BIBLIOTECA
               </a>

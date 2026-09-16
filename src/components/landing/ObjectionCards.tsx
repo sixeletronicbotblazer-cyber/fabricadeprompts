@@ -23,10 +23,10 @@ const items = [
 
 export function ObjectionCards() {
     return (
-        <section className="bg-[#08080A] py-6 sm:py-8 px-4">
+        <section className="bg-[#08080A] py-8 sm:py-12 px-4">
             <div className="max-w-md mx-auto">
                 <FadeIn>
-                    <p className="text-xs font-bold text-white/30 uppercase tracking-wider text-center mb-4">
+                    <p className="text-xs font-bold text-white/30 uppercase tracking-wider text-center mb-5">
                         Antes de acessar:
                     </p>
                 </FadeIn>

@@ -69,14 +69,14 @@ function CountdownTimer() {
 
 export function PricingSection() {
   return (
-    <section id="oferta" className="bg-[#050505] py-12 md:py-18 px-4">
+    <section id="oferta" className="bg-[#050505] py-14 md:py-20 px-4">
       <div className="max-w-xl mx-auto">
 
         <FadeIn>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight mb-2 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight mb-3 text-center">
             Acesse a <span className="text-[#FF2D55]">biblioteca completa</span>
           </h2>
-          <p className="text-base text-white/40 text-center mb-8">
+          <p className="text-base text-white/40 text-center mb-10">
             Pagamento único. Acesso vitalício.
           </p>
         </FadeIn>
@@ -131,13 +131,13 @@ export function PricingSection() {
             <a
               href={checkoutUrl}
               onClick={() => { (window as any).trackCheckout?.('Vitalicio', 49.90); }}
-              className="block w-full text-center bg-[#FF2D55] hover:brightness-110 text-white font-extrabold py-5 px-6 rounded-2xl transition-all text-lg sm:text-xl shadow-lg shadow-[#FF2D55]/25 hover:shadow-[#FF2D55]/40 hover:scale-[1.02] active:scale-[0.98] mb-6 uppercase tracking-wide"
+              className="block w-full text-center bg-[#FF2D55] hover:brightness-110 text-white font-extrabold py-5 sm:py-6 px-6 rounded-2xl transition-all text-lg sm:text-xl shadow-lg shadow-[#FF2D55]/25 hover:shadow-[#FF2D55]/40 hover:scale-[1.02] active:scale-[0.98] mb-7 uppercase tracking-wide"
             >
               QUERO ACESSAR A BIBLIOTECA
             </a>
 
             {/* Features */}
-            <ul className="space-y-3 mb-6">
+            <ul className="space-y-3.5 mb-7">
               {features.map((f, i) => (
                 <li key={i} className="flex items-center gap-2.5">
                   <Check className={`size-4 shrink-0 ${f.highlight ? "text-[#25F4EE]" : "text-[#FF2D55]/70"}`} />
