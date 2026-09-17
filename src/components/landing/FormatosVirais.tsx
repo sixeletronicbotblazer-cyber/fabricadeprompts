@@ -9,35 +9,35 @@ const formats = [
     description: "O formato que chama atenção e ajuda a gerar alcance.",
     badge: "Viral",
     badgeColor: "bg-[#FF2D55]",
-    videoSrc: "https://auroraprompts.com/storage/prompts/1784823740_6a623fbceda04.mp4",
+    videoSrc: "/images/example-0.mp4",
   },
   {
     title: "Movimento",
     description: "Modelo girando, mostrando caimento e detalhes da peça.",
     badge: "UGC",
     badgeColor: "bg-[#25F4EE]",
-    videoSrc: "https://auroraprompts.com/storage/prompts/1787441408_6a8a3100833b3.mp4",
+    videoSrc: "/images/example-1.mp4",
   },
   {
     title: "Formato POV",
     description: "Mãos mostrando produto, peça ou detalhe sem precisar aparecer.",
     badge: "POV",
     badgeColor: "bg-[#FF2D55]",
-    videoSrc: "https://auroraprompts.com/storage/prompts/1788132194_6a94bb623eb43.mp4",
+    videoSrc: "/images/example-2.mp4",
   },
   {
     title: "Manequim",
     description: "Produto apresentado de forma limpa, visual e direta.",
     badge: "Produto",
     badgeColor: "bg-[#25F4EE]",
-    videoSrc: "https://auroraprompts.com/storage/prompts/1788878382_6aa01e2e40355.mp4",
+    videoSrc: "/images/example-3.mp4",
   },
   {
     title: "UGC Lingerie",
     description: "Formato sensual e elegante para moda íntima.",
     badge: "UGC",
     badgeColor: "bg-[#FF2D55]",
-    videoSrc: "https://auroraprompts.com/storage/prompts/1786820947_6a80b9531652b.mp4",
+    videoSrc: "/images/example-4.mp4",
   },
 ];
 
@@ -52,6 +52,7 @@ function FormatCard({ item }: { item: (typeof formats)[0] }) {
             loop
             muted
             playsInline
+            preload="auto"
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute top-2.5 left-2.5 z-10">

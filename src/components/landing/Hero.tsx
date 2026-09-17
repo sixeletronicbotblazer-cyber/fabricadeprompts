@@ -1,6 +1,7 @@
 "use client";
 
 import { FadeIn } from "./FadeIn";
+import { HeroVideo } from "./HeroVideo";
 import { ArrowRight } from "lucide-react";
 
 export function Hero() {
@@ -38,6 +39,10 @@ export function Hero() {
           <p className="text-sm sm:text-base md:text-lg text-[#C4C4CC] leading-[1.6] mx-auto max-w-lg mt-6">
             Acesse uma galeria com <span className="text-white font-semibold">+500 prompts prontos</span> para criar vídeos com IA para TikTok Shop e Shopee.
           </p>
+        </FadeIn>
+
+        <FadeIn delay={0.25}>
+          <HeroVideo />
         </FadeIn>
 
         <FadeIn delay={0.3}>

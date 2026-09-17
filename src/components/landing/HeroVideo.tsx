@@ -18,7 +18,7 @@ export function HeroVideo() {
   return (
     <div className="mt-6 sm:mt-8 mx-auto w-full max-w-[340px] sm:max-w-[380px] md:max-w-[420px] lg:max-w-[460px]">
       <div className="relative rounded-2xl overflow-hidden bg-black shadow-[0_0_40px_rgba(255,45,85,0.12)] border border-[#2A2A2E]/60">
-        {/* Selo "VEJA POR DENTRO" - canto superior direito */}
+        {/* Selo "VEJA POR DENTRO" */}
         <div className="absolute top-3 right-3 z-20">
           <div className="flex flex-col items-center bg-black/70 backdrop-blur-sm border border-[#FF2D55]/30 rounded-xl px-2.5 py-1.5 shadow-[0_0_12px_rgba(255,45,85,0.2)]">
             <div className="flex items-center gap-1">
@@ -33,7 +33,7 @@ export function HeroVideo() {
           </div>
         </div>
 
-        {/* Botão mute/unmute - canto inferior esquerdo */}
+        {/* Botão mute/unmute */}
         <button
           onClick={toggleMute}
           aria-label={muted ? "Ativar som" : "Desativar som"}
@@ -53,7 +53,7 @@ export function HeroVideo() {
           className="w-full aspect-[9/16] object-cover"
           poster="/images/galeria-premium-bonus.png"
         >
-          <source src="https://i.imgur.com/mchBO8F.mp4" type="video/mp4" />
+          <source src="/vsl-oferta.webm" type="video/webm" />
         </video>
 
         {/* Gradiente sutil na base */}
