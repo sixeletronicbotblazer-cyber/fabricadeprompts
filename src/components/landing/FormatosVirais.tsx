@@ -6,53 +6,67 @@ import { TrendingUp } from "lucide-react";
 
 const formats = [
   {
-    title: "Caixa bolinhas natal",
+    title: "Transição vinho",
+    badge: "Transição",
+    badgeColor: "bg-[#FF2D55]",
+    trending: true,
+    videoSrc: "https://i.imgur.com/1aHrSL9.mp4",
+  },
+  {
+    title: "Modo selfie",
+    badge: "UGC",
+    badgeColor: "bg-[#25F4EE]",
+    trending: true,
+    videoSrc: "https://i.imgur.com/SG8jG1h.mp4",
+  },
+  {
+    title: "Transição troca de cor",
+    badge: "Transição",
+    badgeColor: "bg-[#FF2D55]",
+    trending: false,
+    videoSrc: "https://i.imgur.com/gAkp33J.mp4",
+  },
+  {
+    title: "Transição manequim",
+    badge: "Transição",
+    badgeColor: "bg-[#FF2D55]",
+    trending: true,
+    videoSrc: "https://i.imgur.com/9iUQOS1.mp4",
+  },
+  {
+    title: "Xícara natal",
     badge: "Natal",
     badgeColor: "bg-emerald-500/80",
-    trending: true,
-    videoSrc: "https://auroraprompts.com/m/953/aurora-953.mp4?expires=1789683486&signature=143ce1fe1adbcc07b96a4a8802fd3de7e02a2050596e2995bb0701f4b6ff7e45",
-  },
-  {
-    title: "Método gringo",
-    badge: "Faceless",
-    badgeColor: "bg-[#25F4EE]",
-    trending: true,
-    videoSrc: "https://auroraprompts.com/m/972/aurora-972.mp4?expires=1789683565&signature=bc63b7c110e9be24ae63dc22ac8c13f7be995e5a3be75655d1c1fed8cfd3ccad",
-  },
-  {
-    title: "Gringo transição",
-    badge: "Faceless",
-    badgeColor: "bg-[#25F4EE]",
     trending: false,
-    videoSrc: "https://auroraprompts.com/m/970/aurora-970.mp4?expires=1789683565&signature=5be0f1546ef4cf33bfc35b81e5c792359dbaef6adf661ad8d6aff9f9c2872f95",
+    videoSrc: "https://i.imgur.com/7IVUuKG.mp4",
   },
   {
-    title: "POV calçado",
+    title: "Gancho óculos",
+    badge: "Gancho",
+    badgeColor: "bg-amber-500/80",
+    trending: true,
+    videoSrc: "https://i.imgur.com/hggvZWq.mp4",
+  },
+  {
+    title: "POV produto skincare",
     badge: "POV",
     badgeColor: "bg-[#FF2D55]",
-    trending: true,
-    videoSrc: "https://auroraprompts.com/m/806/aurora-806.mp4?expires=1789683663&signature=c1bc0428332de9ac8577100ca26e97851b428884913aa53295cf171069ca6969",
-  },
-  {
-    title: "Modelo correndo",
-    badge: "UGC",
-    badgeColor: "bg-[#FF2D55]",
     trending: false,
-    videoSrc: "https://auroraprompts.com/m/919/aurora-919.mp4?expires=1789683710&signature=fe9627a9f17d51e1231bf86938a52c7ddf758fb9215e2d561deed52f163eed6b",
+    videoSrc: "https://i.imgur.com/5pDQS9I.mp4",
   },
   {
     title: "Gancho queimando roupa",
-    badge: "Viral",
-    badgeColor: "bg-[#FF2D55]",
+    badge: "Gancho",
+    badgeColor: "bg-amber-500/80",
     trending: true,
-    videoSrc: "https://auroraprompts.com/m/948/aurora-948.mp4?expires=1789683827&signature=350d7b77819f2c52ea56d1df068946ebc9d3e644880dc16a04406cda6ef682e0",
+    videoSrc: "https://i.imgur.com/EesDFmo.mp4",
   },
   {
-    title: "Guirlanda de natal",
-    badge: "Natal",
-    badgeColor: "bg-emerald-500/80",
-    trending: false,
-    videoSrc: "https://auroraprompts.com/m/929/aurora-929.mp4?expires=1789683867&signature=789b7c8d9c9f0179f7a4ee5bbdb736874d17a1aa5a5f476c935808560d672fef",
+    title: "Pacote pegando fogo",
+    badge: "Gancho",
+    badgeColor: "bg-amber-500/80",
+    trending: true,
+    videoSrc: "https://i.imgur.com/rAfQPdV.mp4",
   },
 ];
 
@@ -70,13 +84,11 @@ function FormatCard({ item }: { item: (typeof formats)[0] }) {
             preload="auto"
             className="absolute inset-0 w-full h-full object-cover"
           />
-          {/* Badge tag */}
           <div className="absolute top-2.5 left-2.5 z-10">
             <span className={`inline-flex items-center gap-1 ${item.badgeColor} text-[9px] sm:text-[10px] font-bold text-white px-2 py-0.5 rounded-full border border-white/10`}>
               {item.badge}
             </span>
           </div>
-          {/* Trending tag */}
           {item.trending && (
             <div className="absolute top-2.5 right-2.5 z-10">
               <span className="inline-flex items-center gap-1 bg-white/[0.12] backdrop-blur-sm text-[8px] sm:text-[9px] font-bold text-white/90 px-1.5 py-0.5 rounded-full border border-white/15">
@@ -85,7 +97,6 @@ function FormatCard({ item }: { item: (typeof formats)[0] }) {
               </span>
             </div>
           )}
-          {/* Subtle gradient overlay at bottom */}
           <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-black/40 to-transparent z-[5] pointer-events-none" />
         </div>
         <div className="p-3 sm:p-3.5">

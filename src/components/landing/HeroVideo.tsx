@@ -3,9 +3,21 @@
 import { useState, useRef, useCallback } from "react";
 import { Eye, Volume2, VolumeX } from "lucide-react";
 
+const VSL_URL = "https://i.imgur.com/mchBO8F.mp4";
+
 export function HeroVideo() {
   const [muted, setMuted] = useState(true);
+  const [visible, setVisible] = useState(() => !sessionStorage.getItem("vsl_watched"));
+  const [dismissed, setDismissed] = useState(() => !!sessionStorage.getItem("vsl_watched"));
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleEnded = useCallback(() => {
+    sessionStorage.setItem("vsl_watched", "1");
+    setTimeout(() => {
+      setVisible(false);
+      setDismissed(true);
+    }, 600);
+  }, []);
 
   const toggleMute = useCallback(() => {
     if (videoRef.current) {
@@ -15,8 +27,12 @@ export function HeroVideo() {
     }
   }, [muted]);
 
+  if (dismissed) return null;
+
   return (
-    <div className="mt-6 sm:mt-8 mx-auto w-full max-w-[340px] sm:max-w-[380px] md:max-w-[420px] lg:max-w-[460px]">
+    <div
+      className={`mt-6 sm:mt-8 mx-auto w-full max-w-[340px] sm:max-w-[380px] md:max-w-[420px] lg:max-w-[460px] transition-all duration-500 ${visible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
+    >
       <div className="relative rounded-2xl overflow-hidden bg-black shadow-[0_0_40px_rgba(255,45,85,0.12)] border border-[#2A2A2E]/60">
         {/* Selo "VEJA POR DENTRO" */}
         <div className="absolute top-3 right-3 z-20">
@@ -42,18 +58,18 @@ export function HeroVideo() {
           {muted ? <VolumeX className="size-4" /> : <Volume2 className="size-4" />}
         </button>
 
-        {/* Vídeo vertical 9:16 */}
+        {/* Vídeo vertical 9:16 - plays once, NO loop */}
         <video
           ref={videoRef}
           autoPlay
           muted
-          loop
           playsInline
           preload="auto"
+          onEnded={handleEnded}
           className="w-full aspect-[9/16] object-cover"
           poster="/images/galeria-premium-bonus.png"
         >
-          <source src="/vsl-oferta.webm" type="video/webm" />
+          <source src={VSL_URL} type="video/mp4" />
         </video>
 
         {/* Gradiente sutil na base */}
