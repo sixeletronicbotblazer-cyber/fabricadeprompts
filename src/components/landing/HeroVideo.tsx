@@ -7,8 +7,14 @@ const VSL_URL = "https://i.imgur.com/mchBO8F.mp4";
 
 export function HeroVideo() {
   const [muted, setMuted] = useState(true);
-  const [visible, setVisible] = useState(() => !sessionStorage.getItem("vsl_watched"));
-  const [dismissed, setDismissed] = useState(() => !!sessionStorage.getItem("vsl_watched"));
+  const [visible, setVisible] = useState(() => {
+    if (typeof window === "undefined") return true;
+    return !sessionStorage.getItem("vsl_watched");
+  });
+  const [dismissed, setDismissed] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return !!sessionStorage.getItem("vsl_watched");
+  });
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const handleEnded = useCallback(() => {
