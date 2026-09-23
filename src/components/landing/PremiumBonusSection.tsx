@@ -23,7 +23,7 @@ const steps = [
 
 export function PremiumBonusSection() {
   return (
-    <section className="relative bg-[#0D0D10] py-10 sm:py-14 md:py-16 px-4 overflow-hidden">
+    <section id="como-funciona" className="relative bg-[#0D0D10] py-10 sm:py-14 md:py-16 px-4 overflow-hidden">
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Badge */}
         <FadeIn>

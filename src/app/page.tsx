@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useCallback } from "react";
 import { UrgencyBar } from "@/components/landing/UrgencyBar";
 import { Hero } from "@/components/landing/Hero";
 import { FormatosVirais } from "@/components/landing/FormatosVirais";
@@ -15,8 +18,19 @@ import { FinalCTA } from "@/components/landing/FinalCTA";
 import { Footer } from "@/components/landing/Footer";
 import { SocialProof } from "@/components/landing/SocialProof";
 import { MobileStickyCTA } from "@/components/landing/MobileStickyCTA";
+import { MensalUpgradePopup } from "@/components/landing/MensalUpgradePopup";
 
 export default function Home() {
+  const [upgradeOpen, setUpgradeOpen] = useState(false);
+
+  const handleMensalClick = useCallback(() => {
+    setUpgradeOpen(true);
+  }, []);
+
+  const handleCloseUpgrade = useCallback(() => {
+    setUpgradeOpen(false);
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col">
       <UrgencyBar />
@@ -30,7 +44,7 @@ export default function Home() {
         <ComparisonSection />
         <ObjectionCards />
         <ResultsProofsSection />
-        <PricingSection />
+        <PricingSection onMensalClick={handleMensalClick} />
         <GuaranteeSection />
         <FAQ />
         <FinalCTA />
@@ -38,6 +52,7 @@ export default function Home() {
       <MobileStickyCTA />
       <Footer />
       <SocialProof />
+      <MensalUpgradePopup open={upgradeOpen} onClose={handleCloseUpgrade} />
     </div>
   );
 }

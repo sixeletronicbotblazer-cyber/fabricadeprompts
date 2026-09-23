@@ -1,0 +1,51 @@
+export const formats = [
+  {
+    title: "Transição vinho",
+    badge: "Transição",
+    badgeColor: "bg-[#FF2D55]",
+    trending: true,
+    videoSrc: "https://i.imgur.com/1aHrSL9.mp4",
+  },
+  {
+    title: "Transição troca de cor",
+    badge: "Transição",
+    badgeColor: "bg-[#FF2D55]",
+    trending: false,
+    videoSrc: "https://i.imgur.com/gAkp33J.mp4",
+  },
+  {
+    title: "Transição manequim",
+    badge: "Transição",
+    badgeColor: "bg-[#FF2D55]",
+    trending: true,
+    videoSrc: "https://i.imgur.com/9iUQOS1.mp4",
+  },
+  {
+    title: "Gancho óculos",
+    badge: "Gancho",
+    badgeColor: "bg-amber-500/80",
+    trending: true,
+    videoSrc: "https://i.imgur.com/hggvZWq.mp4",
+  },
+  {
+    title: "POV produto skincare",
+    badge: "POV",
+    badgeColor: "bg-[#FF2D55]",
+    trending: false,
+    videoSrc: "https://i.imgur.com/5pDQS9I.mp4",
+  },
+  {
+    title: "Gancho queimando roupa",
+    badge: "Gancho",
+    badgeColor: "bg-amber-500/80",
+    trending: true,
+    videoSrc: "https://i.imgur.com/EesDFmo.mp4",
+  },
+  {
+    title: "Pacote pegando fogo",
+    badge: "Gancho",
+    badgeColor: "bg-amber-500/80",
+    trending: true,
+    videoSrc: "https://i.imgur.com/rAfQPdV.mp4",
+  },
+];
