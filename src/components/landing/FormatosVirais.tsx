@@ -13,6 +13,13 @@ const formats = [
     videoSrc: "https://i.imgur.com/1aHrSL9.mp4",
   },
   {
+    title: "Modo selfie",
+    badge: "UGC",
+    badgeColor: "bg-[#25F4EE]",
+    trending: true,
+    videoSrc: "https://i.imgur.com/SG8jG1h.mp4",
+  },
+  {
     title: "Transição troca de cor",
     badge: "Transição",
     badgeColor: "bg-[#FF2D55]",
@@ -25,6 +32,13 @@ const formats = [
     badgeColor: "bg-[#FF2D55]",
     trending: true,
     videoSrc: "https://i.imgur.com/9iUQOS1.mp4",
+  },
+  {
+    title: "Xícara natal",
+    badge: "Natal",
+    badgeColor: "bg-emerald-500/80",
+    trending: false,
+    videoSrc: "https://i.imgur.com/7IVUuKG.mp4",
   },
   {
     title: "Gancho óculos",
