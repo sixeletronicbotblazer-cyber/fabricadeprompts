@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import { Check, Shield, Zap, BadgePercent, Star } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
-const checkoutUrlVitalicio = "https://pay.cakto.com.br/3dtfnag_968205";
-const checkoutUrlMensal = "https://pay.cakto.com.br/3dtfnag_968205"; // TODO: replace with real mensal checkout link
+const checkoutUrlVitalicio = "https://go.perfectpay.com.br/PPU38CQFUC3"; // R$49,90 - Vitalício
+const checkoutUrlMensal = "https://go.perfectpay.com.br/PPU38CQFSJG";  // R$24,90 - Mensal
 
 const vitalicioFeatures = [
   { text: "Biblioteca completa com +500 prompts", highlight: true },

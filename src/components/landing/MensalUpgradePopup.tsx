@@ -5,8 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, Check, BadgePercent, Shield } from "lucide-react";
 
 /* Checkout URLs — update these with real Cakto links */
-const CHECKOUT_UPGRADE = "https://pay.cakto.com.br/3dtfnag_968205"; // R$32,90 — TODO: replace with real link
-const CHECKOUT_MENSAL = "https://pay.cakto.com.br/3dtfnag_968205";  // R$24,90 — TODO: replace with real link
+const CHECKOUT_UPGRADE = "https://go.perfectpay.com.br/PPU38CQFSJH"; // R$32,90 - Upgrade Vitalício
+const CHECKOUT_MENSAL = "https://go.perfectpay.com.br/PPU38CQFSJG";  // R$24,90 - Mensal
 
 const checklist = [
   "+500 prompts organizados",
