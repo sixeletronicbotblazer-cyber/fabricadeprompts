@@ -53,12 +53,18 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '3077945205929982');
+fbq('track', 'PageView');
+fbq('init', '900080772936894');
 fbq('track', 'PageView');`,
           }}
         />
         <noscript>
           <img height="1" width="1" style={{display:'none'}}
             src="https://www.facebook.com/tr?id=3077945205929982&ev=PageView&noscript=1" alt="" />
+        </noscript>
+        <noscript>
+          <img height="1" width="1" style={{display:'none'}}
+            src="https://www.facebook.com/tr?id=900080772936894&ev=PageView&noscript=1" alt="" />
         </noscript>
         {/* TikTok Pixel */}
         <script
