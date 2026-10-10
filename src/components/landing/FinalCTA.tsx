@@ -2,7 +2,7 @@
 
 import { FadeIn } from "./FadeIn";
 
-const CHECKOUT_URL = "https://pay.cakto.com.br/oci2odo";
+const CHECKOUT_URL = "https://go.perfectpay.com.br/PPU38CQFSJE";
 
 export function FinalCTA() {
   const handleClick = () => {

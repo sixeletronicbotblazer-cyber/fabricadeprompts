@@ -3,7 +3,7 @@
 import { FadeIn } from "./FadeIn";
 import { Check, Sparkles, Zap, Shield, RefreshCw, Smartphone, Eye, BookOpen } from "lucide-react";
 
-const CHECKOUT_URL = "https://pay.cakto.com.br/oci2odo";
+const CHECKOUT_URL = "https://go.perfectpay.com.br/PPU38CQFSJE";
 
 const benefits = [
   { icon: BookOpen, text: "Biblioteca completa com 500+ prompts prontos" },
