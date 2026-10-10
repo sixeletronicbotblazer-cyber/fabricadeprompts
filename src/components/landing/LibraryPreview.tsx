@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { FadeIn } from "./FadeIn";
 
 const checks = [
@@ -55,13 +54,13 @@ export function LibraryPreview() {
                 </span>
               </div>
               <div className="rounded-lg overflow-hidden">
-                <Image
-                  src="/images/galeria-premium-bonus.png"
-                  alt="PromptVault - Visualização da biblioteca por dentro"
-                  width={600}
-                  height={400}
+                <video
+                  src="/galeria-premium-demo.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                   className="w-full h-auto object-cover"
-                  priority
                 />
               </div>
               <p className="text-[#bcb8c8] pt-3 px-1.5 text-[11px]">
