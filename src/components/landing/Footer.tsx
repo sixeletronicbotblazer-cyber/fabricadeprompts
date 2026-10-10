@@ -1,29 +1,17 @@
 "use client";
 
-import { useI18n } from "@/lib/i18n/context";
+import { FadeIn } from "./FadeIn";
 
 export function Footer() {
-  const { t } = useI18n();
-
   return (
-    <footer className="bg-[#08080A] border-t border-[#2A2A2E]/50 py-8 px-4">
-      <div className="max-w-3xl mx-auto text-center">
-        <p className="text-xs text-[#A1A1AA]/40 mb-3">
-          {t("footer.brand")}
+    <footer className="border-t border-[#23232a] py-7 pb-16 text-center text-[#767781] text-[11px]">
+      <div className="px-6">
+        <p>
+          <span className="font-[family-name:var(--font-space-grotesk)] font-bold text-white text-sm">Prompt</span>
+          <span className="font-[family-name:var(--font-space-grotesk)] font-bold text-[#FA2D62] text-sm">Vault</span>
+          {" "}• Biblioteca de Prompts
         </p>
-        <div className="flex items-center justify-center gap-4">
-          <a href="#" className="text-xs text-[#A1A1AA]/40 hover:text-[#A1A1AA]/70 transition-colors">
-            {t("footer.terms")}
-          </a>
-          <span className="text-white/10">•</span>
-          <a href="#" className="text-xs text-[#A1A1AA]/40 hover:text-[#A1A1AA]/70 transition-colors">
-            {t("footer.privacy")}
-          </a>
-          <span className="text-white/10">•</span>
-          <a href="#" className="text-xs text-[#A1A1AA]/40 hover:text-[#A1A1AA]/70 transition-colors">
-            {t("footer.support")}
-          </a>
-        </div>
+        <p className="mt-2">© {new Date().getFullYear()} PromptVault. Todos os direitos reservados.</p>
       </div>
     </footer>
   );

@@ -1,250 +1,71 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Check, Shield, Zap, Star } from "lucide-react";
 import { FadeIn } from "./FadeIn";
-import { useI18n } from "@/lib/i18n/context";
 
-function CountdownTimer() {
-  const [time, setTime] = useState({ h: 23, m: 59, s: 59 });
+const CHECKOUT_URL = "https://go.perfectpay.com.br/PPU38CQFUC3";
 
-  useEffect(() => {
-    const stored = localStorage.getItem("pricing_countdown_end");
-    let endTime: number;
-
-    if (stored) {
-      endTime = parseInt(stored, 10);
-      if (Date.now() >= endTime) {
-        endTime = Date.now() + 24 * 60 * 60 * 1000;
-        localStorage.setItem("pricing_countdown_end", String(endTime));
-      }
-    } else {
-      endTime = Date.now() + 24 * 60 * 60 * 1000;
-      localStorage.setItem("pricing_countdown_end", String(endTime));
+export function PricingSection() {
+  const handleClick = () => {
+    if (typeof window.trackCheckout === "function") {
+      window.trackCheckout("Vitalicio", 27.9);
     }
-
-    function tick() {
-      const diff = Math.max(0, endTime - Date.now());
-      const h = Math.floor(diff / (1000 * 60 * 60));
-      const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const s = Math.floor((diff % (1000 * 60)) / 1000);
-      setTime({ h, m, s });
-    }
-
-    tick();
-    const id = setInterval(tick, 1000);
-    return () => clearInterval(id);
-  }, []);
-
-  const pad = (n: number) => String(n).padStart(2, "0");
+    window.location.href = CHECKOUT_URL;
+  };
 
   return (
-    <div className="flex items-center gap-1.5">
-      {([time.h, time.m, time.s] as const).map((val, i) => (
-        <div key={i} className="flex items-center gap-1">
-          <span className="text-base sm:text-xl font-extrabold text-white tabular-nums leading-none">
-            {pad(val)}
-          </span>
-          {i < 2 && (
-            <span className="text-xs font-bold text-white/20">:</span>
-          )}
-        </div>
-      ))}
-    </div>
-  );
-}
-
-interface PricingSectionProps {
-  onMensalClick?: () => void;
-}
-
-export function PricingSection({ onMensalClick }: PricingSectionProps) {
-  const { t, pricing } = useI18n();
-
-  const vitalicioFeatures = [
-    { text: t("pricing.v1"), highlight: true },
-    { text: t("pricing.v2"), highlight: true },
-    { text: t("pricing.v3"), highlight: true },
-    { text: t("pricing.v4"), highlight: false },
-  ];
-
-  const mensalFeatures = [
-    t("pricing.m1"),
-    t("pricing.m2"),
-    t("pricing.m3"),
-    t("pricing.m4"),
-  ];
-
-  return (
-    <section id="oferta" className="bg-[#050505] py-14 md:py-20 px-4 relative overflow-hidden">
-      {/* Radial gradient behind cards */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-[#FF2D55]/[0.04] blur-[100px] pointer-events-none" />
-
-      <div className="max-w-3xl mx-auto relative z-10">
-
+    <section id="oferta" className="py-16 md:py-20 bg-[#060607]">
+      <div className="max-w-[630px] mx-auto px-6 text-center">
         <FadeIn>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight mb-3 text-center">
-            {t("pricing.headline.pre")} <span className="text-[#FF2D55]">{t("pricing.headline.highlight")}</span>
+          <span className="inline-flex items-center border border-[#3c1c27] bg-[#160e12] text-[#FA2D62] text-[10px] font-black tracking-[0.15em] uppercase px-3.5 py-2 rounded-[40px]">
+            Oferta especial de acesso
+          </span>
+          <h2 className="font-[family-name:var(--font-space-grotesk)] text-[clamp(30px,4vw,43px)] leading-[1.15] tracking-[-0.055em] mt-4 mb-2">
+            A biblioteca completa.<br />
+            <span className="text-[#FA2D62]">Um preço só.</span>
           </h2>
-          <p className="text-base text-white/40 text-center mb-10">
-            {t("pricing.sub")}
+          <p className="text-[#A7A7B1] text-sm leading-relaxed mb-0">
+            Sem assinatura mensal. Sem comparação de planos. Tudo em um único acesso digital.
           </p>
         </FadeIn>
 
-        {/* Watermark word behind cards */}
-        <div className="absolute top-28 left-1/2 -translate-x-1/2 text-[5rem] sm:text-[7rem] md:text-[9rem] font-black text-white/[0.02] uppercase tracking-widest select-none pointer-events-none whitespace-nowrap z-0">
-          {t("pricing.watermark")}
-        </div>
+        <FadeIn delay={0.1}>
+          <div className="mt-8 bg-gradient-to-br from-[#1c1118] to-[#100f13] border border-[#6b273b] rounded-[20px] px-7 py-8 shadow-[0_0_65px_rgba(237,36,93,0.07)]">
+            {/* Ribbon */}
+            <span className="inline-block bg-[#ec2d5b] text-[10px] font-black tracking-[0.08em] rounded-full px-3.5 py-1.5">
+              ACESSO VITALÍCIO
+            </span>
 
-        {/* Two plans grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 items-start relative z-10">
+            <h3 className="mt-5 mb-1 font-[family-name:var(--font-space-grotesk)] text-[23px] font-bold">
+              PromptVault Completo
+            </h3>
 
-          {/* ─── VITALÍCIO (Principal) — Glassmorphism ─── */}
-          <FadeIn delay={0.08}>
-            <div className="relative bg-white/[0.04] backdrop-blur-xl rounded-2xl border-2 border-[#FF2D55]/35 p-6 sm:p-7 shadow-[0_0_50px_rgba(255,45,85,0.12)]">
+            {/* Old price */}
+            <p className="text-[#85858f] text-sm line-through mt-2">De R$47,90</p>
 
-              {/* MAIS POPULAR badge */}
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 flex items-center gap-2">
-                <span className="inline-flex items-center gap-1.5 bg-[#FF2D55] text-white text-xs sm:text-sm font-bold uppercase tracking-wider px-5 py-1.5 rounded-full shadow-lg shadow-[#FF2D55]/30 whitespace-nowrap">
-                  <Star className="size-3.5 fill-white" />
-                  {t("pricing.mostPopular")}
-                </span>
-              </div>
+            {/* Price */}
+            <p className="text-[clamp(59px,8vw,83px)] font-black tracking-[-0.075em] leading-[1.13] mt-3 mb-1.5">
+              <small className="text-[0.32em] align-middle tracking-[-0.02em]">R$</small>27,90
+            </p>
+            <p className="text-[#afb0bb] text-xs">Pagamento único • sem mensalidade</p>
 
-              {/* Countdown */}
-              <div className="rounded-xl bg-black/40 border border-[#2A2A2E]/50 px-4 py-2.5 flex items-center justify-between mb-5 mt-2">
-                <div className="flex items-center gap-1.5">
-                  <Zap className="size-3.5 text-[#FF2D55]" />
-                  <span className="text-xs font-bold text-white/40 uppercase tracking-wider">{t("pricing.offerEnds")}</span>
-                </div>
-                <CountdownTimer />
-              </div>
-
-              {/* Plan label */}
-              <p className="text-xs text-white/50 uppercase tracking-wider font-bold mb-3 text-center">
-                {t("pricing.vitalicio")}
-              </p>
-
-              {/* Price block */}
-              <div className="bg-[#FF2D55]/[0.06] rounded-2xl py-5 px-4 border border-[#FF2D55]/10 mb-5 text-center">
-                <div className="flex items-center justify-center gap-3 mb-1">
-                  <span className="text-lg sm:text-xl text-white/30 line-through font-bold">{pricing.vitalicioFromPrice}</span>
-                  <span className="text-xs font-bold text-[#25F4EE] uppercase tracking-wider bg-[#25F4EE]/10 px-2.5 py-0.5 rounded-full border border-[#25F4EE]/20">
-                    {pricing.vitalicioDiscount}
-                  </span>
-                </div>
-
-                <div className="flex items-baseline justify-center">
-                  <span className="text-[3rem] sm:text-[3.5rem] font-extrabold text-white leading-none tracking-tight">
-                    {pricing.currencySymbol}{pricing.vitalicioMain}
-                  </span>
-                  <span className="text-xl sm:text-2xl font-bold text-white">{pricing.vitalicioCents}</span>
-                </div>
-
-                <p className="text-sm text-[#25F4EE]/80 mt-2 font-semibold">
-                  {t("pricing.singlePayment")}
-                </p>
-                <p className="text-xs text-white/40 mt-0.5">
-                  {t("pricing.singlePaymentDesc")}
-                </p>
-              </div>
-
-              {/* CTA */}
-              <a
-                href={pricing.vitalicioCheckout}
-                onClick={() => { (window as any).trackCheckout?.('Vitalicio', 47.90); }}
-                className="block w-full text-center bg-[#FF2D55] hover:brightness-110 text-white font-extrabold py-5 sm:py-5.5 px-6 rounded-2xl transition-all text-base sm:text-lg shadow-lg shadow-[#FF2D55]/25 hover:shadow-[#FF2D55]/40 hover:scale-[1.02] active:scale-[0.98] mb-5 uppercase tracking-wide"
-              >
-                {t("pricing.vitalicioCta")}
-              </a>
-
-              {/* Features */}
-              <ul className="space-y-3 mb-5">
-                {vitalicioFeatures.map((f, i) => (
-                  <li key={i} className="flex items-center gap-2.5">
-                    <Check className={`size-4 shrink-0 ${f.highlight ? "text-[#25F4EE]" : "text-[#FF2D55]/70"}`} />
-                    <span className={`text-sm leading-tight ${f.highlight ? "text-[#25F4EE]/90 font-semibold" : "text-white/80"}`}>{f.text}</span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* Tudo incluso box */}
-              <div className="rounded-xl bg-[#25F4EE]/5 border border-[#25F4EE]/10 px-4 py-3 mb-4">
-                <p className="text-sm font-bold text-[#25F4EE]/90 text-center">
-                  {t("pricing.allIncluded")}
-                </p>
-              </div>
-
-              {/* Trust */}
-              <div className="flex items-center justify-center gap-2">
-                <Shield className="size-3.5 text-white/20" />
-                <span className="text-xs text-white/20">
-                  {t("pricing.trust")}
-                </span>
-              </div>
+            {/* Features */}
+            <div className="flex justify-center flex-wrap gap-3 text-[#b8b7bd] text-[11px] mt-5">
+              <span><span className="text-[#34e3b4] mr-1.5">✓</span>500+ prompts</span>
+              <span><span className="text-[#34e3b4] mr-1.5">✓</span>Referências visuais</span>
+              <span><span className="text-[#34e3b4] mr-1.5">✓</span>Uso no celular</span>
             </div>
-          </FadeIn>
 
-          {/* ─── MENSAL (Secondary) — Glassmorphism ─── */}
-          <FadeIn delay={0.15}>
-            <div className="relative bg-white/[0.03] backdrop-blur-xl rounded-2xl border border-[#2A2A2E]/50 p-6 sm:p-7 mt-8 md:mt-0">
-
-              {/* Plan label */}
-              <p className="text-xs text-white/40 uppercase tracking-wider font-bold mb-4 text-center">
-                {t("pricing.mensal")}
-              </p>
-
-              {/* Price block */}
-              <div className="bg-white/[0.03] rounded-2xl py-5 px-4 border border-[#2A2A2E]/40 mb-5 text-center">
-                <div className="flex items-baseline justify-center">
-                  <span className="text-[2.5rem] sm:text-[3rem] font-extrabold text-white leading-none tracking-tight">
-                    {pricing.currencySymbol}{pricing.mensalMain}
-                  </span>
-                  <span className="text-lg sm:text-xl font-bold text-white">{pricing.mensalCents}</span>
-                </div>
-
-                <p className="text-sm text-white/40 mt-2 font-semibold">
-                  {t("pricing.monthlyBilling")}
-                </p>
-              </div>
-
-              <p className="text-[12px] sm:text-sm text-[#A1A1AA]/60 leading-relaxed mb-5 text-center max-w-xs mx-auto">
-                {t("pricing.mensalDesc")}
-              </p>
-
-              {/* CTA */}
-              <button
-                onClick={onMensalClick}
-                className="block w-full text-center border border-[#FF2D55]/30 bg-[#FF2D55]/5 hover:bg-[#FF2D55]/15 text-[#FF2D55] hover:text-white font-extrabold py-4.5 sm:py-5 px-6 rounded-2xl transition-all text-sm sm:text-base hover:scale-[1.02] active:scale-[0.98] mb-5 uppercase tracking-wide"
-              >
-                {t("pricing.mensalCta")}
-              </button>
-
-              {/* Features */}
-              <ul className="space-y-2.5 mb-5">
-                {mensalFeatures.map((f, i) => (
-                  <li key={i} className="flex items-center gap-2.5">
-                    <Check className="size-4 shrink-0 text-white/30" />
-                    <span className="text-sm text-white/60 leading-tight">{f}</span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* Trust */}
-              <div className="flex items-center justify-center gap-2">
-                <Shield className="size-3.5 text-white/15" />
-                <span className="text-[11px] text-white/15">
-                  {t("pricing.trust")}
-                </span>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-
-        <FadeIn delay={0.2}>
-          <p className="text-xs text-[#A1A1AA]/40 text-center mt-6 max-w-md mx-auto leading-relaxed">
-            {t("pricing.footnote")}
-          </p>
+            {/* CTA */}
+            <button
+              onClick={handleClick}
+              className="w-full inline-flex items-center justify-center gap-3 bg-[#FA2D62] text-white px-7 py-4 rounded-[10px] text-[13px] font-black shadow-[0_15px_32px_rgba(250,45,98,0.18)] hover:translate-y-[-2px] hover:brightness-110 transition-all duration-200 mt-6"
+            >
+              QUERO MEU ACESSO →
+            </button>
+            <p className="text-[11px] text-[#7e7d87] mt-2.5">
+              Após o pagamento, você recebe instruções para acessar a biblioteca.
+            </p>
+          </div>
         </FadeIn>
       </div>
     </section>

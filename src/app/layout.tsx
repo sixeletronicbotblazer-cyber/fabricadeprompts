@@ -1,34 +1,30 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Space_Grotesk, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 
-const inter = Inter({
-  variable: "--font-inter",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
-  title: "TikTok Shop Motion Prompts | Guias práticos + prompts prontos para vídeos UGC com IA",
-  description:
-    "Crie vídeos de roupas para TikTok Shop com modelos IA usando prompts prontos. InfoApp simples, acesso imediato por R$ 17,90.",
-  keywords: [
-    "TikTok Shop",
-    "UGC",
-    "modelos IA",
-    "prompts prontos",
-    "vídeos de roupa",
-    "criação de conteúdo",
-    "afiliados TikTok",
-  ],
+  title: "PromptVault | Biblioteca de Prompts para vídeos com IA",
+  description: "PromptVault — mais de 500 prompts prontos para vídeos com IA. Escolha, copie e adapte ao seu produto.",
+  keywords: ["PromptVault", "TikTok Shop", "UGC", "prompts", "vídeos com IA", "Shopee", "afiliados"],
   icons: {
     icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
   },
   openGraph: {
-    title: "TikTok Shop Motion Prompts",
-    description:
-      "Crie vídeos de roupas para TikTok Shop com modelos IA usando prompts prontos.",
+    title: "PromptVault | Biblioteca de Prompts",
+    description: "Mais de 500 prompts prontos para vídeos com IA. Escolha, copie e adapte ao seu produto.",
     type: "website",
   },
 };
@@ -60,7 +56,6 @@ fbq('track', 'PageView');`,
           <img height="1" width="1" style={{display:'none'}}
             src="https://www.facebook.com/tr?id=900080772936894&ev=PageView&noscript=1" alt="" />
         </noscript>
-
         {/* UTMify */}
         <script
           src="https://cdn.utmify.com.br/scripts/utms/latest.js"
@@ -92,7 +87,7 @@ fbq('track', 'PageView');`,
           }}
         />
       </head>
-      <body className={`${inter.variable} antialiased`} style={{ fontFamily: "var(--font-inter), sans-serif" }}>
+      <body className={`${spaceGrotesk.variable} ${dmSans.variable} antialiased`} style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}>
         {children}
         <Toaster />
       </body>

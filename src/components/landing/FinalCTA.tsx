@@ -1,39 +1,34 @@
 "use client";
 
 import { FadeIn } from "./FadeIn";
-import { ArrowRight } from "lucide-react";
-import { useI18n } from "@/lib/i18n/context";
+
+const CHECKOUT_URL = "https://go.perfectpay.com.br/PPU38CQFUC3";
 
 export function FinalCTA() {
-  const { t } = useI18n();
+  const handleClick = () => {
+    if (typeof window.trackCheckout === "function") {
+      window.trackCheckout("Vitalicio", 27.9);
+    }
+    window.location.href = CHECKOUT_URL;
+  };
 
   return (
-    <section className="bg-[#050505] relative overflow-hidden py-14 sm:py-18 md:py-24 px-4">
-      <div className="max-w-2xl mx-auto text-center relative z-10">
+    <section className="py-10 md:py-14">
+      <div className="max-w-[630px] mx-auto px-6 text-center">
         <FadeIn>
-          <h2 className="text-[1.6rem] sm:text-2xl md:text-[2.5rem] font-black leading-[1.15] sm:leading-[1.1] text-[#F4F4F5] mb-6">
-            {t("finalCta.headline.pre")} <span className="text-[#FF2D55]">{t("finalCta.headline.highlight")}</span>{t("finalCta.headline.post")}
+          <h2 className="font-[family-name:var(--font-space-grotesk)] text-[clamp(30px,4vw,43px)] leading-[1.15] tracking-[-0.055em] mb-3">
+            Comece agora.{" "}
+            <span className="text-[#FA2D62]">Sem travar na ideia.</span>
           </h2>
-        </FadeIn>
-
-        <FadeIn delay={0.1}>
-          <p className="text-sm sm:text-base text-[#A1A1AA]/70 leading-relaxed mb-8 sm:mb-10 max-w-md mx-auto">
-            {t("finalCta.sub")}
+          <p className="text-[#A7A7B1] text-sm leading-relaxed mb-5">
+            500+ prompts organizados. Um único pagamento. Acesso vitalício.
           </p>
-        </FadeIn>
-
-        <FadeIn delay={0.2}>
-          <div className="max-w-md mx-auto">
-            <a
-              href="#oferta"
-              className="block w-full text-center bg-[#FF2D55] hover:brightness-110 shadow-lg shadow-[#FF2D55]/25 font-extrabold tracking-wide uppercase rounded-2xl text-base sm:text-lg py-5 sm:py-6 px-6 transition-all mb-6 hover:scale-[1.02] active:scale-[0.98]"
-            >
-              {t("finalCta.cta")} <ArrowRight className="inline size-4 ml-2" />
-            </a>
-            <p className="text-sm text-[#A1A1AA]/50">
-              {t("finalCta.trust")}
-            </p>
-          </div>
+          <button
+            onClick={handleClick}
+            className="inline-flex items-center justify-center gap-3 bg-[#FA2D62] text-white px-7 py-4 rounded-[10px] text-[13px] font-black shadow-[0_15px_32px_rgba(250,45,98,0.18)] hover:translate-y-[-2px] hover:brightness-110 transition-all duration-200"
+          >
+            QUERO MEU ACESSO →
+          </button>
         </FadeIn>
       </div>
     </section>

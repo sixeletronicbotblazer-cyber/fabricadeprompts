@@ -4,23 +4,24 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-background: #050505;
-  --color-foreground: #F4F4F5;
-  --color-card: #111113;
-  --color-card-foreground: #F4F4F5;
-  --color-primary: #FF2D55;
+  --color-background: #060607;
+  --color-foreground: #ffffff;
+  --color-card: #141519;
+  --color-card-foreground: #ffffff;
+  --color-primary: #FA2D62;
   --color-primary-foreground: #ffffff;
-  --color-secondary: #151518;
+  --color-secondary: #101114;
   --color-secondary-foreground: #ffffff;
-  --color-muted: #151518;
-  --color-muted-foreground: #A1A1AA;
-  --color-accent: #FF2D55;
+  --color-muted: #17181c;
+  --color-muted-foreground: #A7A7B1;
+  --color-accent: #FA2D62;
   --color-accent-foreground: #ffffff;
   --color-destructive: #ef4444;
-  --color-border: #2A2A2E;
-  --color-input: #2A2A2E;
-  --color-ring: #FF2D55;
-  --font-sans: var(--font-inter);
+  --color-border: #27272E;
+  --color-input: #27272E;
+  --color-ring: #FA2D62;
+  --font-sans: var(--font-dm-sans);
+  --font-heading: var(--font-space-grotesk);
   --radius-sm: 0.375rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
@@ -34,6 +35,9 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-dm-sans), sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
@@ -42,7 +46,7 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: #060607;
 }
 ::-webkit-scrollbar-thumb {
   background: #333;
@@ -52,37 +56,26 @@
   background: #555;
 }
 
-/* === Clean Dark Landing System === */
+/* === PromptVault Dark System === */
 
-/* CTA button gradient (red → orange) */
+/* CTA button - solid pink with glow */
 .bg-cta-gradient {
-  background: linear-gradient(135deg, #FF2D55, #FF4D1A);
+  background: #FA2D62;
 }
 
-/* CTA glow - very subtle breathing */
+/* CTA glow - subtle pink breathing */
 @keyframes ctaGlow {
-  0%, 100% { box-shadow: 0 8px 32px rgba(124, 58, 237, 0.15), 0 4px 16px rgba(236, 72, 153, 0.1); }
-  50% { box-shadow: 0 8px 40px rgba(124, 58, 237, 0.22), 0 4px 20px rgba(236, 72, 153, 0.15); }
+  0%, 100% { box-shadow: 0 8px 32px rgba(250, 45, 98, 0.18), 0 4px 16px rgba(250, 45, 98, 0.12); }
+  50% { box-shadow: 0 8px 40px rgba(250, 45, 98, 0.28), 0 4px 20px rgba(250, 45, 98, 0.18); }
 }
 
 .cta-glow {
   animation: ctaGlow 3s ease-in-out infinite;
 }
 
-/* Accent text gradient for key highlights */
+/* Accent text */
 .text-gradient-accent {
-  background: linear-gradient(135deg, #FF2D55, #FF4D1A);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* TikTok brand gradient (cyan → pink) - use sparingly */
-.tiktok-text-gradient {
-  background: linear-gradient(135deg, #25F4EE, #FE2C55);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #FA2D62;
 }
 
 /* Carousel animations */

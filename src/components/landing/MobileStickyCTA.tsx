@@ -1,61 +1,43 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
-import { useI18n } from "@/lib/i18n/context";
+import { useEffect, useState } from "react";
+
+const CHECKOUT_URL = "https://go.perfectpay.com.br/PPU38CQFUC3";
 
 export function MobileStickyCTA() {
-  const { t, pricing } = useI18n();
   const [visible, setVisible] = useState(false);
-  const initialized = useRef(false);
-
-  const checkScroll = useCallback(() => {
-    const scrollY = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight;
-    const winHeight = window.innerHeight;
-    const scrollPercent = scrollY / (docHeight - winHeight);
-
-    if (scrollPercent < 0.08) {
-      setVisible(false);
-      return;
-    }
-
-    const planosEl = document.getElementById("oferta");
-    if (planosEl) {
-      const rect = planosEl.getBoundingClientRect();
-      if (rect.top < winHeight + 60 && rect.bottom > 0) {
-        setVisible(false);
-        return;
-      }
-    }
-
-    setVisible(true);
-  }, []);
 
   useEffect(() => {
-    const handler = () => {
-      checkScroll();
-      if (!initialized.current) {
-        initialized.current = true;
-      }
+    const onScroll = () => {
+      const scrollY = window.scrollY;
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docH > 0 ? scrollY / docH : 0;
+      const oferta = document.getElementById("oferta");
+      const ofertaRect = oferta?.getBoundingClientRect();
+      const nearOferta = ofertaRect ? ofertaRect.top < 200 && ofertaRect.bottom > -200 : false;
+      setVisible(pct > 0.08 && !nearOferta);
     };
-    window.addEventListener("scroll", handler, { passive: true });
-    return () => window.removeEventListener("scroll", handler);
-  }, [checkScroll]);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const handleClick = () => {
+    if (typeof window.trackCheckout === "function") {
+      window.trackCheckout("Vitalicio", 27.9);
+    }
+    window.location.href = CHECKOUT_URL;
+  };
 
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden pb-[env(safe-area-inset-bottom)]">
-      <a
-        href="#oferta"
-        className="flex items-center justify-center w-full bg-[#FF2D55] backdrop-blur-md py-4 px-6 shadow-[0_-4px_20px_rgba(255,45,85,0.25)] transition-all active:scale-[0.99]"
+    <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-[#060607]/95 backdrop-blur-md border-t border-[#27272E] px-4 py-3">
+      <button
+        onClick={handleClick}
+        className="w-full bg-[#FA2D62] text-white py-3.5 rounded-[10px] text-[13px] font-black shadow-[0_15px_32px_rgba(250,45,98,0.18)]"
       >
-        <span className="text-white/80 font-bold text-[13px] mr-2.5">{pricing.vitalicioPrice}</span>
-        <span className="w-px h-3.5 bg-white/25" />
-        <span className="text-white font-extrabold text-[13px] ml-2.5 tracking-wide uppercase">
-          {t("mobileCta.label")}
-        </span>
-      </a>
+        QUERO MEU ACESSO — R$27,90
+      </button>
     </div>
   );
 }

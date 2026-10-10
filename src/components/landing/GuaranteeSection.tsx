@@ -1,26 +1,21 @@
 "use client";
 
 import { FadeIn } from "./FadeIn";
-import { ShieldCheck } from "lucide-react";
-import { useI18n } from "@/lib/i18n/context";
+import { Shield } from "lucide-react";
 
 export function GuaranteeSection() {
-  const { t } = useI18n();
-
   return (
-    <section className="bg-[#08080A] py-8 sm:py-12 md:py-14 px-4">
-      <div className="max-w-2xl mx-auto">
+    <section className="py-8 md:py-10">
+      <div className="max-w-[630px] mx-auto px-6">
         <FadeIn>
-          <div className="bg-[#111113] border border-[#2A2A2E]/60 rounded-2xl p-6 sm:p-8 text-center">
-            <div className="inline-flex size-10 rounded-full bg-emerald-500/8 border border-emerald-500/12 items-center justify-center mb-4 mx-auto">
-              <ShieldCheck className="size-5 text-emerald-400" />
+          <div className="bg-[#141519] border border-[#27272E] rounded-[13px] p-5 flex items-start gap-4">
+            <Shield className="size-6 text-[#FA2D62] flex-shrink-0 mt-0.5" />
+            <div>
+              <h3 className="font-bold text-sm mb-1">Garantia de 7 dias</h3>
+              <p className="text-xs text-[#A7A7B1] leading-relaxed">
+                Se dentro de 7 dias você sentir que a biblioteca não é para você, devolvemos seu dinheiro. Sem burocracia.
+              </p>
             </div>
-            <h2 className="text-xl sm:text-2xl font-black text-[#F4F4F5] leading-tight mb-4">
-              {t("guarantee.title")}
-            </h2>
-            <p className="text-sm text-[#A1A1AA]/70 leading-relaxed max-w-md mx-auto">
-              {t("guarantee.text")}
-            </p>
           </div>
         </FadeIn>
       </div>
