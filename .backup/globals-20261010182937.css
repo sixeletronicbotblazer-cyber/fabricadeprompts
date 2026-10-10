@@ -1,0 +1,122 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: #050505;
+  --color-foreground: #F4F4F5;
+  --color-card: #111113;
+  --color-card-foreground: #F4F4F5;
+  --color-primary: #FF2D55;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #151518;
+  --color-secondary-foreground: #ffffff;
+  --color-muted: #151518;
+  --color-muted-foreground: #A1A1AA;
+  --color-accent: #FF2D55;
+  --color-accent-foreground: #ffffff;
+  --color-destructive: #ef4444;
+  --color-border: #2A2A2E;
+  --color-input: #2A2A2E;
+  --color-ring: #FF2D55;
+  --font-sans: var(--font-inter);
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* === Clean Dark Landing System === */
+
+/* CTA button gradient (red → orange) */
+.bg-cta-gradient {
+  background: linear-gradient(135deg, #FF2D55, #FF4D1A);
+}
+
+/* CTA glow - very subtle breathing */
+@keyframes ctaGlow {
+  0%, 100% { box-shadow: 0 8px 32px rgba(124, 58, 237, 0.15), 0 4px 16px rgba(236, 72, 153, 0.1); }
+  50% { box-shadow: 0 8px 40px rgba(124, 58, 237, 0.22), 0 4px 20px rgba(236, 72, 153, 0.15); }
+}
+
+.cta-glow {
+  animation: ctaGlow 3s ease-in-out infinite;
+}
+
+/* Accent text gradient for key highlights */
+.text-gradient-accent {
+  background: linear-gradient(135deg, #FF2D55, #FF4D1A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* TikTok brand gradient (cyan → pink) - use sparingly */
+.tiktok-text-gradient {
+  background: linear-gradient(135deg, #25F4EE, #FE2C55);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Carousel animations */
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+
+@keyframes scrollRight {
+  0% { transform: translateX(-25%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes scrollRightSlow {
+  0% { transform: translateX(-25%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-scroll-left {
+  animation: scrollLeft 15s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scrollRight 28s linear infinite;
+}
+
+.animate-scroll-right-slow {
+  animation: scrollRightSlow 12s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll-left,
+  .animate-scroll-right,
+  .animate-scroll-right-slow {
+    animation: none;
+  }
+}
