@@ -44,28 +44,43 @@ export function LibraryPreview() {
             </div>
           </FadeIn>
 
-          {/* Screenshot side - only the app layout image */}
+          {/* Phone mockup with real screen recording */}
           <FadeIn delay={0.15}>
-            <div className="p-4 bg-gradient-to-br from-[#1c1a2e] to-[#101117] rounded-[19px] border border-[#3a2842] shadow-[0_25px_65px_rgba(0,0,0,0.5)] order-first md:order-last">
-              <div className="flex items-center justify-between text-[13px] font-extrabold px-2.5 pt-2.5 pb-4">
-                <span className="font-[family-name:var(--font-space-grotesk)]">◈ PromptVault</span>
-                <span className="bg-[#282432] text-[#a9a5bd] rounded-full px-4 py-1.5 text-[10px] font-semibold">
-                  Buscar prompts...
-                </span>
+            <div className="flex justify-center order-first md:order-last">
+              <div className="relative w-[260px] sm:w-[280px] md:w-[300px]">
+                {/* Phone frame */}
+                <div className="relative bg-[#1a1a1e] rounded-[2.5rem] border-[3px] border-[#2a2a30] shadow-[0_30px_80px_rgba(0,0,0,0.6),0_0_40px_rgba(250,45,98,0.08)] overflow-hidden">
+                  {/* Notch */}
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120px] h-[28px] bg-[#1a1a1e] rounded-b-[1rem] z-20 flex items-center justify-center">
+                    <div className="w-[10px] h-[10px] rounded-full bg-[#2a2a30]" />
+                  </div>
+                  {/* Status bar */}
+                  <div className="relative z-10 flex items-center justify-between px-6 pt-[6px] h-[44px] text-[9px] text-white/50 font-medium">
+                    <span>9:41</span>
+                    <div className="flex items-center gap-1">
+                      <svg className="w-3 h-2" viewBox="0 0 12 8" fill="currentColor"><path d="M1 6h2v2H1V6zm3-2h2v4H4V4zm3-4h2v8H7V0z" opacity="0.4"/></svg>
+                      <svg className="w-3.5 h-2" viewBox="0 0 16 8" fill="currentColor"><rect x="0" y="1" width="12" height="6" rx="1" opacity="0.3"/><rect x="1" y="2" width="8" height="4" rx="0.5"/></svg>
+                    </div>
+                  </div>
+                  {/* Video screen */}
+                  <div className="mx-2 rounded-[1.2rem] overflow-hidden bg-black">
+                    <video
+                      src="/mockup-por-dentro.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                  {/* Home indicator */}
+                  <div className="flex justify-center py-2.5">
+                    <div className="w-[100px] h-[4px] rounded-full bg-white/20" />
+                  </div>
+                </div>
+                {/* Glow effect behind phone */}
+                <div className="absolute -inset-4 bg-[#FA2D62]/5 rounded-[3rem] blur-2xl -z-10" />
               </div>
-              <div className="rounded-lg overflow-hidden">
-                <video
-                  src="/galeria-premium-demo.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-              <p className="text-[#bcb8c8] pt-3 px-1.5 text-[11px]">
-                Galeria de formatos visuais • visualização real da biblioteca
-              </p>
             </div>
           </FadeIn>
         </div>
