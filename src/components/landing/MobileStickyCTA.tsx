@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
+import { useI18n } from "@/lib/i18n/context";
 
 export function MobileStickyCTA() {
+  const { t, pricing } = useI18n();
   const [visible, setVisible] = useState(false);
   const initialized = useRef(false);
 
@@ -48,10 +50,10 @@ export function MobileStickyCTA() {
         href="#oferta"
         className="flex items-center justify-center w-full bg-[#FF2D55] backdrop-blur-md py-4 px-6 shadow-[0_-4px_20px_rgba(255,45,85,0.25)] transition-all active:scale-[0.99]"
       >
-        <span className="text-white/80 font-bold text-[13px] mr-2.5">R$49,90</span>
+        <span className="text-white/80 font-bold text-[13px] mr-2.5">{pricing.vitalicioPrice}</span>
         <span className="w-px h-3.5 bg-white/25" />
         <span className="text-white font-extrabold text-[13px] ml-2.5 tracking-wide uppercase">
-          Acessar a Biblioteca
+          {t("mobileCta.label")}
         </span>
       </a>
     </div>

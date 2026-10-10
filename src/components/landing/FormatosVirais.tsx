@@ -2,46 +2,49 @@
 
 import { FadeIn } from "./FadeIn";
 import { Sparkles, Copy, Wand2 } from "lucide-react";
-
-const categories = [
-  {
-    icon: Sparkles,
-    title: "Ganchos & Transições",
-    items: "Movimentos, trocas, vinho, manequim, fogo…",
-  },
-  {
-    icon: Copy,
-    title: "POV & Produto",
-    items: "Skincare, moda, casa, acessórios, UGC selfie…",
-  },
-  {
-    icon: Wand2,
-    title: "Sazonais & Nichos",
-    items: "Natal, datas comemorativas, nichos específicos…",
-  },
-];
+import { useI18n } from "@/lib/i18n/context";
 
 export function FormatosVirais() {
+  const { t } = useI18n();
+
+  const categories = [
+    {
+      icon: Sparkles,
+      title: t("formats.cat1.title"),
+      items: t("formats.cat1.items"),
+    },
+    {
+      icon: Copy,
+      title: t("formats.cat2.title"),
+      items: t("formats.cat2.items"),
+    },
+    {
+      icon: Wand2,
+      title: t("formats.cat3.title"),
+      items: t("formats.cat3.items"),
+    },
+  ];
+
   return (
     <section id="formatos" className="bg-[#050505] py-10 sm:py-14 md:py-16 px-4">
       <div className="max-w-3xl mx-auto">
         <FadeIn>
           <div className="flex justify-center mb-4">
             <span className="inline-flex items-center gap-1.5 text-[9px] sm:text-[10px] font-bold text-[#FF2D55]/90 uppercase tracking-[0.15em] bg-[#FF2D55]/8 border border-[#FF2D55]/12 px-3.5 py-1 rounded-full">
-              FORMATOS VIRAIS VALIDADOS
+              {t("formats.badge")}
             </span>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.05}>
           <h2 className="text-[1.3rem] sm:text-xl md:text-[1.85rem] font-black leading-[1.15] sm:leading-[1.1] text-[#F4F4F5] mb-3 text-center max-w-lg mx-auto">
-            Escolha o formato. Copie o prompt. <span className="text-[#FF2D55]">Adapte para o seu produto</span>.
+            {t("formats.headline.pre")} <span className="text-[#FF2D55]">{t("formats.headline.highlight")}</span>{t("formats.headline.post")}
           </h2>
         </FadeIn>
 
         <FadeIn delay={0.08}>
           <p className="text-[12px] sm:text-sm text-[#A1A1AA]/60 leading-relaxed mb-8 sm:mb-10 max-w-md mx-auto text-center">
-            Tudo já organizado dentro da biblioteca.
+            {t("formats.sub")}
           </p>
         </FadeIn>
 
@@ -72,7 +75,7 @@ export function FormatosVirais() {
 
         <FadeIn delay={0.15}>
           <p className="text-[11px] sm:text-xs text-[#A1A1AA]/50 text-center max-w-md mx-auto leading-relaxed">
-            A biblioteca também inclui categorias por nicho, movimento, produto, datas comemorativas e estilos de criativo.
+            {t("formats.footnote")}
           </p>
         </FadeIn>
       </div>

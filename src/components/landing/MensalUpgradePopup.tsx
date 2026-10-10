@@ -3,22 +3,7 @@
 import { useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Check, BadgePercent, Shield } from "lucide-react";
-
-/* Checkout URLs — update these with real Cakto links */
-const CHECKOUT_UPGRADE = "https://go.perfectpay.com.br/PPU38CQFSJH"; // R$32,90 - Upgrade Vitalício
-const CHECKOUT_MENSAL = "https://go.perfectpay.com.br/PPU38CQFSJG";  // R$24,90 - Mensal
-
-const checklist = [
-  "+500 prompts organizados",
-  "Biblioteca completa",
-  "Galeria Premium / PromptVault",
-  "Modo Modelo, POV e Selfie UGC",
-  "Novos módulos",
-  "Aulas rápidas e exemplos",
-  "Grupo VIP",
-  "Atualizações futuras",
-  "Acesso completo sem mensalidade",
-];
+import { useI18n } from "@/lib/i18n/context";
 
 interface MensalUpgradePopupProps {
   open: boolean;
@@ -26,15 +11,29 @@ interface MensalUpgradePopupProps {
 }
 
 export function MensalUpgradePopup({ open, onClose }: MensalUpgradePopupProps) {
+  const { t, pricing } = useI18n();
+
+  const checklist = [
+    t("upgrade.check1"),
+    t("upgrade.check2"),
+    t("upgrade.check3"),
+    t("upgrade.check4"),
+    t("upgrade.check5"),
+    t("upgrade.check6"),
+    t("upgrade.check7"),
+    t("upgrade.check8"),
+    t("upgrade.check9"),
+  ];
+
   const handleUpgrade = useCallback(() => {
-    (window as any).trackCheckout?.("Vitalicio-Upgrade", 32.90);
-    window.location.href = CHECKOUT_UPGRADE;
-  }, []);
+    (window as any).trackCheckout?.("Vitalicio-Upgrade", 37.90);
+    window.location.href = pricing.recoveryCheckout;
+  }, [pricing.recoveryCheckout]);
 
   const handleContinueMensal = useCallback(() => {
-    (window as any).trackCheckout?.("Mensal", 24.90);
-    window.location.href = CHECKOUT_MENSAL;
-  }, []);
+    (window as any).trackCheckout?.("Mensal", 27.90);
+    window.location.href = pricing.mensalOriginalCheckout;
+  }, [pricing.mensalOriginalCheckout]);
 
   return (
     <AnimatePresence>
@@ -65,7 +64,7 @@ export function MensalUpgradePopup({ open, onClose }: MensalUpgradePopupProps) {
               <button
                 onClick={onClose}
                 className="absolute top-3 right-3 size-8 flex items-center justify-center rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-white/50 hover:text-white/80 transition-all z-10"
-                aria-label="Fechar"
+                aria-label={t("upgrade.header")}
               >
                 <X className="size-4" />
               </button>
@@ -73,16 +72,16 @@ export function MensalUpgradePopup({ open, onClose }: MensalUpgradePopupProps) {
               <div className="p-6 sm:p-7">
                 {/* Header */}
                 <p className="text-xs font-bold text-[#A1A1AA]/60 uppercase tracking-wider mb-3">
-                  Antes de continuar...
+                  {t("upgrade.header")}
                 </p>
 
                 <h3 className="text-xl sm:text-2xl font-black text-white leading-tight mb-2">
-                  Libere o Vitalício por apenas{" "}
-                  <span className="text-[#FF2D55]">R$8 a mais</span>
+                  {t("upgrade.headline.pre")}{" "}
+                  <span className="text-[#FF2D55]">{t("upgrade.headline.highlight")}</span>
                 </h3>
 
                 <p className="text-sm text-[#A1A1AA]/70 leading-relaxed mb-5">
-                  Acesso completo à biblioteca, Grupo VIP e todas as atualizações futuras incluídas.
+                  {t("upgrade.sub")}
                 </p>
 
                 {/* Price card */}
@@ -91,31 +90,31 @@ export function MensalUpgradePopup({ open, onClose }: MensalUpgradePopupProps) {
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                     <span className="inline-flex items-center gap-1.5 bg-[#FF2D55] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-lg shadow-[#FF2D55]/30 whitespace-nowrap">
                       <BadgePercent className="size-3" />
-                      OFERTA ESPECIAL
+                      {t("upgrade.specialOffer")}
                     </span>
                   </div>
 
                   {/* VITALÍCIO badge */}
                   <div className="flex justify-center mb-3 mt-1">
                     <span className="inline-flex items-center gap-1 bg-[#25F4EE]/15 border border-[#25F4EE]/25 text-[#25F4EE] text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
-                      VITALÍCIO
+                      {t("upgrade.vitalicio")}
                     </span>
                   </div>
 
                   {/* De / Por */}
                   <div className="flex items-center justify-center gap-3 mb-1">
-                    <span className="text-lg text-white/30 line-through font-bold">R$49,90</span>
+                    <span className="text-lg text-white/30 line-through font-bold">{pricing.vitalicioFromPrice}</span>
                   </div>
 
                   <div className="flex items-baseline justify-center">
                     <span className="text-[2.5rem] sm:text-[3rem] font-extrabold text-white leading-none tracking-tight">
-                      R$32
+                      {pricing.currencySymbol}{pricing.recoveryMain}
                     </span>
-                    <span className="text-xl font-bold text-white">,90</span>
+                    <span className="text-xl font-bold text-white">{pricing.recoveryCents}</span>
                   </div>
 
                   <p className="text-sm text-[#25F4EE]/80 mt-2 font-semibold text-center">
-                    Pagamento único · Acesso vitalício
+                    {t("upgrade.singlePaymentLifetime")}
                   </p>
                 </div>
 
@@ -134,7 +133,7 @@ export function MensalUpgradePopup({ open, onClose }: MensalUpgradePopupProps) {
                   onClick={handleUpgrade}
                   className="block w-full text-center bg-[#FF2D55] hover:brightness-110 text-white font-extrabold py-5 px-6 rounded-2xl transition-all text-base sm:text-lg shadow-lg shadow-[#FF2D55]/25 hover:shadow-[#FF2D55]/40 hover:scale-[1.02] active:scale-[0.98] mb-3 uppercase tracking-wide"
                 >
-                  SIM, QUERO O VITALÍCIO
+                  {t("upgrade.cta")}
                 </button>
 
                 {/* Opção discreta */}
@@ -142,19 +141,19 @@ export function MensalUpgradePopup({ open, onClose }: MensalUpgradePopupProps) {
                   onClick={handleContinueMensal}
                   className="block w-full text-center text-white/40 hover:text-white/60 text-sm font-medium py-2 transition-all"
                 >
-                  Não, continuar com o Mensal
+                  {t("upgrade.dismiss")}
                 </button>
 
                 {/* Microcopy */}
                 <p className="text-[11px] text-[#A1A1AA]/40 text-center mt-3 leading-relaxed">
-                  A diferença é de apenas R$8 para liberar o plano vitalício.
+                  {t("upgrade.microcopy")}
                 </p>
 
                 {/* Trust */}
                 <div className="flex items-center justify-center gap-2 mt-4">
                   <Shield className="size-3 text-white/20" />
                   <span className="text-[11px] text-white/20">
-                    Pagamento seguro · Garantia 7 dias · PIX
+                    {t("upgrade.trust")}
                   </span>
                 </div>
               </div>

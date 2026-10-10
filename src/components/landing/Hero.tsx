@@ -4,9 +4,10 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { FadeIn } from "./FadeIn";
 import { formats } from "./formats-data";
 import { TrendingUp, Eye, ArrowRight } from "lucide-react";
+import { useI18n } from "@/lib/i18n/context";
 
 /* ─── Carousel card ─── */
-function HeroFormatCard({ item }: { item: (typeof formats)[0] }) {
+function HeroFormatCard({ item, trendingLabel }: { item: (typeof formats)[0]; trendingLabel: string }) {
   return (
     <div className="flex-shrink-0 w-[48%] sm:w-[30%] md:w-[22%] lg:w-[18%] pr-2 sm:pr-3">
       <div className="bg-[#111113] rounded-2xl border border-[#2A2A2E]/60 overflow-hidden hover:border-[#FF2D55]/25 transition-all duration-300 shadow-[0_0_24px_rgba(255,45,85,0.06)] hover:shadow-[0_0_32px_rgba(255,45,85,0.12)]">
@@ -31,7 +32,7 @@ function HeroFormatCard({ item }: { item: (typeof formats)[0] }) {
             <div className="absolute top-2 right-2 z-10">
               <span className="inline-flex items-center gap-1 bg-white/[0.12] backdrop-blur-sm text-[7px] sm:text-[8px] font-bold text-white/90 px-1 py-0.5 rounded-full border border-white/15">
                 <TrendingUp className="size-2" />
-                Em alta
+                {trendingLabel}
               </span>
             </div>
           )}
@@ -49,6 +50,7 @@ function HeroFormatCard({ item }: { item: (typeof formats)[0] }) {
 
 /* ─── Hero Section ─── */
 export function Hero() {
+  const { t } = useI18n();
   const trackRef = useRef<HTMLDivElement>(null);
   const offsetRef = useRef(0);
   const rafRef = useRef<number>(0);
@@ -142,28 +144,28 @@ export function Hero() {
 
         <FadeIn delay={0.08}>
           <p className="text-xs sm:text-sm text-[#A1A1AA]/50 uppercase tracking-[0.12em] font-semibold mb-4">
-            BIBLIOTECA DE PROMPTS PARA VÍDEOS COM IA
+            {t("hero.eyebrow")}
           </p>
         </FadeIn>
 
-        {/* Headline — KEEP as requested */}
+        {/* Headline */}
         <FadeIn delay={0.15}>
           <h1 className="text-[1.75rem] sm:text-[2.25rem] md:text-[3rem] lg:text-[3.35rem] font-black leading-[1.15] sm:leading-[1.08] tracking-tight text-white">
-            Pare de tentar inventar <span className="text-[#FF2D55]">prompt do zero</span>.
+            {t("hero.headline.pre")} <span className="text-[#FF2D55]">{t("hero.headline.highlight")}</span>{t("hero.headline.post")}
           </h1>
         </FadeIn>
 
-        {/* New subheadline */}
+        {/* Subheadline */}
         <FadeIn delay={0.2}>
           <p className="text-sm sm:text-base md:text-lg text-[#C4C4CC] leading-[1.6] mx-auto max-w-lg mt-6">
-            <span className="text-[#FF2D55] font-semibold">Veja por dentro</span> alguns dos{" "}
-            <span className="text-[#FF2D55] font-semibold">formatos que você encontra na biblioteca</span>. Escolha a referência, copie o prompt e adapte para o seu produto.
+            <span className="text-[#FF2D55] font-semibold">{t("hero.sub.pre")}</span> {t("hero.sub.mid")}{" "}
+            <span className="text-[#FF2D55] font-semibold">{t("hero.sub.highlight")}</span>{t("hero.sub.post")}
           </p>
         </FadeIn>
 
         <FadeIn delay={0.23}>
           <p className="text-xs sm:text-sm text-[#A1A1AA]/50 mt-2">
-            Formatos organizados para TikTok Shop e Shopee.
+            {t("hero.formats")}
           </p>
         </FadeIn>
       </div>
@@ -171,17 +173,17 @@ export function Hero() {
       {/* ─── Video Carousel ─── */}
       <FadeIn delay={0.28}>
         <div className="mt-8 sm:mt-10 relative">
-          {/* "VEJA POR DENTRO" badge */}
+          {/* Badge */}
           <div className="flex justify-center mb-4 relative z-20">
             <div className="flex flex-col items-center bg-black/70 backdrop-blur-sm border border-[#FF2D55]/30 rounded-xl px-4 py-2 shadow-[0_0_16px_rgba(255,45,85,0.15)]">
               <div className="flex items-center gap-1.5">
                 <Eye className="size-3.5 text-[#FF2D55]" />
                 <span className="text-[10px] sm:text-xs font-bold text-white/90 uppercase tracking-wider leading-none">
-                  VEJA POR DENTRO
+                  {t("hero.peekBadge")}
                 </span>
               </div>
               <span className="text-[8px] sm:text-[9px] text-[#A1A1AA]/60 leading-none mt-0.5">
-                Biblioteca de prompts
+                {t("hero.peekSub")}
               </span>
             </div>
           </div>
@@ -198,7 +200,7 @@ export function Hero() {
               onPointerCancel={onPointerUp}
             >
               {allItems.map((item, i) => (
-                <HeroFormatCard key={i} item={item} />
+                <HeroFormatCard key={i} item={item} trendingLabel={t("hero.trending")} />
               ))}
             </div>
           </div>
@@ -218,11 +220,11 @@ export function Hero() {
               onClick={handleDiscoverClick}
               className="inline-flex items-center justify-center w-full sm:w-auto px-10 sm:px-14 py-5 sm:py-6 bg-[#FF2D55] hover:brightness-110 text-white font-extrabold tracking-wide uppercase text-base sm:text-lg rounded-2xl transition-all shadow-lg shadow-[#FF2D55]/25 hover:shadow-[#FF2D55]/40 hover:scale-[1.02] active:scale-[0.98]"
             >
-              QUERO VER COMO FUNCIONA
+              {t("hero.cta")}
               <ArrowRight className="ml-2.5 size-4" />
             </a>
             <p className="text-sm text-white/40 mt-1">
-              Veja os formatos, a biblioteca e como usar.
+              {t("hero.ctaSub")}
             </p>
           </div>
         </FadeIn>

@@ -53,3 +53,22 @@ server.log
 # Skills directory
 /skills/skills/
 upload/
+
+# Tool results & dev artifacts
+tool-results/
+download/
+examples/
+
+# Root screenshot PNGs (dev artifacts)
+/*.png
+/*.jpeg
+/*.jpg
+/*.gif
+
+# Dev logs & worklogs
+dev.log
+dev.out.log
+worklog.md
+
+# Prisma (unused)
+prisma/

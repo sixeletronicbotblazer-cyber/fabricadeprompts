@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingCart } from "lucide-react";
+import { useI18n } from "@/lib/i18n/context";
 
 const proofs = [
   { name: "Ana C.", delay: 8000, duration: 4000 },
@@ -28,6 +29,7 @@ const proofs = [
 ];
 
 export function SocialProof() {
+  const { t } = useI18n();
   const [visible, setVisible] = useState(false);
   const [current, setCurrent] = useState<string | null>(null);
   const timersRef = useRef<NodeJS.Timeout[]>([]);
@@ -75,7 +77,7 @@ export function SocialProof() {
                   {current}
                 </p>
                 <p className="text-[11px] text-[#A1A1AA]/70">
-                  comprou agora
+                  {t("socialProofPopup.bought")}
                 </p>
               </div>
               <div className="flex-shrink-0">

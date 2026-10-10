@@ -7,53 +7,29 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
-const faqs = [
-  {
-    q: "O que eu recebo?",
-    a: "Acesso a uma biblioteca com +500 prompts organizados por tipo de vídeo e categoria, com pré-visualização, atualizações semanais e todos os formatos para TikTok Shop e Shopee.",
-  },
-  {
-    q: "A biblioteca cria o vídeo automaticamente?",
-    a: "Não. Ela reúne referências e prompts para orientar a criação. Você prepara a imagem inicial e usa o prompt de animação na ferramenta de IA escolhida.",
-  },
-  {
-    q: "Posso usar no Flow ou Seedance?",
-    a: "Você adapta os prompts à ferramenta e ao formato de geração que utilizar. Os resultados podem variar conforme o modelo de IA.",
-  },
-  {
-    q: "Preciso aparecer nos vídeos?",
-    a: "Não. Você pode criar cenas com modelo IA, POV, selfie, produto na mão e outros formatos sem gravar seu próprio rosto.",
-  },
-  {
-    q: "Funciona para TikTok Shop e Shopee?",
-    a: "Sim. Os prompts foram pensados para criativos de produtos físicos, principalmente para TikTok Shop, Shopee e vídeos de oferta.",
-  },
-  {
-    q: "É pagamento único?",
-    a: "Sim. Você paga R$49,90 uma vez e mantém o acesso vitalício. Sem mensalidade.",
-  },
-  {
-    q: "Recebo acesso na hora?",
-    a: "Sim. Após a confirmação do pagamento, o acesso é liberado imediatamente.",
-  },
-  {
-    q: "Funciona com qual ferramenta de IA?",
-    a: "Você pode adaptar os prompts para ferramentas de imagem e vídeo com IA, como Flow, Veo, Kling, Sora e outras plataformas. Os resultados podem variar conforme o modelo.",
-  },
-  {
-    q: "Tem garantia?",
-    a: "Sim. Você tem 7 dias de garantia para testar se a biblioteca faz sentido para você.",
-  },
-];
+import { useI18n } from "@/lib/i18n/context";
 
 export function FAQ() {
+  const { t } = useI18n();
+
+  const faqs = [
+    { q: t("faq.q1"), a: t("faq.a1") },
+    { q: t("faq.q2"), a: t("faq.a2") },
+    { q: t("faq.q3"), a: t("faq.a3") },
+    { q: t("faq.q4"), a: t("faq.a4") },
+    { q: t("faq.q5"), a: t("faq.a5") },
+    { q: t("faq.q6"), a: t("faq.a6") },
+    { q: t("faq.q7"), a: t("faq.a7") },
+    { q: t("faq.q8"), a: t("faq.a8") },
+    { q: t("faq.q9"), a: t("faq.a9") },
+  ];
+
   return (
     <section className="bg-[#08080A] py-10 sm:py-14 md:py-16 px-4">
       <div className="max-w-2xl mx-auto">
         <FadeIn>
           <h2 className="text-[1.4rem] sm:text-2xl md:text-[2rem] font-black text-[#F4F4F5] leading-[1.15] sm:leading-[1.1] mb-6 sm:mb-8 text-center">
-            Dúvidas frequentes
+            {t("faq.title")}
           </h2>
         </FadeIn>
 

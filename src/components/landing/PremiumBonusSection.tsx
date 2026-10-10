@@ -2,26 +2,29 @@
 
 import { Eye, ImageIcon, Play, ArrowRight } from "lucide-react";
 import { FadeIn } from "./FadeIn";
-
-const steps = [
-  {
-    icon: Eye,
-    title: "Veja a prévia",
-    text: "Escolha uma referência do estilo que você quer criar.",
-  },
-  {
-    icon: ImageIcon,
-    title: "Prepare a imagem inicial",
-    text: "Use a base para criar a cena: produto na mão, modelo vestindo ou outro formato disponível.",
-  },
-  {
-    icon: Play,
-    title: "Adapte e anime",
-    text: "Ajuste o prompt para seu produto e use na ferramenta de IA.",
-  },
-];
+import { useI18n } from "@/lib/i18n/context";
 
 export function PremiumBonusSection() {
+  const { t } = useI18n();
+
+  const steps = [
+    {
+      icon: Eye,
+      title: t("premium.step1.title"),
+      text: t("premium.step1.text"),
+    },
+    {
+      icon: ImageIcon,
+      title: t("premium.step2.title"),
+      text: t("premium.step2.text"),
+    },
+    {
+      icon: Play,
+      title: t("premium.step3.title"),
+      text: t("premium.step3.text"),
+    },
+  ];
+
   return (
     <section id="como-funciona" className="relative bg-[#0D0D10] py-10 sm:py-14 md:py-16 px-4 overflow-hidden">
       <div className="max-w-5xl mx-auto relative z-10">
@@ -29,7 +32,7 @@ export function PremiumBonusSection() {
         <FadeIn>
           <div className="flex justify-center mb-3">
             <span className="inline-flex items-center gap-1.5 bg-white/[0.04] text-[#C4C4CC] text-[10px] sm:text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full border border-[#2A2A2E]/60">
-              BIBLIOTECA PROMPTLY PROMPTS
+              {t("premium.badge")}
             </span>
           </div>
         </FadeIn>
@@ -37,7 +40,7 @@ export function PremiumBonusSection() {
         {/* Title */}
         <FadeIn delay={0.05}>
           <h2 className="text-[1.3rem] sm:text-xl md:text-[1.85rem] font-black leading-[1.15] text-[#F4F4F5] mb-3 text-center max-w-lg mx-auto">
-            Veja a <span className="text-[#FF2D55]">prévia</span>. Copie o prompt. Crie o vídeo.
+            {t("premium.headline.pre")} <span className="text-[#FF2D55]">{t("premium.headline.highlight")}</span>{t("premium.headline.post")}
           </h2>
         </FadeIn>
 
@@ -76,7 +79,7 @@ export function PremiumBonusSection() {
             {/* Clarification line */}
             <FadeIn delay={0.3}>
               <p className="text-[10px] sm:text-[11px] text-[#A1A1AA]/45 leading-relaxed mb-4">
-                A biblioteca fornece as referências e os prompts. A geração das imagens e dos vídeos acontece nas ferramentas de IA que você utilizar.
+                {t("premium.clarification")}
               </p>
             </FadeIn>
 
@@ -86,7 +89,7 @@ export function PremiumBonusSection() {
                 href="#oferta"
                 className="inline-flex items-center justify-center bg-[#FF2D55] hover:brightness-110 text-white font-extrabold py-4 px-9 rounded-2xl transition-all text-sm sm:text-base shadow-lg shadow-[#FF2D55]/25 hover:scale-[1.02] active:scale-[0.98] uppercase tracking-wide"
               >
-                QUERO O PACOTE ESPECIAL
+                {t("premium.cta")}
               </a>
             </FadeIn>
           </div>
@@ -129,7 +132,7 @@ export function PremiumBonusSection() {
             {/* Sub-video phrase */}
             <FadeIn delay={0.25}>
               <p className="mt-3 text-center md:text-left text-[11px] sm:text-xs text-[#A1A1AA]/40 leading-relaxed">
-                É como ter um acervo visual de criativos pronto para consultar sempre que faltar ideia.
+                {t("premium.subVideo")}
               </p>
             </FadeIn>
           </div>
@@ -138,7 +141,7 @@ export function PremiumBonusSection() {
         {/* Confira os planos note */}
         <FadeIn delay={0.4}>
           <p className="text-[10px] sm:text-[11px] text-[#A1A1AA]/40 text-center mt-6">
-            Biblioteca com formatos para diferentes nichos, produtos e campanhas. Confira o que está incluso em cada pacote abaixo.
+            {t("premium.note")}
           </p>
         </FadeIn>
       </div>

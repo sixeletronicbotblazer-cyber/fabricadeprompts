@@ -2,25 +2,28 @@
 
 import { useEffect, useRef, useCallback } from "react";
 import { FadeIn } from "./FadeIn";
-
-const cards = [
-  {
-    image: "/images/proof-jan-fev.png",
-    alt: "Dados de Janeiro e Fevereiro no TikTok Shop",
-    label: "Dados de Janeiro e Fevereiro no TikTok Shop",
-    sub: "Criativos em teste",
-    desc: "Variacoes sendo criadas para testar novos angulos.",
-  },
-  {
-    image: "/images/proof-jun.png",
-    alt: "Dados de Junho no TikTok Shop",
-    label: "Dados de Junho no TikTok Shop",
-    sub: "Aplicacao no TikTok",
-    desc: "Prints e bastidores de videos sendo usados na pratica.",
-  },
-];
+import { useI18n } from "@/lib/i18n/context";
 
 export function ResultsProofsSection() {
+  const { t } = useI18n();
+
+  const cards = [
+    {
+      image: "/images/proof-jan-fev.png",
+      alt: t("results.card1.label"),
+      label: t("results.card1.label"),
+      sub: t("results.card1.sub"),
+      desc: t("results.card1.desc"),
+    },
+    {
+      image: "/images/proof-jun.png",
+      alt: t("results.card2.label"),
+      label: t("results.card2.label"),
+      sub: t("results.card2.sub"),
+      desc: t("results.card2.desc"),
+    },
+  ];
+
   const trackRef = useRef<HTMLDivElement>(null);
   const offsetRef = useRef(0);
   const rafRef = useRef<number>(0);
@@ -84,22 +87,22 @@ export function ResultsProofsSection() {
         {/* Title */}
         <FadeIn>
           <h2 className="text-[1.2rem] sm:text-2xl lg:text-[1.7rem] font-extrabold text-[#F4F4F5] leading-[1.15] sm:leading-[1.2] text-center max-w-md sm:max-w-lg mx-auto mb-2">
-            Quem usa a biblioteca, consegue{" "}
-            <span className="text-[#FF2D55]">testar mais criativos</span>
+            {t("results.headline.pre")}{" "}
+            <span className="text-[#FF2D55]">{t("results.headline.highlight")}</span>
           </h2>
         </FadeIn>
 
         {/* Subtitle */}
         <FadeIn delay={0.05}>
           <p className="text-[11px] sm:text-[13px] text-[#A1A1AA]/60 max-w-sm mx-auto text-center leading-relaxed mb-1">
-            Com os prompts da biblioteca, fica mais facil sair do zero, criar variacoes e testar mais videos para TikTok Shop.
+            {t("results.sub")}
           </p>
         </FadeIn>
 
         {/* Support paragraph */}
         <FadeIn delay={0.08}>
           <p className="text-[10px] sm:text-[11px] text-[#A1A1AA]/40 max-w-sm mx-auto text-center leading-relaxed mb-6 sm:mb-8">
-            A ideia nao e depender de sorte ou inventar tudo sozinho. A biblioteca ajuda voce a ter direcao para copiar, adaptar e testar diferentes formatos de criativo.
+            {t("results.support")}
           </p>
         </FadeIn>
 
