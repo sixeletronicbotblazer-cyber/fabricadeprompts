@@ -2,12 +2,12 @@
 
 import { FadeIn } from "./FadeIn";
 
-const CHECKOUT_URL = "https://go.perfectpay.com.br/PPU38CQFUC3";
+const CHECKOUT_URL = "https://pay.cakto.com.br/oci2odo";
 
 export function FinalCTA() {
   const handleClick = () => {
     if (typeof window.trackCheckout === "function") {
-      window.trackCheckout("Vitalicio", 27.9);
+      window.trackCheckout("Vitalicio", 29.9);
     }
     window.location.href = CHECKOUT_URL;
   };
@@ -25,9 +25,9 @@ export function FinalCTA() {
           </p>
           <button
             onClick={handleClick}
-            className="inline-flex items-center justify-center gap-3 bg-[#FA2D62] text-white px-7 py-4 rounded-[10px] text-[13px] font-black shadow-[0_15px_32px_rgba(250,45,98,0.18)] hover:translate-y-[-2px] hover:brightness-110 transition-all duration-200"
+            className="inline-flex items-center justify-center gap-3 bg-[#FA2D62] text-white px-7 py-4 rounded-[10px] text-[13px] font-black shadow-[0_15px_32px_rgba(250,45,98,0.18)] hover:translate-y-[-2px] hover:brightness-110 transition-all duration-200 cta-glow"
           >
-            QUERO MEU ACESSO →
+            QUERO MEU ACESSO — R$29,90 →
           </button>
         </FadeIn>
       </div>

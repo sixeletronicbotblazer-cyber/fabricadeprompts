@@ -31,7 +31,7 @@ export function LibraryPreview() {
               <ul className="grid gap-2.5 my-6">
                 {checks.map((c) => (
                   <li key={c} className="text-[13px] text-[#e0e0e5]">
-                    <span className="text-[#FA2D62] font-black mr-2.5">✓</span>
+                    <span className="text-[#34e3b4] mr-2.5">✓</span>
                     {c}
                   </li>
                 ))}
@@ -45,7 +45,7 @@ export function LibraryPreview() {
             </div>
           </FadeIn>
 
-          {/* Screenshot side */}
+          {/* Screenshot side - only the app layout image */}
           <FadeIn delay={0.15}>
             <div className="p-4 bg-gradient-to-br from-[#1c1a2e] to-[#101117] rounded-[19px] border border-[#3a2842] shadow-[0_25px_65px_rgba(0,0,0,0.5)] order-first md:order-last">
               <div className="flex items-center justify-between text-[13px] font-extrabold px-2.5 pt-2.5 pb-4">
@@ -54,16 +54,18 @@ export function LibraryPreview() {
                   Buscar prompts...
                 </span>
               </div>
-              <div className="grid grid-cols-3 gap-2">
-                <Image src="/images/galeria-premium-bonus.png" alt="POV Produto" width={200} height={267} className="aspect-[3/4] object-cover rounded-lg" />
-                <Image src="/images/prova_social_whatsapp_01.png" alt="Selfie UGC" width={200} height={267} className="aspect-[3/4] object-cover rounded-lg" />
-                <Image src="/images/proof-jan-fev.png" alt="Gancho Visual" width={200} height={267} className="aspect-[3/4] object-cover rounded-lg" />
-                <Image src="/images/prova_social_whatsapp_02.png" alt="Faceless" width={200} height={267} className="aspect-[3/4] object-cover rounded-lg" />
-                <Image src="/images/prova_social_whatsapp_03.png" alt="Modelo" width={200} height={267} className="aspect-[3/4] object-cover rounded-lg" />
-                <Image src="/images/prova_social_whatsapp_04.png" alt="Produto" width={200} height={267} className="aspect-[3/4] object-cover rounded-lg" />
+              <div className="rounded-lg overflow-hidden">
+                <Image
+                  src="/images/galeria-premium-bonus.png"
+                  alt="PromptVault - Visualização da biblioteca por dentro"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                  priority
+                />
               </div>
               <p className="text-[#bcb8c8] pt-3 px-1.5 text-[11px]">
-                Galeria de formatos visuais • visualização demonstrativa
+                Galeria de formatos visuais • visualização real da biblioteca
               </p>
             </div>
           </FadeIn>

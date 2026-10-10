@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const CHECKOUT_URL = "https://go.perfectpay.com.br/PPU38CQFUC3";
+const CHECKOUT_URL = "https://pay.cakto.com.br/oci2odo";
 
 export function MobileStickyCTA() {
   const [visible, setVisible] = useState(false);
@@ -23,7 +23,7 @@ export function MobileStickyCTA() {
 
   const handleClick = () => {
     if (typeof window.trackCheckout === "function") {
-      window.trackCheckout("Vitalicio", 27.9);
+      window.trackCheckout("Vitalicio", 29.9);
     }
     window.location.href = CHECKOUT_URL;
   };
@@ -36,7 +36,7 @@ export function MobileStickyCTA() {
         onClick={handleClick}
         className="w-full bg-[#FA2D62] text-white py-3.5 rounded-[10px] text-[13px] font-black shadow-[0_15px_32px_rgba(250,45,98,0.18)]"
       >
-        QUERO MEU ACESSO — R$27,90
+        QUERO MEU ACESSO — R$29,90
       </button>
     </div>
   );

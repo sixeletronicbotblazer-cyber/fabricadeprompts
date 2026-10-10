@@ -149,7 +149,7 @@ export function Hero() {
         <FadeIn delay={0.2}>
           <p className="text-sm text-[#dbdbe0] mt-4">
             <span className="text-[#85858f] line-through mr-1.5">R$47,90</span>
-            <strong className="text-2xl text-white font-black">R$27,90</strong> • vitalício
+            <strong className="text-2xl text-white font-black">R$29,90</strong> • vitalício
           </p>
         </FadeIn>
 
